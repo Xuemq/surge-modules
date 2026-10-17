@@ -2388,6 +2388,24 @@
       "line": 9396,
       "line_sha256": "256dcb6d4d9c64e616a673f983e615f227c44b82b98a109eb42511d080dd619a",
       "kept_line": 9074
+    },
+    {
+      "kind": "module-header-order",
+      "fields": [
+        "name",
+        "desc",
+        "author",
+        "icon",
+        "category",
+        "homepage",
+        "tg-channel",
+        "tag",
+        "system",
+        "date",
+        "remark",
+        "arguments"
+      ],
+      "reason": "Put name/description first, followed by active metadata; preserve attribution and all rule bytes."
     }
   ],
   "removed": [
@@ -2934,7 +2952,7 @@
     "Referenced runtime files remain upstream and are not vendored."
   ],
   "status": "single_source_static_pass",
-  "output_sha256": "4a58763b5b6a1043abf160d4fce59f14f2fff94bdb5f61cd693dd923744ec577",
+  "output_sha256": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
   "counts_after": {
     "Rule": 2808,
     "Header Rewrite": 1,
@@ -2950,6 +2968,7 @@
     "exact-duplicate": 267,
     "json-map-base64": 5,
     "unique-script-label": 92,
-    "script-argument-object": 7
+    "script-argument-object": 7,
+    "module-header-order": 1
   }
 }

@@ -1,3 +1,16 @@
+#!name=去广告优化 · fmz200
+#!desc=基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。
+#!author=奶思[https://github.com/fmz200]
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
+#!category=奶思的模块
+#!homepage=https://github.com/fmz200/wool_scripts
+#!tg-channel=https://t.me/inaisi
+#!tag=去广告, fmz200, 奶思
+#!system=ios
+#!date=2026-09-10 21:10:39
+#!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
+#!arguments=12306_enable:true,DT:false,FX:true,HMPR:false,MY:true,PRCN:true,PRDRD:false,PRGG:true,PRMST:true,PRRK:false,PRRR:true,PRSCVPT:false,PRST:false,displayUpList:"show",logLevel:"error",per_filter_video_thread:"0",purifyComment:true,sponsorBlock:true,tab:true,useractivity:true
+
 # Modified 2026-10-17 by Xuemq: exact safe deduplication; restored upstream defaults; unique script labels.
 # Derived only from fmz200/wool_scripts. Licensed under the upstream GNU GPL v3; see licenses/fmz200-GPL-3.0.txt.
 # No blackmatrix7 or ddgksf2013 rule contents have been merged.
@@ -6,20 +19,8 @@
 # Explicit scope exclusions: 9 reviewed entries; see build report.
 
 # Upstream #!name=广告拦截&净化合集
-#!name=去广告优化 · fmz200
 # Upstream #!desc=(支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!desc=基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。
-#!author=奶思[https://github.com/fmz200]
-#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
-#!category=奶思的模块
-#!homepage=https://github.com/fmz200/wool_scripts
 # Upstream #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Surge/module/blockAds.module
-#!tg-channel=https://t.me/inaisi
-#!tag=去广告, fmz200, 奶思
-#!system=ios
-#!date=2026-09-10 21:10:39
-#!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
-#!arguments=12306_enable:true,DT:false,FX:true,HMPR:false,MY:true,PRCN:true,PRDRD:false,PRGG:true,PRMST:true,PRRK:false,PRRR:true,PRSCVPT:false,PRST:false,displayUpList:"show",logLevel:"error",per_filter_video_thread:"0",purifyComment:true,sponsorBlock:true,tab:true,useractivity:true
 
 
 # >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<

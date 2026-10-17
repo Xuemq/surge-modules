@@ -168,7 +168,19 @@ def optimize_single(data, source, policy):
     for key in sorted(set(metadata) - metadata_written):
         header.insert(-1, f'#!{key}={metadata[key]}')
         report['changes'].append({'kind':'module-metadata','field':key,'value':metadata[key]})
-    result='\n'.join(header+out)+'\n'
+    lines = header + out
+    first_section = next(i for i, line in enumerate(lines) if line.startswith('['))
+    metadata_lines = [line for line in lines[:first_section] if line.startswith('#!')]
+    if metadata_lines:
+        # Follow the official module examples: active name/description at byte
+        # zero, then other metadata. Attribution and GPL comments remain intact.
+        first = [line for key in ('name', 'desc') for line in metadata_lines if line.startswith('#!' + key + '=')]
+        first.extend(line for line in metadata_lines if not line.startswith(('#!name=', '#!desc=')))
+        lines = first + [''] + [line for line in lines[:first_section] if not line.startswith('#!')] + lines[first_section:]
+        report['changes'].append({'kind':'module-header-order',
+            'fields':[line[2:].partition('=')[0] for line in first],
+            'reason':'Put name/description first, followed by active metadata; preserve attribution and all rule bytes.'})
+    result='\n'.join(lines)+'\n'
     parsed=parse_module(result.encode(),source+'-optimized')
     for entry in parsed.entries:
         if entry.section != 'Script':

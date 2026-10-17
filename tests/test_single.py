@@ -188,7 +188,7 @@ class SingleSourceTests(unittest.TestCase):
     def test_reviewed_module_metadata_preserves_upstream_attribution(self):
         text='#!name=Original\n#!desc=Original description\n#!author=Original Author\n[Rule]\nDOMAIN,a,REJECT\n'
         out,r=self.run_single(text,module_metadata={'name':'去广告优化 · fmz200','desc':'fmz200 单来源优化；静态校验，尚未实机测试。'})
-        self.assertIn('\n#!name=去广告优化 · fmz200\n',out)
+        self.assertEqual(out.splitlines()[0],'#!name=去广告优化 · fmz200')
         self.assertIn('\n#!desc=fmz200 单来源优化；静态校验，尚未实机测试。\n',out)
         self.assertIn('# Upstream #!name=Original',out)
         self.assertIn('# Upstream #!desc=Original description',out)
@@ -197,7 +197,7 @@ class SingleSourceTests(unittest.TestCase):
 
     def test_reviewed_metadata_added_if_missing(self):
         out,r=self.run_single('[Rule]\nDOMAIN,a,REJECT\n',module_metadata={'name':'Title','desc':'Description'})
-        self.assertIn('\n#!name=Title\n',out)
+        self.assertEqual(out.splitlines()[0],'#!name=Title')
         self.assertIn('\n#!desc=Description\n',out)
         self.assertLess(out.index('#!name=Title'),out.index('[Rule]'))
 
@@ -205,5 +205,22 @@ class SingleSourceTests(unittest.TestCase):
         for metadata in ({'name':'Title\n[MITM]'},{'desc':''},{'author':'Override'}, {'name':None}):
             with self.subTest(metadata=metadata),self.assertRaises(Invalid):
                 self.run_single('[Rule]\nDOMAIN,a,REJECT\n',module_metadata=metadata)
+
+    def test_active_metadata_starts_at_byte_zero_before_comments(self):
+        text='# Source notice\n#!author=Original Author\n#!desc=Old description\n#!name=Old name\n#!system=ios\n[Rule]\nDOMAIN,a,REJECT\n'
+        out,r=self.run_single(text,module_metadata={'name':'Display name','desc':'Display description'})
+        self.assertTrue(out.startswith('#!name=Display name\n#!desc=Display description\n'))
+        first_blank=out.splitlines().index('')
+        self.assertTrue(all(line.startswith('#!') for line in out.splitlines()[:first_blank]))
+        self.assertFalse(any(line.startswith('#!') for line in out.splitlines()[first_blank:]))
+        self.assertEqual(sum(line.startswith('#!name=') for line in out.splitlines()),1)
+        self.assertEqual(sum(line.startswith('#!desc=') for line in out.splitlines()),1)
+        self.assertLess(out.index('#!author=Original Author'),out.index('# Modified '))
+        self.assertIn('# Source notice',out)
+        self.assertIn('# Upstream #!name=Old name',out)
+        self.assertIn('# Upstream #!desc=Old description',out)
+        active=[line for line in out.splitlines() if line and not line.startswith('#')]
+        self.assertEqual(active,['[Rule]','DOMAIN,a,REJECT'])
+        self.assertEqual(r['changes_by_kind']['module-header-order'],1)
 
 if __name__=='__main__':unittest.main()

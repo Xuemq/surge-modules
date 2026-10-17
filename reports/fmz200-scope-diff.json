@@ -3,7 +3,7 @@
   "change_date": "2026-10-17",
   "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
   "previous_output_sha256": "1b77ebf2d1619c6fd68a0a5ad672989e409acef0da5f5dc64add93fdb41f0b99",
-  "output_sha256": "4a58763b5b6a1043abf160d4fce59f14f2fff94bdb5f61cd693dd923744ec577",
+  "output_sha256": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
   "classification": "manual-scope-exclusion",
   "removed_count": 9,
   "removed_by_section": {
@@ -89,7 +89,15 @@
     "header_body_rewrites_identical": true,
     "existing_dedup_and_repairs_identical": true,
     "upstream_author_preserved": true,
-    "only_text_changes": "Nine selected active lines replaced by traceability comments; one scope-count header comment added; name/description updated with upstream metadata retained as comments.",
+    "only_text_changes": "Nine selected active lines replaced by traceability comments; one scope-count header comment added; name/description updated with upstream metadata retained as comments. Active metadata moved to the first contiguous block, name/description first.",
     "surge_runtime_tested": false
+  },
+  "header_compatibility_update": {
+    "previous_output_sha256": "4a58763b5b6a1043abf160d4fce59f14f2fff94bdb5f61cd693dd923744ec577",
+    "name_description_at_byte_zero": true,
+    "metadata_values_unchanged": true,
+    "all_active_rules_identical": true,
+    "upstream_comments_identical": true,
+    "surge_client_display_verified": false
   }
 }
