@@ -1,0 +1,11 @@
+.cache/
+work/
+dist/
+inputs/
+*.sgmodule
+*.module
+*.conf
+__pycache__/
+*.py[cod]
+.venv/
+.env*
