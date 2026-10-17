@@ -60,6 +60,23 @@ class ConversionTests(unittest.TestCase):
                 self.assertEqual(r['converted'],1)
                 self.assertEqual(len(r['unsupported']),1)
 
+    def test_reviewed_analyze_echo(self):
+        url='https://example.test/12306.js'
+        out,r=self.convert('^a url script-analyze-echo-response '+url,{'approved_analyze_script_urls':[url]})
+        self.assertIn('type=http-request',out)
+        self.assertIn('requires-body=true',out)
+
+    def test_reviewed_static_echo(self):
+        url='https://example.test/static.json'
+        out,r=self.convert('^a url echo-response application/json echo-response '+url,{'approved_static_response_urls':[url]})
+        self.assertIn('data-type=file',out)
+        self.assertIn('Content-Type:application/json',out)
+
+    def test_reviewed_binary_script(self):
+        url='https://example.test/binary.js'
+        out,r=self.convert('^a url script-response-body '+url,{'approved_script_urls':[url],'binary_script_urls':[url]})
+        self.assertIn('binary-body-mode=true',out)
+
     def test_html_and_credentials(self):
         for data in (b'<html>Error</html>',b'# password = x\n^a url reject\n'):
             with self.assertRaises(Invalid):

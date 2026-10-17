@@ -153,6 +153,8 @@ def parse_entry(section: str, raw: str, source: str, line: int) -> Entry:
         p = params(body)
         if p.get("type") not in {"http-request", "http-response"} or not p.get("pattern") or not p.get("script-path"):
             raise Invalid("only named HTTP scripts with pattern/script-path are supported")
+        if re.search(r"(?<!\{)\{[A-Za-z_][A-Za-z0-9_]*\}(?!\})", p.get("argument", "")):
+            raise Invalid("unresolved Loon-style argument placeholder")
         u = urlsplit(p["script-path"])
         if u.scheme != "https" or not u.netloc or u.username or u.password:
             raise Invalid("script-path must be an HTTPS URL; local scripts are unsupported")
@@ -174,16 +176,37 @@ def parse_entry(section: str, raw: str, source: str, line: int) -> Entry:
             key = pattern = unquote(w[0]); phase = "http-request"
             safe = len(w) == 3 and w[2] == "reject"
         elif section == "Map Local":
-            if len(w) < 2 or not any(t.startswith("data-type=") for t in w[1:]):
-                raise Invalid("Map Local requires explicit data-type")
-            allowed = {"data-type", "data", "status-code", "header"}
-            for token in w[1:]:
-                k, sep, v = token.partition("=")
-                if not sep or k not in allowed or not v:
-                    raise Invalid("malformed Map Local parameter")
-                if k == "data-type" and v not in {"text", "base64", "tiny-gif"}:
-                    raise Invalid("remote/local file mapping requires separate review")
-            key = pattern = unquote(w[0]); phase = "http-request"
+            # Surge's parameter list is not shell syntax; JSON text can contain
+            # unescaped inner quotes and spaces. Preserve values exactly.
+            first = re.match(r"^(\S+)\s+", raw)
+            if not first:
+                raise Invalid("malformed Map Local")
+            fields_text = raw[first.end():]
+            markers = list(re.finditer(r"(?:^|\s+)(data-type|data|status-code|header)=", fields_text))
+            if not markers or markers[0].start() != 0:
+                raise Invalid("malformed Map Local parameter")
+            mapping = {}
+            for i, marker in enumerate(markers):
+                name = marker.group(1)
+                end = markers[i+1].start() if i+1 < len(markers) else len(fields_text)
+                value = fields_text[marker.end():end].strip()
+                if not value or name in mapping:
+                    raise Invalid("empty/duplicate Map Local parameter")
+                if value[0] in "\"'" and (len(value) < 2 or value[-1] != value[0]):
+                    raise Invalid("unclosed Map Local value")
+                mapping[name] = unquote(value)
+            kind = mapping.get("data-type", "file")
+            if kind not in {"text", "base64", "tiny-gif", "file"}:
+                raise Invalid("unsupported Map Local data type")
+            if kind != "tiny-gif" and "data" not in mapping:
+                raise Invalid("Map Local data is required")
+            if "status-code" in mapping and (not mapping["status-code"].isdecimal() or not 200 <= int(mapping["status-code"]) <= 999):
+                raise Invalid("invalid Map Local status code")
+            if kind == "file":
+                uri = urlsplit(mapping["data"])
+                if uri.scheme != "https" or not uri.netloc or uri.username or uri.password:
+                    raise Invalid("Map Local file must be an HTTPS URL; local files are unsupported")
+            key = pattern = unquote(first.group(1)); phase = "http-request"
         elif section == "Header Rewrite":
             if w and w[0] not in {"http-request", "http-response"}:
                 w.insert(0, "http-request")

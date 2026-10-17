@@ -14,7 +14,7 @@ def convert_qx(data: bytes, policy=None):
     policy = policy or {"approved_script_urls": [], "approved_request_body_hashes": []}
     text = clean_bytes(data)
     sections = {}
-    report = {"schema_version": 1, "source_sha256": digest(data), "directives": {}, "unsupported": [], "converted": 0, "static_only": True}
+    report = {"schema_version": 1, "source_sha256": digest(data), "directives": {}, "unsupported": [], "converted": 0, "static_only": True, "warnings": []}
     counts = Counter()
     for n, line in enumerate(text.splitlines(), 1):
         raw = line.strip()
@@ -60,12 +60,30 @@ def convert_qx(data: bytes, policy=None):
                         raise Invalid("jq expression must have explicit single quotes")
                     phase = "http-response-jq" if kind == "jsonjq-response-body" else "http-request-jq"
                     section, native = "Body Rewrite", f"{phase} {pattern} {value}"
+                elif kind == "echo-response":
+                    pair = value.split(" echo-response ")
+                    if len(pair) != 2 or pair[1] not in policy.get("approved_static_response_urls", []):
+                        raise Invalid("static response URL/content type has not been reviewed")
+                    mime, url = pair
+                    if not re.fullmatch(r"[a-zA-Z0-9.+-]+/[a-zA-Z0-9.+-]+", mime):
+                        raise Invalid("unsupported echo-response content type")
+                    section, native = "Map Local", f'{pattern} data-type=file data="{url}" status-code=200 header="Content-Type:{mime}"'
+                elif kind == "script-analyze-echo-response":
+                    if value not in policy.get("approved_analyze_script_urls", []):
+                        raise Invalid("analyze-echo script must explicitly support Surge request short-circuiting")
+                    label = "moyu_" + digest(raw)[:16]
+                    section, native = "Script", f"{label} = type=http-request, pattern={quote(pattern)}, script-path={value}, requires-body=true"
                 elif kind in {"script-response-body", "script-response-header", "script-request-body", "script-request-header"}:
+                    incompatible = next((item for item in policy.get("known_incompatible", []) if item.get("url") == value), None)
+                    if incompatible:
+                        raise Invalid("reviewed script has no equivalent Surge effect: " + incompatible["reason"])
                     if value not in policy.get("approved_script_urls", []):
                         raise Invalid("external script runtime compatibility has not been reviewed")
                     phase = "http-response" if "response" in kind else "http-request"
                     label = "moyu_" + digest(raw)[:16]
                     section, native = "Script", f"{label} = type={phase}, pattern={quote(pattern)}, script-path={value}, requires-body={'true' if kind.endswith('-body') else 'false'}"
+                    if value in policy.get("binary_script_urls", []):
+                        native += ", binary-body-mode=true"
                 else:
                     raise Invalid("unsupported conversion; no equivalent behavior has been verified")
             sections.setdefault(section, []).append(native)

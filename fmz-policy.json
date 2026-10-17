@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "source_id": "fmz200",
+  "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+  "modification_date": "2026-10-17",
+  "argument_defaults": {
+    "per_filter_video_thread": "\"0\"",
+    "logLevel": "\"error\"",
+    "sponsorBlock": "true",
+    "tab": "true",
+    "useractivity": "true",
+    "DT": "false",
+    "FX": "true",
+    "MY": "true",
+    "displayUpList": "\"show\"",
+    "purifyComment": "true",
+    "PRGG": "true",
+    "PRRK": "false",
+    "PRDRD": "false",
+    "PRSCVPT": "false",
+    "PRST": "false",
+    "PRRR": "true",
+    "HMPR": "false",
+    "PRMST": "true",
+    "PRCN": "true"
+  },
+  "defaults_evidence": {
+    "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin",
+    "sha256": "1a0b83a76719531544153f3fdc31b7a05213b9ed0a827f6b49ba5adedb625ef1",
+    "reviewed_date": "2026-10-17",
+    "method": "Defaults read from upstream [Argument]: first select value / switch default."
+  },
+  "confirmed_invalid_entries": [],
+  "script_argument_repairs": {
+    "5263ed1558fe491770017fe1ea64c3f18c4e41a2b3f46194c9b20e3424563581": {
+      "argument": "\"{\"logLevel\":{{{logLevel}}}}\"",
+      "reason": "Current Sparkle Surge runtime parses a named JSON object; repair obsolete array/Loon placeholders with upstream defaults.",
+      "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/master/release/surge/module/bilibili.sgmodule",
+      "evidence_sha256": "dad4f2e59c8a1617723c24147f4da1773f65cb4b253a907a0b6a309c7dc4710b"
+    },
+    "89f5b7bd17b277220560111e10358eb912ec0409096c01d7e756bbeea5f4c5ac": {
+      "argument": "\"{\"purifyComment\":{{{purifyComment}}},\"logLevel\":{{{logLevel}}}}\"",
+      "reason": "Current Sparkle Surge runtime parses a named JSON object; repair obsolete array/Loon placeholders with upstream defaults.",
+      "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/master/release/surge/module/bilibili.sgmodule",
+      "evidence_sha256": "dad4f2e59c8a1617723c24147f4da1773f65cb4b253a907a0b6a309c7dc4710b"
+    },
+    "1825666fe743f7bfcbe244b6fcee00a561b3b44413499e795bceb71662653699": {
+      "argument": "\"{\"displayUpList\":{{{displayUpList}}},\"purifyComment\":{{{purifyComment}}},\"sponsorBlock\":{{{sponsorBlock}}},\"logLevel\":{{{logLevel}}}}\"",
+      "reason": "Current Sparkle Surge runtime parses a named JSON object; repair obsolete array/Loon placeholders with upstream defaults.",
+      "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/master/release/surge/module/bilibili.sgmodule",
+      "evidence_sha256": "dad4f2e59c8a1617723c24147f4da1773f65cb4b253a907a0b6a309c7dc4710b"
+    },
+    "41cf27a71bbd7c3e463f5df4c184a564bed1eaff05aedaeb1f6d337330d88480": {
+      "argument": "\"{\"MY\":{{{MY}}},\"DT\":{{{DT}}},\"FX\":{{{FX}}}}\"",
+      "reason": "wyres.js expects named JSON object; use official home defaults and preserve fmz/Loon tab defaults.",
+      "evidence": "https://raw.githubusercontent.com/Keywos/rule/main/script/wy/wy.sgmodule",
+      "evidence_sha256": "088b5d872f5c34ff79e6947a950d4d3093e6b91291a872eb7819f118ff434324"
+    },
+    "10441f251f410628c52995e6e635c3a6b61dc512a202c589f9e3d9544d3d1dc3": {
+      "argument": "\"{\"PRGG\":{{{PRGG}}},\"PRRK\":{{{PRRK}}},\"PRDRD\":{{{PRDRD}}},\"PRSCVPT\":{{{PRSCVPT}}},\"PRST\":{{{PRST}}},\"PRRR\":{{{PRRR}}},\"HMPR\":{{{HMPR}}},\"PRMST\":{{{PRMST}}},\"PRCN\":{{{PRCN}}}}\"",
+      "reason": "wyres.js expects named JSON object; use official home defaults and preserve fmz/Loon tab defaults.",
+      "evidence": "https://raw.githubusercontent.com/Keywos/rule/main/script/wy/wy.sgmodule",
+      "evidence_sha256": "088b5d872f5c34ff79e6947a950d4d3093e6b91291a872eb7819f118ff434324"
+    }
+  },
+  "additional_defaults_evidence": {
+    "url": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.response.js",
+    "sha256": "d9a09789a9f2153c27b0a435064dfdcf1723a36f20451a075e37c4f8f21d338f",
+    "defaults": {
+      "displayUpList": "show",
+      "purifyComment": true
+    }
+  },
+  "keywos_defaults_evidence": {
+    "url": "https://raw.githubusercontent.com/Keywos/rule/main/script/wy/wy.sgmodule",
+    "sha256": "088b5d872f5c34ff79e6947a950d4d3093e6b91291a872eb7819f118ff434324",
+    "reviewed_date": "2026-10-17",
+    "home_defaults": "Exact official Surge module defaults; true means hidden.",
+    "tab_defaults": "Preserve fmz/Loon MY=true, DT=false, FX=true; only repair named-object shape."
+  }
+}

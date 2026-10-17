@@ -35,7 +35,228 @@
   },
   "conversion_policy": {
     "reviewed": false,
-    "approved_script_urls": [],
-    "approved_request_body_hashes": []
+    "approved_script_urls": [
+      "https://raw.githubusercontent.com/app2smile/rules/master/js/baidumap.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/baishitv.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/quark.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/123pan.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/555Ad.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ahfs.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caixinads.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/coolapk.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/dict.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/fly.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/hanglvzongheng.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/iqiyi_open_ads.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ithome.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/jd_json.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/qidian.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/shunfeng_json.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/smzdm_json.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/startup.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/stay.js",
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/zhihu_openads.js"
+    ],
+    "approved_request_body_hashes": [],
+    "approved_analyze_script_urls": [
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/12306.js"
+    ],
+    "approved_static_response_urls": [
+      "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/dongqiudi.js"
+    ],
+    "binary_script_urls": [
+      "https://raw.githubusercontent.com/app2smile/rules/master/js/baidumap.js"
+    ],
+    "script_review_evidence": [
+      {
+        "url": "https://raw.githubusercontent.com/app2smile/rules/master/js/baidumap.js",
+        "filename": "baidumap.js",
+        "sha256": "7cd5425ff0dcdd24d0fd42a4ca4a21b30c5d6edcd8052b3b7ca95c4722fcb500",
+        "bytes": 80453,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/abchina.js",
+        "filename": "abchina.js",
+        "sha256": "26d2b77d365bed05baac95d6bf42f8950b0899fd8e49d60ce5e8a26caa8be2c8",
+        "bytes": 27666,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/baishitv.js",
+        "filename": "baishitv.js",
+        "sha256": "b4af6e3ea6d58d20567a04e47f7dc7de137307773a6f06e5916b9278c9c00717",
+        "bytes": 160,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pinganads.js",
+        "filename": "pinganads.js",
+        "sha256": "645e358b4f666d5e10678041d873a7e69e0b4e93ae491223af19f549eee03f08",
+        "bytes": 5201,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js",
+        "filename": "pupumarket.js",
+        "sha256": "2a2357b324e04b5cf254db77710e523be895e4ba61082a77cd0773f7a706baf2",
+        "bytes": 623,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/quark.js",
+        "filename": "quark.js",
+        "sha256": "a80632f4308d8971f2ee1b42cb1b2c3b72c90ec5619ed33849fcc0fcbf0f1bcc",
+        "bytes": 14279,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/12306.js",
+        "filename": "12306.js",
+        "sha256": "4723bc2236835eea0a8b79529c832a9af1cfd37fa1b160becb3a4b51f9067cd5",
+        "bytes": 1174,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/123pan.js",
+        "filename": "123pan.js",
+        "sha256": "bde5bed66b502a330e67725183fc28a7ad5d3da74fcb20067b8c9013cd21f1aa",
+        "bytes": 30188,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/555Ad.js",
+        "filename": "555Ad.js",
+        "sha256": "24e580861f900fb775adb4cbbd106ef46d946c7f47db132e3036ee29d90d2dec",
+        "bytes": 1171,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ahfs.js",
+        "filename": "ahfs.js",
+        "sha256": "faebd8707d3d25183764ceceda4620fc1be6d1c34e6b9abf19722df42a48b9ba",
+        "bytes": 1111,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/amdc.js",
+        "filename": "amdc.js",
+        "sha256": "8217f2150f8d12ae04d2c49b5da0a838e83f4de68b34df71c2da16cc1267898f",
+        "bytes": 633,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/caixinads.js",
+        "filename": "caixinads.js",
+        "sha256": "592c181611f5b89682c93cfc59a29de84e35606e8ab1837118a175886acd6e58",
+        "bytes": 875,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/coolapk.js",
+        "filename": "coolapk.js",
+        "sha256": "79b28bcbeb4b7b150a21ed20d7d50d9cee2bb91ff5110e9f34dc3be54b0991e4",
+        "bytes": 10789,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/dict.js",
+        "filename": "dict.js",
+        "sha256": "cb80f9bcc73f21bb2a61650db6c203faf40373d97b99c752a07c113cd2c635a1",
+        "bytes": 19,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/fly.js",
+        "filename": "fly.js",
+        "sha256": "83a8f1d03b3b5fa903b9d31102f12bce0eadd238eac5325f1e1ee032c090cdeb",
+        "bytes": 934,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/hanglvzongheng.js",
+        "filename": "hanglvzongheng.js",
+        "sha256": "24173b13433fc3c46b29577301c044425b1159f24f6fe577eef9a8227120f201",
+        "bytes": 518,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/iqiyi_open_ads.js",
+        "filename": "iqiyi_open_ads.js",
+        "sha256": "e98f28a8d930fa2c873ed6fa1b618d60a7360ced8b6bd6a4ed40f76085400f5f",
+        "bytes": 824,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ithome.js",
+        "filename": "ithome.js",
+        "sha256": "e8e1210c6a10d98258e56821267bcc2c66455633765263acb3d3ff423d254ece",
+        "bytes": 508,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/jd_json.js",
+        "filename": "jd_json.js",
+        "sha256": "07973f97d8ae97beac1b106e858e9ebfdbc973127d7badd73912cf9ec41ddd55",
+        "bytes": 1093,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/qidian.js",
+        "filename": "qidian.js",
+        "sha256": "020399e7a5571227ad7cb7e8515c39bb3b5fbab9874e0ab3c2a6bee5240163a5",
+        "bytes": 575,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/shunfeng_json.js",
+        "filename": "shunfeng_json.js",
+        "sha256": "63d75bd700e36799dfa1b2fd0111e5ed26c27e9db910b096e902ae62d017cb56",
+        "bytes": 614,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/smzdm_json.js",
+        "filename": "smzdm_json.js",
+        "sha256": "cbcabf770447117a66358314950a4233448eeb86274ccfb96d148294d327eece",
+        "bytes": 2631,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/startup.js",
+        "filename": "startup.js",
+        "sha256": "94c0f1d3a0e6c9e0188a78d9cc937c8fdcf7c06ce87a3225ae37c3a3468f21aa",
+        "bytes": 281,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/stay.js",
+        "filename": "stay.js",
+        "sha256": "7f4a7b8170640d7479f0e0d9124dc29ee8764e5260ff39d1b67394c16294a147",
+        "bytes": 852,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/zhihu_openads.js",
+        "filename": "zhihu_openads.js",
+        "sha256": "3f12b578e30b4f6f7d54fd0091789491c444ed9cc2353b91406927438b201dc7",
+        "bytes": 1001,
+        "review": "static Surge API/branch inspection; not executed; runtime URLs remain upstream"
+      }
+    ],
+    "known_incompatible": [
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/abchina.js",
+        "sha256": "26d2b77d365bed05baac95d6bf42f8950b0899fd8e49d60ce5e8a26caa8be2c8",
+        "reason": "Current script only returns modified status inside the Quantumult X $task branch; Surge branch calls $done() without modification."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pinganads.js",
+        "sha256": "645e358b4f666d5e10678041d873a7e69e0b4e93ae491223af19f549eee03f08",
+        "reason": "Current script only returns modified status inside the Quantumult X $task branch; Surge branch calls $done() without modification."
+      }
+    ]
   }
 }

@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 from .core import Invalid
 from .converter import convert_qx
+from .single import optimize_single
 from .pipeline import atomic_write, audit, check_updates, fetch, json_write, load_manifest, read_json
 
 
@@ -22,8 +23,20 @@ def main(argv=None):
     s.add_argument("--output", default="work/moyu.sgmodule")
     s.add_argument("--report", default="work/conversion.json")
     s.add_argument("--policy", help="reviewed JSON conversion policy")
+    s = sub.add_parser("optimize-base")
+    s.add_argument("input")
+    s.add_argument("--policy", default="fmz-policy.json")
+    s.add_argument("--output", default="work/fmz200.optimized.sgmodule")
+    s.add_argument("--report", default="work/fmz200-report.json")
     args = p.parse_args(argv)
     try:
+        if args.command == "optimize-base":
+            policy = read_json(args.policy)
+            candidate, report = optimize_single(Path(args.input).read_bytes(), policy["source_id"], policy)
+            json_write(args.report, report)
+            atomic_write(Path(args.output), candidate.encode())
+            print(report["status"])
+            return 0
         if args.command == "convert-qx":
             candidate, report = convert_qx(Path(args.input).read_bytes(), read_json(args.policy) if args.policy else None)
             json_write(args.report, report)

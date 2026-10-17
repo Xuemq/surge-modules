@@ -68,9 +68,19 @@ class ParserTests(unittest.TestCase):
         m = module('[Map Local]\n^https://a.test/ data-type=text data=" " status-code=200 header="Content-Type:application/json"')
         self.assertEqual(len(m.entries), 1)
 
-    def test_remote_mapping_requires_review(self):
+    def test_remote_mapping_supported_without_fetching(self):
+        m = module('[Map Local]\n^a data-type=file data="https://a.test/x"')
+        self.assertEqual(len(m.entries), 1)
         with self.assertRaises(Invalid):
-            module('[Map Local]\n^a data-type=file data="https://a.test/x"')
+            module('[Map Local]\n^a data-type=file data="/tmp/local.json"')
+
+    def test_map_embedded_json_quotes_and_spaces(self):
+        raw = '^a data-type=text data="{"code": 0}" header="Content-Type:application/json"'
+        self.assertEqual(module('[Map Local]\n' + raw).entries[0].raw, raw)
+
+    def test_map_duplicate_parameters(self):
+        with self.assertRaises(Invalid):
+            module('[Map Local]\n^a data-type=text data="{}" data="[]"')
 
     def test_body_quotes_backslashes(self):
         line = r'''http-response ^https:\/\/a.test/ 'a\\b' 'c d' '''.strip()
@@ -83,6 +93,10 @@ class ParserTests(unittest.TestCase):
     def test_arguments_preserved(self):
         m = module('#!system=ios\n#!arguments=toggle:true\n[Script]\n' + script() + ', argument={{{toggle}}}')
         self.assertEqual(m.metadata['arguments'], 'toggle:true')
+
+    def test_single_brace_argument_blocks(self):
+        with self.assertRaises(Invalid):
+            module('[Script]\n' + script() + ', argument="[{PRGG},{PRRK}]"')
 
     def test_undefined_argument_blocks(self):
         with self.assertRaises(Invalid):
