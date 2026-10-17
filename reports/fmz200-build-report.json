@@ -5,6 +5,20 @@
   "static_only": true,
   "changes": [
     {
+      "kind": "module-metadata",
+      "line": 1,
+      "field": "name",
+      "value": "去广告优化 · fmz200",
+      "line_sha256": "d58e275e7e962898d951492cf316e6e4b0b449aa2fc01f1e8e76a22bded6df51"
+    },
+    {
+      "kind": "module-metadata",
+      "line": 2,
+      "field": "desc",
+      "value": "基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。",
+      "line_sha256": "025b5da7ae3439576d7662244070169e09fc9dac4699f20505b74f24bcee4c3a"
+    },
+    {
       "kind": "restore-argument-defaults",
       "line": 13,
       "arguments": [
@@ -2376,7 +2390,80 @@
       "kept_line": 9074
     }
   ],
-  "removed": [],
+  "removed": [
+    {
+      "kind": "scope-exclusion",
+      "line": 1348,
+      "section": "Rule",
+      "line_sha256": "d118a415a89a1597e9f089c4e77a2cad81ae7b4267834cd40689d84262a354ca",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 4412,
+      "section": "URL Rewrite",
+      "line_sha256": "d9ca26d429f45ab1367eb14f8e6d74136a8ded3b232f3dee0e8df7f9d7c5d22b",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 4413,
+      "section": "URL Rewrite",
+      "line_sha256": "b73676d13bd208316c9bcc63bd91df61f316e42f2065568177b1646a17cc80d1",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 4447,
+      "section": "URL Rewrite",
+      "line_sha256": "849f61060b2ce3b5bab7ecc67467432427fac05e61837a2cbd92e269d59de753",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 4448,
+      "section": "URL Rewrite",
+      "line_sha256": "8d57b6d29097b97cc61ee193bab55bef19945c7f41e0070deaf2cb84ccad1c4f",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 7000,
+      "section": "Map Local",
+      "line_sha256": "136623e2c354990542667965ffe225989734c7f58b9118fb7c2dc0b7e6719d4b",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 7002,
+      "section": "Map Local",
+      "line_sha256": "51ced727dc97fefa7ae5d07cb3bbbb02d1fafc854e1260be580e2b33820443a0",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 7277,
+      "section": "Map Local",
+      "line_sha256": "e7887c6003f3c30e79fad7ece3cdb59507d6e2bc9955dc0ef16d8e045a1d2b2d",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    },
+    {
+      "kind": "scope-exclusion",
+      "line": 8374,
+      "section": "Map Local",
+      "line_sha256": "737d69859e450d6fdb1343686b6be589da5dd38ec3680206d8a3b0bc270f50a5",
+      "classification": "manual-scope-exclusion",
+      "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
+    }
+  ],
   "retained_conflicts": [
     {
       "section": "Rule",
@@ -2847,17 +2934,18 @@
     "Referenced runtime files remain upstream and are not vendored."
   ],
   "status": "single_source_static_pass",
-  "output_sha256": "1b77ebf2d1619c6fd68a0a5ad672989e409acef0da5f5dc64add93fdb41f0b99",
+  "output_sha256": "4a58763b5b6a1043abf160d4fce59f14f2fff94bdb5f61cd693dd923744ec577",
   "counts_after": {
-    "Rule": 2809,
+    "Rule": 2808,
     "Header Rewrite": 1,
-    "URL Rewrite": 518,
+    "URL Rewrite": 514,
     "Body Rewrite": 104,
-    "Map Local": 801,
+    "Map Local": 797,
     "Script": 218,
     "MITM": 1
   },
   "changes_by_kind": {
+    "module-metadata": 2,
     "restore-argument-defaults": 1,
     "exact-duplicate": 267,
     "json-map-base64": 5,

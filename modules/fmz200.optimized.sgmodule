@@ -3,10 +3,12 @@
 # No blackmatrix7 or ddgksf2013 rule contents have been merged.
 # Static validation only. External script/resource URLs retain upstream behavior.
 # Requires Surge iOS 5.14+ for jq Body Rewrite; runtime scripts may require a newer version.
+# Explicit scope exclusions: 9 reviewed entries; see build report.
 
 # Upstream #!name=广告拦截&净化合集
-#!name=fmz200 广告拦截合集（去重修正版）
-#!desc=(支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!name=去广告优化 · fmz200
+# Upstream #!desc=(支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!desc=基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
@@ -1348,7 +1350,7 @@ DOMAIN,apis.alenable.com,REJECT
 
 # > 国美电器
 # hostname = prom.mobile.gome.com.cn
-DOMAIN-SUFFIX,prom.gome.com.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1348; see build report.
 
 # > 国双 (Gridsum)
 DOMAIN-SUFFIX,gridsumdissector.cn,REJECT
@@ -4232,8 +4234,8 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 国美电器
 # hostname = prom.mobile.gome.com.cn
-^https?:\/\/prom\.mobile\.gome\.com\.cn\/mobile\/promotion\/promscms\/\w+\.jsp - reject
-^https?:\/\/prom\.mobile\.gome\.com\.cn\/mobile\/promotion\/promscms\/sale\w+\.jsp - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4412; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4413; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
@@ -4267,8 +4269,8 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 好奇心日报
 # hostname = notch.qdaily.com, app3.qdaily.com
-^https?:\/\/notch\.qdaily\.com\/api\/v\d\/boot_ad - reject
-^https?:\/\/app3\.qdaily\.com\/app3\/boot_advertisements\.json - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4447; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4448; see build report.
 
 # > 好型体重秤
 # hostname = open.fitdays.cn
@@ -6810,9 +6812,9 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 # > 牛听听
 # hostname = gateway.benewtech.cn, ntt-app.benewtech.cn
-^https:\/\/gateway\.benewtech\.cn\/resources-app\/app\/startup\/prepage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7000; see build report.
 
-^https:\/\/ntt-app\.benewtech\.cn\/v6\/user\/\d+\/messages\/event data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7002; see build report.
 
 # > 农业银行
 # hostname = midc.cdn-static.abchina.com.cn, enjoy.cdn-static.abchina.com
@@ -7087,7 +7089,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # > 日淘任意门
 # hostname = app.meruki.cn
 # 开屏广告 感谢【Ava阿檬】分享
-^https?:\/\/app\.meruki\.cn\/\?n=Sig\.Front\.AppFront\.GetOpenAdDoorzo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7277; see build report.
 
 # > 瑞幸咖啡
 # hostname = capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com
@@ -8148,7 +8150,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 # > 职工普惠
 # hostname = preprod.cdzghome.com
 # 需卸载重装 感谢【zyu0090】分享
-^https?:\/\/preprod\.cdzghome\.com:8100\/banner\/bootUp data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8374; see build report.
 
 # > 智行APP
 # hostname = m.ctrip.com
