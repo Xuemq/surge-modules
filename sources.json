@@ -257,6 +257,16 @@
         "sha256": "645e358b4f666d5e10678041d873a7e69e0b4e93ae491223af19f549eee03f08",
         "reason": "Current script only returns modified status inside the Quantumult X $task branch; Surge branch calls $done() without modification."
       }
+    ],
+    "source_sha256": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72",
+    "excluded_entries": [
+      {
+        "line": 724,
+        "line_sha256": "8d3bd8b1bef972a3426deaeef2a75de2f42f68861895256d03cc7c0ee8b511f2",
+        "directive": "request-body",
+        "classification": "manual-scope-exclusion",
+        "reason": "TestFlight storefront/region modification is explicitly excluded from the requested conversion scope."
+      }
     ]
   }
 }

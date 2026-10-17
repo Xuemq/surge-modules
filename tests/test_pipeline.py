@@ -82,6 +82,64 @@ class ConversionTests(unittest.TestCase):
             with self.assertRaises(Invalid):
                 convert_qx(data)
 
+    def exclusion_policy(self, data, raw, line=1):
+        return {'source_sha256':digest(data),'excluded_entries':[{'line':line,'line_sha256':digest(raw),
+                'directive':'request-body','classification':'manual-scope-exclusion',
+                'reason':'Region modification explicitly excluded from requested ad-blocking scope.'}]}
+
+    def test_request_body_scope_exclusion_is_reported(self):
+        raw='^testflight url request-body old request-body new'
+        data=(raw+'\n^keep url reject\nhostname = keep.example\n').encode()
+        policy=self.exclusion_policy(data,raw)
+        out,r=convert_qx(data,policy)
+        self.assertNotIn('testflight',out)
+        self.assertIn('^keep _ reject',out)
+        self.assertIn('hostname = %APPEND% keep.example',out)
+        self.assertEqual(r['excluded'],policy['excluded_entries'])
+        self.assertEqual(r['converted'],2)
+        self.assertEqual(r['directives']['request-body'],1)
+
+    def test_request_body_scope_exclusion_source_bound(self):
+        raw='^testflight url request-body old request-body new';data=(raw+'\n^keep url reject\n').encode()
+        policy=self.exclusion_policy(data,raw)
+        for source_hash in (None,'0'*64):
+            with self.subTest(source_hash=source_hash),self.assertRaises(Invalid):
+                convert_qx(data,{**policy,'source_sha256':source_hash})
+
+    def test_request_body_scope_exclusion_target_bound(self):
+        raw='^testflight url request-body old request-body new';data=(raw+'\n^keep url reject\n').encode()
+        policy=self.exclusion_policy(data,raw)
+        for changed in ({'line':2},{'line':3},{'line_sha256':'0'*64},{'directive':'hostname'},{'line':True}):
+            with self.subTest(changed=changed),self.assertRaises(Invalid):
+                convert_qx(data,{**policy,'excluded_entries':[{**policy['excluded_entries'][0],**changed}]})
+
+    def test_request_body_scope_exclusion_does_not_hide_other_failures(self):
+        raw='^testflight url request-body old request-body new';data=(raw+'\n^other url unknown\n').encode()
+        out,r=convert_qx(data,self.exclusion_policy(data,raw))
+        self.assertIsNone(out)
+        self.assertEqual(len(r['excluded']),1)
+        self.assertEqual(len(r['unsupported']),1)
+        self.assertEqual(r['unsupported'][0]['line'],2)
+
+    def test_request_body_scope_exclusion_one_occurrence_only(self):
+        raw='^testflight url request-body old request-body new';data=(raw+'\n'+raw+'\n^keep url reject\n').encode()
+        out,r=convert_qx(data,self.exclusion_policy(data,raw))
+        self.assertIsNone(out)
+        self.assertEqual(len(r['excluded']),1)
+        self.assertEqual(r['unsupported'][0]['line'],2)
+
+    def test_request_body_scope_exclusion_rejects_duplicate_or_conflicting_policy(self):
+        raw='^testflight url request-body old request-body new';data=(raw+'\n^keep url reject\n').encode()
+        policy=self.exclusion_policy(data,raw)
+        for changed in ({'excluded_entries':policy['excluded_entries']*2},{'approved_request_body_hashes':[digest(raw)]}):
+            with self.subTest(changed=changed),self.assertRaises(Invalid):
+                convert_qx(data,{**policy,**changed})
+
+    def test_request_body_scope_exclusion_cannot_hide_comments(self):
+        raw='# scope comment';data=(raw+'\n^keep url reject\n').encode()
+        with self.assertRaises(Invalid):
+            convert_qx(data,self.exclusion_policy(data,raw))
+
 
 class PipelineTests(unittest.TestCase):
     def setUp(self):
