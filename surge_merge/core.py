@@ -138,6 +138,7 @@ class Module:
     source: str
     entries: list[Entry] = field(default_factory=list)
     metadata: dict[str, str] = field(default_factory=dict)
+    sha256: str | None = None
 
 def parse_entry(section: str, raw: str, source: str, line: int) -> Entry:
     key, pattern, phase, safe = "", None, None, True
@@ -241,7 +242,7 @@ def host_list(value: str) -> tuple[str, list[str]]:
 
 def parse_module(data: bytes, source: str) -> Module:
     text = clean_bytes(data)
-    module, section, seen_sections = Module(source), None, set()
+    module, section, seen_sections = Module(source, sha256=digest(data)), None, set()
     for n, line in enumerate(text.splitlines(), 1):
         raw = line.strip()
         if not raw:
@@ -288,17 +289,67 @@ def conflict(kind: str, entries: list[Entry], key: str) -> dict:
     identity = json.dumps([kind, key, sorted(e.id for e in entries)], ensure_ascii=False)
     return {"id": digest(identity), "kind": kind, "key": key, "entries": refs}
 
+def generates_request_response(entry: Entry) -> bool:
+    """Conservative request short-circuit classification, not execution ordering.
+
+    A rejection, redirect or local response can prevent a response transform
+    from receiving the origin response it expects. URL header rewrites are not
+    classified as terminal here. Unknown/nonliteral overlap still needs review.
+    """
+    if entry.section == "Map Local":
+        return True
+    if entry.section == "URL Rewrite":
+        tokens = words(entry.raw)
+        return len(tokens) == 3 and tokens[2] in {"reject", "302", "307"}
+    return False
+
 def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | None, dict]:
     overrides = overrides or {"schema_version": 1, "decisions": []}
-    if overrides.get("schema_version") != 1 or not isinstance(overrides.get("decisions"), list):
+    version = overrides.get('schema_version')
+    if version not in {1, 2} or not isinstance(overrides.get("decisions"), list):
         raise Invalid("unsupported overrides schema")
+    base_source = None
+    if version == 2:
+        if (set(overrides) != {'schema_version', 'base_source', 'source_sha256', 'decisions', 'excluded_entries'}
+                or not modules or len({m.source for m in modules}) != len(modules)
+                or overrides['base_source'] != modules[0].source
+                or overrides['source_sha256'] != {m.source: m.sha256 for m in modules}
+                or list(overrides['source_sha256']) != [m.source for m in modules]
+                or any(m.sha256 is None for m in modules)
+                or not isinstance(overrides['excluded_entries'], list)):
+            raise Invalid('baseline-preserving policy requires exact ordered base and all source hashes')
+        base_source = modules[0].source
     decisions = {}
     for d in overrides["decisions"]:
-        if set(d) != {"conflict_id", "entry_ids", "action", "reason"} or d["action"] != "keep" or not d["reason"].strip() or not isinstance(d["entry_ids"], list) or not d["entry_ids"] or d["conflict_id"] in decisions:
+        if (set(d) != {"conflict_id", "entry_ids", "action", "reason"}
+                or d['action'] not in ({'keep', 'preserve-base'} if version == 2 else {'keep'})
+                or not isinstance(d['reason'], str) or not d['reason'].strip()
+                or not isinstance(d["entry_ids"], list) or not d["entry_ids"]
+                or len(set(d['entry_ids'])) != len(d['entry_ids']) or d["conflict_id"] in decisions):
             raise Invalid("malformed override: use exact conflict, kept entry IDs and reason")
         decisions[d["conflict_id"]] = d
     all_entries = [e for m in modules for e in m.entries]
     report = {"schema_version": 1, "static_only": True, "sources": [m.source for m in modules], "counts_before": dict(Counter(e.section for e in all_entries)), "duplicates": [], "conflicts": [], "resolved": [], "warnings": ["No regex equivalence/overlap proof; no Surge application validation; referenced scripts are not fetched or executed."]}
+    exclusions = set()
+    if base_source:
+        report.update(base_source=base_source, source_sha256=overrides['source_sha256'], excluded_entries=[], inherited_conflicts=[])
+        base_ids = {e.id for e in modules[0].entries}
+        entry_refs = {(e.source, e.line, e.id): e for e in all_entries}
+        for selection in overrides['excluded_entries']:
+            if (not isinstance(selection, dict)
+                    or set(selection) != {'source', 'line', 'entry_id', 'base_entry_ids', 'reason', 'evidence'}
+                    or selection['source'] == base_source
+                    or type(selection['line']) is not int
+                    or not isinstance(selection['base_entry_ids'], list) or not selection['base_entry_ids']
+                    or not set(selection['base_entry_ids']) <= base_ids
+                    or not isinstance(selection['reason'], str) or not selection['reason'].strip()
+                    or not isinstance(selection['evidence'], str) or not selection['evidence'].strip()):
+                raise Invalid('supplement exclusion requires exact entry and reviewed base overlap evidence')
+            identity = (selection['source'], selection['line'], selection['entry_id'])
+            if identity not in entry_refs or identity in exclusions:
+                raise Invalid('unused or duplicate supplementary exclusion')
+            exclusions.add(identity)
+            report['excluded_entries'].append(selection)
     metadata = {}
     for m in modules:
         for k, v in m.metadata.items():
@@ -308,7 +359,9 @@ def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | N
                 metadata[k] = v
     kept, seen_exact = [], {}
     for e in all_entries:
-        if e.safe_dedup and e.id in seen_exact:
+        if (e.source, e.line, e.id) in exclusions:
+            continue
+        if e.source != base_source and e.safe_dedup and e.id in seen_exact:
             report["duplicates"].append({"kept": seen_exact[e.id].ref(), "removed": e.ref()})
         else:
             kept.append(e); seen_exact[e.id] = e
@@ -345,6 +398,26 @@ def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | N
     for key, es in patterns.items():
         if len({e.section for e in es}) > 1:
             potential.append(conflict("cross-section-request", es, key))
+    # Request short-circuits also compete with transformations in either phase.
+    # In particular a URL reject must not silently shadow an http-response
+    # script just because their phases differ. Preserve the earlier conflict
+    # identities above; this additional group is a separate fail-closed guard.
+    behavior_patterns = {}
+    for e in kept:
+        if (generates_request_response(e)
+                or e.section in {"Script", "Body Rewrite", "Header Rewrite"}):
+            behavior_patterns.setdefault(e.pattern, []).append(e)
+    for key, es in behavior_patterns.items():
+        if (any(generates_request_response(e) for e in es)
+                and any(e.section in {"Script", "Body Rewrite", "Header Rewrite"} for e in es)):
+            potential.append(conflict("request-shadows-transform", es, key))
+    transformations = {}
+    for e in kept:
+        if e.section in {"Script", "Body Rewrite", "Header Rewrite"}:
+            transformations.setdefault((e.phase, e.pattern), []).append(e)
+    for key, es in transformations.items():
+        if any(e.section == "Script" for e in es) and len({e.section for e in es}) > 1:
+            potential.append(conflict("cross-section-transform", es, str(key)))
     dropped, used = set(), set()
     for c in potential:
         d = decisions.get(c["id"])
@@ -352,9 +425,18 @@ def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | N
         if d:
             if not set(d["entry_ids"]) <= valid_ids:
                 raise Invalid("override contains an entry outside its exact conflict")
-            # Keeping multiple script labels/colliding key definitions is not a resolution.
-            if len(d["entry_ids"]) != 1:
+            base_conflict_ids = {e['id'] for e in c['entries'] if e['source'] == base_source}
+            if d['action'] == 'preserve-base':
+                if not base_conflict_ids or set(d['entry_ids']) != base_conflict_ids:
+                    raise Invalid('preserve-base must retain every base definition and no supplement definition')
+                if sum(e['source'] == base_source for e in c['entries']) > 1:
+                    report['inherited_conflicts'].append({**c, 'retained_entry_ids': d['entry_ids'],
+                        'handling': 'Retain every base occurrence in original order; inherited behavior is not declared conflict-free.'})
+            # Ordinary keep decisions remain single-entry resolutions.
+            elif len(d["entry_ids"]) != 1:
                 raise Invalid("each override must keep exactly one conflicting entry")
+            if base_source and not base_conflict_ids <= set(d['entry_ids']):
+                raise Invalid('baseline-preserving policy cannot discard a base definition')
             dropped |= valid_ids - set(d["entry_ids"]); used.add(c["id"])
             report["resolved"].append({**c, "decision": d})
         else:
@@ -366,6 +448,12 @@ def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | N
     for c in report["resolved"]:
         if any(i in dropped for i in c["decision"]["entry_ids"]):
             raise Invalid("contradictory overrides")
+    if base_source:
+        original_base = modules[0].entries
+        retained_base = [e for e in kept if e.source == base_source]
+        if retained_base != original_base:
+            raise Invalid('baseline-preserving policy changed a base entry or its order')
+        report['base_entries_preserved'] = len(original_base)
     if report["conflicts"]:
         report["status"] = "blocked_conflicts"
         return None, report
@@ -387,6 +475,6 @@ def merge(modules: list[Module], overrides: dict | None = None) -> tuple[str | N
         else:
             output.extend(e.raw for e in es)
     text = "\n".join(output) + "\n"
-    parse_module(text.encode(), "merged-self-check")
-    report.update(status="candidate_static_pass", counts_after=dict(Counter(e.section for e in kept)), sha256=digest(text))
+    parsed_output = parse_module(text.encode(), "merged-self-check")
+    report.update(status="candidate_static_pass", counts_after=dict(Counter(e.section for e in parsed_output.entries)), sha256=digest(text))
     return text, report

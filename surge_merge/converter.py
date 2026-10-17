@@ -1,5 +1,6 @@
 """Independent, conservative QX rewrite conversion. Never executes source scripts."""
 from collections import Counter
+import json
 import re
 from .core import Invalid, clean_bytes, digest, parse_module
 
@@ -33,8 +34,33 @@ def convert_qx(data: bytes, policy=None):
     if exclusions and policy.get('source_sha256') != digest(data):
         raise Invalid('conversion exclusions require the exact reviewed source hash')
     used_exclusions = set()
+    adapters = {}
+    for adapter in policy.get('native_header_adapters', []):
+        fields = {'line', 'line_sha256', 'source_script_url', 'source_script_sha256',
+                  'adapter_url', 'adapter_sha256', 'header_names', 'keywords', 'status', 'reason', 'evidence'}
+        if (not isinstance(adapter, dict) or set(adapter) != fields
+                or type(adapter['line']) is not int or adapter['line'] < 1
+                or any(not isinstance(adapter[k], str) or not re.fullmatch(r'[0-9a-f]{64}', adapter[k])
+                       for k in ('line_sha256', 'source_script_sha256', 'adapter_sha256'))
+                or any(not isinstance(adapter[k], str) or not adapter[k].strip()
+                       or any(c in adapter[k] for c in '\r\n')
+                       for k in ('source_script_url', 'adapter_url', 'reason', 'evidence'))
+                or not adapter['source_script_url'].startswith('https://')
+                or not adapter['adapter_url'].startswith('https://')
+                or adapter['status'] != 404
+                or not isinstance(adapter['header_names'], list) or not 1 <= len(adapter['header_names']) <= 8
+                or any(not isinstance(k, str) or not re.fullmatch(r'[A-Za-z0-9_-]+', k) for k in adapter['header_names'])
+                or not isinstance(adapter['keywords'], list) or not 1 <= len(adapter['keywords']) <= 16
+                or any(not isinstance(k, str) or not 1 <= len(k) <= 128 or any(c in k for c in '\r\n') for k in adapter['keywords'])):
+            raise Invalid('native header adapter requires exact reviewed source, runtime hashes, and bounded status policy')
+        if adapter['line'] in adapters or adapter['line'] in exclusions:
+            raise Invalid('duplicate or contradictory native header adapter target')
+        adapters[adapter['line']] = adapter
+    if adapters and policy.get('source_sha256') != digest(data):
+        raise Invalid('native adapters require the exact reviewed source hash')
+    used_adapters = set()
     sections = {}
-    report = {"schema_version": 1, "source_sha256": digest(data), "directives": {}, "unsupported": [], "excluded": [], "converted": 0, "static_only": True, "warnings": []}
+    report = {"schema_version": 1, "source_sha256": digest(data), "directives": {}, "unsupported": [], "excluded": [], "adapted": [], "converted": 0, "static_only": True, "warnings": []}
     counts = Counter()
     for n, line in enumerate(text.splitlines(), 1):
         raw = line.strip()
@@ -72,7 +98,19 @@ def convert_qx(data: bytes, policy=None):
                 pattern, action = parts
                 kind, _, value = action.partition(" ")
                 value = value.strip()
-                if kind == "reject" and not value:
+                if n in adapters:
+                    adapter = adapters[n]
+                    if (kind != 'script-response-header' or digest(raw) != adapter['line_sha256']
+                            or value != adapter['source_script_url']):
+                        raise Invalid('native adapter target differs from exact reviewed header-script line')
+                    arguments = json.dumps({'headerNames':adapter['header_names'], 'keywords':adapter['keywords'],
+                                            'status':adapter['status']}, ensure_ascii=False, separators=(',', ':'))
+                    label = 'moyu_native_' + digest(raw)[:16]
+                    section, native = 'Script', (f'{label} = type=http-response, pattern={quote(pattern)}, '
+                        f'script-path={adapter["adapter_url"]}, requires-body=false, argument={quote(arguments)}')
+                    used_adapters.add(n)
+                    report['adapted'].append(dict(adapter))
+                elif kind == "reject" and not value:
                     section, native = "URL Rewrite", pattern + " _ reject"
                 elif kind in {"reject-200", "reject-dict", "reject-array", "reject-img"} and not value:
                     bodies = {"reject-200": 'data-type=text data=" " status-code=200', "reject-dict": 'data-type=text data="{}" status-code=200 header="Content-Type:application/json"', "reject-array": 'data-type=text data="[]" status-code=200 header="Content-Type:application/json"', "reject-img": 'data-type=tiny-gif status-code=200'}
@@ -124,6 +162,10 @@ def convert_qx(data: bytes, policy=None):
     report["directives"] = dict(counts)
     if set(exclusions) - used_exclusions:
         raise Invalid('conversion exclusion does not match an active source entry')
+    if set(adapters) - used_adapters:
+        raise Invalid('native adapter does not match an active reviewed source entry')
+    if adapters:
+        report['warnings'].append('Native adapters are static local candidates. Verify their hosted bytes and Surge runtime before deployment; no upstream script was executed.')
     if not counts:
         raise Invalid("no active QX directives")
     if report["unsupported"]:
