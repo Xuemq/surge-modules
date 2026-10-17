@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "base": "fmz200",
+  "sources": [
+    {
+      "id": "fmz200",
+      "format": "surge",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/blockAds.module",
+      "immutable_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3ca7487b4e4b86d9af76e50df72c62eacfbb659e/Surge/module/blockAds.module",
+      "sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+      "bytes": 471930,
+      "license_review": "GPL-3.0 observed; compatibility pending"
+    }
+  ],
+  "redistribution": {
+    "approved": true,
+    "scope": "Only the separately licensed fmz200 derivative; no cross-project merge.",
+    "license_url": "https://github.com/fmz200/wool_scripts/blob/3ca7487b4e4b86d9af76e50df72c62eacfbb659e/LICENSE"
+  },
+  "conversion_policy": {
+    "reviewed": true,
+    "scope": "Not applicable: this manifest contains no QX input."
+  }
+}

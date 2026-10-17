@@ -1,0 +1,35 @@
+name: Check fmz200 upstream
+on:
+  schedule:
+    - cron: '37 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: fmz-upstream-check
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-17
+        with:
+          persist-credentials: false
+      - name: Test original tools
+        id: tests
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 -m compileall -q surge_merge tests
+      - name: Compare upstream with the reviewed fmz200 lock
+        id: upstream
+        continue-on-error: true
+        run: python3 -m surge_merge check-updates --manifest sources-fmz.json --report work/fmz-update-status.json
+      - name: Write sanitized status summary
+        if: always()
+        run: python3 -m surge_merge.summary work/fmz-update-status.json
+      - name: Require a successful unchanged check
+        if: always() && (steps.tests.outcome != 'success' || steps.upstream.outcome != 'success')
+        run: |
+          echo "Review required. The published last-good module and lock were not modified."
+          exit 1
