@@ -1,35 +1,72 @@
-name: Check fmz200 upstream
+name: Safely update fmz200 module
 on:
   schedule:
     - cron: '37 3 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update.yml'
+      - 'surge_merge/**'
+      - 'tests/**'
+      - 'fmz-policy.json'
+      - 'sources-fmz.json'
 permissions:
   contents: read
 concurrency:
-  group: fmz-upstream-check
+  group: fmz-safe-auto-update
   cancel-in-progress: false
 jobs:
-  check:
+  prepare:
+    if: github.repository == 'Xuemq/surge-modules' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    outputs:
+      changed: ${{ steps.prepare.outputs.changed }}
+      package_sha256: ${{ steps.prepare.outputs.package_sha256 }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-17
         with:
+          ref: ${{ github.sha }}
           persist-credentials: false
-      - name: Test original tools
-        id: tests
+      - name: Test the trusted tools before processing upstream data
         run: |
           python3 -m unittest discover -s tests -v
           python3 -m compileall -q surge_merge tests
-      - name: Compare upstream with the reviewed fmz200 lock
-        id: upstream
-        continue-on-error: true
-        run: python3 -m surge_merge check-updates --manifest sources-fmz.json --report work/fmz-update-status.json
-      - name: Write sanitized status summary
-        if: always()
-        run: python3 -m surge_merge.summary work/fmz-update-status.json
-      - name: Require a successful unchanged check
-        if: always() && (steps.tests.outcome != 'success' || steps.upstream.outcome != 'success')
-        run: |
-          echo "Review required. The published last-good module and lock were not modified."
-          exit 1
+      - name: Fetch, migrate exact decisions, and validate fmz200
+        id: prepare
+        run: python3 -m surge_merge.auto_update prepare
+      - name: Transfer only the validated fmz200 release package
+        if: steps.prepare.outputs.changed == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2, verified 2026-10-17
+        with:
+          name: fmz-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/fmz-auto-package/
+          if-no-files-found: error
+          retention-days: 1
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.changed == 'true' && github.repository == 'Xuemq/surge-modules' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-17
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Receive this run's candidate in an isolated directory
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0, verified 2026-10-17
+        with:
+          name: fmz-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/fmz-auto-package/
+      - name: Check package hash, exact paths, and source commit binding
+        env:
+          EXPECTED_PACKAGE_SHA256: ${{ needs.prepare.outputs.package_sha256 }}
+        run: python3 -m surge_merge.auto_update verify-package
+      - name: Atomically publish only if main has not advanced
+        env:
+          EXPECTED_PACKAGE_SHA256: ${{ needs.prepare.outputs.package_sha256 }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -m surge_merge.auto_update publish
