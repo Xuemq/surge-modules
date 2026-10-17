@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "scope": "fmz200-only",
+  "static_only": true,
+  "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+  "source_commit": "3ca7487b4e4b86d9af76e50df72c62eacfbb659e",
+  "module_sha256": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "scope_exclusion_count": 9,
+  "policy_sha256": "7624d5a4ab4018c8c3e655b307ac730c026d8df2893bd2a261ceb472316d1c79",
+  "modification_date": "2026-10-17"
+}

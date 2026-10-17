@@ -1,26 +1,18 @@
-# fmz200 单来源候选说明
+# fmz200 单来源优化说明
 
-本目录的模块仅派生于 fmz200/wool_scripts，不含本次 blackmatrix7、墨鱼来源的规则合并。
-
-上游作者：fmz200（奶思）及原文件中注明的贡献者。
-上游地址：https://github.com/fmz200/wool_scripts/blob/3ca7487b4e4b86d9af76e50df72c62eacfbb659e/Surge/module/blockAds.module
+此模块仅派生于 fmz200/wool_scripts，不含 blackmatrix7 或墨鱼规则合并。
+上游作者：fmz200（奶思）及原文件中注明的贡献者；模块内保留原作者信息。
+上游固定版本：https://raw.githubusercontent.com/fmz200/wool_scripts/3ca7487b4e4b86d9af76e50df72c62eacfbb659e/Surge/module/blockAds.module
 原文件 SHA-256：d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423
 本次修改日期：2026-10-17
 修改者：Xuemq（通过本仓库原创优化工具）
-候选 SHA-256：c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d
+模块 SHA-256：c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d
 
-许可：该派生模块沿用上游 GNU GPL v3；完整上游许可位于 licenses/fmz200-GPL-3.0.txt。该说明不替其他来源重新授予许可。
+许可：沿用上游 GNU GPL v3；完整许可见 licenses/fmz200-GPL-3.0.txt。
+修改：安全完全重复项去重 267 条；重复脚本标签确定性改名 92 项；具名 JSON 参数修复 7 行；JSON 等值 base64 修复 5 行；恢复有证据的缺失参数默认值；保留原有不同操作与顺序。
+明确选择的范围排除：9 条，均绑定原始段名和行哈希，不代表它们已经失效。自动更新仅允许精确目标移动行号，不能扩大删除范围或自动改写决定。完整逐行报告见 reports/fmz200-build-report.json；首次范围精简的历史对比见 reports/fmz200-scope-diff.json（不代表后续版本差异）。
 
-修改：去除267条安全完全重复项，保留全部顺序型 Body/Header Rewrite；92个重复脚本标签改为确定性唯一名；恢复19个有上游证据的参数默认值；修复 Sparkle 与网易云脚本的旧式参数为具名 JSON 对象（7个原始行，对应5个最终脚本）；5个 JSON 响应采用等值 base64 表示。保留43组原有同键不同操作/正文及其顺序，不私自选取其中一条。另按明确选择排除9条应用专用规则（Rule 1条、URL Rewrite 4条、Map Local 4条）；它们是范围选择，不属于已证实失效规则。除这9条外，其余活动规则及顺序、MITM、脚本和原有修复全部保持不变。模块显示名改为“去广告优化 · fmz200”，说明准确标明单来源优化与实机验证限制；原作者与原始元信息保留。详见 reports/fmz200-scope-diff.json。
+每日安全更新与手动运行通过后，发布至同一个 modules/fmz200.optimized.sgmodule 地址。任何校验、下载、测试或发布门禁失败时保留最后成功版本。自动发布记录见 reports/fmz200-update.json；复现使用 sources-fmz.json 和 fmz-policy.json。
 
-脚本和资源仍引用原上游 URL，没有将脚本正文打包。远程依赖将来可能变化；模块字节可重现不代表外部依赖行为永远不变。本次只读检查全部110个去重外部依赖（fmz来源83个）均为HTTP 200、非空、非HTML；2个JSON资源解析通过。没有确认失效的依赖，因此未据此删除规则。链接可读取不等于广告匹配仍有效；也没有仅凭超时、403、规则年龄或域名推测删除规则。
-
-jq Body Rewrite 要求 Surge iOS 5.14+；外部脚本可能另有版本要求。
-
-仅完成静态解析、缺失参数检查、标签唯一性检查、默认参数 JSON 检查和合成测试。尚未在 Surge iOS 实机运行，也未证明不同正则没有重叠。建议在现有配置可恢复的前提下单独启用此模块测试，避免与原 fmz 模块同时启用而重复处理。
-
-重现：使用仓库内 sources.json 的 fmz200 锁定来源、fmz-policy.json，以及 python -m surge_merge optimize-base 命令。详细逐行变更报告由该命令生成。
-
-网易云首页开关采用 Keywos 官方 Surge 默认；标签页保留 fmz/Loon 预设 MY=true、DT=false、FX=true，只修复参数形状。这些是通用来源默认值，不是用户个人应用清单或偏好。
-
-元信息兼容性调整：有效 #!name 与 #!desc 位于文件第1、2行，其余有效元信息连续排列在注释之前，遵循官方示例布局；字段值、所有活动规则和上游署名/注释保持原样。尚未验证客户端显示结果，未将头部位置断言为已证实原因。
+引用脚本和资源仍使用上游 URL，不打包或执行其正文。相同 URL 的远端内容仍可能独立变化；模块可复现不保证远端依赖不变。不会仅凭超时、403、年龄或域名猜测删除规则。
+仅完成静态检查与合成测试，尚未在 Surge iOS 实机运行，也没有正则匹配集合重叠或广告有效性证明。jq Body Rewrite 要求 Surge iOS 5.14+；远程脚本可能有更高要求。详细门禁和限制见 docs/auto-updates.md。
