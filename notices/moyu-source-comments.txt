@@ -1,0 +1,473 @@
+// ==UserScript==
+// @ScriptName        墨鱼去开屏𝐕𝟐.𝟎
+// @Author            @ddgksf2013
+// @TgChannel         𝐡𝐭𝐭𝐩𝐬://𝐭.𝐦𝐞/𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟐𝟏
+// @TgBot             https://t.me/ddgksf2013_bot
+// @WechatID          墨鱼手记
+// @UpdateTime        2026-08-29
+// @Feedback          💡 请通过邮件反馈问题『其它方式一概无视』：𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑@𝟏𝟔𝟑.𝐜𝐨𝐦 💡
+// @Please            如需引用请注明出处，谢谢合作！
+// @Function          去除APP首页启动广告和部分应用内广告，如果有需要的去除开屏广告的APP，可自行在共享表格中添加需求
+// @AddRequest        https://bit.ly/addRequestforAdBlock
+// @ExtraTxt          Only provide the removal of open-screen advertisements for personally used apps
+// @Attention         QuantumultX能去广告，不代表能去所有广告！
+// @Mark              名字后面的*代表该应用启动倒计时仍然存在
+// @Contributor       @blackmatrix7, @app2smile, @DivineEngine, @kyle, @Nick-workflow, @kkpp, @LE
+// @Tips              利用捷径打开URL[填写AppScheme]，即可免开屏广告打开应用，适合无法MITM的APP
+// @APPList           无法𝐌𝐈𝐓𝐌的应用：银行类[绝大部分]|抖音|蜂巢|滴答清单|Taio|小米运动|有条下载|Fileball|万年历|豆瓣[信息流]|虎牙直播|货拉拉|番茄小说|携程旅行[APP]|凯叔讲故事|七猫小说|醒图|剪映|潮汐|不背单词|高铁管家|咕咚运动|APTV|DayOne|懂车帝|南京银行|东方航空|中国电信|上汽大众|丰云行|彩云天气[会员]|瑞幸咖啡[抖音小程序]|i茅台|用药助手|东风日产|美图秀秀|星巴克
+// @Attention         如果广告仍然存在，请『卸载应用』重新安装，还是不行则表示『规则里没有或已失效』
+// @ScriptURL         https://ddgksf2013.top/rewrite/StartUpAds.conf
+// ==/UserScript==
+# ======= ~ ====== #
+#本重写引用不含[喜马拉雅、哔哩哔哩、微博(国际版)、Youtube、Keep、百度贴吧、知乎、高德地图、小红书、网易云、什么值得买、皮皮虾、菜鸟、彩云天气、百度网盘、Reddit、网易邮箱大师、咸鱼、汽水音乐、车来了]去广告
+# ======= 0~9 ======= #
+# > Version
+# > 10
+# > 139mail
+# > 369chuxing
+# > 58
+# > 555
+# > 5eplay
+# > 12123
+# > 123pan
+# > 36kr
+# > 500
+# > 78dongman
+# > 12306
+# ======= A ======= #
+# > acfun
+# > aihuishou
+# > appso
+# > alibaba
+# > amdc
+# > ahfs
+# > aastocks
+# > anhuizhangshang10000
+# ======= B ======= #
+# > baiduditu
+# > baidutieba
+# > baidufanyi
+# > baiduwenku
+# > baiduwangpan
+# > beijingshouqi
+# > bishengke
+# > beikezhaofang
+# > boluobaoqingxiaoshuo
+# > bit
+# > beijingqiche
+# > baidushurufa
+# > baobaoshuyunyu
+# > baicizhan
+# > baishitv
+# ======= C ======= #
+# > clicli
+# > crunchyroll
+# > chaoxingxuexitong
+# > caifu
+# > caijingzazhi
+# > ciweimaoyuedu
+# > cainiao
+# > csdn
+# > cailianshe
+# > ctm
+# > caixin
+# > choiceshuju
+# ======= D ======= #
+# > dongkakongjian*
+#^https?:\/\/m\.creditcard\.ecitic\.com\/citiccard\/mbk\/appspace-getway\/getWay\/dkkj-system-web\/system\/v\d\/init-config url reject-200
+# > dangdang
+# > dazhongpingqiu
+# > dashixiong
+# > douban
+# > didichuxing
+# > daoyu
+# > dongqiudi
+# > douyu
+# > dewu
+# > donghuafeng
+;^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\? url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js
+# > dazhihui
+# > dangdangyuedu
+# > dianshijia
+# > dingxiangmama
+# > dongfangcaifu
+# > damai
+# > dami
+# > dingxiangyuan
+# > dedao
+# > dingdongmaicai
+# > dejian
+# > didachuxing
+# > dongkakongjian*
+# > duxiaoman
+# ======= E ======= #
+# > elema
+# > echongdian
+# > echongdian
+# ======= F ======= #
+# > fandengdushu
+# > feizhu
+# > feikechaguan
+# > fengyunxing
+# > feimaoguanjia
+# > etnet
+# > fenbi
+# > futuniuniu
+# > fenwandao
+# ======= G ======= #
+# > gongshijilu
+# > gaidepaihang
+# > guanyu
+# > guangqibentian
+# > guojiadili
+# > guojiayibaofuwupingtai
+# ======= H ======= #
+# > haoxingtizhongcheng
+# > huazhu
+# > hupu
+# > hongbanbao
+# > huyazhibo
+# > haoqixinribao
+# > huxiu
+# > huangyouxiangji
+# > hanglvzongheng
+;^https?:\/\/114\.115\.217\.129\/gateway\/api\/umetrip\/native$ url script-response-header https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/hanglvzongheng.js
+# > hangzhougongjiao
+# > haohaozhu
+# > huabaozhitou
+# > hema
+# > hefengtianqi
+# > haoqing
+# > huaerjiejianwen
+# > hanxiaoquan
+# > hpoi
+# > haique
+# > huatuzaixian
+# > huitongcaijing
+# ======= I ======= #
+# > i4
+# > i3
+#^https?:\/\/www\.i3zh\.com url response-body cm-pop-up-banners response-body ddgksf2013
+# > iQiYi
+# > igpsport
+# > ithome
+# ======= J ======= #
+# > jingdongdushu
+# > jingxi
+# > jingdong[invalid]
+# > jingdongjinrong
+# > jingdonglite
+# > jingdongyun
+# > jingdongkuaidi
+# > jianxun
+# > jiaohangmaidanba
+# > jiemianxinwen
+# > jietuqiche
+# > jijianhuilv
+# > jiaxiaoediantong
+# > jiakaobaodian
+# > jianhanglife
+# > jimi
+# > jike
+;^https?:\/\/mgw\.mpaas\.cn-hangzhou\.aliyuncs\.com\/mgw\.htm url reject-200
+# > jiansheyinhang
+# > jump
+# > jingdongxiaojia
+# > jiankang160
+# > jixianghangkong
+# > jiliyinhe
+# ======= K ======= #
+# > kfc
+# > kuaikan
+# > ku'an
+# > kanlixiang
+# > kantianxia
+# > kuake
+# > kuaishou
+# > kudi
+# > keep
+# > kuaiying
+# > kujiale
+# > kugou
+# > kujiequ
+# > koufujiantou
+# > kuaidui
+# > koudaijizhang
+# ======= L ======= #
+# > lingclub
+# > linxi
+# > lecheng
+# > lanjie100
+# > laiChon
+# > liangBulU
+# host-suffix, admobile.top, reject-200
+# > lanRenTingShu
+# > lanjiyin
+# > leisutiyu
+# > lianzhangmenhu
+# > liulishuo
+# > lingpao
+# >lianmeng
+# > lofter
+# > lanrentingshu
+# > lecheng
+# > lexiaotong
+# > leke
+# > lvchongchong
+# > lekeyundong
+# ======= M ======= #
+# > MeiTuan
+# > MeiTuanWaiMai
+# > MeiWeiBuYongDeng
+# > MaFengWo
+# > manmanmai
+# > MaiDuiDui
+# > manhuaren
+# > MIX
+# > MaKaLong
+# > MoMo
+# > maidanba
+# > mixuebingcheng
+# > miyoushe
+# > meiyou
+# > miguyinyue
+# > maoyan
+# > manhuashe
+# > maidanglao
+# > merit
+# > meisiyixue*
+# > manbuzhe
+# > moomoo
+# > miaojie
+# > migushipinaikan
+# > mijia
+# > makeshuiyinxiangji
+# > maidanba
+# > meilixiuxing
+# ======= N ======= #
+# > nanfanghangkong
+# > nantaihuhao
+# > nbzhuhsou
+# > nongyeyinhang
+; host-suffix, msmp.abchina.com.cn, reject
+# ======= O ======= #
+# > omofun
+# > One
+# > Oray
+# > one
+# > ocleancare*
+# ======= P ======= #
+# > pinduoduo
+# > PiaoGen
+# > pengpainews
+# > pufayinhang
+# > pupumarket
+# > pica
+# > pansearch
+# > pinganzhengquan
+# > pinganjiankang
+# > paojieling
+# ======= Q ======= #
+# > qqbrower
+# > QuNaEr
+# > QiCheZhiJia
+# > QiDianDuShu
+# > qinlingkaimen
+# > qijunjiekancaijin
+# > qqyuedu
+# > qinbaobao
+# > picooc
+# > qidianyuedu
+# > qingdaoditie
+# > quchenshi
+# > qihangjiaoyu
+# ======= R ======= #
+# > RenMinRiBao
+# > renren
+# > richanzhilian
+# > ruiboshi
+# > ruibai
+# ======= S ======= #
+# > shaoshupai
+# > ShunFengYouXuan
+# > spotify pro
+;^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
+;^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ url script-request-header https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
+# > spotify
+# > SanLianZhongDu
+# > ShunFeng
+# > shihuo
+# > Soul
+# > Stay
+# > suning
+# > shanmu
+# > shanxianyixia
+# > shaoniandedao
+# > shoulvrujia
+# > soutushenqi
+# > shixingshengxian
+# > sanhaodongman
+# > suishenxing
+# > shenmezhidemai
+# > shenzhouzuche
+# ======= T ======= #
+# > tianfutong
+# > tianxingjinrong
+# > tianyiyunpan
+# > tianmaojingling
+# > testflight
+# > TengXunShouJiGuanJia
+# > TuNiu
+# > TaoPiaoPiao
+# > TianTianJiJin
+# > topwidget
+# > TencentNews
+# > taipinyang
+# > tonghuashun
+# > tengxundongman
+# > tongchenglvxing
+# > tujiaminxu
+# > tangdong
+# > taobao
+# > tianmao
+# > tuantuanjiayou
+# > toutiao
+# > tank
+# > tanghushi
+# > tianmaojingling
+# ======= U ======= #
+# ======= V ======= #
+# ======= W ======= #
+# > weipinhui
+# > WangYiDaShen
+# > WangYiyunyinyue
+#^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ url reject-200
+# > WangYiYouXiang
+# > WangYiYanXuan
+; ^https?:\/\/yanxuan.nosdn.127.net\/(static-union\/)?.*\.gif url reject-200
+# > WeChat110
+;^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/ddgksf2013/Scripts/master/weixin110.js
+# > weixindaihuo
+# > WeChat
+# > Weifeng
+#^https?:\/\/api\.wfdata\.club\/v\d\/search\/hot\? url response-body dataList":\[.+\] response-body dataList":[{}]
+# > Weico
+# > wangyiwoniudushu
+# > wangyikaola
+# > wanmeishijiedianjing
+# > wangxinyun
+# > wacaijizhang
+# > wodelianyungang*
+# > windjinrong
+# > wodenanjing
+# > wuluyundong
+# ======= X ======= #
+# > xinyue
+# > xierdun
+# > XiaoTe
+# > XiaoShuiMian
+# > XieCheng
+# > XiChuangZhu
+# > XiaoYi
+# > xiachufang
+# > xiaolishenghuo
+# > xiaomi
+# > xiaomiyinxiang
+# > xiaomiyoupin
+# > xifandongman
+# > xiangrikui
+# > xinruijulebu
+# > xueqiu
+# > xiaoyuansouti
+# > xiaoyuankousuan
+# > xiangrikui
+# > xiaoaiyinxiang
+# > xiaocaibawangcan
+# > xinlangcaijing
+# > xiaoyisheyingji
+# > xiaoxiong
+# > xiaomishangcheng
+# > xinmanhua
+# > xiguapi
+# > xiaoqiangtingche
+# > xiamenhangkong
+# > xiaoyiguanjia
+# > xiaoheihe
+# > xiaoneiwang
+# > xianyu
+# > xinqiutiyu
+# > xiaocanhuishenghuo
+# > xiaotundangjia
+# ======= Y ======= #
+# > yanaifei
+# > YangShiPin
+# > YiHaoDian
+# > YiKaoBang
+# > YouLinYouKe
+# > YinkeZhiBo
+# > YinxiangNote
+# > yonghui
+# > yaduo
+# > youshu
+# > yingshiyun
+# > yuxueyuan
+# > yitao
+# > yunting
+# > yangcong
+# > yijietu
+# > youminxingkong
+# > yihaodian
+# > yimaitong
+# > yingshiyun
+# > youdaocidian
+# > ycc360
+# > yundaren
+# > yixiaoyuan
+# > yinhezhengquan
+# > yueniuxinwen
+# > yiqidazhong
+# > yiqifengtian
+# > yunjing
+# ======= Z ======= #
+# > zhangshangshenghuo
+#^https?:\/\/mlife\.cmbchina\.com\/ClientFaceService\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec url reject-200
+# > zhongguoyidong
+# > zhongguoyidongyunpan
+# > zhongguoyidongjiangsu
+# > zhongguoyidongshandong
+# > zhongguoliantong
+# > zhongguoyidongguangxi
+# > zhongguoyidonganhui*
+# > zhuanzhuan
+# > zhiboba
+# > zuoyebang
+# > ZuiYou
+# > Zhihu
+# > zhuishushenqi
+# > zhangshangdaojucheng
+# > zhangyue
+# > ziru
+# > zhangshanggongjiao
+# > zhongguoyinhang
+#^https?:\/\/mbs\.boc\.cn\/ubas-mgateway-static\/images\/advertType\/.+.jpg url reject-img
+# > zhongguotianqi
+# > zhuijudaren
+# > zhangshangyingxionglianmeng
+# > zhongguoyidongguangdong
+# > zhixinghuochepiao
+# > zijinnongshangyinhang*
+# > zhangyu
+# > zhihuisuzhou
+# > zhangzhougonggongjiaotong
+# > zhangyue
+# > zhangyue
+# > zhaojin
+# > zonghengxiaoshuo
+# > zhangshangwuweiqiyue
+;^https?:\/\/app\.mval\.qq\.com\/go\/mlol_news\/recommend_feeds url reject-200
+# > zcool
+# > zhongguancunzaixian
+# > zhangtongjiayuan
+# > zhongxingzhihuishenghuo
+# > zikaobiguotiku
+# > zhangshangkaoyan

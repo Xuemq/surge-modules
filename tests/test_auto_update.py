@@ -90,14 +90,14 @@ class AutoUpdateTests(unittest.TestCase):
         self.assertEqual(json.loads(again["fmz-policy.json"])["modification_date"], "2026-10-17")
 
     def test_safe_changed_source_migrates_exclusion_and_lock(self):
-        new = b"# added upstream comment\n" + OLD.replace(b"[Script]", b"DOMAIN,new.example,REJECT\n[Script]")
+        new = b"# added upstream comment\n" + OLD.replace(b"[Script]", b"[URL Rewrite]\n^https://new.example/ _ reject\n[Script]")
         files, status = self.build(new)
         policy = json.loads(files["fmz-policy.json"])
         self.assertEqual(policy["scope_exclusions"][0]["line"], 6)
         expected = deepcopy(self.policy["scope_exclusions"][0]); expected["line"] = 6
         self.assertEqual(policy["scope_exclusions"], [expected])
         self.assertNotIn(RULE.encode(), files[auto.MODULE_PATH])
-        self.assertIn(b"DOMAIN,new.example,REJECT", files[auto.MODULE_PATH])
+        self.assertIn(b"^https://new.example/ _ reject", files[auto.MODULE_PATH])
         self.assertEqual(policy["module_metadata"], self.policy["module_metadata"])
         self.assertEqual(policy["script_argument_repairs"], self.policy["script_argument_repairs"])
         self.assertEqual(status["added_active_entries"], 1)
@@ -164,6 +164,39 @@ class AutoUpdateTests(unittest.TestCase):
         self.assertBlocked(new, "new_runtime_dependency_requires_review")
         self.assertBlocked(OLD+b"[Map Local]\n^new data=https://evil.example/response.json\n", "new_runtime_dependency_requires_review")
 
+    def test_map_local_redirect_headers_and_body_changes_require_review(self):
+        old='[Rule]\nDOMAIN,keep.test,REJECT\n'
+        for status,header in (('302','Location:https://destination.test/'),('307','Location:https://destination.test/'),
+                ('200','Refresh:0;url=https://destination.test/'),('200','Set-Cookie:session=fixture')):
+            new=old+'[Map Local]\n^https://new.test/ data-type=text data="{}" status-code='+status+' header="'+header+'"\n'
+            with self.subTest(status=status,header=header),self.assertRaisesRegex(auto.Blocked,'map_local_definition_changed_requires_review'):
+                auto.validate_delta(old.encode(),new.encode(),old,new)
+        old+='[Map Local]\n^https://old.test/ data-type=text data="{}"\n'
+        for new in (old.replace('data="{}"','data="[]"'),old.replace('^https://old.test/','.*')):
+            with self.assertRaisesRegex(auto.Blocked,'map_local_definition_changed_requires_review'):
+                auto.validate_delta(old.encode(),new.encode(),old,new)
+
+    def test_exact_reviewed_map_local_can_remain_or_be_removed(self):
+        old='[Rule]\nDOMAIN,keep.test,REJECT\n[Map Local]\n^https://old.test/ data-type=text data="{}" status-code=302 header="Location:https://destination.test/"\n'
+        for new in (old,'[Rule]\nDOMAIN,keep.test,REJECT\n'):
+            result=auto.validate_delta(old.encode(),new.encode(),old,new)
+            self.assertEqual(result['added_active_entries'],0)
+
+    def test_new_direct_or_reject_routing_requires_review(self):
+        for policy in ('DIRECT','REJECT'):
+            new=OLD.replace(b'[Script]',('DOMAIN,auth.example,'+policy+'\n[Script]').encode())
+            with self.subTest(policy=policy):self.assertBlocked(new,'routing_definition_changed_requires_review')
+
+    def test_body_rewrite_added_or_changed_requires_review(self):
+        old='[Rule]\nDOMAIN,keep.test,REJECT\n'
+        for body in ('http-request ^https://new.test/ a b','http-response-jq ^https://new.test/ \'del(.ads)\''):
+            new=old+'[Body Rewrite]\n'+body+'\n'
+            with self.subTest(body=body),self.assertRaisesRegex(auto.Blocked,'body_definition_changed_requires_review'):
+                auto.validate_delta(old.encode(),new.encode(),old,new)
+        old+='[Body Rewrite]\nhttp-response ^https://old.test/ a b\n';new=old.replace(' a b',' a c')
+        with self.assertRaisesRegex(auto.Blocked,'body_definition_changed_requires_review'):
+            auto.validate_delta(old.encode(),new.encode(),old,new)
+
     def test_runtime_file_url_discovery_handles_quotes(self):
         m = auto.parse_module(b'[Map Local]\n^new data-type=file data="https://example.test/x.json" header="Content-Type:application/json"\n', "fixture")
         self.assertEqual(auto.runtime_urls(m), {"https://example.test/x.json"})
@@ -228,7 +261,7 @@ class AutoUpdateTests(unittest.TestCase):
         self.assertEqual(auto.validate_delta(old.encode(),new.encode(),old,new)["added_active_entries"],1)
 
     def test_large_delta_blocks(self):
-        extra = "\n".join("DOMAIN,new"+str(i)+".example,REJECT" for i in range(26))+"\n"
+        extra = "[URL Rewrite]\n"+"\n".join("^https://new"+str(i)+".example/ _ reject" for i in range(26))+"\n"
         self.assertBlocked(OLD.replace(b"[Script]", extra.encode()+b"[Script]"), "large_rule_delta_requires_review")
 
     def test_unknown_directives_and_lost_author_block(self):

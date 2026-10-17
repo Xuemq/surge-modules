@@ -222,6 +222,20 @@ def validate_delta(old_data, new_data, old_output, new_output):
     old_headers = Counter(e.id for e in old.entries if e.section == "Header Rewrite")
     new_headers = Counter(e.id for e in new.entries if e.section == "Header Rewrite")
     require(new_headers <= old_headers, "header_definition_changed_requires_review")
+    # Map Local can redirect with status/Location, set cookies, refresh pages,
+    # or return active content. URL-only checks do not authorize such behavior.
+    # Preserve reviewed definitions; any new/changed response needs review.
+    old_maps = Counter(e.id for e in old.entries if e.section == "Map Local")
+    new_maps = Counter(e.id for e in new.entries if e.section == "Map Local")
+    require(new_maps <= old_maps, "map_local_definition_changed_requires_review")
+    old_body = Counter(e.id for e in old.entries if e.section == "Body Rewrite")
+    require(Counter(e.id for e in new.entries if e.section == "Body Rewrite") <= old_body,
+            "body_definition_changed_requires_review")
+    # Routing definitions can bypass baseline URL-response decisions. A new
+    # DIRECT or broad reject is not authorized by syntactic validity alone.
+    old_rules = Counter(e.id for e in old.entries if e.section == "Rule")
+    require(Counter(e.id for e in new.entries if e.section == "Rule") <= old_rules,
+            "routing_definition_changed_requires_review")
     require(conflict_signatures(new) <= conflict_signatures(old), "new_or_changed_literal_conflict")
     old_ids, new_ids = [e.id for e in old.entries], [e.id for e in new.entries]
     shared = set(old_ids) & set(new_ids)

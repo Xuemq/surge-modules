@@ -1,0 +1,2674 @@
+#!name=广告拦截&净化合集
+#!desc=(支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!author=奶思[https://github.com/fmz200]
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
+#!category=奶思的模块
+#!homepage=https://github.com/fmz200/wool_scripts
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Surge/module/blockAds.module
+#!tg-channel=https://t.me/inaisi
+#!tag=去广告, fmz200, 奶思
+#!system=ios
+#!date=2026-09-10 21:10:39
+#!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
+#!arguments=12306_enable:true
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# > 广告联盟
+# 若有问题自行设置白名单, REJECT
+# Ad-Stir, REJECT
+# Adadapted, REJECT
+# AdChina, REJECT
+# AddThis, REJECT
+# Adform, REJECT
+# Adhouyi (广告后台), REJECT
+# Adinall, REJECT
+# Adition, REJECT
+# Adjust, REJECT
+# Admarvel, REJECT
+# AdRoll, REJECT
+# Adtaily, REJECT
+# Adups, REJECT
+# Adview, REJECT
+# Adwo, REJECT
+# Adzerk, REJECT
+# Ad-m.asia, REJECT
+# AdColony, REJECT
+# AerServ, REJECT
+# Airpush, REJECT
+# App-Adforce, REJECT
+# Appadhoc, REJECT
+# AppsFlyer, REJECT
+# Appdriver, REJECT
+# Cacafly, REJECT
+# Casale Media, REJECT
+# Chartboost, REJECT
+# Clicki, REJECT
+# CNZZ, REJECT
+# Criteo, REJECT
+# comScore, REJECT
+# Dianjoy, REJECT
+# Dianru, REJECT
+# dtscout, REJECT
+# Exoclick, REJECT
+# Exosrv, REJECT
+# Flurry, REJECT
+# Guomob (果盟), REJECT
+# GrowingIO, REJECT
+# iClick, REJECT
+# Innity, REJECT
+# Inveno, REJECT
+# InMobi, REJECT
+# IronSource, REJECT
+# iPinYou (品友互动), REJECT
+# Jesgoo, REJECT
+# JuicyAds, REJECT
+# Kejet, REJECT
+# Keyrun, REJECT
+# Kissmetrics, REJECT
+# Krux, REJECT
+# 酷云互动, REJECT
+# Kochava, REJECT
+# Leadbolt, REJECT
+# Localytics, REJECT
+# 亿动广告传媒, REJECT
+# Marketgid, REJECT
+# 聚胜万合, REJECT
+# MGID, REJECT
+# Millennial Media, REJECT
+# Mixpanel, REJECT
+# Moat, REJECT
+# 创智汇聚, REJECT
+# Mobfox, REJECT
+# 魔窗, REJECT
+# Mathtag, REJECT
+# 艾德思奇（adSage）, REJECT
+# MoPub（Twitter 公司旗下的移动广告服务平台）, REJECT
+# NetworkBench (听云), REJECT
+# NicoNico, REJECT
+# Onetad, REJECT
+# OpenX, REJECT
+# Optimizely, REJECT
+# Oracle, REJECT
+# Pagechoice, REJECT
+# Plista, REJECT
+# Pubnative, REJECT
+# PopAds, REJECT
+# PubMatic, REJECT
+# Qtmojo, REJECT
+# Qumi (趣米), REJECT
+# Quantcast, REJECT
+# Rayjump, REJECT
+# Rubicon Project, REJECT
+# Smart AdServer, REJECT
+# Snapmobile, REJECT
+# StatCounter, REJECT
+# Segment, REJECT
+# Sigmob, REJECT
+# Sizmek, REJECT
+# Smaato, REJECT
+# StartApp, REJECT
+# Taptica, REJECT
+# TGBus, REJECT
+# Touclick, REJECT
+# Trafficfactory, REJECT
+# Trafficjunky, REJECT
+# TalkingData, REJECT
+# Tapad, REJECT
+# Tapjoy, REJECT
+# 推啊 (Tuia), REJECT
+# VigLink, REJECT
+# Voiceads, REJECT
+# Vungle, REJECT
+# Vpon, REJECT
+# Yandex, REJECT
+# Yengo, REJECT
+# 亿起发, REJECT
+# 优效平台, REJECT
+# 指点传媒, REJECT
+# 诸葛智能, REJECT
+# Zedo, REJECT
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# > 12123
+# hostname = gab.122.gov.cn
+# > 17173（网络游戏门户网站）
+# > 178游戏网
+# > 18183游戏网
+# > 1905电影网
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# > 2345网址导航
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# > 360
+# > 365日历
+# > 39健康网
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# > 51CTO学堂
+# > 58汽车
+# > 58同城
+# hostname = *.58cdn.com.cn, app.58.com
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# > 阿里云
+# > 爱卡汽车网
+# > 爱拍
+# > 爱奇艺
+# hostname = -i.vip.iqiyi.com, *.iqiyi.com
+# > Adobe
+# Marketo, REJECT
+# > Adobe Flash China Special Edition
+# > Akamai
+# > Amazon
+# hostname = api-cslp-emt.amazon.cn
+# > AOL（美国在线）
+# > Apple
+# 安全浏览限制解除, REJECT
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 百词斩
+# > 百度
+# hostname = www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, baichuan.baidu.com, api*.tuisong.baidu.com, afd.baidu.com, mobads.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, sa*.tuisong.baidu.com, m.baidu.com, sofire.baidu.com
+# > 百度地图
+# hostname = dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com
+# > 百度贴吧
+# hostname = tiebac.baidu.com
+# 屏蔽域名dns查询, REJECT
+# > 百姓网
+# > 百意
+# > 宝宝树
+# > 暴风影音
+# > 爆米花
+# > 奔图
+# > 崩坏3
+# > 笔趣阁
+# > 哔哩哔哩
+# hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com
+# > BBC
+# > Bing
+# > Braze
+# > bshare
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# > 财新网
+# > 车来了
+# hostname = pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
+# > 创维
+# > C&J Marketing
+# 苏州思杰马克丁软件有限公司, REJECT
+# > Camera360
+# > CNN
+# > CSDN
+# hostname = app-gw.csdn.net, gw.csdn.net
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# > 当当网
+# > 滴滴青桔
+# hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
+#DOMAIN-KEYWORD, pt-starimg.didistatic.com, REJECT
+# > 电脑之家
+# > 叮嗒出行
+# hostname = img.admobile.top, webcdn.m.qq.com
+# > 叮咚买菜
+# hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
+# > 东方财富
+# hostname = app.ceair.com
+# > 东方网
+# > 懂车帝
+# > 懂球帝
+# hostname = ap.dongdianqiu.com
+# > 抖音
+# > 斗鱼直播
+# hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
+# > 豆瓣
+# hostname = api.douban.com
+# > 多多视频
+# > 朵朵校友圈
+# 微信小程序去广告, REJECT
+# > Dr.Peng
+#IP-CIDR, 10.72.25.0/24, REJECT, no-resolve
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# > 饿了么
+# hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# > 番茄小说
+# hostname = *.pangolin-sdk-toutiao.com, *.pangolin-sdk-toutiao.*, *.pstatp.com, *.pstatp.com.*, *.pglstatp-toutiao.com.*, *.pglstatp-toutiao.com, gurd.snssdk.com, gurd.snssdk.com.*, i-lq.snssdk.com, i-lq.snssdk.com.*, *default.ixigua.com
+#DOMAIN, i.snssdk.com, REJECT
+#DOMAIN-SUFFIX, bytedance.com, REJECT
+# > 房天下 (Soufun)
+# > 飞常准
+# hostname = app.variflight.com
+# > 风行网
+# > 凤凰新媒体
+# > Facebook
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# > 赶集网
+# > 高德地图
+# hostname = m*.amap.com, optimus-ads.amap.com, amap-aos-info-nogw.amap.com
+# > 勾正数据（GozenData）
+# > 购物党
+# > 光大银行 阳光惠生活
+# hostname = yghsh.cebbank.com
+# > 广州地铁乘车码
+# 多个广告 感谢CtrlMusic🐓分享, REJECT
+# > 国美电器
+# hostname = prom.mobile.gome.com.cn
+# > 国双 (Gridsum)
+# > Go.com
+# > Google
+# hostname = pagead2.googlesyndication.com
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# > 韩剧TV
+# hostname = gfp.veta.naver.com, api.hanju.koudaibaobao.com
+# > 好游快爆
+# > 和讯网
+# > 湖南卫视
+# > 虎扑
+# hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
+# > 虎牙直播
+# hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+# 开屏广告, REJECT
+# > 互传
+# > 沪江网校
+# > 华数TV
+# > 华为商城
+# > 环球网
+# > 黄油相机
+# hostname = api4.bybutter.com
+# 开屏广告 感谢#Dragon分享, REJECT
+# > 会声会影
+# > Hao123
+# hao123上网导航, REJECT
+# > Huawei AspiegelBot
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 驾校一点通
+# hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
+# > 建行生活
+# hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
+# 内置饿了么外卖弹窗, REJECT
+# > 今日头条
+# hostname = p*.pstatp.com
+# > 金立 (Gionee)
+# > 金融界
+# > 金山词霸
+# hostname = dict-mobile.iciba.com, mobile-pic.cache.iciba.com, service.iciba.com, *.kingsoft-office-service.com
+# > 金山系 (Kingsoft)
+# > 京东
+# hostname = api.m.jd.com, dns.jd.com
+# 屏蔽DNS, REJECT
+# > 九游
+# > 巨潮资讯
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 酷6网
+# > 酷狗音乐
+# > 酷我音乐
+# hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
+# > 快递100
+# hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+#DOMAIN,is.snssdk.com,REJECT
+# > 快懂百科
+# > 快乐广播
+# > 快手
+# hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com
+# DOMAIN, js-ad.a.yximgs.com, REJECT
+# > 快速问医生
+# > 快压zip
+# > Keep
+# hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
+# 拦截HTTPDNS
+# 拦截广告下发
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# > 蓝基因
+# hostname = tk.lanjiyin.com.cn
+# 弹窗还在，需要手动关闭, REJECT
+# > 乐播投屏
+# > 乐居
+# > 乐视
+# > 联想
+# hostname = api.club.lenovo.cn
+# > 两步路
+# > Line
+# hostname = a.line.me, ad.line-scdn.net, w.line.me, gw.line.naver.jp, lan.line.me, buy.line.me, crs-event.line.me, obs.line-scdn.net, d.line-scdn.net, scdn.line-apps.com, sch.line.me, static.line-scdn.net, nelo2-col.linecorp.com, uts-front.line-apps.com, cix.line-apps.com, legy.line-apps.com, ec-bot-obs.line-scdn.net
+# > LinkedIn
+# > LinkWiFi
+# > Lycos
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 妈妈网
+# > 买单吧
+# hostname = creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, creditcard.bankcomm.cn, creditcard.bankcomm.com
+# > 芒果TV
+# hostname = *.mgtv.com
+# > 猫扑 (Mop)
+# > 美图秀秀
+# hostname = mea.meitudata.com, adui.tg.meitu.com
+# > 美团
+# > 美颜相机
+# 去首页和轮播广告, REJECT
+# > 美柚
+# hostname = x.seeyouyima.com, axxd.xmseeyouyima.com, config-service.seeyouyima.com
+# > 魅族 (Meizu)
+# > 咪咕视频
+# hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
+# > 米家
+# hostname = home.mi.com
+# > 民生银行
+# hostname = www.cmbc.com.cn, rs.creditcard.cmbc.com.cn
+# > 蘑菇街
+# > 墨迹天气
+# > MacKeeper
+# > Makeding (苏州思杰马克丁)
+# > Microsoft
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# > Naver
+# > New Relic
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# > Openmultimedia
+# > OPPO
+# > Optimix（奥迪美）
+# > Oupeng (欧朋)
+# > Outfit7（会说话的汤姆猫）
+# > Outlook
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > 澎湃新闻
+# hostname = adpai.thepaper.cn
+# > 皮皮虾
+# 推荐视频不能预览, REJECT
+# > PeanutWiFi
+# > Photoable
+# > PPTV
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# > 七猫小说
+# hostname = open.e.kuaishou.cn, api-access.pangolin-sdk-toutiao-b.com, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, dsp-x.jd.com, api-cfg.wtzw.com, p1-lm.adukwai.com, lf-cdn-tos.bytescm.com
+# > 齐鲁网
+# > 汽车之家
+# hostname = adproxy.autohome.com.cn, app2.autoimg.cn
+# > 汽水音乐
+# hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
+#DOMAIN, is.snssdk.com, REJECT
+# DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT // 被复写替代
+# > 蜻蜓FM
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# > 云快充
+# hostname = gw3.ykccn.com
+# 微信小程序
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# > QQ音乐
+# hostname = us.l.qq.com, y.gtimg.cn, music.y.qq.com
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# > 人民网
+# > 人人视频
+# hostname = api.rr.tv
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# > 闪萌
+# > 深圳通
+# hostname = ecard.shenzhentong.com
+# 微信小程序, REJECT
+# > 什么值得买
+# hostname = homepage-api.smzdm.com, haojia-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s-api.smzdm.com, haojia.m.smzdm.com
+# > 盛趣游戏
+# hostname = daoyu.sdo.com
+# > 世纪佳缘
+# > 收钱吧
+# hostname = api.pinduoduo.com
+# 买单小程序去广告, REJECT
+# > 手机中国
+# > 书旗小说
+# hostname = ut2.shuqistat.com, dsp.toutiao.com, sf3-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, sq.sljkj.com, ocean.shuqireader.com, img-tailor.11222.cn, message.shuqireader.com, feedback.uc.cn, *.shuqireader.com, 101.91.69.26
+# > 数盟 (Shuzilm)
+# > 搜狗
+# 屏蔽京东和搜狗收集信息 @jFrecht, REJECT
+# > 搜狗输入法
+# hostname = business-cdn.shouji.sogou.com, ios.sogou.com, android.sogou.com, h5api.sginput.qq.com
+# DOMAIN-SUFFIX, business-cdn.shouji.sogou.com, REJECT
+# > 搜狐
+# hostname = *.souhu.com
+# > 苏宁易购
+# hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
+# > Sape
+# > Snapchat
+# > Soul
+# hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > 太平洋电脑
+# hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
+# > 淘宝
+# hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# > 淘淘搜
+# > 腾讯系
+# > 腾讯智慧
+# > 天神
+# > 天天看看
+# > 同盾
+# > 同花顺
+# hostname = adm.10jqka.com.cn, iphone.ac.qq.com, stat.10jqka.com.cn
+# > 途虎养车
+# hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
+# > 团油
+# > 迅雷
+# hostname = images.client.vip.xunlei.com, api-shoulei-ssl.xunlei.com
+# > Talkatone
+# hostname = alt-r.my.com, imgx.jampp.com
+#DOMAIN-SUFFIX,akamaized.net, REJECT
+# > Tanwan (贪玩)
+# > TubeMax
+# hostname = *.i18n-pglstatp.com
+# > Tumblr
+# > Turn
+# > Twitch
+# > Twitter
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# > UC浏览器
+# > Unity Ads
+# > Urban Airship
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# > Vivo
+# > VIVO商城
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > 歪麦霸王餐
+# 去开屏 , REJECT
+# > 豌豆荚
+# > 网易
+# > 网易大神
+# hostname = god.gameyw.netease.com, app-conf.ds.163.com
+# 拦截HTTPDNS
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# > 唯品会
+# hostname = b.appsimg.com, mapi.appvipshop.com
+# > Waps（无线广告交易中心）
+# > Whale Cloud (鲸云)
+# > WiFi万能钥匙
+# hostname = cds.wifi188.com
+# 感谢#All in 梭哈分享, REJECT
+# 去除导航栏免费短剧, REJECT
+# > Wostore (联通沃商店)
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > 喜马拉雅
+# hostname = gslbali.ximalaya.com, search.ximalaya.com, searchwsa.ximalaya.com, mobile.ximalaya.com, mobilehera.ximalaya.com, mobwsa.ximalaya.com, m.ximalaya.com, mwsa.ximalaya.com
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# > 小爱音箱
+# hostname = info.mina.xiaoaisound.com, marketing-aibox.v.mitvos.com
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# > 小利生活
+# hostname = mpos-pic.helipay.com
+# > 小米
+# > 小小影视
+# > 晓晓优选
+# hostname = xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net
+# > 新华网
+# > 新浪
+# > 新民网
+# > 雪球
+# hostname = api.xueqiu.com, open.xueqiu.com, stock.xueqiu.com, 39.103.79.14, 39.106.97.84, 47.95.49.75, 101.201.62.20, 101.201.62.26, 101.201.175.228, 124.250.48.3, 182.92.145.50, 182.92.251.113
+# > 寻医问药
+# > 讯飞输入法
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 亚信科技
+# > 央视网
+# hostname = www.cntv.cn
+# > 央视影音 (CBox)
+# > 一点资讯
+# > 艺龙
+# > 易查
+# > 易车
+# hostname = api.ycapp.yiche.com, cheyouapi.ycapp.yiche.com
+# > 音悦Tai
+# > 优酷
+# hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
+# DOMAIN-SUFFIX, acz.youku.com, REJECT
+# DOMAIN-SUFFIX, sjarvis.taobao.com, REJECT
+# DOMAIN, mc.atm.youku.com, REJECT
+# DOMAIN-SUFFIX, myes.youku.com, REJECT
+# > 悠视网
+# > 悠易互通
+# > 游久网
+# > 游民星空
+# hostname = *.gamersky.com
+# > 游迅网
+# > 有米
+# > 元聚网络（漫画岛，追书神器，甜瓜小说）
+# > 云快充
+# hostname = gw3.ykccn.com
+# 微信小程序
+# > 云闪付
+# > 云之家
+# > Yahoo
+# hostname = m.yap.yahoo.com
+# > YY直播平台
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > 真不卡
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# > 中关村
+# > 中国电信
+# hostname = cloud.189.cn, zt-app.go189.cn
+# > 中国联通
+# hostname = m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
+# > 中国平安
+# > 中国日报
+# > 中国移动
+# hostname = client.app.coc.10086.cn, app.10086.cn
+# > 中国移动云盘
+# hostname = mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com
+# > 中华万年历
+# > 中华网
+# > 字节跳动
+# hostname = *.pstatp.com, amemv.com, musical.com, snssdk.com, tiktokv.com, dsp.toutiao.com
+# > 作业帮
+# hostname = syh.zybang.com, www.zybang.com
+# > ZAKER新闻
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 哔哩哔哩
+# hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# > 12123
+# hostname = gab.122.gov.cn
+#^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery reject
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# > 21经济网
+# hostname = api.21jingji.com
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# > 500
+# hostname = evs.500.com
+# > 555影视
+# hostname = vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+# > 58同城
+# hostname = *.58cdn.com.cn, app.58.com
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# > 爱回收
+# hostname = gw.aihuishou.com
+# > 爱美剧
+# hostname = api.bjxkhc.com
+# > 爱思助手
+# hostname = list-app-m.i4.cn
+# > 爱阅书香
+# hostname = icc.one
+# > 澳觅
+# hostname = interface.aomiapp.com
+# > AcFun
+# hostname = aes.acfun.cn, api-new.app.acfun.cn
+# > AppSo
+# hostname = sso.ifanr.com
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 百度
+# hostname = www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, baichuan.baidu.com, api*.tuisong.baidu.com, afd.baidu.com, mobads.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, sa*.tuisong.baidu.com, m.baidu.com, sofire.baidu.com
+# > 百度地图
+# hostname = dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com
+# > 百度翻译
+# hostname = mime.baidu.com
+# > 百度输入法
+# hostname = r6.mo.baidu.com, res.mi.baidu.com, mime.baidu.com, mbd.baidu.com
+# > 百度网盘
+# hostname = pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn
+# > 北京首汽
+# hostname = gateway.shouqiev.com
+# > 贝壳找房
+# hostname = apps.api.ke.com
+# > 贝太厨房
+# hostname = channel.beitaichufang.com
+# > 比特球云盘
+# hostname = pan-api.bitqiu.com
+# > 币世界
+# hostname = iapi.bishijie.com
+# > 必胜客
+# hostname = res.pizzahut.com.cn
+# > 菠萝包轻小说
+# hostname = api.sfacg.com
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# > 财经杂志
+# hostname = api.caijingmobile.com
+# > 财联社
+# hostname = api3.cls.cn
+# > 菜鸟裹裹
+# hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
+# 支付宝-菜鸟
+# > 曹操专车
+# hostname = ptmpcap.caocaokeji.cn, cap.caocaokeji.cn
+# > 超级课程表
+# hostname = 182.92.244.70, ad.myfriday.cn
+# > 超星学习通
+# hostname = learn.chaoxing.com
+# > 车来了
+# hostname = pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
+# > 刺猬猫阅读
+# hostname = app.hbooker.com
+# > clicli
+# hostname = js-ad.ayximgs.com
+# > CSDN
+# hostname = app-gw.csdn.net, gw.csdn.net
+# 感谢【Jörgen Frecht】分享
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# > 大麦
+# hostname = acs.m.taobao.com, amdc.m.taobao.com
+# > 大智慧
+# hostname = ssp.dzh.com.cn
+# > 大众点评
+# hostname = 103.37.155.60, *.dianping.com, img.meituan.net, p.meituan.com, rms.meituan.com, www.dpfile.com, awp-assets.meituan.net, s3plus.meituan.net, p*.meituan.net, ddplus.meituan.net
+# 开屏广告
+# > 当当阅读
+# hostname = e.dangdang.com, api.dangdang.com, mapi.dangdang.com
+# > 得物
+# 开屏广告 【Runestoner】分享
+# > 嘀嗒出行
+# hostname = capis*.didapinche.com, adx-cn.anythinktech.com, www.didapinche.com
+# 小程序净化
+# > 电视家
+# hostname = api.gaoqingdianshi.com, cdn.dianshihome.com
+# > 丁香医生
+# hostname = dxy.com
+# > 丁香园
+# hostname = dq.dxy.cn
+# > 叮咚买菜
+# hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
+# 开屏广告
+# 首页弹窗
+# 我的页VIP栏净化
+# > 盯盯拍
+# hostname = *.pglstatp-toutiao.com, api.htp.ad-scope.com.cn, appgw.ddpai.com, init.sms.mob.com, apphw.ddpai.com
+# > 东方财富
+# hostname = app.ceair.com
+# > 懂球帝
+# hostname = ap.dongdianqiu.com
+#^https?:\/\/ap\.dongqiudi\.com\/plat\/v reject
+# > 斗鱼直播
+# hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
+# > 豆瓣
+# hostname = api.douban.com
+# > DLabel云标签
+# hostname = dudian-oss.oss-cn-shenzhen.aliyuncs.com, imagepc.ctaiot.com
+# 去开屏广告
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# > 饿了么
+# hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+# 开屏广告
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# > 番茄小说
+# hostname = *.pangolin-sdk-toutiao.com, *.pangolin-sdk-toutiao.*, *.pstatp.com, *.pstatp.com.*, *.pglstatp-toutiao.com.*, *.pglstatp-toutiao.com, gurd.snssdk.com, gurd.snssdk.com.*, i-lq.snssdk.com, i-lq.snssdk.com.*, *default.ixigua.com
+# 去章末广告
+# > 樊登读书
+# hostname = gateway-api.dushu365.com
+# > 飞常准
+# hostname = app.variflight.com
+# > 飞客茶馆
+# hostname = api.flydigi.com
+# > 飞猫管家
+# hostname = app.flymodem.com.cn
+# 开屏
+# > 飞猪
+# hostname = acs.m.taobao.com, gw.alicdn.com
+# > 丰巢
+# hostname = external.fcbox.com, dsp.fcbox.com, consumer.fcbox.com, rtm.fcbox.com
+# 已无法MITM
+# > 凤凰秀
+# hostname = dsa-mfp.fengshows.cn, api.fengshows.com
+# > 富途牛牛
+# hostname = api*.futunn.com
+# 首页右下角角标
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# > 盖得排行
+# hostname = zone.guiderank-app.com
+# > 高德地图
+# hostname = m*.amap.com, optimus-ads.amap.com, amap-aos-info-nogw.amap.com
+# > 高铁管家
+# hostname = cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+# > 工时记录
+# hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com
+# > 挂号网（微医）
+# hostname = kano.guahao.cn, app.wy.guahao.com
+# > 怪兽充电
+# hostname = awg.enmonster.com, aag.enmonster.com
+# 微信小程序
+# > 冠寓
+# hostname = guanyu.longfor.com
+# 开屏广告
+# > 国家医保服务平台
+# hostname = fuwu.nhsa.gov.cn
+# 开屏广告
+# > 国美电器
+# hostname = prom.mobile.gome.com.cn
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# > 海豚优惠
+# hostname = *.townmalls.cn
+# > 韩剧TV
+# hostname = gfp.veta.naver.com, api.hanju.koudaibaobao.com
+# > 杭州公交
+# hostname = m.ibuscloud.com
+# > 杭州市民
+# hostname = ads.iconntech.com, smkmp.96225.com
+# > 航旅纵横
+# hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com, oss.umetrip.com
+# 此条存在首页横幅误杀，可以禁止MITM域名
+# > 好好住
+# hostname = api.haohaozhu.cn
+# > 好奇心日报
+# hostname = notch.qdaily.com, app3.qdaily.com
+# > 好型体重秤
+# hostname = open.fitdays.cn
+# > 盒马
+# hostname = acs.m.taobao.com, acs-m.freshippo.com
+# > 横店电影小程序
+# 开屏广告
+# > 红版报
+# hostname = fbchina.flipchina.cn
+# > 虎扑
+# hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
+# > 虎嗅
+# hostname = api-ad-product.huxiu.com
+# > 虎牙直播
+# hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+# > 花生地铁
+# hostname = cmsapi.wifi8.com, cmsfile.wifi8.com
+# > 华尔街见闻
+# hostname = api-one-wscn.awtmt.com, api.wallstreetcn.com
+# > 华住会
+# hostname = appapi.huazhu.com, hweb-hotel.huazhu.com, hweb-manager.huazhu.com
+# 开屏广告
+# > 黄油相机
+# hostname = api4.bybutter.com
+# > 火猫
+# hostname = api.huomao.com
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 极简汇率
+# hostname = explorer.tratao.com
+# > 驾考宝典
+# hostname = *.kakamobi.cn, smart.789.image.mucang.cn
+# > 驾校一点通
+# hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
+# 开屏广告 感谢【jinlvei】分享
+# > 建行生活
+# hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
+# > 界面新闻
+# hostname = img.jiemian.com
+# > 今日头条
+# hostname = p*.pstatp.com
+# 感谢【Jörgen Frecht】分享
+# > 金山词霸
+# hostname = dict-mobile.iciba.com, mobile-pic.cache.iciba.com, service.iciba.com, *.kingsoft-office-service.com
+# > 金十数据
+# hostname = jad-api.jin10.com
+# 开屏广告和应用内弹窗
+# > 京东
+# hostname = api.m.jd.com, dns.jd.com
+# 禁京东直播小窗
+# > 京东金融
+# hostname = m.360buyimg.com, api.m.jd.com, bdsp-x.jd.com, dsp-x.jd.com, ms.jr.jd.com, appconf.mail.163.com, support.you.163.com
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 看理想
+# hostname = api.vistopia.com.cn
+# > 看天下
+# hostname = open3.vistastory.com
+# > 肯德基
+# hostname = res.kfc.com.cn
+# > 快递100
+# hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+# > Keep
+# hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
+# 屏蔽应用内弹窗
+# 屏蔽部分启动弹窗
+# 屏蔽开屏广告请求
+# 屏蔽青少年弹窗
+# 屏蔽搜索栏自动填充词
+# 屏蔽热词
+# 屏蔽hotCourse
+# 屏蔽adwebapp
+# 屏蔽广告预加载
+# 屏蔽adbox
+# 屏蔽更新
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# > 来疯
+# hostname = api.laifeng.com, api.jxedt.com
+# > 莱充
+# hostname = mobile.laichon.com, shop.laichon.com
+# > 拦截100
+# hostname = tagit.hyhuo.com
+# > 蓝基因
+# hostname = tk.lanjiyin.com.cn
+# 首页弹窗广告 OCc分享
+# > 懒人听书
+# hostname = 118.178.214.118, dapis.mting.info, display.wting.info
+# > 懒投资
+# hostname = ios.lantouzi.com
+# > 乐橙
+# hostname = dl-cu-hz.lechange.cn
+# > 联想
+# hostname = api.club.lenovo.cn
+# > 两步路
+# host-suffix, admobile.top, reject
+# > Line
+# hostname = a.line.me, ad.line-scdn.net, w.line.me, gw.line.naver.jp, lan.line.me, buy.line.me, crs-event.line.me, obs.line-scdn.net, d.line-scdn.net, scdn.line-apps.com, sch.line.me, static.line-scdn.net, nelo2-col.linecorp.com, uts-front.line-apps.com, cix.line-apps.com, legy.line-apps.com, ec-bot-obs.line-scdn.net
+# > linxi
+# hostname = api.internetofcity.cn
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 马蜂窝
+# hostname = mapi.mafengwo.cn
+# > 埋堆堆
+# hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com, conf-darwin.xycdn.com, *.ubixioe.com
+# > 买单吧
+# hostname = creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, creditcard.bankcomm.cn, creditcard.bankcomm.com
+# > 漫画人
+# hostname = mangaapi.manhuaren.com, *mangaapi.manhuaren.*
+# > 芒果TV
+# hostname = *.mgtv.com
+# 无用请求
+# > 猫耳FM
+# hostname = app.missevan.com
+# 开屏广告 感谢【可莉🅥】分享
+# > 每日优鲜
+# hostname = j-image.missfresh.cn
+# > 美图秀秀
+# hostname = mea.meitudata.com, adui.tg.meitu.com
+# > 美味不用等
+# hostname = capi.mwee.cn
+# > 美柚
+# hostname = x.seeyouyima.com, axxd.xmseeyouyima.com, config-service.seeyouyima.com
+# > 秒拍
+# hostname = b-api.ins.miaopai.com
+# > 蘑菇租房
+# hostname = api.mgzf.com
+# > MIX
+# hostname = dispatcher.camera360.com
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# > 农业银行
+# hostname = midc.cdn-static.abchina.com.cn, enjoy.cdn-static.abchina.com
+# ^https?:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(?!bbc2|f015|1655|0992|4678|a194|d8e2|c513|e51c|0ee1|166e|05ca|c882|d5b8|22ed|a0dc|a55a|6f89|3bf9|3c71|52ec|5b62|ve7a|001c|923d|accf|4a10|0bd7|be7a|5b62|5dd6|1f24|006c|775d|bd02|b983|5251|806b|d119|db14|43c9|41d3|8570|2c10|85ea|1435|814e|f422|aec7|738c|d7c8|0538|02b4|fd20|7647|f6ef|07c5|885b|e4cb|685b|30aa|c23b|9603|f27f|eaf8|8011|a5eb|409d|724c|3f2a|e07f|6744|60a6|158c|8ce3) reject-dict
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# > ofo共享单车
+# hostname = supportda.ofo.com, ma.ofo.com, activity2.api.ofo.com
+# > omofun
+# hostname = 103.91.210.141
+# > ONE
+# hostname = v3.wufazhuce.com, app.api.d3yuiw4.com, api.21ec74.com
+# > Oray
+# hostname = slapi.oray.net
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > 澎湃新闻
+# hostname = adpai.thepaper.cn
+# > 拼多多
+# hostname = api.pinduoduo.com, api.yangkeduo.com, mobile.yangkeduo.com
+# > 平安好车主
+# hostname = iobs.pingan.com.cn, hcz-member.pingan.com.cn
+# > 朴朴超市
+# hostname = j1.pupuapi.com
+# 广告下发
+# 主页实惠卡横幅
+# > 浦发银行
+# hostname = lban.spdb.com.cn, wap.spdb.com.cn
+# > pikpak
+# hostname = access.mypikpak.com
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# > 七猫小说
+# hostname = open.e.kuaishou.cn, api-access.pangolin-sdk-toutiao-b.com, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, dsp-x.jd.com, api-cfg.wtzw.com, p1-lm.adukwai.com, lf-cdn-tos.bytescm.com
+# 删除了域名lf-cdn-tos.bytescm.com，原因是无法MITM
+# > 企迈 - QMAI(包含: 挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵)
+# hostname = webapi.qmai.cn, miniapp.qmai.cn
+# > 起点读书
+# hostname = qidian.qpic.cn, mage.if.qidian.com, magev6.if.qidian.com
+# > 汽水音乐
+# hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
+# 字节跳动广告
+# > 前程无忧 51Job
+# hostname = appapi.51job*.com, cupid.51job*.comhostname
+# 去广告 (需卸载App重装) img01.51jobcdn.com
+# 开屏及营销广告
+# 顶部弹窗
+# 首页右上角浮窗及右边浮标
+# 弹窗广告
+# > 亲宝宝
+# hostname = api.qbb6.com
+# > 穷游
+# hostname = open.qyer.com, media.qyer.com
+# > 球迷报
+# hostname = a.qiumibao.com
+# > 去哪儿
+# hostname = qde.qunar.com, homefront.qunar.com, client.qunar.com
+# > 全家便利店
+# hostname = fmapp.chinafamilymart.com.cn
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 消息页感兴趣推荐
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 其他 - 服务器推送配置
+# > QQ浏览器
+# hostname = us.l.qq.com
+# > QQ钱包
+# hostname = m.qianbao.qq.com
+# > QQ音乐
+# hostname = us.l.qq.com, y.gtimg.cn, music.y.qq.com
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# > 人民日报
+# hostname = app.peopleapp.com, stat.peopleapp.com, adstatic.peopleapp.com
+# > 人人视频
+# hostname = api.rr.tv
+# RRTV_屏蔽軟件更新
+# > 日日煮
+# hostname = cms.daydaycook.com.cn, api.daydaycook.com.cn
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# > 三联中读
+# hostname = apis.lifeweek.com.cn
+# > 山姆会员商店
+# hostname = api-sams.walmartmobile.cn
+# > 少数派
+# hostname = ios.sspai.com
+# > 神马
+# hostname = editor.sm.cn
+# > 盛趣游戏
+# hostname = daoyu.sdo.com
+# > 识货
+# hostname = sh-gateway.shihuo.cn, static.shihuocdn.cn
+# 开屏广告
+# > 首旅如家
+# hostname = app.homeinns.com
+# > 首汽约车
+# hostname = gw-passenger.01zhuanche.com, img.yun.01zhuanche
+# > 书旗小说
+# hostname = ut2.shuqistat.com, dsp.toutiao.com, sf3-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, sq.sljkj.com, ocean.shuqireader.com, img-tailor.11222.cn, message.shuqireader.com, feedback.uc.cn, *.shuqireader.com, 101.91.69.26
+# > 顺丰优选
+# hostname = mapi.sfbest.com
+# > 搜狗输入法
+# hostname = business-cdn.shouji.sogou.com, ios.sogou.com, android.sogou.com, h5api.sginput.qq.com
+# 开屏广告
+# > 搜狐
+# hostname = *.souhu.com
+# > 苏宁易购
+# hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
+# > Soul
+# hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
+# 国际版Soul去广告
+# > Spotify
+# hostname = *-spclient.spotify.com, spclient.wg.spotify.com
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > 太平洋电脑
+# hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
+# > 淘票票
+# hostname = acs.m.taobao.com
+# 开屏广告
+# > 淘淘阅读
+# hostname = bid.adview.cn
+# 感谢【Baby】分享
+# > 腾讯乘车码
+# hostname = ccmsupport-sz.tenpay.com
+# 感谢【jinlvei】分享
+# > 腾讯体育
+# hostname = news.ssp.qq.com, sports3.gtimg.com
+# > 腾讯新闻
+#^https?:\/\/r\.inews\.qq\.com\/getSplash\?apptype=ios&startarticleid=&__qnr= reject-img
+# > 腾讯游戏
+# hostname = qt.qq.com
+# > 腾讯游戏社区
+# hostname = static.gameplus.qq.com
+# 如果想拦截1234567890-1234?wx类的长连接就加长规则,不加结尾符,只要前面的匹配了都会拦截。
+# > 天天基金
+# hostname = j5.dfcfw.com, appactive.1234567.com.cn
+# > 天星金融
+# hostname = t1.market.xiaomi.com
+# > 同程旅行
+# hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
+# 开屏广告
+# > 同花顺
+# hostname = adm.10jqka.com.cn, iphone.ac.qq.com, stat.10jqka.com.cn
+# > 途虎养车
+# hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
+# 包含途虎小程序和App净化
+# > 途家民宿
+# hostname = client.tujia.com
+# > Top Widgets
+# hostname = top-widgets-api.xiaozujian.com
+# > TruthSocial
+# hostname = truthsocial.com
+# > TubeMax
+# hostname = *.i18n-pglstatp.com
+# 感谢【可莉】分享
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# > U净
+# hostname = api-marketing.zhinengxiyifang.cn, adsoss.zhinengxiyifang.cn, ads.zhinengxiyifang.cn
+# > udn news
+# hostname = pubads.g.doubleclick.net, pagead2.googleadservices.com
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > 完美世界电竞
+# hostname = api.wmpvp.com
+# 开屏广告
+# > 万词王
+# hostname = wanciwangdata.oss-cn-beijing.aliyuncs.com, recite.perfectlingo.com
+# 移除开屏
+# > 网上国网
+# hostname = osg-static.sgcc.com.cn, osg-service.sgcc.com.cn
+# > 网易大神
+# hostname = god.gameyw.netease.com, app-conf.ds.163.com
+# 广告下发
+# > 网易考拉
+# hostname = kaola-haitao.oss.kaolacdn.com, sp.kaola.com, gw.kaola.com
+# > 网易严选
+# hostname = support.you.163.com, m.you.163.com, yanxuan.nosdn.127.net
+# > 网易邮箱
+# hostname = *.music.126.net, img1.126.net, www.icourse163.org, nex.163.com, g1.163.com, client.mail.163.com, c.m.163.com, interface*.music.163.com
+# > 网易有道词典
+# hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
+# 其他
+# > 威锋
+# hostname = api.wfdata.club
+# > 唯品会
+# hostname = b.appsimg.com, mapi.appvipshop.com
+# > 蜗牛睡眠
+# hostname = snailsleep.net
+# > 无他相机
+# hostname = api-release.wuta-cam.com, res-release.wuta-cam.com
+# > WIFI万能钥匙
+# > WPS
+# hostname = ios.wps.cn, mobile-pic.cache.iciba.com
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > 米读
+# hostname = apiwz.midukanshu.com
+# > 厦门航空
+# hostname = mobileapi.xiamenair.com
+# 开屏广告
+# > 西窗烛
+# hostname = lchttpapi.xczim.com
+# > 稀饭动漫
+# hostname = pzoap.moedot.net
+# > 虾米音乐
+# hostname = acs.m.taobao.com
+# > 下厨房
+# hostname = *.pglstatp-toutiao.com, res1.hubcloud.com.cnhostname
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 消息页感兴趣推荐
+# > 小爱音箱
+# hostname = info.mina.xiaoaisound.com, marketing-aibox.v.mitvos.com
+# > 小白学习打印机
+# hostname = api.xbxxhz.com
+# 捕获试卷脚本：https://raw.githubusercontent.com/Yu9191/Script/main/shijuan.js
+# > 小桔科技
+# hostname = ct.xiaojukeji.com, res.xiaojukeji.com
+# > 小利生活
+# hostname = mpos-pic.helipay.com
+# > 小牛
+# hostname = app-api.niu.com
+# > 小睡眠
+# hostname = api.psy-1.com
+# > 小兔充充
+# hostname = ad.xiaotucc.com, mapi.xiaotucc.com
+# 小程序净化
+# > 小熊艺术
+# hostname = www.xiaoxiongmeishu.com
+# > 小艺
+# hostname = api.xiaoyi.com
+# > 晓晓优选
+# hostname = xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net
+# 弹窗广告
+# 右下角的悬浮广告
+# 禁止上报设备信息
+# > 笑容加
+# hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
+# 屏蔽固件更新
+# 首页弹窗
+# > 携程
+# hostname = m.ctrip.com, ma-adx.ctrip.com, mbd.baidu.com
+# 开屏去广告
+# > 新片场
+# hostname = app.xinpianchang.com
+# > 星火英语
+# hostname = api*.sparke.cn
+# 开屏广告
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 鸭奈飞
+# hostname = pipi.4kya.com
+# > 央视频
+# hostname = cdn.cmgadx.com
+# > 一号店
+# hostname = venus.yhd.com
+# > 一起考教师
+# hostname = api.17kjs.com
+# 开屏广告及题库广告 感谢【Jessire】分享
+# > 一淘
+# hostname = acs.m.taobao.com
+# > 医考帮
+# hostname = api.yikaobang.com.cn
+# 去强制更新 感谢【SH DDDDD】分享
+# > 艺龙旅行网
+# hostname = mobile-api2011.elong.com, webboot.zhangyue.com, saad.ms.zhangyue.net
+# > 银盛通
+# hostname = ad.ysepay.com
+# > 萤石
+# hostname = i.ys7.com
+# > 映客直播
+# hostname = service.busi.inke.cn
+# > 优书
+# hostname = gongdu.youshu.cc
+# > 邮储银行
+# hostname = static.psbc.com, mcc.psbc.com, static.mobile-bank.psbc.com, d.psbc.com
+# 屏蔽升级弹窗 感谢@jinlvei分享 影响软件运行，如开启可自行添加主机名
+# > 游戏时光
+# hostname = app02.vgtime.com, www.vgtime.com
+# > 友邻优课
+# hostname = new-app-api.ylyk.com
+# > 有兔阅读(米兔)
+# hostname = img.dailmo.com, img.allahall.com, app.zhoudamozi.com
+# > 云宝宝大数据
+# hostname = nnapp.cloudbae.cn
+# > Yahoo
+# hostname = m.yap.yahoo.com
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > 掌上生活
+# hostname = mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
+# 设置栏目内广告
+# > 掌上英雄联盟
+# hostname = us.l.qq.com, ossweb-img.qq.com, mlol.qt.qq.com
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 其他 - 服务器推送配置
+# > 指点天下
+# hostname = zua.zhidiantianxia.cn
+# 开屏广告
+# > 中国电信
+# hostname = cloud.189.cn, zt-app.go189.cn
+# > 中国人保
+# hostname = zgrb.epicc.com.cn
+# 人保头条
+# > 中国移动
+# hostname = client.app.coc.10086.cn, app.10086.cn
+# 多个悬浮窗
+# > 中信银行
+# hostname = wap.bank.ecitic.com, imcs.citicbank.com
+# 开屏广告
+# > 追剧达人
+# hostname = zjdr666.com
+# > 字节跳动
+# hostname = *.pstatp.com, amemv.com, musical.com, snssdk.com, tiktokv.com, dsp.toutiao.com
+# > 最右
+# hostname = api.izuiyou.com, adapi.izuiyou.com
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 哔哩哔哩
+# hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# > crunchyroll
+# hostname = beta-api.crunchyroll.com
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# > 大师兄
+# hostname = sdk.alibaba.com.ailbaba.me, adservice.sigmob.cn
+# > 叮咚买菜
+# hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# > 飞客茶馆
+# hostname = api.flydigi.com
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# > i3
+# hostname = www.i3zh.com
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 建行生活
+# hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
+# > 京喜
+# hostname = api.m.jd.com
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 看东方（百视TV）
+# hostname = bp-api.bestv.com.cn, bp-api.bestv.cn
+# > 快递100
+# hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+# > 快手
+# hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 每日精选
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > 拼多多
+# hostname = api.pinduoduo.com, api.yangkeduo.com, mobile.yangkeduo.com
+# > 朴朴超市
+# hostname = j1.pupuapi.com
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# > 汽水音乐
+# hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# > 瑞幸咖啡
+# hostname = capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com
+# > RARBG
+# hostname = dyncdn.me
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > 台铃智能
+# hostname = www.tailgdd.com
+# > 天府市民云
+# hostname = tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+# > 天府银行小程序
+# hostname = chl.tf.cn, wechat.tf.cn
+# > 途家民宿
+# hostname = client.tujia.com
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > 万达电影
+# hostname = misc-api-prd-mx.wandafilm.com
+# > 网易大神
+# hostname = god.gameyw.netease.com, app-conf.ds.163.com
+# > 微信公众号
+# hostname = mp.weixin.qq.com
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > 喜马拉雅
+# hostname = gslbali.ximalaya.com, search.ximalaya.com, searchwsa.ximalaya.com, mobile.ximalaya.com, mobilehera.ximalaya.com, mobwsa.ximalaya.com, m.ximalaya.com, mwsa.ximalaya.com
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# > 小特 - 首选特斯拉中文社区
+# hostname = lcen.xiaote.net
+# > 小宇宙
+# hostname = api.xiaoyuzhoufm.com
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 一汽大众
+# hostname = oneapp-api.faw-vw.com
+# > 游民星空
+# hostname = *.gamersky.com
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > 浙里办
+# hostname = portal.zjzwfw.gov.cn
+# > 郑好办
+# hostname = app-izz.zhengzhou.gov.cn
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# > 转转
+# hostname = app.zhuanzhuan.com
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# > 2345天气王
+# hostname = tianqi.2345.com
+# 底下百家号广告 感谢【 🐈‍⬛👮】分享
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# > 360儿童卫士
+# hostname = ad.life.360.cn
+# 开屏广告 感谢【别怕我又不乱来】分享
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# > 51信用卡管家
+# hostname = api.u51.com
+# > 555影视
+# hostname = vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+# > 58同城
+# hostname = *.58cdn.com.cn, app.58.com
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# > 阿里巴巴
+# hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# > 阿里云盘
+# hostname = api.alipan.com, member.alipan.com
+# > 爱美剧
+# hostname = api.bjxkhc.com
+# > 爱奇艺
+# hostname = -i.vip.iqiyi.com, *.iqiyi.com
+# 播放页开通会员提示
+# 播放页多余动效
+# 播放页升级白金会员按钮
+# 青少年弹窗
+# > 爱企查
+# hostname = b2baifanfan.baidu.com
+# > 爱牵挂care
+# hostname = manager.aiqiangua.com
+# 去开屏，感谢【也許】投稿
+# > 爱桐乡
+# hostname = mapi.txcmapp.com
+# 开屏广告
+# > 安徽掌上10000
+# hostname = www.ahzs10000.com
+# > 安吉星
+# hostname = www.onstar.com.cn, api.shanghaionstar.com
+# 开屏广告
+# > Amazon
+# hostname = api-cslp-emt.amazon.cn
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 百度
+# hostname = www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, baichuan.baidu.com, api*.tuisong.baidu.com, afd.baidu.com, mobads.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, sa*.tuisong.baidu.com, m.baidu.com, sofire.baidu.com
+# > 百度地图
+# hostname = dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com
+# > 百度输入法
+# hostname = r6.mo.baidu.com, res.mi.baidu.com, mime.baidu.com, mbd.baidu.com
+# 百度输入法开屏
+# 应用内灵感语录 输入页面推荐里语录
+# 输入法点击图标
+# > 百度文库
+# hostname = appwk.baidu.com
+# > 百信银行
+# hostname = mres.aibank.com
+# > 半月谈
+# hostname = www.banyuetanapp.com
+# 开屏广告
+# > 薄荷健康
+# hostname = api.boohee.com, bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn, lego.boohee.com, status.boohee.com
+# 记录 悬浮部件
+# 记录 发布
+# 记录 搜索发现
+# 记录 消息 通知 横幅推广
+# 弹窗配置
+# 绑定设备 横幅推广
+# > 宝宝树孕育
+# hostname = aimg.babytreeimg.com, plough.babytree.com, mapiweb.babytree.com, go.babytree.com
+# 开屏广告 感谢【alist.choc.ga】分享
+# 弹窗广告 感谢【Ron】分享
+# > 北京银行
+# hostname = cdnmobibank.bankofbeijing.com.cn
+# > 比亚迪王朝
+# hostname = cache.bydauto.com.cn
+# 首页开屏
+# > 币安
+# hostname = www.binance.info, www.yingwangtech.net, www.binance.com
+# 开屏广告
+# > 必胜客
+# hostname = res.pizzahut.com.cn
+# > 哔哩哔哩
+# hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com
+# > 哔哩哔哩漫画
+# hostname = manga.bilibili.com, i*.hdslb.com
+# > 波点音乐
+# hostname = bd-api.kuwo.cn, h5app.kuwo.cn, bodianimgcdn.kuwo.cn
+# 开屏广告 感谢【林夕】分享
+# > 乐刻
+# hostname = lens.leoao.com
+# 开屏广告
+# > 掌上京彩
+# hostname = cdn-xyk-app.bankofbeijing.com.cn
+# > Blued
+# hostname = social.blued.cn
+# 主页推荐直播 
+# 未登录时个人界面广告
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# > 彩云天气
+# > 菜鸟裹裹
+# hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
+# 首页 好物推荐,商品推广,底部标签页,快递详情页,问卷调查,主页图标
+# 发现页 数字角标 裹裹券
+# > 曹操专车
+# hostname = ptmpcap.caocaokeji.cn, cap.caocaokeji.cn
+# > 超级课程表
+# hostname = 182.92.244.70, ad.myfriday.cn
+# 开屏广告 由【jinlvei】分享
+# > 潮玩宇宙
+# hostname = ios-api.lucklyworld.com
+# 开屏广告
+# > 车来了
+# hostname = pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
+# > 创客贴设计
+# hostname = gw.chuangkit.com
+# > 长城炼金术
+# hostname = fintechappdr.cgws.com
+# 感谢【Joe Joy】分享
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# > 达达骑士版
+# hostname = delivery-api.imdada.cn
+# 开屏广告，弹窗广告，首页置顶轮播广告 感谢【T大G】分享
+# > 大疆商城
+# hostname = se-api.djiits.com
+# 去开屏广告
+# > 大麦
+# hostname = acs.m.taobao.com, amdc.m.taobao.com
+# > 大师兄
+# hostname = sdk.alibaba.com.ailbaba.me, adservice.sigmob.cn
+# > 大众点评
+# hostname = 103.37.155.60, *.dianping.com, img.meituan.net, p.meituan.com, rms.meituan.com, www.dpfile.com, awp-assets.meituan.net, s3plus.meituan.net, p*.meituan.net, ddplus.meituan.net
+# > 到梦空间
+# hostname = appdmkj.5idream.net
+# 开屏广告 感谢【企鹅】分享
+# 更新弹窗 感谢【企鹅】分享
+# 我的页面广告
+# > 得物
+# > 低端影视
+# hostname = img.ddrk.me, ddrk.me
+# > 滴滴出行
+# hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
+# > 滴滴代驾
+# hostname = daijia.kuaidadi.com, as.xiaojukeji.com
+# 横幅广告
+# > 滴滴青桔
+# hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
+# > 嘀嗒出行
+# hostname = capis*.didapinche.com, adx-cn.anythinktech.com, www.didapinche.com
+# > 电E宝
+# hostname = app.95598pay.com
+# > 叮嗒出行
+# hostname = img.admobile.top, webcdn.m.qq.com
+# > 叮咚买菜
+# hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
+# VIP开通弹窗
+# 我的页弹窗(暂未启用)
+# 我的页-猜你喜欢
+# 购物车顶部VIP横条
+# 购物车-猜你喜欢
+# > 盯盯拍
+# hostname = *.pglstatp-toutiao.com, api.htp.ad-scope.com.cn, appgw.ddpai.com, init.sms.mob.com, apphw.ddpai.com
+# > 钉钉
+# hostname = gw.alicdn.com, img.alicdn.com
+# 误杀少 解决阿里系的开屏 目前测试咸鱼/钉钉 感谢【zzzzzz】分享
+# > 东方财富
+# hostname = app.ceair.com
+# 东方航空
+# > 动画疯
+# hostname = api.gamer.com.tw
+# > 动卡空间
+# hostname = ump.sz.creditcard.ecitic.com, m.creditcard.ecitic.com
+# 开屏广告
+# > 斗鱼直播
+# hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
+# > 豆瓣
+# hostname = api.douban.com
+# 如开启可自行添加主机名 img*.douban.com, frodo.douban.com, erebor.douban.com
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# > 饿了么
+# hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+# > e充电
+# hostname = cdn-evone-ceph.echargenet.com
+# > e代驾
+# hostname = pic.edaijia.cn
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# > 发现精彩
+# hostname = static.95508.com
+# 开屏广告
+# > 返利网
+# hostname = l*.51fanli.net
+# > 飞客茶馆
+# hostname = api.flydigi.com
+# 开屏 需要卸载重装
+# > 飞猪
+# hostname = acs.m.taobao.com, gw.alicdn.com
+# > 分期乐
+# hostname = fm.fenqile.com
+# > 凤凰秀
+# hostname = dsa-mfp.fengshows.cn, api.fengshows.com
+# > 福享太平
+# hostname = ecloud.tppension.cntaiping.com
+# 去开屏广告
+# > 富途牛牛
+# hostname = api*.futunn.com
+# 我的横幅广告
+# 账户和交易横幅广告
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# > 高德地图
+# hostname = m*.amap.com, optimus-ads.amap.com, amap-aos-info-nogw.amap.com
+# > 高铁管家
+# hostname = cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+# > 工商银行
+# hostname = v.icbc.com.cn
+# 如开启可自行添加主机名
+# > 工时记录
+# hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com
+# > 工银E生活
+# hostname = pv.elife.icbc.com.cn
+# > 工银e生活小程序
+# hostname = elife.icbc.com.cn
+# 如开启可自行添加主机名
+# > 公考雷达
+# hostname = api.gongkaoleida.com
+# > 故宫博物馆小程序
+# 开屏广告
+# > 挂号网（微医）
+# hostname = kano.guahao.cn, app.wy.guahao.com
+# > 怪兽充电
+# hostname = awg.enmonster.com, aag.enmonster.com
+# > 光大银行
+# hostname = mobile.cebbank.com, yghsh.cebbank.com
+# > 光大银行 阳光惠生活
+# hostname = yghsh.cebbank.com
+# > 广发银行
+# hostname = static.95508.com, mps.95508.com
+# > 广汽传祺
+# hostname = gsp.gacmotor.com
+# 开屏广告 感谢【Charlie】分享
+# 更新弹窗  感谢【企鹅】分享
+# > 广州农商银行
+# hostname = mbank.grcbank.com
+# > 国泰君安
+# hostname = dl.app.gtja.com, dl*.app.gtja.com
+# > Google
+# hostname = pagead2.googlesyndication.com
+# 如开启可自行添加主机名，但似乎已不可MITM
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# > 哈富证券
+# hostname = emisdatacenteraws.hafoo.com
+# 横幅广告
+# > 嗨学
+# hostname = www.haixue.com
+# 屏蔽开屏广告
+# > 海尔服务小程序
+# hostname = service.haiersmarthomes.com
+# 横幅广告
+# > 海马爸比
+# hostname = hmbaby.simshine.cn
+# > 杭州市民
+# hostname = ads.iconntech.com, smkmp.96225.com
+# > 合利宝展业通
+# hostname = promote-trx.helipay.com
+# > 和风天气
+# hostname = hfapp-service.qweather.net
+# 感谢【可莉】分享
+# > 盒马
+# hostname = acs.m.taobao.com, acs-m.freshippo.com
+# > 横店电影小程序
+# 顶部横幅广告
+# 中间横幅广告
+# > 虎扑
+# hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
+# > 虎牙直播
+# hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
+# > 花生地铁
+# hostname = cmsapi.wifi8.com, cmsfile.wifi8.com
+# > 花小猪
+# hostname = res.hongyibo.com.cn
+# 开屏
+# > 华宝智投
+# hostname = api.touker.com
+# > 华彩生活
+# hostname = static.creditcard.hxb.com.cn
+# > 华尔街见闻
+# hostname = api-one-wscn.awtmt.com, api.wallstreetcn.com
+# 开屏广告 感谢【Joe Joy】分享
+# > 华盛通
+# hostname = interface.hstong.com
+# 横幅广告
+# > 华住会
+# hostname = appapi.huazhu.com, hweb-hotel.huazhu.com, hweb-manager.huazhu.com
+# 推荐信息
+# 新客专享: queryNewNotice | 天天特惠四方格: querySelectHotel | 华住品牌: queryHotelBrand | 华住商城: queryMall | 华住世界: huazhuWorld
+# 弹窗广告
+# 更新屏蔽
+# 搜索酒店上方Banner
+# > 汇丰汇选
+# hostname = m.prod.app.hsbcfts.com.cn
+# 屏蔽升级弹窗 感谢【Charlie】分享
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 机核网
+# hostname = www.gcores.com
+# 开屏广告 感谢【Ava阿檬】分享
+# > 吉林银行
+# hostname = cdn.jlbank.com.cn
+# > 加油广东
+# hostname = img.gdoil.cn
+# > 驾考宝典
+# hostname = *.kakamobi.cn, smart.789.image.mucang.cn
+# > 驾校一点通
+# hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
+# > 简讯
+# hostname = api.tipsoon.com
+# > 建行生活
+# hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
+# 首页横幅广告
+# 内置饿了么
+# > 江苏银行
+# hostname = mbank5.jsbchina.cn
+# 可能导致登录验证码不显示
+# > 街电
+# hostname = s.jiediankeji.com
+# 微信小程序
+# > 今日水印相机
+# hostname = api.sogaha.cn
+# > 金山词霸
+# hostname = dict-mobile.iciba.com, mobile-pic.cache.iciba.com, service.iciba.com, *.kingsoft-office-service.com
+# > 京东读书
+# hostname = jdread-api.jd.com
+# > 京东健康
+# hostname = m.360buyimg.com
+# > 京东金融
+# hostname = m.360buyimg.com, api.m.jd.com, bdsp-x.jd.com, dsp-x.jd.com, ms.jr.jd.com, appconf.mail.163.com, support.you.163.com
+# > 京东云无线宝
+# hostname = router-app-api.jdcloud.com
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 开源中国
+# hostname = www.oschina.net
+# > 看东方（百视TV）
+# hostname = bp-api.bestv.com.cn, bp-api.bestv.cn
+# 开屏广告 感谢【树先生】分享
+# > 肯德基
+# hostname = res.kfc.com.cn
+# > 口袋校园
+# hostname = pocketuni.net
+# > 酷我音乐
+# hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
+# 广告
+# > 快递100
+# hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+# > 快看
+# hostname = api.kkmh.com
+# > 快手
+# hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com
+# > Keep
+# hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# > 拉卡拉
+# hostname = gmp.lakala.com, wallet.lakala.com
+# > 来电
+# hostname = mobile-api.imlaidian.com
+# 小程序净化
+# > 懒人听书
+# hostname = 118.178.214.118, dapis.mting.info, display.wting.info
+# > 乐堡潮玩馆小程序
+# 开屏广告+弹窗广告
+# > 联想至像打印
+# hostname = abcapi.lenovoimage.com
+# app开屏
+# > 猎聘
+# hostname = api-ac.liepin.com, api-wanda.liepin.com
+# > 鲁班到家用户版
+# hostname = order-app-api.lbdj.com
+# 去开屏广告
+# > 旅法师营地
+# hostname = www.iyingdi.cn
+# > 旅途随身听
+# hostname = www.1314zhilv.com
+# > 罗森点点
+# hostname = plt.yorentown.com, lawsonapi.yorentown.com
+# > Line
+# hostname = a.line.me, ad.line-scdn.net, w.line.me, gw.line.naver.jp, lan.line.me, buy.line.me, crs-event.line.me, obs.line-scdn.net, d.line-scdn.net, scdn.line-apps.com, sch.line.me, static.line-scdn.net, nelo2-col.linecorp.com, uts-front.line-apps.com, cix.line-apps.com, legy.line-apps.com, ec-bot-obs.line-scdn.net
+# > LING Club-原菱菱邦
+# (第一条一劳永逸,误杀很多,后面几条没有误杀,需要频繁更新规则)
+# > LocSim
+# hostname = app.aa-ab.com
+# 屏蔽虚拟定位升级弹窗
+# > lofter
+# hostname = ad.lofter.com, images.pinduoduo.com, lofter.lf127.net
+# 开屏广告 感谢@林夕分享
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 妈妈网孕育
+# hostname = qimg.cdnmama.com
+# 开屏广告
+# > 马达出行
+# hostname = mada-travel.17u.cn, ebk.17u.cn
+# 开屏广告
+# 我的会员中心
+# 首页下方推广
+# 屏蔽更新
+# > 马蜂窝
+# hostname = mapi.mafengwo.cn
+# > 马卡龙玩图
+# hostname = app.api.versa-ai.com, static01.versa-ai.com
+# > 埋堆堆
+# hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com, conf-darwin.xycdn.com, *.ubixioe.com
+# > 买单吧
+# hostname = creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, creditcard.bankcomm.cn, creditcard.bankcomm.com
+# > 麦当劳
+# hostname = api.mcd.cn
+# > 脉脉
+# hostname = open.taou.com, h3.open.taou.com
+# 开屏广告、职位页面横幅
+# 赠送礼物 横幅
+# 帖子文末推广卡片
+# > 芒果TV
+# hostname = *.mgtv.com
+# 首页左上角推广
+# 底部tab红点
+# 播放器界面
+# 升级弹窗
+# 搜索框填充词
+# > 猫眼
+# hostname = p0.pipi.cn
+# 开屏广告
+# > 每日精选
+# > 美图秀秀
+# hostname = mea.meitudata.com, adui.tg.meitu.com
+# > 美团 & 美团外卖
+# hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
+# > 美团充电宝小程序
+# hostname = cdb.meituan.com
+# > 美团众包
+# hostname = peisongapi.meituan.com
+# > 咪咕视频
+# hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
+#^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ reject-dict
+# > 米家
+# hostname = home.mi.com
+# > 民生银行
+# hostname = www.cmbc.com.cn, rs.creditcard.cmbc.com.cn
+# > 全民生活
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# > 奈菲影视
+# hostname = www.nfmovies.com
+# > 南方航空
+# hostname = 3g.csair.com
+# 弹窗
+# > 宁聚
+# hostname = api.nj.nbtv.cn
+# 开屏广告
+# 弹窗广告
+# > 牛津高阶词典第十版
+# hostname = oxadmin.cp.com.cn
+# 首页下方广告
+# > 牛听听
+# hostname = gateway.benewtech.cn, ntt-app.benewtech.cn
+# > 农业银行
+# hostname = midc.cdn-static.abchina.com.cn, enjoy.cdn-static.abchina.com
+# > NTPlay
+# hostname = blog.nilbt.com
+# 去升级弹窗 【Hua alex】分享
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# > ONE
+# hostname = v3.wufazhuce.com, app.api.d3yuiw4.com, api.21ec74.com
+# 开屏广告
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > 皮皮搞笑
+# hostname = adapi.izuiyou.com
+# > 票根
+# hostname = pss.txffp.com
+# > 票星球
+# hostname = appapi.caiyicloud.com
+# > 拼多多
+# hostname = api.pinduoduo.com, api.yangkeduo.com, mobile.yangkeduo.com
+# > 平安好车主
+# hostname = iobs.pingan.com.cn, hcz-member.pingan.com.cn
+# > 平安口袋银行
+# hostname = cdn.sdb.com.cn
+# > 平安壹钱包
+# hostname = mobile.1qianbao.com
+# > 平安证券
+# hostname = pacdn.m.stock.pingan.com
+# 开屏广告 感谢【umie】分享
+# > 朴朴超市
+# hostname = j1.pupuapi.com
+# 搜索框页面热榜
+# 朴朴超市订单待收货页右下角悬浮广告
+# 购物车页去换购推荐
+# 各种页面的商品推荐
+# 个人主页会员标识
+# > 浦大喜奔
+# hostname = image.spdbccc.com.cn
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# > 奇瑞汽车
+# hostname = mobile-consumer-sapp.chery.cn
+# 开屏广告
+# > 起点读书
+# hostname = qidian.qpic.cn, mage.if.qidian.com, magev6.if.qidian.com
+# 起点读书投票、章末免费领取章节卡等
+# 我的界面内测推广
+# 书架置顶推广(保留签到移除花哨背景)
+# 发现上面的图标屏蔽
+# > 汽车之家
+# hostname = adproxy.autohome.com.cn, app2.autoimg.cn
+# > 汽水音乐
+# hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
+# 发现页面 正在直播
+# 邀请开通会员弹窗
+# > 前程无忧 51Job
+# hostname = appapi.51job*.com, cupid.51job*.comhostname
+# 屏蔽更新
+# 底栏中央活动标
+# > 穷游
+# hostname = open.qyer.com, media.qyer.com
+# > 去哪儿
+# hostname = qde.qunar.com, homefront.qunar.com, client.qunar.com
+# 开屏广告
+# > 全民K歌
+# hostname = y.gtimg.cn
+# > 全能浏览器
+# hostname = mi.gdt.qq.com
+# 感谢【梭哈 All in】分享
+# > 全球购骑士卡
+# hostname = facade-api.black-unique.com
+# 开屏广告 感谢【Kook】分享
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# 屏蔽广告
+# 今日运势 商城 Beat专区 音乐收藏家 | type:ACTIVITY | 低至5.2折
+# 播放页歌名下方∶乐迷团｜关注｜播放页提示｜音乐应用红点｜播放提示
+# 搜索页热搜卡片｜猜你喜欢｜我的应用下方提醒
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 搜索页多余推荐列表
+# 这些宝贝超好卖
+# 用闲鱼币买更便宜
+# 闲鱼我的页面底部商品推荐
+# 开屏广告
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# 惊喜弹窗
+# 信息流
+# 评论区图片水印
+# > 云快充
+# hostname = gw3.ykccn.com
+# 微信小程序
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
+# 会员页面 - 弹窗、悬浮动图
+# 我的页面 - 项目列表、会员卡片
+# 搜索页 - 关键词、猜你想搜
+# 回答详情页 - 评论区顶部、下一个回答
+# 网页版去广告 //www.zhihu.com, zhuanlan.zhihu.com
+# > QQ音乐
+# hostname = us.l.qq.com, y.gtimg.cn, music.y.qq.com
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# > 人民日报
+# hostname = app.peopleapp.com, stat.peopleapp.com, adstatic.peopleapp.com
+# > 人人视频
+# hostname = api.rr.tv
+# RRTV_屏蔽限時彈窗
+# > 日产智联
+# hostname = oneapph5.dongfeng-nissan.com.cn
+# 开屏广告
+# > 日淘任意门
+# hostname = app.meruki.cn
+# 开屏广告 感谢【Ava阿檬】分享
+# > 瑞幸咖啡
+# hostname = capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com
+# > RARBG
+# hostname = dyncdn.me
+# https://rarbgmirror.org/torrents.php
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# > 山姆会员商店
+# hostname = api-sams.walmartmobile.cn
+# 屏蔽更新
+# > 闪动校园
+# hostname = api.huachenjie.com, open.e.kuaishou.cn, ad.shunchangzhixing.com, zlsdk.1rtb.net
+# 去除ai视频
+# 去除顶部横幅
+# 去除首页广告
+# 去除“我”页面下方福袋
+# 去除开屏广告
+# > 闪现一下
+# hostname = api.gameplus.qq.com
+# > 深圳通
+# hostname = ecard.shenzhentong.com
+# > 什么值得买
+# hostname = homepage-api.smzdm.com, haojia-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s-api.smzdm.com, haojia.m.smzdm.com
+# > 神舟汽车
+# hostname = img01.10101111cdn.com
+# > 省省回头车
+# hostname = www.ymm56.com
+# 开屏广告 需要清理缓存
+# > 识货
+# hostname = sh-gateway.shihuo.cn, static.shihuocdn.cn
+# > 首汽约车
+# hostname = gw-passenger.01zhuanche.com, img.yun.01zhuanche
+# > 顺丰快递
+# hostname = ccsp-egmas.sf-express.com, ucmp.sf-express.com
+# APP净化 感谢【怎么肥事】分享
+# > 顺丰快递小程序
+# hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
+# > 四季線上影視
+# hostname = service.4gtv.tv
+# > 搜电充电
+# hostname = wxs-weixin.sd.zhumanggroup.com
+# 微信小程序
+# > 搜狗输入法
+# hostname = business-cdn.shouji.sogou.com, ios.sogou.com, android.sogou.com, h5api.sginput.qq.com
+# 屏蔽游戏中心
+# > 搜狐
+# hostname = *.souhu.com
+# > 苏打校园APP
+# hostname = api.sodalife.xyz
+# > 苏宁易购
+# hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
+# 新人专享弹窗
+# > 苏周到
+# hostname = szdmobile.suzhou.gov.cn
+# 更新提示 感谢【alist.choc.ga】分享
+# > 苏e行
+# hostname = ad.shunchangzhixing.com, api.bwton.com
+# 需卸载重装，有缓存
+# 开屏广告 感谢【alist.choc.ga】分享
+# 软件内推广广告 感谢【为什么要看头像呢】分享
+# > Soul
+# hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
+# 信息流，帖子详情页等各种广告
+# > Spotify
+# hostname = *-spclient.spotify.com, spclient.wg.spotify.com
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > 太平洋电脑
+# hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
+# > 太平洋知科技
+# hostname = mrobot.pconline.com.cn
+# > 淘宝
+# hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# > 腾讯地图
+# hostname = 4gimg.map.qq.com
+# > 天府市民云
+# hostname = tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+# 注意：生活圈,社区打不开 需要的自己添加主机名
+# > 天府手机银行
+# hostname = cgbank.oss-cn-shenzhen.aliyuncs.com
+# > 天府通
+# hostname = ams-cdn.cdtft.cn
+# 需卸载重装，因为设置里没有清楚缓存，推荐搭配旧版5.2.0使用 感谢【Leo】分享
+# > 天府银行小程序
+# hostname = chl.tf.cn, wechat.tf.cn
+# 首页弹窗广告
+# > 天猫精灵
+# hostname = ossgw.alicdn.com, zconfig.alibabausercontent.com
+# > 天猫养车
+# hostname = api.ncarzone.com
+# 中间横幅广告
+# 右下角悬浮广告
+# > 天山云TV
+# hostname = www.tsytv.com.cn
+# > 天天基金
+# hostname = j5.dfcfw.com, appactive.1234567.com.cn
+# > 天翼云盘
+# hostname = api.cloud.189.cn
+# 感谢【All in 梭哈】分享
+# > 同程旅行
+# hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
+# 景点界面轮播图和右下角悬浮窗
+# 租车界面 广告
+# 酒店界面广告
+# > 同花顺
+# hostname = adm.10jqka.com.cn, iphone.ac.qq.com, stat.10jqka.com.cn
+# 同花顺至尊版 感谢【梭哈 All in】分享
+# > 途虎养车
+# hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
+# > 途家民宿
+# hostname = client.tujia.com
+# 需要卸载重装
+# > 途牛
+# hostname = m.tuniu.com
+# > 推栏
+# hostname = m.pvp.xoyo.com
+# 去开屏广告 需要重装
+# > 迅雷
+# hostname = images.client.vip.xunlei.com, api-shoulei-ssl.xunlei.com
+# > Talkatone
+# hostname = alt-r.my.com, imgx.jampp.com
+# > TapTap
+# hostname = api.taptapdada.com
+# 开屏广告 感谢【TEXAS】分享
+# > TT语音
+# hostname = ga-album-cdnqn.52tt.com
+# 开屏广告 个别图片误杀 如开启可自行添加主机名
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# > U净
+# hostname = api-marketing.zhinengxiyifang.cn, adsoss.zhinengxiyifang.cn, ads.zhinengxiyifang.cn
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# > Vista看天下
+# hostname = open3.vistastory.com
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > 本来生活
+# hostname = img0*.benlailife.com
+# > 稿定设计
+# hostname = qiye.gaoding.com
+# > 万词王
+# hostname = wanciwangdata.oss-cn-beijing.aliyuncs.com, recite.perfectlingo.com
+# 移除banner广告
+# 移除底部广告
+# 移除悬浮广告
+# > 网上国网
+# hostname = osg-static.sgcc.com.cn, osg-service.sgcc.com.cn
+# > 网易大神
+# hostname = god.gameyw.netease.com, app-conf.ds.163.com
+# 我的页面 - 横幅广告、为你推荐、更多会员权益、精选活动
+# > 网易考拉
+# hostname = kaola-haitao.oss.kaolacdn.com, sp.kaola.com, gw.kaola.com
+# > 网易蜗牛读书
+# hostname = easyreadfs.nosdn.127.net, p.du.163.com
+# > 网易新闻
+# hostname = c.m.163.com
+# > 网易邮箱
+# hostname = *.music.126.net, img1.126.net, www.icourse163.org, nex.163.com, g1.163.com, client.mail.163.com, c.m.163.com, interface*.music.163.com
+# > 网易有道词典
+# hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
+# 翻译广告
+# 首次查词弹窗
+# 首页弹窗
+# 搜索预想
+# 会员优惠券弹窗
+# 首页左上角福利中心
+# 会员界面横幅广告
+# > 网易有钱
+# hostname = client.mail.163.com
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# 屏蔽广告
+# 今日运势 商城 Beat专区 音乐收藏家 | type:ACTIVITY | 低至5.2折
+# 播放页歌名下方∶乐迷团｜关注｜播放页提示｜音乐应用红点｜播放提示
+# 搜索页热搜卡片｜猜你喜欢｜我的应用下方提醒
+# > 微店
+# hostname = thor.weidian.com
+# > 微信公众号
+# hostname = mp.weixin.qq.com
+# 公众号去除商品推广
+# > 唯品会
+# hostname = b.appsimg.com, mapi.appvipshop.com
+# APP+小程序弹窗广告
+# 右下角悬浮窗，需手动关闭广告一次
+# > 我爱卡社区管家
+# hostname = api.51credit.com
+# > 无他相机
+# hostname = api-release.wuta-cam.com, res-release.wuta-cam.com
+# > 悟空遥控器
+# hostname = img.wukongtv.com
+# > Weico(微博客户端)
+# hostname = overseas.weico.cc
+# > WiFi万能钥匙
+# hostname = cds.wifi188.com
+# 首页弹窗广告
+# > WIFI万能钥匙
+# 首页弹窗广告
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > 米游社
+# hostname = upload-bbs.mihoyo.com
+# > 西施眼
+# hostname = vapp.tmuyun.com
+# > 希尔顿
+# hostname = wcprd.hilton.com.cn
+# 荣誉客会
+# > 希沃白板5
+# hostname = cstore-en-public-tx.seewo.com
+# 开屏广告 需要卸载重装 感谢【别怕我又不乱来】分享
+# > 喜马拉雅
+# hostname = gslbali.ximalaya.com, search.ximalaya.com, searchwsa.ximalaya.com, mobile.ximalaya.com, mobilehera.ximalaya.com, mobwsa.ximalaya.com, m.ximalaya.com, mwsa.ximalaya.com
+# > 下厨房
+# hostname = *.pglstatp-toutiao.com, res1.hubcloud.com.cnhostname
+# 首页会有一小部分图片误杀
+# 去开屏
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 搜索页多余推荐列表
+# 这些宝贝超好卖
+# 用闲鱼币买更便宜
+# 闲鱼我的页面底部商品推荐
+# 开屏广告
+# > 向日葵
+# hostname = client-api-v2.oray.com
+# 开屏广告
+# 首页文字广告
+# 发现页广告
+# > 小爱音箱
+# hostname = info.mina.xiaoaisound.com, marketing-aibox.v.mitvos.com
+# > 小蚕霸王餐
+# hostname = zlsdk.1rtb.net, web2.realtech-inc.com, sdk.1rtb.net, gw.xiaocantech.com
+# 去广告（这个域名其实已经在分流中拒绝）
+# 首页横幅推广
+# 开屏广告
+# 更新弹窗
+# > 小电充电
+# hostname = smarket.dian.so, file.dian.so
+# 微信小程序
+# > 小合拓展
+# hostname = xhtz.oss-cn-guangzhou.aliyuncs.com
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# 惊喜弹窗
+# 信息流
+# 评论区图片水印
+# > 小芒
+# hostname = mgesq.api.mgtv.com, *.hitv.com
+# 我的页面-猜你喜欢
+# 我的页面-
+# 搜索排行榜单
+# 底部按钮、我的页面左上角
+# > 小米打印
+# hostname = api-miprint.hannto.com, api.indeedpower.com
+# 去开屏 感谢【别怕我又不乱来】分享
+# 主页上方广告
+# > 小米金融
+# hostname = api.jr.mi.com
+# > 小米有品
+# hostname = shopapi.io.mi.com
+# > 小米运动
+# hostname = api-mifit*.huami.com
+# > 小佩宠物
+# hostname = api.petkit.cn
+# > 小象超市
+# hostname = portal-portm.meituan.com, mall.meituan.com
+# 广告下发
+# 开屏广告
+# 首页领券悬浮红包
+# > 小熊拦截
+# hostname = spamblocker-api.zeekstudio.com
+# 去除更新弹窗
+# > 小宇宙
+# hostname = api.xiaoyuzhoufm.com
+# 移除开屏广告
+# 移除单集总结和ai总结
+# 移除搜索框内容
+# > 小Biu智家
+# hostname = shcss.suning.com
+# 开屏广告 感谢【别人别我】分享
+# > 笑容加
+# hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
+# 屏蔽更新提示
+# 商城页弹窗
+# > 携程
+# hostname = m.ctrip.com, ma-adx.ctrip.com, mbd.baidu.com
+# 更新弹窗 APP降级8.40.0版本搭配去开屏广告规则，目前没有出现MITM失败等其他问题 如开启可自行添加主机名 m.ctrip.com
+# 8.47.0以上版本会有部分图片加载不出来
+# > 心悦俱乐部
+# hostname = bgw.xinyue.qq.com
+# > 新浪新闻
+# hostname = edit.sinaapp.com
+# > 星财富
+# hostname = operationapi.fosunhanig.com
+# 开屏广告+弹窗广告+横幅广告
+# > 星途 starway
+# hostname = app.chinahxzq.com.cn
+# 开屏广告 感谢【打豆豆】分享
+# > 兴业银行
+# hostname = file.cibfintech.com
+# > 兴业证券
+# hostname = static.xyzq.cn
+# 优理宝（3秒倒计时,任意位置点一下即可跳过）
+# > 熊猫直播
+# hostname = static.api.m.panda.tv
+# > 雪球
+# hostname = api.xueqiu.com, open.xueqiu.com, stock.xueqiu.com, 39.103.79.14, 39.106.97.84, 47.95.49.75, 101.201.62.20, 101.201.62.26, 101.201.175.228, 124.250.48.3, 182.92.145.50, 182.92.251.113
+# > 讯飞
+# hostname = imeclient.openspeech.cn
+# > 迅游加速器
+# hostname = portal-xunyou.qingcdn.com
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 亚朵开屏
+# hostname = api2.yaduo.com
+# > 央视频
+# hostname = cdn.cmgadx.com
+# > 央视网
+# hostname = www.cntv.cn
+# > 曜影医疗
+# hostname = patient-api.suh.cn, userpms-api.suh.cn
+# 去开屏和弹窗广告
+# > 一刻相册
+# hostname = issuecdn.baidupcs.com
+# > 艺龙旅行网
+# hostname = mobile-api2011.elong.com, webboot.zhangyue.com, saad.ms.zhangyue.net
+# > 易车
+# hostname = api.ycapp.yiche.com, cheyouapi.ycapp.yiche.com
+# > 易捷加油
+# hostname = a.sinopecsales.com, ocrifs.ejoy.sinopec.com
+# 开屏广告
+# 小程序底部横幅广告
+# > 易校园
+# hostname = compus.xiaofubao.com
+# 开屏广告
+# > 翼支付
+# hostname = mapi-app.bestpay.com.cn
+# 弹窗广告（APP降级10.66.80版本） 如开启可自行添加主机名 
+# 开屏广告（APP降级10.66.80版本）
+# > 银盛小Y管家
+# hostname = ads.ysepay.com
+# 开屏广告
+# > 印象笔记
+# hostname = app.yinxiang.com
+# > 盈宝证券
+# hostname = api.winbull8.com
+# 首页和我的横幅广告
+# > 盈立智投
+# hostname = hz.yxzq.com
+# 我的横幅广告
+# > 永安行
+# hostname = api5.youonbike.com
+# 开屏以及app内弹窗广告
+# > 永辉
+# hostname = api.yonghuivip.com
+# > 优酷
+# hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
+# 播放页弹窗动图
+# > 悠洗APP
+# hostname = api.ulife.group
+# 净化 感谢【TEXAS】分享
+# > 邮储银行
+# hostname = static.psbc.com, mcc.psbc.com, static.mobile-bank.psbc.com, d.psbc.com
+# 添加主机名后影响APP正常运行
+# 邮储信用卡
+# > 游民星空
+# hostname = *.gamersky.com
+# 移除开屏广告、列表广告
+# > 游戏时光
+# hostname = app02.vgtime.com, www.vgtime.com
+# 开屏广告,文章顶部广告 感谢【Ava阿檬】分享
+# > 友邦
+# hostname = e-static.aia.com.cn
+# > 有兔阅读(米兔)
+# hostname = img.dailmo.com, img.allahall.com, app.zhoudamozi.com
+# > 育学园
+# hostname = *.yuxueyuan.cn
+# > 猿辅导
+# hostname = xyst.yuanfudao.com
+# > 云快充
+# hostname = gw3.ykccn.com
+# 微信小程序
+# > 云麦
+# hostname = restapi.iyunmai.com
+# > YouTube
+# hostname = rr*.googlevideo.com, youtubei.googleapis.com
+# 播放页广告
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > 涨乐财富通
+# hostname = c.zhangle.com, live.inst-service.htsc.com, geetest.htsc.com, 119.29.29.*
+# 开屏广告 弹窗广告
+# > 掌上道具城
+# hostname = djcapp.game.qq.com
+# > 掌上公交
+# hostname = quanguo.mygolbs.com, wx.mygolbs.com
+# 我的横幅广告
+# > 掌上鹿城
+# hostname = vapp.tmuyun.com
+# 开屏广告
+# > 掌上生活
+# hostname = mbasecc.bas.cmbchina.com, mbasecc.bcs.cmbchina.com, intellicc.bas.cmbchina.com, intellicc.bcs.cmbchina.com
+# 开屏广告
+# 首页随机弹窗
+# > 掌上英雄联盟
+# hostname = us.l.qq.com, ossweb-img.qq.com, mlol.qt.qq.com
+# 开屏广告 感谢【𝑨梦 𝑪𝒉𝒙𝒎𝟏𝟎𝟐𝟑】分享
+# > 掌阅
+# hostname = ih2.ireader.com, book.img.ireader.com
+# > 招财猫直聘
+# hostname = beehiveapi.58.com
+# > 招商银行
+# hostname = webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com
+# 开屏广告
+# 首页横幅广告
+# > 正气助手
+# hostname = apio.zhengqi100.com
+# 去主界面广告
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
+# 会员页面 - 弹窗、悬浮动图
+# 我的页面 - 项目列表、会员卡片
+# 搜索页 - 关键词、猜你想搜
+# 回答详情页 - 评论区顶部、下一个回答
+# 网页版去广告 //www.zhihu.com, zhuanlan.zhihu.com
+# > 职工普惠
+# hostname = preprod.cdzghome.com
+# 需卸载重装 感谢【zyu0090】分享
+# > 智行APP
+# hostname = m.ctrip.com
+# 开屏广告 影响携程部分功能正常运行，携程8.40.0以下的版本不受影响。如开启可自行添加主机名
+# > 中关村在线
+# hostname = apicloud.zol.com.cn
+# 需要重装
+# > 中国电信
+# hostname = cloud.189.cn, zt-app.go189.cn
+# > 中国广电
+# hostname = app.10099.com.cn
+# > 中国联通
+# hostname = m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn
+# > 中国人保
+# hostname = zgrb.epicc.com.cn
+# 启动开屏
+# 猜你喜欢
+# > 中国人寿
+# hostname = ecssmobile.e-chinalife.com
+# 屏蔽开屏广告
+# > 中国天气网小程序
+# hostname = e.weather.com.cn
+# 横幅广告
+# > 中国移动
+# hostname = client.app.coc.10086.cn, app.10086.cn
+# > 中国移动云盘
+# hostname = mcmm.caiyun.feixin.10086.cn, mrp.mcloud.139.com, ad.mcloud.139.com, middle.yun.139.com
+# > 中国银行 缤纷生活
+# > 中国知网
+# hostname = xyz.cnki.net
+# > 中通快递
+# hostname = hdgateway.zto.com
+# 微信小程序净化
+# > 中信银行
+# hostname = wap.bank.ecitic.com, imcs.citicbank.com
+# > 中银跨境GO
+# hostname = openapi.boc.cn
+# 开屏广告 首页弹窗 如开启可自行添加主机名
+# > 中油好客e站小程序
+# hostname = minipro.95504.net
+# 弹窗广告
+# 底部横幅广告
+# > 中油优途
+# hostname = sichuan.95504.net
+# > 中羽在线
+# hostname = app.badmintoncn.com
+# > 众邦银行
+# hostname = direct.z-bank.com
+# 倒计时还在，点击任意位置跳过开屏动画
+# > 猪八戒
+# hostname = fastbuyer.zbj.com
+# > 住这儿
+# hostname = z.onewo.com
+# 开屏广告 感谢【Mozart】分享
+# > 转转
+# hostname = app.zhuanzhuan.com
+# 转转右下角悬浮广告
+# > 追书神器
+# hostname = adx-cn.anythinktech.com
+# > 字节跳动
+# hostname = *.pstatp.com, amemv.com, musical.com, snssdk.com, tiktokv.com, dsp.toutiao.com
+#^https?:\/\/.+\.pstatp\.com\/img\/ad reject-200
+# > 自如
+# hostname = ztoread.ziroom.com
+# > 作业帮
+# hostname = syh.zybang.com, www.zybang.com
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ !! ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# > 12306
+# hostname = ad.12306.cn
+# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# > 51信用卡管家
+# hostname = api.u51.com
+# > 555影视
+# hostname = vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# > 阿里巴巴
+# hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# > 阿里云盘
+# hostname = api.alipan.com, member.alipan.com
+# > 爱奇艺
+# hostname = -i.vip.iqiyi.com, *.iqiyi.com
+# 首页信息流广告
+# 播放详情页
+# 搜索页列表
+# 评论区
+# 我的页面菜单
+# 首页左上角天气
+# 通用控制,各tab页二楼
+# 底部tab、顶部tab
+# 搜索框填充词
+# 开屏广告,播放广告
+# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# > 百度地图
+# hostname = dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com
+# > 百度贴吧
+# hostname = tiebac.baidu.com
+# > 薄荷健康
+# hostname = api.boohee.com, bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn, lego.boohee.com, status.boohee.com
+# 记录 大家都在看data.recom_cards / 底部按钮data.recom_btns
+# 广场 推荐 红标data.tabs[1].badge /轮播图data.recommend_ads
+# 代谢中心 顶部轮播图top_banner / 免费问诊推广diagnos_config / 合作医疗机构partner_hospital / 医患问答question_answer / 热门商品product / 品牌大事件brand_story
+# > 哔哩哔哩
+# hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com
+# > 哔哩哔哩漫画
+# hostname = manga.bilibili.com, i*.hdslb.com
+# > Blued
+# hostname = social.blued.cn
+# 登录后个人界面广告
+# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# > 财新网
+# > 菜鸟裹裹
+# hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
+# 消息中心
+# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# > 大众点评
+# hostname = 103.37.155.60, *.dianping.com, img.meituan.net, p.meituan.com, rms.meituan.com, www.dpfile.com, awp-assets.meituan.net, s3plus.meituan.net, p*.meituan.net, ddplus.meituan.net
+# 开屏广告
+# > 滴滴出行
+# hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
+#http-response ^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js, requires-body=true, timeout=60, tag=滴滴出行
+# 微信小程序个人中心净化 感谢【TEXAS】分享
+# > 电影猎手
+# hostname = app-v1.ecoliving168.com
+# > 叮咚买菜
+# hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
+# 开屏广告及首页推荐流及底部状态栏优化
+# 右下角AI
+# 我的页净化
+# > 动画疯
+# hostname = api.gamer.com.tw
+# (黑屏25秒)
+# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# > 飞客茶馆
+# hostname = api.flydigi.com
+# > 粉笔
+# > 复游会微信小程序
+# hostname = apis.folidaymall.com
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# > 航旅纵横
+# hostname = home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com, oss.umetrip.com
+# > 盒马
+# hostname = acs.m.taobao.com, acs-m.freshippo.com
+# > 汇付天下
+# 感谢【可莉】分享
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# > IT之家
+# 移除 轮播图 置顶文章 信息流广告
+# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# > 建行生活
+# hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
+# 内置饿了么
+# > 京东
+# hostname = api.m.jd.com, dns.jd.com
+# > 京喜
+# hostname = api.m.jd.com
+# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# > 酷安
+# hostname = api.coolapk.com, www.coolapk.com
+# > 酷我音乐
+# hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
+# 会员
+# > 夸克
+# > 快手联盟,优量汇,穿山甲「广告联盟」
+# > Keep
+# hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
+# 我的页面去推广
+# 应用底部栏净化
+# 发现页处理
+# 课程预览页广告
+# 我的运动页面去除下方推荐
+# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# > 旅途随身听
+# hostname = www.1314zhilv.com
+# 首页北京城市导览图片,首页上方轮播图片净化
+# > 罗森点点
+# hostname = plt.yorentown.com, lawsonapi.yorentown.com
+# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 马蜂窝
+# hostname = mapi.mafengwo.cn
+# > 买单吧
+# hostname = creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, creditcard.bankcomm.cn, creditcard.bankcomm.com
+# > 脉脉
+# hostname = open.taou.com, h3.open.taou.com
+# 帖子末尾 看过此贴的用户也在看
+# 移除信息流和评论区大块广告 信息流广告focus_feed / 评论区广告gossip_detail_comment / 评论区广告feed_detail_comment?
+# > 芒果TV
+# hostname = *.mgtv.com
+# 我的页面
+# 首页信息流,顶部tab
+# 底部tab
+# 播放详情页
+# 搜索框填充词
+# > 美丽修行
+# hostname = api.bevol.com
+# 去除开屏 首页广告 美修盒广告 我的页面广告
+# > 美柚
+# hostname = x.seeyouyima.com, axxd.xmseeyouyima.com, config-service.seeyouyima.com
+# > 咪咕视频
+# hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
+# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# > 朴朴超市
+# hostname = j1.pupuapi.com
+# 搜索结果页信息流横幅广告
+# 下单页实惠卡开通推荐
+# 订单列表骑手反馈问题推荐
+# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# > 企迈 - QMAI(包含: 挪瓦咖啡、林里柠檬茶、霸王茶姬、陈香贵)
+# hostname = webapi.qmai.cn, miniapp.qmai.cn
+# > 前程无忧 51Job
+# hostname = appapi.51job*.com, cupid.51job*.comhostname
+# 我的页净化
+# > 去哒
+# 首页开屏广告 感谢【德克萨斯】分享
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# mian | 热推、有话想说、分享一下、歌曲下的祝福等小提示去除 ｜ 评论区 乐迷、星评等级 关注 等 图标去除
+# tab
+# 推荐 | home | 主页
+# 发现
+# 我的 MyPageBar ad
+# 显示未关注你
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 商品信息流广告
+# 定位地区页面的信息流广告
+# 个人主页
+# 首页顶部频道菜单
+# 商品详情页周边推荐
+# 搜索结果信息流广告
+# 同城页横幅广告
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# 搜索页
+# 开屏广告
+# 详情页,小部件
+# 图片水印,视频水印
+# 评论区图片、live图水印，表情包下载
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片、精简顶部标签
+# 会员页面 - 弹窗、悬浮动图
+# 回答详情页 - 评论区顶部、下一个回答
+# 其他 - 服务器推送配置
+# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# > 人人视频
+# hostname = api.rr.tv
+# RRTV_level_info
+# RRTV_去除首頁廣告
+# RRTV_去除廣場tab
+# RRTV_去除商城廣告
+# RRTV_Ad_List
+# RRTV_Ad_All
+# RRTV_Get_Drama
+# RRTV_Watch_V4
+# RRTV_User_Info
+# > Reddit
+# 过滤推广 关NSFW提示 感谢【xream】分享
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# > 什么值得买
+# hostname = homepage-api.smzdm.com, haojia-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s-api.smzdm.com, haojia.m.smzdm.com
+# 感谢【怎么肥事】分享
+# > 苏打校园APP
+# hostname = api.sodalife.xyz
+# > Soul
+# hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
+# 替换信息收集
+# 青少年模式弹窗
+# > Spotify
+# hostname = *-spclient.spotify.com, spclient.wg.spotify.com
+# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# > 淘宝
+# hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# > 腾讯新闻
+# > 途虎养车
+# hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
+# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# > vgTime
+# App去开屏广告(需全新应用). 若要去新闻列表广告需要搭配广告联盟模块
+# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# > 网易有道词典
+# hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
+# 首页净化，学习Tab界面净化，首页听读训练净化
+# > 网易云音乐
+# hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
+# mian | 热推、有话想说、分享一下、歌曲下的祝福等小提示去除 ｜ 评论区 乐迷、星评等级 关注 等 图标去除
+# tab
+# 推荐 | home | 主页
+# 发现
+# 我的 MyPageBar ad
+# 显示未关注你
+# > 微信解除链接限制
+# hostname = weixin110.qq.com, security.wechat.com
+# 微信跳过中间界面，支付宝链接、被封禁链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选），群聊 / 扫码均可使用，可选项可在脚本 2、3 行更改，也可在 BoxJs 中更改。
+# > 温尼伯站
+# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# > 闲鱼
+# hostname = acs.m.goofish.com, g-acs.m.goofish.com
+# 商品信息流广告
+# 定位地区页面的信息流广告
+# 个人主页
+# 首页顶部频道菜单
+# 商品详情页周边推荐
+# 搜索结果信息流广告
+# 同城页横幅广告
+# > 香蕉是一种水果
+# > 小红书
+# hostname = edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com
+# 搜索页
+# 开屏广告
+# 详情页,小部件
+# 图片水印,视频水印
+# 评论区图片、live图水印，表情包下载
+# > 小芒
+# hostname = mgesq.api.mgtv.com, *.hitv.com
+# > 小米商城
+# > 小兔充充
+# hostname = ad.xiaotucc.com, mapi.xiaotucc.com
+# > 笑容加
+# hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
+# 我的页推广
+# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# > 优酷
+# hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
+# 播放详情页,首页信息流,顶部tab,我的页面,评论区
+# 底部tab
+# 青少年模式弹窗
+# 搜索列表
+# 热剧弹窗
+# 开屏广告
+# > 悠洗APP
+# hostname = api.ulife.group
+# > YouTube
+# hostname = rr*.googlevideo.com, youtubei.googleapis.com
+# 响应体
+# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# > 掌上公交
+# hostname = quanguo.mygolbs.com, wx.mygolbs.com
+# > 招商证券
+# hostname = marketing.cmschina.com
+# 首页和理财页面横幅广告
+# > 知乎
+# hostname = api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, link.zhihu.com
+# 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片、精简顶部标签
+# 会员页面 - 弹窗、悬浮动图
+# 回答详情页 - 评论区顶部、下一个回答
+# 其他 - 服务器推送配置
+# > 中国国际航空
+# > 转转
+# hostname = app.zhuanzhuan.com
+# “我的”页面去除冗余的模块
+# >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<

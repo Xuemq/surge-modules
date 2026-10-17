@@ -1,0 +1,85 @@
+name: Safely update reviewed three-source module
+on:
+  schedule:
+    - cron: '37 3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-merged.yml'
+      - 'surge_merge/**'
+      - 'tests/**'
+      - 'merged-policy.json'
+      - 'sources-merged.json'
+      - 'upstream/moyu.source'
+      - 'licenses/**'
+      - 'notices/**'
+      - 'docs/merged-notice.md'
+      - 'scripts/header-status.js'
+permissions:
+  contents: read
+concurrency:
+  group: surge-safe-auto-update
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'Xuemq/surge-modules' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      base_sha: ${{ steps.revision.outputs.sha }}
+      changed: ${{ steps.prepare.outputs.changed }}
+      package_sha256: ${{ steps.prepare.outputs.package_sha256 }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-17
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Bind this queued run to the current trusted main commit
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Test the trusted tools before processing upstream data
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 -m compileall -q surge_merge tests
+      - name: Fetch, migrate exact decisions, and validate three sources
+        id: prepare
+        env:
+          BASE_SHA: ${{ steps.revision.outputs.sha }}
+        run: python3 -m surge_merge.merged_update prepare --base-sha "$BASE_SHA"
+      - name: Transfer only the validated merged release package
+        if: steps.prepare.outputs.changed == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2, verified 2026-10-17
+        with:
+          name: merged-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/merged-auto-package/
+          if-no-files-found: error
+          retention-days: 1
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.changed == 'true' && github.repository == 'Xuemq/surge-modules' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-17
+        with:
+          ref: ${{ needs.prepare.outputs.base_sha }}
+          persist-credentials: false
+      - name: Receive this run's candidate in an isolated directory
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0, verified 2026-10-17
+        with:
+          name: merged-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/merged-auto-package/
+      - name: Check package hash, exact paths, and source commit binding
+        env:
+          BASE_SHA: ${{ needs.prepare.outputs.base_sha }}
+          EXPECTED_PACKAGE_SHA256: ${{ needs.prepare.outputs.package_sha256 }}
+        run: python3 -m surge_merge.merged_update verify-package --base-sha "$BASE_SHA"
+      - name: Atomically publish only if main has not advanced
+        env:
+          BASE_SHA: ${{ needs.prepare.outputs.base_sha }}
+          EXPECTED_PACKAGE_SHA256: ${{ needs.prepare.outputs.package_sha256 }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -m surge_merge.merged_update publish --base-sha "$BASE_SHA"
