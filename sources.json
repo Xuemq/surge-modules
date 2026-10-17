@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "base": "fmz200",
+  "sources": [
+    {
+      "id": "fmz200",
+      "format": "surge",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/blockAds.module",
+      "immutable_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/3ca7487b4e4b86d9af76e50df72c62eacfbb659e/Surge/module/blockAds.module",
+      "sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+      "bytes": 471930,
+      "license_review": "GPL-3.0 observed; compatibility pending"
+    },
+    {
+      "id": "blackmatrix7",
+      "format": "surge",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule",
+      "immutable_url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/a75313d36b049b8aca5b26beffafb1b0ec8c564d/rewrite/Surge/AllInOne/AllInOne.sgmodule",
+      "sha256": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
+      "bytes": 82309,
+      "license_review": "GPL-2.0 observed; or-later status and compatibility pending"
+    },
+    {
+      "id": "moyu",
+      "format": "qx",
+      "url": "https://ddgksf2013.top/rewrite/StartUpAds.conf",
+      "sha256": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72",
+      "bytes": 61745,
+      "license_review": "No clear license found; attribution notice is not redistribution clearance"
+    }
+  ],
+  "redistribution": {
+    "approved": false,
+    "reason": "Upstream license compatibility and permissions must be reviewed before publishing derived output."
+  },
+  "conversion_policy": {
+    "reviewed": false,
+    "approved_script_urls": [],
+    "approved_request_body_hashes": []
+  }
+}
