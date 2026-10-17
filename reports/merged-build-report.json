@@ -7,11 +7,11 @@
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
     "moyu": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72"
   },
-  "policy_sha256": "fa9e7e10c796496a5094c4e120a64eb8cd5e9256c0481b2cdec2577794102ac7",
+  "policy_sha256": "9f80ec66169ba1970ffe3e4ae7b37cbad9f9e4a634b20d7a16f63072bef02b71",
   "reviewed_assembly_sha256": "a6b434be72b4bf81119a3920cbab8625df75a6a20d8f7ecdfe9f7282809bec66",
-  "output_sha256": "b8400bd773751cdaab7ee599bc85c23905d00fb05ba95bdb1d0fcdff463f630b",
-  "bytes": 435363,
-  "active_entries_sha256": "59c597789dc3f24f4bd8eaa7ea224ca6a82fffdf3fc90d0adf86b5b1d6208a90",
+  "output_sha256": "b336ac440952bd927ee8893922703101ae45076e2fd7e299e92b94a37ec3b251",
+  "bytes": 435643,
+  "active_entries_sha256": "2f01705932021501c757976b789b1299a0506f174603f9b441b83bbc3f1cefed",
   "counts": {
     "Rule": 2827,
     "Header Rewrite": 1,
@@ -6192,6 +6192,98 @@
       }
     ]
   },
+  "serialization_repairs": {
+    "applied": [
+      {
+        "entry_id": "a8287b3b13c03d811f7e8856dbe15f06347eeecf4335b8d0240dc1f5fbf6b83d",
+        "result_entry_id": "a327b500d8438e39da4b8ab87b8a8bda611fc8aa350e7973bc2436b20a6bfc39",
+        "section": "Body Rewrite",
+        "line": 3796,
+        "kind": "body-token-quotes",
+        "reason": "Quote both literal body-operation tokens while retaining their bytes, original URL pattern and order.",
+        "evidence": "https://manual.nssurge.com/http/body-rewrite.html"
+      },
+      {
+        "entry_id": "055030463c10bc6a35df699cf5eb87ad7b205543f017e249500694224435e6e6",
+        "result_entry_id": "fe51affd2ba33525b59374ff546c61e214b6cc15504266bc500575931006e7d6",
+        "section": "Script",
+        "line": 4998,
+        "kind": "key-value-template",
+        "reason": "Use the runtime-documented key=value argument syntax; retain the default numeric value.",
+        "evidence": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js"
+      },
+      {
+        "entry_id": "ce87ece78b010073916ecb1f7feaff8f41d3072b225079b2c8d5d2ba60c75cf0",
+        "result_entry_id": "2bab23ba30e58af81e9c4bbd977668aa70f4dc336cd2b1f77695187985f4f44e",
+        "section": "Script",
+        "line": 5002,
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "726f4064cd8a0f7ca337f4dfea512f38dc4326f39ced04538055bbb78b9dfbb3",
+        "result_entry_id": "df890afe5bedc3f10b04abb5cddc581211e6c80b607b5bc533917592160398a9",
+        "section": "Script",
+        "line": 5003,
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "6ac581b33f8fc739f3cfd1973acdc693f3e208a51f2b8f6ce7f4c9027137b693",
+        "result_entry_id": "29ea4a0814ba77fc1a3994c617b78e8a9ade06e8b4d76d0464e36609b3bb3866",
+        "section": "Script",
+        "line": 5005,
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "cb49a0499aa06ef3576b95533c04b9645696aa0f05b5f3b393179bcc54445f8e",
+        "result_entry_id": "859c1d9f9a7a4b9f1b14b5a692b4e88d38db2840e669dd9d0a16e76e08f161a3",
+        "section": "Script",
+        "line": 5215,
+        "kind": "comma-free-host-range",
+        "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
+        "evidence": "https://manual.nssurge.com/scripting/overview.html"
+      },
+      {
+        "entry_id": "c0aa97e303e0889684d23736cbb7daf61dac81181ed44bbe6ad413b379926ef7",
+        "result_entry_id": "46321d628bd1c03a4d46ab7c4f9f9590452ba59a42cf39a65b8c5f4a59b6dd4f",
+        "section": "Script",
+        "line": 5217,
+        "kind": "comma-free-host-range",
+        "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
+        "evidence": "https://manual.nssurge.com/scripting/overview.html"
+      },
+      {
+        "entry_id": "f2c858b10463a21f919dc6b85bcab1214f2b7ae3ac01cc6b28aef3721dd9db34",
+        "result_entry_id": "1c07ac186419c5ca3bfca944c1b27ad9e28ea4b994aa2d6e81d5b1c7ed9fce74",
+        "section": "Script",
+        "line": 5228,
+        "kind": "uri-header-argument",
+        "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
+        "evidence": "https://manual.nssurge.com/profile/format.html"
+      },
+      {
+        "entry_id": "f7c0bd2a1c0c57db45f448e068d27c606177fad569d4e003ad31fe5e86d66c5b",
+        "result_entry_id": "ee5fee091f5c035872317aa869aaf90180fdccd2dff92dc70cbc07e2a2f37603",
+        "section": "Script",
+        "line": 5230,
+        "kind": "uri-header-argument",
+        "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
+        "evidence": "https://manual.nssurge.com/profile/format.html"
+      }
+    ],
+    "adapter_url": "https://raw.githubusercontent.com/Xuemq/surge-modules/main/scripts/header-status-v2.js",
+    "adapter_sha256": "491bcd458364481cca6c7c976a65e6996fd10df97fe6236e92408179c85b8160",
+    "runtime_verified": false,
+    "limitations": [
+      "Exact format/parameter repairs only; device export and app behavior still require verification."
+    ]
+  },
+  "base_entries_byte_preserved": 4438,
   "limitations": [
     "Not tested in Surge or the affected apps.",
     "Finite regex examples are not an exhaustive overlap/equivalence proof.",

@@ -16,6 +16,7 @@ on:
       - 'notices/**'
       - 'docs/merged-notice.md'
       - 'scripts/header-status.js'
+      - 'scripts/header-status-v2.js'
 permissions:
   contents: read
 concurrency:

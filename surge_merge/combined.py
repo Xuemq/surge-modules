@@ -10,6 +10,7 @@ from .converter import convert_qx
 from .pipeline import atomic_write, json_write, read_json
 from .scope import filter_native_scope
 from .single import optimize_single
+from .serialization import repair_serialization
 
 SOURCE_IDS = ('fmz200', 'blackmatrix7', 'moyu')
 BEHAVIOR_SECTIONS = {'URL Rewrite', 'Map Local', 'Script', 'Body Rewrite', 'Header Rewrite'}
@@ -138,6 +139,10 @@ def build_combined(source_bytes, bundle):
     actual_labels = {e.key for e in final.entries if e.section == 'Script'}
     if not expected_adapter_ids <= actual_labels:
         raise Invalid('reviewed native adapter disappeared from final module')
+    # Existing source/baseline/overlap guards apply to the reviewed assembly.
+    # Exact output-only repairs neither select new rules nor relax those guards.
+    text, serialization = repair_serialization(text, bundle.get('serialization_repairs'))
+    final = parse_module(text.encode(), 'merged-repaired-release')
     compact_stages = {
         'fmz': {k: stages['fmz'][k] for k in ('source_sha256', 'output_sha256', 'counts_after', 'changes_by_kind')},
         'scope_exclusions': bundle['fmz_policy'].get('scope_exclusions', []),
@@ -154,6 +159,8 @@ def build_combined(source_bytes, bundle):
         'base_entries_preserved': len(modules[0].entries), 'baseline_mitm_hosts_preserved': len(base_hosts),
         'final_mitm_hosts': len(final_hosts), 'native_adapters_preserved': len(adapters),
         'finite_overlap_review': guard, 'stages': compact_stages, 'merge': compact_merge,
+        'serialization_repairs': serialization,
+        'base_entries_byte_preserved': len(modules[0].entries) - sum(x['entry_id'] in {e.id for e in modules[0].entries} for x in serialization['applied']),
         'limitations': ['Not tested in Surge or the affected apps.',
             'Finite regex examples are not an exhaustive overlap/equivalence proof.',
             'Remote script/resource contents are not executed or vendored and can change independently.',

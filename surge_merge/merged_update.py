@@ -27,6 +27,8 @@ from .scope import filter_native_scope
 
 MODULE_PATH = 'modules/merged.optimized.sgmodule'
 MOYU_URL = 'https://ddgksf2013.top/rewrite/StartUpAds.conf'
+SERIALIZATION_ADAPTER_PATH = 'scripts/header-status-v2.js'
+SERIALIZATION_ADAPTER_URL = 'https://raw.githubusercontent.com/' + REPOSITORY + '/main/' + SERIALIZATION_ADAPTER_PATH
 UPSTREAMS = {
     'fmz200': ('fmz200/wool_scripts', 'main', 'Surge/module/blockAds.module'),
     'blackmatrix7': ('blackmatrix7/ios_rule_script', 'master', 'rewrite/Surge/AllInOne/AllInOne.sgmodule'),
@@ -41,8 +43,16 @@ NOTICE_SPECS = {
 PUBLIC_FILES = (MODULE_PATH, 'sources-merged.json', 'merged-policy.json', 'upstream/moyu.source',
     'reports/merged-build-report.json', 'reports/merged-update.json',
     *('notices/' + s + '-source-comments.txt' for s in SOURCE_IDS))
-SUPPORT_FILES = (*NOTICE_SPECS, 'docs/merged-notice.md', 'scripts/header-status.js')
+SUPPORT_FILES = (*NOTICE_SPECS, 'docs/merged-notice.md', 'scripts/header-status.js', SERIALIZATION_ADAPTER_PATH)
 PACKAGE_FILES = PUBLIC_FILES + SUPPORT_FILES
+
+
+def validate_serialization_adapter(bundle, data):
+    repairs = bundle.get('serialization_repairs')
+    if repairs is None:
+        return
+    require(isinstance(repairs, dict) and repairs.get('adapter_url') == SERIALIZATION_ADAPTER_URL
+        and repairs.get('adapter_sha256') == digest(data), 'serialization_adapter_binding_changed')
 
 
 def upstream_url(source, sha, path=None):
@@ -178,7 +188,8 @@ def migrate_bundle(old, new, bundle, modification_date):
     migrated['merge_policy']['source_sha256'] = {m.source: m.sha256 for m in new_modules}
     # Decisions, witness identities and exceptions remain byte-for-byte identical.
     require(migrated['merge_policy']['decisions'] == bundle['merge_policy']['decisions']
-        and migrated['overlap_review'] == bundle['overlap_review'], 'review_decisions_must_not_change')
+        and migrated['overlap_review'] == bundle['overlap_review']
+        and migrated.get('serialization_repairs') == bundle.get('serialization_repairs'), 'review_decisions_must_not_change')
     return migrated
 
 
@@ -200,6 +211,7 @@ def build_release(root, old, new, commits, notices, modification_date):
     for adapter in bundle['conversion_policy'].get('native_header_adapters', []):
         require(adapter['adapter_url'] == 'https://raw.githubusercontent.com/' + REPOSITORY + '/main/scripts/header-status.js'
             and digest((root / 'scripts/header-status.js').read_bytes()) == adapter['adapter_sha256'], 'native_adapter_hash_changed')
+    validate_serialization_adapter(bundle, (root / SERIALIZATION_ADAPTER_PATH).read_bytes())
     old_text, _ = build_combined(old, bundle)
     require(old_text.encode() == (root / MODULE_PATH).read_bytes(), 'published_baseline_not_reproducible')
     migrated = migrate_bundle(old, new, bundle, modification_date)
@@ -287,6 +299,7 @@ def verify_package(folder, expected_digest, base_sha):
     parse_module(result[MODULE_PATH], "package-self-check")
     manifest, bundle = json.loads(result['sources-merged.json']), json.loads(result['merged-policy.json'])
     sources = validate_scope(manifest, bundle)
+    validate_serialization_adapter(bundle, result[SERIALIZATION_ADAPTER_PATH])
     verify_bytes(sources['moyu'], result['upstream/moyu.source'])
     require(record['source_sha256'] == bundle['source_sha256'], 'record_source_lock_mismatch')
     return result

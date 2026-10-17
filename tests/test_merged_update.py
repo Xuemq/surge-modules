@@ -81,6 +81,7 @@ class MergedUpdateTests(unittest.TestCase):
         self.install('upstream/moyu.source',self.sources['moyu'])
         self.install('docs/merged-notice.md',b'Observed notices do not grant additional rights.\n')
         self.install('scripts/header-status.js',b'// Synthetic adapter fixture\n')
+        self.install(update.SERIALIZATION_ADAPTER_PATH,b'// Synthetic v2 adapter fixture\n')
         self.install(update.MODULE_PATH,build_combined(self.sources,self.bundle)[0].encode())
         self.install('modules/fmz200.optimized.sgmodule',b'last good fallback\n')
 
@@ -298,6 +299,62 @@ class MergedUpdateTests(unittest.TestCase):
         files,_=self.build(new);adapter=json.loads(files['merged-policy.json'])['conversion_policy']['native_header_adapters'][0]
         old['line']+=1;self.assertEqual(adapter,old)
 
+    def install_serialization_fixture(self):
+        self.install_adapter_fixture()
+        before=parse_module((self.root/update.MODULE_PATH).read_bytes(),'fixture')
+        target=next(e for e in before.entries if e.section=='Script' and e.key.startswith('moyu_native_'))
+        self.bundle['serialization_repairs']={'schema_version':1,'adapter_url':update.SERIALIZATION_ADAPTER_URL,
+            'adapter_sha256':digest((self.root/update.SERIALIZATION_ADAPTER_PATH).read_bytes()),
+            'entries':[{'entry_id':target.id,'kind':'uri-header-argument','reason':'Reviewed transport fixture.',
+                'evidence':'https://manual.nssurge.com/scripting/http-response.html'}]}
+        json_write(self.root/'merged-policy.json',self.bundle)
+        self.install(update.MODULE_PATH,build_combined(self.sources,self.bundle)[0].encode())
+
+    def test_repaired_baseline_rebuilds_exactly_and_then_is_noop(self):
+        self.install_serialization_fixture();files,status=self.build()
+        self.assertEqual(files[update.MODULE_PATH],(self.root/update.MODULE_PATH).read_bytes())
+        self.assertIn(b'script-path='+update.SERIALIZATION_ADAPTER_URL.encode(),files[update.MODULE_PATH])
+        self.assertIn(b'argument=uri:%7B',files[update.MODULE_PATH])
+        for path,data in files.items():self.install(path,data)
+        second,status=self.build();self.assertEqual(status['status'],'unchanged');self.assertEqual(second,files)
+
+    def test_serialization_policy_is_unchanged_after_source_line_migration(self):
+        self.install_serialization_fixture();expected=deepcopy(self.bundle['serialization_repairs'])
+        new=self.changed('moyu',b'^https://bank.test/',b'// Shift line only\n^https://bank.test/')
+        files,_=self.build(new);migrated=json.loads(files['merged-policy.json'])
+        self.assertEqual(migrated['serialization_repairs'],expected)
+        self.assertIn(b'argument=uri:%7B',files[update.MODULE_PATH])
+        self.assertEqual(migrated['merge_policy']['decisions'],self.bundle['merge_policy']['decisions'])
+        self.assertEqual(migrated['overlap_review'],self.bundle['overlap_review'])
+
+    def test_v2_adapter_checksum_or_destination_change_blocks(self):
+        self.install_serialization_fixture()
+        bundle=deepcopy(self.bundle);bundle['serialization_repairs']['adapter_url']='https://example.test/other.js'
+        json_write(self.root/'merged-policy.json',bundle);self.blocked(self.sources,'serialization_adapter_binding_changed')
+        json_write(self.root/'merged-policy.json',self.bundle)
+        self.install(update.SERIALIZATION_ADAPTER_PATH,b'changed v2 runtime')
+        self.blocked(self.sources,'serialization_adapter_binding_changed')
+
+    def test_serialization_target_drift_cannot_remove_the_fix(self):
+        self.install_serialization_fixture()
+        self.blocked(self.changed('moyu',b'^https://bank.test/',b'^https://different.test/'),'reviewed_target_missing_changed_or_ambiguous')
+        bundle=deepcopy(self.bundle);bundle['serialization_repairs']['entries'][0]['entry_id']='0'*64
+        json_write(self.root/'merged-policy.json',bundle)
+        self.blocked(self.sources)
+
+    def test_v2_artifact_is_verified_but_never_automatically_published(self):
+        self.install_serialization_fixture();files,sha=self.ready()
+        self.assertIn(update.SERIALIZATION_ADAPTER_PATH,files)
+        self.assertNotIn(update.SERIALIZATION_ADAPTER_PATH,update.PUBLIC_FILES)
+        self.assertEqual(update.verify_package(self.package,sha,BASE_SHA),files)
+        bundle=json.loads(files['merged-policy.json']);bundle['serialization_repairs']['adapter_sha256']='0'*64
+        files['merged-policy.json']=update.json_bytes(bundle)
+        record=json.loads(files['reports/merged-update.json']);record['policy_sha256']=digest(files['merged-policy.json'])
+        files['reports/merged-update.json']=update.json_bytes(record)
+        forged=Path(self.tmp.name)/'forged';forged_sha=update.write_package(forged,files,BASE_SHA)
+        with self.assertRaisesRegex(update.Blocked,'serialization_adapter_binding_changed'):
+            update.verify_package(forged,forged_sha,BASE_SHA)
+
     def test_existing_script_matcher_body_and_argument_cannot_expand(self):
         old='[Script]\na = type=http-response, pattern=^https://ads.test/, script-path=https://example.test/a.js, requires-body=false, argument=x\n'
         for new in (old.replace('^https://ads.test/','.*'),old.replace('requires-body=false','requires-body=true'),old.replace('argument=x','argument=y')):
@@ -329,6 +386,7 @@ class MergedUpdateTests(unittest.TestCase):
             self.assertEqual(text.count('persist-credentials: false'),2)
             self.assertEqual(text.count('contents: write'),1);self.assertNotIn('pull_request',text)
             self.assertIn("cron: '37 3 * * *'",text)
+            if filename=='update-merged.yml':self.assertIn("'scripts/header-status-v2.js'",text)
 
 
 if __name__=='__main__':unittest.main()

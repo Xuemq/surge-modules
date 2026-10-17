@@ -6745,5 +6745,66 @@
     "raw-url": "https://raw.githubusercontent.com/Xuemq/surge-modules/main/modules/merged.optimized.sgmodule",
     "category": "去广告",
     "modification_date": "2026-10-17"
+  },
+  "serialization_repairs": {
+    "schema_version": 1,
+    "adapter_url": "https://raw.githubusercontent.com/Xuemq/surge-modules/main/scripts/header-status-v2.js",
+    "adapter_sha256": "491bcd458364481cca6c7c976a65e6996fd10df97fe6236e92408179c85b8160",
+    "entries": [
+      {
+        "entry_id": "a8287b3b13c03d811f7e8856dbe15f06347eeecf4335b8d0240dc1f5fbf6b83d",
+        "kind": "body-token-quotes",
+        "reason": "Quote both literal body-operation tokens while retaining their bytes, original URL pattern and order.",
+        "evidence": "https://manual.nssurge.com/http/body-rewrite.html"
+      },
+      {
+        "entry_id": "055030463c10bc6a35df699cf5eb87ad7b205543f017e249500694224435e6e6",
+        "kind": "key-value-template",
+        "reason": "Use the runtime-documented key=value argument syntax; retain the default numeric value.",
+        "evidence": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js"
+      },
+      {
+        "entry_id": "ce87ece78b010073916ecb1f7feaff8f41d3072b225079b2c8d5d2ba60c75cf0",
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "726f4064cd8a0f7ca337f4dfea512f38dc4326f39ced04538055bbb78b9dfbb3",
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "6ac581b33f8fc739f3cfd1973acdc693f3e208a51f2b8f6ce7f4c9027137b693",
+        "kind": "json-string-templates",
+        "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
+        "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
+      },
+      {
+        "entry_id": "cb49a0499aa06ef3576b95533c04b9645696aa0f05b5f3b393179bcc54445f8e",
+        "kind": "comma-free-host-range",
+        "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
+        "evidence": "https://manual.nssurge.com/scripting/overview.html"
+      },
+      {
+        "entry_id": "c0aa97e303e0889684d23736cbb7daf61dac81181ed44bbe6ad413b379926ef7",
+        "kind": "comma-free-host-range",
+        "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
+        "evidence": "https://manual.nssurge.com/scripting/overview.html"
+      },
+      {
+        "entry_id": "f2c858b10463a21f919dc6b85bcab1214f2b7ae3ac01cc6b28aef3721dd9db34",
+        "kind": "uri-header-argument",
+        "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
+        "evidence": "https://manual.nssurge.com/profile/format.html"
+      },
+      {
+        "entry_id": "f7c0bd2a1c0c57db45f448e068d27c606177fad569d4e003ad31fe5e86d66c5b",
+        "kind": "uri-header-argument",
+        "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
+        "evidence": "https://manual.nssurge.com/profile/format.html"
+      }
+    ]
   }
 }
