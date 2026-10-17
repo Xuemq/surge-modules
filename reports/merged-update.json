@@ -7,16 +7,17 @@
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
     "moyu": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72"
   },
-  "module_sha256": "b8400bd773751cdaab7ee599bc85c23905d00fb05ba95bdb1d0fcdff463f630b",
-  "policy_sha256": "74411a7f75c71829aba4fe29c7a44d2bc6ab36787a0df46c0874698baf7b7865",
+  "module_sha256": "b336ac440952bd927ee8893922703101ae45076e2fd7e299e92b94a37ec3b251",
+  "policy_sha256": "6969d4fc045cc8f3b09f490f6ab9a495117ea898be6b9bde503cb7888dc3af1f",
   "support_sha256": {
     "licenses/fmz200-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
     "licenses/blackmatrix7-GPL-2.0.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
     "notices/blackmatrix7-README.md": "22cf4c930b6341d747a5de1896367091421e64b43cc6ef4585075dd9a86e8ba7",
     "notices/blackmatrix7-AllInOne-README.md": "9b46cf5a03bc353a5d329a5d7220b3a9cd3c252344b21f652e3960a61042532b",
     "notices/moyu-original-header.txt": "d6dbeb9570a974d2ea7250ecc2e8e142f4168353fff74f70d481c2b317e1f8f7",
-    "docs/merged-notice.md": "1a870429ce35ef557c59575eed7902a810358d6aea0f7ca8de3f218c06d662bf",
-    "scripts/header-status.js": "0985cf2568383c77adb2f5a3a7b0b9c3597e526442cc8339796087e4dd2a8ebd"
+    "docs/merged-notice.md": "b70e5e0f4a02a24012937052cfcb69174a97813dfe3d8a4f442aa5a97d558146",
+    "scripts/header-status.js": "0985cf2568383c77adb2f5a3a7b0b9c3597e526442cc8339796087e4dd2a8ebd",
+    "scripts/header-status-v2.js": "491bcd458364481cca6c7c976a65e6996fd10df97fe6236e92408179c85b8160"
   },
   "scope_exclusion_count": 9,
   "supplement_scope_exclusion_count": 2,
