@@ -82,6 +82,7 @@
 # > didichuxing
 # > daoyu
 # > dongqiudi
+#^https?:\/\/ap\.(dongqiudi|dongdianqiu)\.com\/plat\/v4 url echo-response text/json echo-response https://raw.githubusercontent.com/ddgksf2013/Scripts/master/dongqiudi.js
 # > douyu
 # > dewu
 # > donghuafeng

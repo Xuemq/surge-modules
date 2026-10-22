@@ -3,7 +3,7 @@
   "source_sha256": {
     "fmz200": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
-    "moyu": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72"
+    "moyu": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b"
   },
   "fmz_policy": {
     "schema_version": 1,
@@ -380,7 +380,7 @@
         "reason": "Current script only returns modified status inside the Quantumult X $task branch; Surge branch calls $done() without modification."
       }
     ],
-    "source_sha256": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72",
+    "source_sha256": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b",
     "excluded_entries": [
       {
         "line": 724,
@@ -450,10 +450,10 @@
     },
     "moyu-native": {
       "source_id": "moyu-native",
-      "source_sha256": "ed08d667dfc1f2900605f115a659e4bcd01db3a02229987ecd99fa8a0398754d",
+      "source_sha256": "ba9e6e05d7fc6ea27d9f7d7fdc42bdacceda643fccd4fed7c6d1d308984055da",
       "excluded_entries": [
         {
-          "line": 123,
+          "line": 122,
           "section": "Map Local",
           "line_sha256": "793a68bf7ff585522f03caaec23ef32d622355e8d2e4fe34e25f2c50e8e24054",
           "classification": "manual-scope-exclusion",
@@ -468,7 +468,7 @@
     "source_sha256": {
       "fmz200-optimized": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
       "blackmatrix7": "996dddce052e7a68be7923db41e364b6513d813c30713498151af804b8b31525",
-      "moyu-native": "3621d0bf25508df2effc382403d725a205e84d1c10638e1bf960677b5880a99b"
+      "moyu-native": "e71c88a4e7949a9aa73050740d5c328aff87c64553d27359b257e854be523378"
     },
     "decisions": [
       {
@@ -5422,7 +5422,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 79,
+        "line": 78,
         "entry_id": "5c6a12eef8200e576fed0ed866138a2bda7a24a65d1f45735cb7c789d21bb8dc",
         "base_entry_ids": [
           "5c6a12eef8200e576fed0ed866138a2bda7a24a65d1f45735cb7c789d21bb8dc"
@@ -5432,7 +5432,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 96,
+        "line": 95,
         "entry_id": "a55702c870c0c727ffccf69222d8310f35d9979e4a30a47c5ea2eb5a13931273",
         "base_entry_ids": [
           "36b3482b206f4d12db165c77cf49be637cc80d6d13d3b037a035d9b352a94cba"
@@ -5442,7 +5442,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 98,
+        "line": 97,
         "entry_id": "0fe026b6634594dab907b0f05e69e2412111148d82d9efb62e953b81446563dc",
         "base_entry_ids": [
           "c6a4ec9065b3f76253cd23e46fc7add47d281d084be7ada18bbaa52078ba6a84",
@@ -5453,7 +5453,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 103,
+        "line": 102,
         "entry_id": "238f1794f4af21737ac8615cf84be866137835a7a7f9de520d1f09c76db09d45",
         "base_entry_ids": [
           "cd0e032e318320422b582da9d2c6ad653c42ea7c2d2d5c8ba12d8534d575138c"
@@ -5463,7 +5463,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 120,
+        "line": 119,
         "entry_id": "2d0cb70f0799f6913e60f57c0bc7adaa52c1d4cbffb39e9d738f81e4461b2183",
         "base_entry_ids": [
           "2d0cb70f0799f6913e60f57c0bc7adaa52c1d4cbffb39e9d738f81e4461b2183"
@@ -5473,7 +5473,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 130,
+        "line": 129,
         "entry_id": "afa6f346aa1ad7e51335e1604acfeb71c055f7a9c0663e695bde3aa83c74d83e",
         "base_entry_ids": [
           "6c92b31f1805903b4eb9ed00075a544ecb475503ba09b136a0dd7884e1901496"
@@ -5483,7 +5483,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 131,
+        "line": 130,
         "entry_id": "b3911d1a4de6260e6720ca30e79bbeefc3c86e4cc78eb766729a852585671dc8",
         "base_entry_ids": [
           "6c92b31f1805903b4eb9ed00075a544ecb475503ba09b136a0dd7884e1901496"
@@ -5493,7 +5493,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 132,
+        "line": 131,
         "entry_id": "8dce766b99155e4fdf4df2f73aaea67b5da871e2260a29c004b710fe1ec5e0c4",
         "base_entry_ids": [
           "818df36a239ef57bd0832781e99979a59ec2cf2b06dc7ed0686f4903f8301721"
@@ -5503,7 +5503,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 134,
+        "line": 133,
         "entry_id": "0e8e03065ed83ec180da6a646305cabf67123bf943f582bae1268cc91a96eae3",
         "base_entry_ids": [
           "567af275ab951e209d3ba9c88bf55268d1f1379331193d8c4c1f627e6cb6bc63"
@@ -5513,7 +5513,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 147,
+        "line": 146,
         "entry_id": "d8cce2a9f9d90866404d08c1164186b6704af59fac2f271bc97305d9aa1708c1",
         "base_entry_ids": [
           "17f1728f5031bf271fe819004049182b56adca21a45f9c18c0db45760878d0c1"
@@ -5523,7 +5523,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 149,
+        "line": 148,
         "entry_id": "4f7ab89532622d04b2e27bafab2b0cad134594bb29d288b664110ed95db6c249",
         "base_entry_ids": [
           "610dd292fd123a9446048908769dc75aa57a915154f716687a2b802453880d74"
@@ -5533,7 +5533,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 156,
+        "line": 155,
         "entry_id": "facd016d80a248a2f3627d5824ff073eb0392dce58a5bad7e1f1f44d683e7ea7",
         "base_entry_ids": [
           "f761b11283095c6b83c45d33978550bc1c1f3e605c63b6dd98568eedd63af822"
@@ -5543,7 +5543,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 166,
+        "line": 165,
         "entry_id": "5a2554a89491593a2ff535cb95537595885809a813641fd40ffab4a57d12e4a1",
         "base_entry_ids": [
           "9b8f88846e8935a85c8e7b60a36e3ab7544566546c941ef768442114d46dae07",
@@ -5554,7 +5554,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 195,
+        "line": 194,
         "entry_id": "01bd732fa4db86ff106c3f2633971a029e5fa4f28c4f37aed00aa89e9017097f",
         "base_entry_ids": [
           "fc6eeeb8b4dea2bf6e878e50dac8a58b6a3ed06d971d546e48f6f19bdf9b20aa",
@@ -5565,7 +5565,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 197,
+        "line": 196,
         "entry_id": "39b4d9882cbf97c2a74943e8754aa1a1d866e23c4871717eb3aedd0c487c37d0",
         "base_entry_ids": [
           "fc6eeeb8b4dea2bf6e878e50dac8a58b6a3ed06d971d546e48f6f19bdf9b20aa"
@@ -5575,7 +5575,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 200,
+        "line": 199,
         "entry_id": "4f39c821eb79c377e6e5d43c7c474dcbf8ee484f82d2e24f20f4647ace0d9e1c",
         "base_entry_ids": [
           "1e0506090ca3b2221c01eaafddc90641063158bcedf4e8d92b8f578210ae37e4"
@@ -5585,7 +5585,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 204,
+        "line": 203,
         "entry_id": "a59f6e621b6ae8ca31a5eb674d23d47674ba3125b01411071e0dda935d47808d",
         "base_entry_ids": [
           "6a4655e212cadf84af7dc20907073169f98ec7e2f5db899afd832be942a387ce"
@@ -5595,7 +5595,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 217,
+        "line": 216,
         "entry_id": "37ed3793693ff6ecc8b630652a80020ef4ba320bfe534bb776ece859e94280c6",
         "base_entry_ids": [
           "f09da2c43db564ff0733fba373386372b8e3568fdead57d7d7a4a827ec929d0c"
@@ -5605,7 +5605,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 224,
+        "line": 223,
         "entry_id": "1b23bfc0897fb94e2a23951997af4d0d1d6b2bda4aefcb7411114fbf07f414c1",
         "base_entry_ids": [
           "b9bd161d1ca0e0cf95c78be3f91593b3ec3ce44f430bd9850e08b02e9f9f1985"
@@ -5615,7 +5615,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 231,
+        "line": 230,
         "entry_id": "13d33bbbd70fbdaad8a36385b6e044b79d11dbe3b240739ff228b7f209f57181",
         "base_entry_ids": [
           "15459d59567edc01052162a0876e29b69f54065eaed3fea0e16c9fc7ecee54a4"
@@ -5625,7 +5625,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 233,
+        "line": 232,
         "entry_id": "2d6dd63146e5495838d4526277bfeda1860b62659d63a7e64638730804157b2a",
         "base_entry_ids": [
           "f09da2c43db564ff0733fba373386372b8e3568fdead57d7d7a4a827ec929d0c"
@@ -5635,7 +5635,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 234,
+        "line": 233,
         "entry_id": "253d0f1aa3ea17e19cd96d574592a82ca057cb6f692321d50a0b902754d77bd2",
         "base_entry_ids": [
           "f6620f413955bdf84d56cb7b91251c7372bb080b44637f2813a62e1890d2e859"
@@ -5645,7 +5645,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 291,
+        "line": 290,
         "entry_id": "4f7b232e6eda338e559c808ad1195eca7caf6dc0c1c1a5390c514ca5695761e6",
         "base_entry_ids": [
           "88fca52aa01599bcc9eb8b260a41e85565fd4a12dd05fa34147f22bd13163fd1"
@@ -5655,7 +5655,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 301,
+        "line": 300,
         "entry_id": "0f521d04a97dc8bac61f9b5a9ecb8f11863c2f238a898368894aa308297b6a25",
         "base_entry_ids": [
           "0f521d04a97dc8bac61f9b5a9ecb8f11863c2f238a898368894aa308297b6a25"
@@ -5665,7 +5665,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 306,
+        "line": 305,
         "entry_id": "700d981ee2b75a3551eccfc2af11a2dbed4183f5e9401305b1e249917704a418",
         "base_entry_ids": [
           "cedba19d0d105e4e60a1ac83712b9284433c8a11cc70fb982608334fcbe20951",
@@ -5676,7 +5676,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 313,
+        "line": 312,
         "entry_id": "8dbcccda9942d3f00aa1c4ec8956497d52d8bd4199f02aa8f46884f6089e7f92",
         "base_entry_ids": [
           "8dbcccda9942d3f00aa1c4ec8956497d52d8bd4199f02aa8f46884f6089e7f92"
@@ -5686,7 +5686,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 347,
+        "line": 346,
         "entry_id": "a025a8a030c79bab2d9fa1ea972fa80705298adedaf19f82c2a305b1ca259f69",
         "base_entry_ids": [
           "ff80fb46cd99b6c82550ca2892121e5e414f5bc5e40ceb9e39682209a7df700d"
@@ -5696,7 +5696,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 353,
+        "line": 352,
         "entry_id": "be2f2f34c419abc47238c0152d8ccec6a5dd901f3c2c235227c0639e390c9142",
         "base_entry_ids": [
           "290c402dd63bee06482fe2fa08f3ae4add30206234cc08eaa7341c259b088b1d",
@@ -5708,7 +5708,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 356,
+        "line": 355,
         "entry_id": "045da8ec3e25d2ab71f9dc05e215421bf9fb8b653fc80d593852a6de8e5a5aab",
         "base_entry_ids": [
           "64522ebdead6486a0b9c8d19e40fa52ec86ae511e910267947cc8b50bb4fd40e",
@@ -5720,7 +5720,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 358,
+        "line": 357,
         "entry_id": "584f51b6a5ae2177ad65aa1d8b957109d199fd6e8c04c7cbfc6a3e55d8d2a0f5",
         "base_entry_ids": [
           "f4183ed61223ddba5b20f7d5b6cda85f65fb81425ce6fea7c2b0752cb9a2c2db",
@@ -5731,7 +5731,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 379,
+        "line": 378,
         "entry_id": "37c20a515eff321dea56db00fff0af127f87988250fda0cc9b22189d2cd30351",
         "base_entry_ids": [
           "37c20a515eff321dea56db00fff0af127f87988250fda0cc9b22189d2cd30351"
@@ -5741,7 +5741,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 384,
+        "line": 383,
         "entry_id": "c786ec696b359924a40309221f3fc7802e87e84534eb22ddc5c591493c6003e6",
         "base_entry_ids": [
           "c786ec696b359924a40309221f3fc7802e87e84534eb22ddc5c591493c6003e6"
@@ -5751,7 +5751,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 394,
+        "line": 393,
         "entry_id": "d14d66470587b01cca6ef114947445ed0507b745903d26e2d951d39580811401",
         "base_entry_ids": [
           "6aaf4bcd059d94582e99e5d5c65028e4ced96df98be654b7efe119c411d266fd"
@@ -5761,7 +5761,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 398,
+        "line": 397,
         "entry_id": "348ab22389c16fafb00c6917b390b3c6552a66c0e78d90fcabc27c9d3c6c88e7",
         "base_entry_ids": [
           "9e2936cb4199588cebce91f97ce2559bf5ec265cc4c2279d4a37452ae11abe31"
@@ -5771,7 +5771,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 401,
+        "line": 400,
         "entry_id": "2ea342e1a46910c0f2b09e67397150253d1146171a836cfeb8cc9783cfe8c44c",
         "base_entry_ids": [
           "3411f6c75b97fca07b579b8a5ae29a69446c29de22c37374f51bb6831daa6a0e"
@@ -5781,7 +5781,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 405,
+        "line": 404,
         "entry_id": "61cc5a36738ecd5fa1b10985949361a3af159cd75c9268a204a28cc2e62d261b",
         "base_entry_ids": [
           "fe6c94993d6922f93ee55daa3c084f7dc80ef60908e5614992a2655eccab8b94"
@@ -5791,7 +5791,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 412,
+        "line": 411,
         "entry_id": "1ed052e5a751466a7912f08e768ffed9424071647a737c8d6dbb7b34451492d7",
         "base_entry_ids": [
           "a55ff7cd83becf408c899c1467751894367a1df01e887f52979fe5a845236970"
@@ -5801,7 +5801,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 420,
+        "line": 419,
         "entry_id": "df63272ff86fab627c46e0770b86dcaa7d8598d440b3eb1f117b1091995915bf",
         "base_entry_ids": [
           "b8e8b7a366076bbfe5409aadc4e2f05651cc075034eb31c78fe0b94b1c0acacf"
@@ -5811,7 +5811,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 422,
+        "line": 421,
         "entry_id": "0aa707b11182607a7ff22ed3f949ff90c4b9ba2054db49428492d39fa2fe5402",
         "base_entry_ids": [
           "a76255e90dea50bf2380dc90cfb4024e906932645b8445223d1e15c5d359599e"
@@ -5821,7 +5821,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 425,
+        "line": 424,
         "entry_id": "c7eb31e4baf00ef68ffb5e970617f436a563a645b61550a97b9808b5d5c67027",
         "base_entry_ids": [
           "16686741e1ee136d355895b7976904b7144c4dccb9d1bb4a49fec072955c3ac7"
@@ -5831,7 +5831,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 432,
+        "line": 431,
         "entry_id": "b1ebd37d216de20abeb8d1ed04f24dcf8eddf52ad8d14a3fbc7943d755605908",
         "base_entry_ids": [
           "aaa2c02f30d9658630f3a42f23e457421ad9e071c56f6f95ac581865f2be6952"
@@ -5841,7 +5841,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 449,
+        "line": 448,
         "entry_id": "69e0b5f23b0601af30bfdd2f3f64baab1851d1097c352e1bb4e09c0de75ed3da",
         "base_entry_ids": [
           "44218c4589e52984b7762ffe03531a6f1d0bd93ebe6adf3fb3b74426802f3a74"
@@ -5851,7 +5851,7 @@
       },
       {
         "source": "moyu-native",
-        "line": 492,
+        "line": 491,
         "entry_id": "ade9108c5ac9412605cfc56143136081d654e76b812e4ad7f5c29cdd7a4c3ad1",
         "base_entry_ids": [
           "09a7263c242dc968d12e69a792f8de6fcaf1154847a93c5d6a5f59afa407380c"
@@ -6744,7 +6744,7 @@
     "homepage": "https://github.com/Xuemq/surge-modules",
     "raw-url": "https://raw.githubusercontent.com/Xuemq/surge-modules/main/modules/merged.optimized.sgmodule",
     "category": "去广告",
-    "modification_date": "2026-10-17"
+    "modification_date": "2026-10-22"
   },
   "serialization_repairs": {
     "schema_version": 1,

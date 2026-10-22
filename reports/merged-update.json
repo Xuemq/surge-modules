@@ -5,10 +5,10 @@
   "source_sha256": {
     "fmz200": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
-    "moyu": "fb9c1530eac7e921c007f7d1e9113aef11b7319fa8613e3a2bdaf15f88690a72"
+    "moyu": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b"
   },
-  "module_sha256": "b336ac440952bd927ee8893922703101ae45076e2fd7e299e92b94a37ec3b251",
-  "policy_sha256": "6969d4fc045cc8f3b09f490f6ab9a495117ea898be6b9bde503cb7888dc3af1f",
+  "module_sha256": "6efa4726e1bddea840fd064abb0a25f650d7b70242bd160952ec5f542a6cdfd7",
+  "policy_sha256": "c681ba896418ce86abd036dec9fdd89f35228130a086627d10a65685681a2cea",
   "support_sha256": {
     "licenses/fmz200-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
     "licenses/blackmatrix7-GPL-2.0.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
@@ -24,5 +24,5 @@
   "conversion_exclusion_count": 1,
   "conflict_decision_count": 453,
   "overlap_witness_count": 173,
-  "modification_date": "2026-10-17"
+  "modification_date": "2026-10-22"
 }

@@ -7,7 +7,7 @@
 #!system=ios
 #!arguments=12306_enable:true,DT:false,FX:true,HMPR:false,MY:true,PRCN:true,PRDRD:false,PRGG:true,PRMST:true,PRRK:false,PRRR:true,PRSCVPT:false,PRST:false,displayUpList:"show",logLevel:"error",per_filter_video_thread:"0",purifyComment:true,sponsorBlock:true,tab:true,useractivity:true
 
-# Modified 2026-10-17 by Xuemq: reviewed conversion, deduplication, parameter repair and conservative conflict selection.
+# Modified 2026-10-22 by Xuemq: reviewed conversion, deduplication, parameter repair and conservative conflict selection.
 # Original authors and contributors retain their rights. See docs/merged-notice.md and notices/ for exact upstream notices.
 # Source licenses are recorded separately; no single license or additional upstream permission is asserted for the combined contents.
 # Static and synthetic tests only. Surge/app runtime and arbitrary regex overlap are not verified.
@@ -4724,7 +4724,6 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 ^https?:\/\/api-tx\.dsocial\.xyz\/api\/.*\/ad_ data-type=text data=" " status-code=200
 https?://res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data=" " status-code=200
 https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices) data-type=text data=" " status-code=200
-^https?:\/\/ap\.(dongqiudi|dongdianqiu)\.com\/plat\/v4 data-type=file data="https://raw.githubusercontent.com/ddgksf2013/Scripts/master/dongqiudi.js" status-code=200 header="Content-Type:text/json"
 ^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ data-type=text data=" " status-code=200
 ^https?:\/\/e.dangdang.com\/media\/api.+\?action=getDeviceStartPage data-type=text data=" " status-code=200
 ^https?:\/\/mama\.dxy\.com\/api\/cms\/client\/popup-window\/list data-type=text data=" " status-code=200
