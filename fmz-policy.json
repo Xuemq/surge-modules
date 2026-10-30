@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source_id": "fmz200",
-  "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
-  "modification_date": "2026-10-17",
+  "source_sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
+  "modification_date": "2026-10-30",
   "argument_defaults": {
     "per_filter_video_thread": "\"0\"",
     "logLevel": "\"error\"",
@@ -80,63 +80,63 @@
   },
   "scope_exclusions": [
     {
-      "line": 1348,
+      "line": 1450,
       "section": "Rule",
       "line_sha256": "d118a415a89a1597e9f089c4e77a2cad81ae7b4267834cd40689d84262a354ca",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 4412,
+      "line": 4483,
       "section": "URL Rewrite",
       "line_sha256": "d9ca26d429f45ab1367eb14f8e6d74136a8ded3b232f3dee0e8df7f9d7c5d22b",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 4413,
+      "line": 4484,
       "section": "URL Rewrite",
       "line_sha256": "b73676d13bd208316c9bcc63bd91df61f316e42f2065568177b1646a17cc80d1",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 4447,
+      "line": 4518,
       "section": "URL Rewrite",
       "line_sha256": "849f61060b2ce3b5bab7ecc67467432427fac05e61837a2cbd92e269d59de753",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 4448,
+      "line": 4519,
       "section": "URL Rewrite",
       "line_sha256": "8d57b6d29097b97cc61ee193bab55bef19945c7f41e0070deaf2cb84ccad1c4f",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 7277,
+      "line": 7262,
       "section": "Map Local",
       "line_sha256": "e7887c6003f3c30e79fad7ece3cdb59507d6e2bc9955dc0ef16d8e045a1d2b2d",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 7000,
+      "line": 7055,
       "section": "Map Local",
       "line_sha256": "136623e2c354990542667965ffe225989734c7f58b9118fb7c2dc0b7e6719d4b",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 7002,
+      "line": 7057,
       "section": "Map Local",
       "line_sha256": "51ced727dc97fefa7ae5d07cb3bbbb02d1fafc854e1260be580e2b33820443a0",
       "classification": "manual-scope-exclusion",
       "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
     },
     {
-      "line": 8374,
+      "line": 8355,
       "section": "Map Local",
       "line_sha256": "737d69859e450d6fdb1343686b6be589da5dd38ec3680206d8a3b0bc270f50a5",
       "classification": "manual-scope-exclusion",
@@ -146,5 +146,22 @@
   "module_metadata": {
     "name": "去广告优化 · fmz200",
     "desc": "基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。"
-  }
+  },
+  "retained_entries": [
+    {
+      "section": "Rule",
+      "raw": "DOMAIN, ads-img-al.xhscdn.com, REJECT",
+      "line_sha256": "45e572890374964a29e6eba04b590280bba0b63db1ff1771d1f3f96a89065a3d",
+      "evidence": {
+        "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+        "line": 2448
+      },
+      "after": {
+        "section": "Rule",
+        "line": 3354,
+        "line_sha256": "c046c31fe47bde6978ea7e16bba811518376602581a723ecbb4ae3e6e70a04fa"
+      },
+      "reason": "Preserve reviewed baseline ad-domain rejection; upstream removal was not confirmed obsolete."
+    }
+  ]
 }

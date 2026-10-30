@@ -10,7 +10,7 @@
 - 使用已发布文件和旧锁定源完整重建基线，要求模块逐字节相同。新包使用独立 `merged-policy.json`，不更改 fmz 单来源策略。
 - 已审规则只能凭完整段名、行内容哈希或解析后的条目 ID 重定位。要求旧、新目标唯一；缺失、改写、重复或数量歧义都会阻断。不能用相似名称、域名猜测、模糊匹配或静默删除来通过门禁。
 - 保留 9 条 fmz 精确范围排除，以及两个补充来源中的对应精确排除、TestFlight 排除、两项原生响应适配的全部参数和哈希。
-- 现有 453 项冲突决定、166 项补充冲突排除和 173 对有限重叠见证保留原语义；只更新必要的行号与阶段哈希，不生成新的冲突决定或例外。构建器重新检查这些决定及见证。
+- 当前精确冲突决定、补充冲突排除和有限重叠见证以 `merged-policy.json` 及构建报告为准；自动更新保留原语义，只更新必要的行号与阶段哈希，不生成新的冲突决定或例外。构建器重新检查这些决定及见证。人工重审的迁移记录与自动迁移分开保存。
 - 允许小范围、可解析的 URL Rewrite 拒绝规则增删，以及未受精确决定约束的条目删除；新增或改写外部资源、脚本、Rule 路由、Map Local 响应、重定向、Header Rewrite 和 Body Rewrite 定义均需要人工复核。Map Local 即使引用已有 URL 或看起来是静态正文，也不能绕过状态码、Location、Refresh、Set-Cookie 或活动正文的人工复核。已有脚本即使 URL 不变，修改匹配、阶段、参数、请求体或其他设置也会阻断。
 - 保留已有条目的相对顺序和重复次数；检查字面冲突、MITM、General、语义元数据、作者信息和变更数量。各转换阶段和最终模块都检查，避免把危险改动藏在转换或去重阶段。有限 URL 见证不解释 Rule 路由语言，因此连新的 DOMAIN 拒绝规则也不自动接受，防止绕过已知基线重叠门禁。
 - 已审序列化修复保存在 `merged-policy.json` 的 `serialization_repairs` 中；更新只能完整保留该策略，不能重算修复决定。基线先重建修复后的已发布模块，新源仍须匹配每个唯一条目 ID；目标缺失、重复或改变时阻断，不能静默恢复坏行。版本化 `scripts/header-status-v2.js` 的固定仓库 URL 和文件哈希在准备及发布包验证阶段均检查；自动更新不会改写 v1 或 v2 适配器。此轮修复仅适用于三源模块，fmz 回退订阅保持原样。
@@ -38,6 +38,8 @@
 GitHub 默认 concurrency 队列只保留一个待运行项，快速连续触发可能替换较旧的待运行项；下一次日程或手动运行会再检查。它不是每个事件必达的消息队列。配置依据：[GitHub concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)、[GitHub workflow 安全建议](https://docs.github.com/en/actions/reference/security/secure-use)。
 
 ## 复现和失败处理
+
+2026-10-30 的人工重审接受小红书/RedNote 和联掌门户这一批精确来源变化，以及逐项确认的 MITM/HTTP 引擎范围；同时保留被上游移除、但没有失效证据的 `ads-img-al.xhscdn.com` 整域拒绝。新增联掌门户成功 JSON 响应与既有墨鱼拒绝规则的交叠另作精确排除，并增加有限 URL 见证；不能仅因旧见证全部通过就认定新规则没有交叠。排除的是完整的旧 `getAdSlotList` 补充拒绝条目，不是正则范围等价替换；它的其它端口或查询变体不再由这一补充条目拦截。九项格式/参数修复、原应用范围排除和 TestFlight 排除继续保留。此重审不放宽任何未来自动更新门禁。
 
 按 `sources-merged.json` 下载两个不可变源，使用仓库内墨鱼快照填充 `.cache/{fmz200,blackmatrix7,moyu}.source`，执行：
 

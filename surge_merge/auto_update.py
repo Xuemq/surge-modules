@@ -19,7 +19,7 @@ import urllib.request
 
 from .core import Invalid, clean_bytes, digest, params, parse_module, unquote, words
 from .pipeline import MAX_BYTES, NoRedirect, atomic_write, download, json_write, load_manifest, read_json, verify_bytes
-from .single import optimize_single
+from .single import optimize_single, retained_entries_by_anchor
 
 REPOSITORY = "Xuemq/surge-modules"
 UPSTREAM = "https://raw.githubusercontent.com/fmz200/wool_scripts/"
@@ -128,6 +128,14 @@ def migrate_policy(old_data, new_data, policy, modification_date):
         after = [n for sec, sha, n in new if (sec, sha) == identity]
         require(before == [selection["line"]] and len(after) == 1, "scope_target_missing_changed_or_ambiguous")
         selection["line"] = after[0]
+    for selection in migrated.get("retained_entries", []):
+        anchor = selection["after"]
+        identity = (anchor["section"], anchor["line_sha256"])
+        before = [n for sec, sha, n in old if (sec, sha) == identity]
+        after = [n for sec, sha, n in new if (sec, sha) == identity]
+        require(before == [anchor["line"]] and len(after) == 1,
+                "retained_anchor_missing_changed_or_ambiguous")
+        anchor["line"] = after[0]
     for sha in policy.get("script_argument_repairs", {}):
         before = [(sec, h) for sec, h, _ in old if h == sha]
         after = [(sec, h) for sec, h, _ in new if h == sha]
@@ -143,6 +151,11 @@ def migrate_policy(old_data, new_data, policy, modification_date):
     migrated["source_sha256"] = digest(new_data)
     if old_data != new_data:
         migrated["modification_date"] = modification_date
+    if migrated.get("retained_entries"):
+        try:
+            retained_entries_by_anchor(new_data, "fmz200", migrated)
+        except Invalid as exc:
+            raise Blocked("retained_entry_requires_manual_review") from exc
     return migrated
 
 
@@ -268,6 +281,7 @@ def make_notice(manifest, policy, report):
 许可：沿用上游 GNU GPL v3；完整许可见 licenses/fmz200-GPL-3.0.txt。
 修改：安全完全重复项去重 {changes.get('exact-duplicate', 0)} 条；重复脚本标签确定性改名 {changes.get('unique-script-label', 0)} 项；具名 JSON 参数修复 {changes.get('script-argument-object', 0)} 行；JSON 等值 base64 修复 {changes.get('json-map-base64', 0)} 行；恢复有证据的缺失参数默认值；保留原有不同操作与顺序。
 明确选择的范围排除：{exclusions} 条，均绑定原始段名和行哈希，不代表它们已经失效。自动更新仅允许精确目标移动行号，不能扩大删除范围或自动改写决定。完整逐行报告见 reports/fmz200-build-report.json；首次范围精简的历史对比见 reports/fmz200-scope-diff.json（不代表后续版本差异）。
+明确保留的旧基线规则：{len(policy.get('retained_entries', []))} 条，绑定已审历史定义与唯一当前源锚点。上游重新引入同键规则或锚点改变会阻断更新，不会自动删除这项保护。
 
 每日安全更新与手动运行通过后，发布至同一个 modules/fmz200.optimized.sgmodule 地址。任何校验、下载、测试或发布门禁失败时保留最后成功版本。自动发布记录见 reports/fmz200-update.json；复现使用 sources-fmz.json 和 fmz-policy.json。
 

@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "source_sha256": {
-    "fmz200": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+    "fmz200": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
     "moyu": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b"
   },
   "fmz_policy": {
     "schema_version": 1,
     "source_id": "fmz200",
-    "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
-    "modification_date": "2026-10-17",
+    "source_sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
+    "modification_date": "2026-10-30",
     "argument_defaults": {
       "per_filter_video_thread": "\"0\"",
       "logLevel": "\"error\"",
@@ -87,63 +87,63 @@
     },
     "scope_exclusions": [
       {
-        "line": 1348,
+        "line": 1450,
         "section": "Rule",
         "line_sha256": "d118a415a89a1597e9f089c4e77a2cad81ae7b4267834cd40689d84262a354ca",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4412,
+        "line": 4483,
         "section": "URL Rewrite",
         "line_sha256": "d9ca26d429f45ab1367eb14f8e6d74136a8ded3b232f3dee0e8df7f9d7c5d22b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4413,
+        "line": 4484,
         "section": "URL Rewrite",
         "line_sha256": "b73676d13bd208316c9bcc63bd91df61f316e42f2065568177b1646a17cc80d1",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4447,
+        "line": 4518,
         "section": "URL Rewrite",
         "line_sha256": "849f61060b2ce3b5bab7ecc67467432427fac05e61837a2cbd92e269d59de753",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4448,
+        "line": 4519,
         "section": "URL Rewrite",
         "line_sha256": "8d57b6d29097b97cc61ee193bab55bef19945c7f41e0070deaf2cb84ccad1c4f",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7277,
+        "line": 7262,
         "section": "Map Local",
         "line_sha256": "e7887c6003f3c30e79fad7ece3cdb59507d6e2bc9955dc0ef16d8e045a1d2b2d",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7000,
+        "line": 7055,
         "section": "Map Local",
         "line_sha256": "136623e2c354990542667965ffe225989734c7f58b9118fb7c2dc0b7e6719d4b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7002,
+        "line": 7057,
         "section": "Map Local",
         "line_sha256": "51ced727dc97fefa7ae5d07cb3bbbb02d1fafc854e1260be580e2b33820443a0",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 8374,
+        "line": 8355,
         "section": "Map Local",
         "line_sha256": "737d69859e450d6fdb1343686b6be589da5dd38ec3680206d8a3b0bc270f50a5",
         "classification": "manual-scope-exclusion",
@@ -153,7 +153,24 @@
     "module_metadata": {
       "name": "去广告优化 · fmz200",
       "desc": "基于 fmz200 的单来源优化：安全去重、参数修复及已确认的规则精简。适用于 Surge iOS 5.14+；仅完成静态检查，尚未实机验证。"
-    }
+    },
+    "retained_entries": [
+      {
+        "section": "Rule",
+        "raw": "DOMAIN, ads-img-al.xhscdn.com, REJECT",
+        "line_sha256": "45e572890374964a29e6eba04b590280bba0b63db1ff1771d1f3f96a89065a3d",
+        "evidence": {
+          "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+          "line": 2448
+        },
+        "after": {
+          "section": "Rule",
+          "line": 3354,
+          "line_sha256": "c046c31fe47bde6978ea7e16bba811518376602581a723ecbb4ae3e6e70a04fa"
+        },
+        "reason": "Preserve reviewed baseline ad-domain rejection; upstream removal was not confirmed obsolete."
+      }
+    ]
   },
   "conversion_policy": {
     "reviewed": true,
@@ -466,47 +483,11 @@
     "schema_version": 2,
     "base_source": "fmz200-optimized",
     "source_sha256": {
-      "fmz200-optimized": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
+      "fmz200-optimized": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
       "blackmatrix7": "996dddce052e7a68be7923db41e364b6513d813c30713498151af804b8b31525",
       "moyu-native": "e71c88a4e7949a9aa73050740d5c328aff87c64553d27359b257e854be523378"
     },
     "decisions": [
-      {
-        "conflict_id": "545e36cefb6e6c425bdcd759425dc443c5ec84d3759d4723013d5db0b88d698a",
-        "entry_ids": [
-          "5c9fc0ff412b1805e8e033bc452e27c8bd9e92f76f9a78c959cdec4da2fbe7ce",
-          "23b22ac00fc607e5608fd4e60a92b506ed031547ead1cc76506c87493f9b6303"
-        ],
-        "action": "preserve-base",
-        "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
-      },
-      {
-        "conflict_id": "ec85459ab6c9f7c3ca0ac9c13d22bf45d1d0c569d094e7e61fba8784572a71b1",
-        "entry_ids": [
-          "eea4783c8e6531082a660b7a99d80930e718306b710876e5d0a53cddd514564d",
-          "341d76388fd399bfadbc28f8476265f9d101d5726f2c43fe395707c4d4de4537"
-        ],
-        "action": "preserve-base",
-        "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
-      },
-      {
-        "conflict_id": "7585ff0ef2dc317b514f7726d6efc94f4382e7eabf9a03d2286d2e498ae9ac26",
-        "entry_ids": [
-          "556b1d8d21b4194309e8f89efa6231456e1049c9a7adc6b5fa6a8070313c2f08",
-          "177d3465bf194ec333687aa9d591e663a26feefd886b9dd4b1e3db970adc4dfd"
-        ],
-        "action": "preserve-base",
-        "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
-      },
-      {
-        "conflict_id": "2c10b963faac685945e52dd2b634542c3116c50a631b7a3619eb9f8af6e2bfb1",
-        "entry_ids": [
-          "745b9d93df812f002f9f97876ac7aafcba7f5d10698974122f1ce36ae171170a",
-          "4ae4ff613965d03786890200bcc6aac71187c4fec7fc6a6f1d5b3ec8146ee43f"
-        ],
-        "action": "preserve-base",
-        "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
-      },
       {
         "conflict_id": "7b30c1483bb543412e9e7d547885218b5ec33e02f9adf818dacb7da8f6c8d694",
         "entry_ids": [
@@ -1271,14 +1252,6 @@
         "conflict_id": "bf73a4223b4a42627a5879ab194acdf2b5783670c514cd662c8b8b99fdaf0d0a",
         "entry_ids": [
           "4a2189e09fcfe34f21232061be7d0f7c0f0e1ca81c261af33fbf6267b28a65b9"
-        ],
-        "action": "preserve-base",
-        "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
-      },
-      {
-        "conflict_id": "00d61884f073467820472221e0352247979509f9a63444dfd3c52b88c7906be0",
-        "entry_ids": [
-          "b0836c075c8bfe3ffe620d6f53c6781ac14941ce3b6a54012152e4b16627d634"
         ],
         "action": "preserve-base",
         "reason": "Preserve every primary fmz definition and its original order; omit conflicting supplements. This is source priority, not semantic equivalence."
@@ -5278,7 +5251,7 @@
         "line": 834,
         "entry_id": "449832c0078745f61cec9eb99e1083d40ff28101650ef4d587685618dd31fc17",
         "base_entry_ids": [
-          "ac2329ceb1793d97ca8a08ac78f465f0b60aeb5543790a903b2b7be55e91f269"
+          "17f6b12346618e5d259a1a9ae2efd28f4cb034ec2171b8734400dfe55c592309"
         ],
         "reason": "Conservative baseline-first exclusion: finite witness shows supplementary response/transform overlaps baseline behavior. Additional supplement coverage is intentionally forfeited; no equivalence claim.",
         "evidence": "Verified Python-regex finite witnesses, NOT Surge runtime or exhaustive overlap proof: [{\"base_entry_id\":\"ac2329ceb1793d97ca8a08ac78f465f0b60aeb5543790a903b2b7be55e91f269\",\"base_section\":\"Map Local\",\"witness\":\"http://www.xiaohongshu.com/api/sns/v0/ads/resource\"}]"
@@ -5858,6 +5831,16 @@
         ],
         "reason": "Conservative baseline-first exclusion: finite witness shows supplementary response/transform overlaps baseline behavior. Additional supplement coverage is intentionally forfeited; no equivalence claim.",
         "evidence": "Verified Python-regex finite witnesses, NOT Surge runtime or exhaustive overlap proof: [{\"base_entry_id\":\"09a7263c242dc968d12e69a792f8de6fcaf1154847a93c5d6a5f59afa407380c\",\"base_section\":\"Script\",\"witness\":\"https://j1.pupuapi.com/client/marketing/advertisement/v1\"},{\"base_entry_id\":\"09a7263c242dc968d12e69a792f8de6fcaf1154847a93c5d6a5f59afa407380c\",\"base_section\":\"Script\",\"witness\":\"https://j1.pupuapi.com/client/marketing/advertisement/v1?\"}]"
+      },
+      {
+        "source": "moyu-native",
+        "line": 503,
+        "entry_id": "fa9b3b1a4c7025f681759de02ba56db4d71d43a9d0147a6f9d8768e2baacd943",
+        "base_entry_ids": [
+          "0ee5ce28adf83fd8e7476e8b3699b23f0d077fec7c678bd725f48abef0662905"
+        ],
+        "reason": "Reviewed broad supplementary reject would shadow the newly approved primary fmz 200 JSON response; preserve base behavior and omit this exact supplement.",
+        "evidence": "Exact reviewed overlap witness: https://yuudnn.lz-qs.com:9220/mssp-api/api/v1/mrtb/getAdSlotList"
       }
     ]
   },
@@ -6665,7 +6648,7 @@
       },
       {
         "supplement_id": "449832c0078745f61cec9eb99e1083d40ff28101650ef4d587685618dd31fc17",
-        "base_id": "ac2329ceb1793d97ca8a08ac78f465f0b60aeb5543790a903b2b7be55e91f269",
+        "base_id": "17f6b12346618e5d259a1a9ae2efd28f4cb034ec2171b8734400dfe55c592309",
         "witness": "http://www.xiaohongshu.com/api/sns/v0/ads/resource"
       },
       {
@@ -6727,6 +6710,11 @@
         "supplement_id": "a025a8a030c79bab2d9fa1ea972fa80705298adedaf19f82c2a305b1ca259f69",
         "base_id": "ff80fb46cd99b6c82550ca2892121e5e414f5bc5e40ceb9e39682209a7df700d",
         "witness": "http://api.m.mi.com/v1/app/start"
+      },
+      {
+        "supplement_id": "fa9b3b1a4c7025f681759de02ba56db4d71d43a9d0147a6f9d8768e2baacd943",
+        "base_id": "0ee5ce28adf83fd8e7476e8b3699b23f0d077fec7c678bd725f48abef0662905",
+        "witness": "https://yuudnn.lz-qs.com:9220/mssp-api/api/v1/mrtb/getAdSlotList"
       }
     ],
     "exceptions": [
@@ -6744,7 +6732,7 @@
     "homepage": "https://github.com/Xuemq/surge-modules",
     "raw-url": "https://raw.githubusercontent.com/Xuemq/surge-modules/main/modules/merged.optimized.sgmodule",
     "category": "去广告",
-    "modification_date": "2026-10-22"
+    "modification_date": "2026-10-30"
   },
   "serialization_repairs": {
     "schema_version": 1,

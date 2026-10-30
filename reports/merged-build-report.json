@@ -3,31 +3,31 @@
   "status": "reviewed_static_build",
   "static_only": true,
   "source_sha256": {
-    "fmz200": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
+    "fmz200": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
     "moyu": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b"
   },
-  "policy_sha256": "37516c9805eb210db7ab0fe049f83f80902805e952e0998bdc842bc8815c3dee",
-  "reviewed_assembly_sha256": "9846a333be78f3124a747d6c96f499f1bb74bf4bc7e850f9175cfab7cc454bcf",
-  "output_sha256": "6efa4726e1bddea840fd064abb0a25f650d7b70242bd160952ec5f542a6cdfd7",
-  "bytes": 435445,
-  "active_entries_sha256": "5e45af08ffbdca62583f9dd5c3dbea845f67563bc800cc28a6abb8372cdfde92",
+  "policy_sha256": "6a4d819cfeb70a3a7c84e77b526c143e8029c4eb549d4873c2e78a3b6c03238e",
+  "reviewed_assembly_sha256": "098717595b1e2f25c16345c9a0f2201cd3f087fec0b1e94fcd59fecf539f60e5",
+  "output_sha256": "510fd687c41d38e2f92d36e7115716e5c32c7507e9c47d0d583676b28a28fad9",
+  "bytes": 435902,
+  "active_entries_sha256": "b44e0c4d7b66b12679be45a89242d002ac02ed39a89120563be8174cbc84b05f",
   "counts": {
-    "Rule": 2827,
+    "General": 1,
+    "Rule": 2823,
     "Header Rewrite": 1,
-    "URL Rewrite": 875,
-    "Body Rewrite": 115,
-    "Map Local": 1068,
+    "URL Rewrite": 873,
+    "Body Rewrite": 107,
+    "Map Local": 1078,
     "Script": 263,
-    "MITM": 1,
-    "General": 1
+    "MITM": 1
   },
-  "base_entries_preserved": 4443,
-  "baseline_mitm_hosts_preserved": 931,
-  "final_mitm_hosts": 1481,
+  "base_entries_preserved": 4441,
+  "baseline_mitm_hosts_preserved": 939,
+  "final_mitm_hosts": 1488,
   "native_adapters_preserved": 2,
   "finite_overlap_review": {
-    "witness_pairs_checked": 173,
+    "witness_pairs_checked": 174,
     "unexpected_hits": 0,
     "exceptions_used": [
       {
@@ -40,21 +40,23 @@
   },
   "stages": {
     "fmz": {
-      "source_sha256": "d75a30e3410fccc4269c2749cdc430f2c6ef5b092bca1bc342279642f9918423",
-      "output_sha256": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
+      "source_sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
+      "output_sha256": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
       "counts_after": {
-        "Rule": 2808,
+        "General": 1,
+        "Rule": 2804,
         "Header Rewrite": 1,
-        "URL Rewrite": 514,
-        "Body Rewrite": 104,
-        "Map Local": 797,
+        "URL Rewrite": 513,
+        "Body Rewrite": 96,
+        "Map Local": 807,
         "Script": 218,
         "MITM": 1
       },
       "changes_by_kind": {
         "module-metadata": 2,
         "restore-argument-defaults": 1,
-        "exact-duplicate": 267,
+        "exact-duplicate": 184,
+        "retained-baseline-rule": 1,
         "json-map-base64": 5,
         "unique-script-label": 92,
         "script-argument-object": 7,
@@ -63,63 +65,63 @@
     },
     "scope_exclusions": [
       {
-        "line": 1348,
+        "line": 1450,
         "section": "Rule",
         "line_sha256": "d118a415a89a1597e9f089c4e77a2cad81ae7b4267834cd40689d84262a354ca",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4412,
+        "line": 4483,
         "section": "URL Rewrite",
         "line_sha256": "d9ca26d429f45ab1367eb14f8e6d74136a8ded3b232f3dee0e8df7f9d7c5d22b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4413,
+        "line": 4484,
         "section": "URL Rewrite",
         "line_sha256": "b73676d13bd208316c9bcc63bd91df61f316e42f2065568177b1646a17cc80d1",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4447,
+        "line": 4518,
         "section": "URL Rewrite",
         "line_sha256": "849f61060b2ce3b5bab7ecc67467432427fac05e61837a2cbd92e269d59de753",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4448,
+        "line": 4519,
         "section": "URL Rewrite",
         "line_sha256": "8d57b6d29097b97cc61ee193bab55bef19945c7f41e0070deaf2cb84ccad1c4f",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7277,
+        "line": 7262,
         "section": "Map Local",
         "line_sha256": "e7887c6003f3c30e79fad7ece3cdb59507d6e2bc9955dc0ef16d8e045a1d2b2d",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7000,
+        "line": 7055,
         "section": "Map Local",
         "line_sha256": "136623e2c354990542667965ffe225989734c7f58b9118fb7c2dc0b7e6719d4b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7002,
+        "line": 7057,
         "section": "Map Local",
         "line_sha256": "51ced727dc97fefa7ae5d07cb3bbbb02d1fafc854e1260be580e2b33820443a0",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 8374,
+        "line": 8355,
         "section": "Map Local",
         "line_sha256": "737d69859e450d6fdb1343686b6be589da5dd38ec3680206d8a3b0bc270f50a5",
         "classification": "manual-scope-exclusion",
@@ -241,36 +243,36 @@
   "merge": {
     "base_source": "fmz200-optimized",
     "source_sha256": {
-      "fmz200-optimized": "c8634b34bef74ac2bd0e04b06e87dc21d1c02811f8b9b3e0d3a9e4a08982cc3d",
+      "fmz200-optimized": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
       "blackmatrix7": "996dddce052e7a68be7923db41e364b6513d813c30713498151af804b8b31525",
       "moyu-native": "e71c88a4e7949a9aa73050740d5c328aff87c64553d27359b257e854be523378"
     },
     "counts_before": {
-      "Rule": 2837,
+      "General": 2,
+      "Rule": 2833,
       "Header Rewrite": 1,
-      "URL Rewrite": 1336,
-      "Body Rewrite": 121,
-      "Map Local": 1233,
+      "URL Rewrite": 1335,
+      "Body Rewrite": 113,
+      "Map Local": 1243,
       "Script": 269,
-      "MITM": 3,
-      "General": 1
+      "MITM": 3
     },
     "counts_after": {
-      "Rule": 2827,
+      "General": 1,
+      "Rule": 2823,
       "Header Rewrite": 1,
-      "URL Rewrite": 875,
-      "Body Rewrite": 115,
-      "Map Local": 1068,
+      "URL Rewrite": 873,
+      "Body Rewrite": 107,
+      "Map Local": 1078,
       "Script": 263,
-      "MITM": 1,
-      "General": 1
+      "MITM": 1
     },
     "duplicates": [
       {
         "kept": {
           "id": "728dd1d88dafe58f484343007f78c5c9af62fbb8b78a1ac2bb7454bbd1398cb1",
           "source": "fmz200-optimized",
-          "line": 2404,
+          "line": 3692,
           "section": "Rule"
         },
         "removed": {
@@ -284,7 +286,7 @@
         "kept": {
           "id": "d0f1f1addc9e11b8ac213379f292f5ed5dbbc57b5b8951cfa49403088115295e",
           "source": "fmz200-optimized",
-          "line": 2405,
+          "line": 3693,
           "section": "Rule"
         },
         "removed": {
@@ -298,7 +300,7 @@
         "kept": {
           "id": "2987b894798a32919eb123588ca24aceb16647adab5eb98f3aca83ab6f1859be",
           "source": "fmz200-optimized",
-          "line": 2406,
+          "line": 3696,
           "section": "Rule"
         },
         "removed": {
@@ -312,7 +314,7 @@
         "kept": {
           "id": "3984c55c203a6a17cfb02b7fd18f1688455db87924952429776f21fefc01a332",
           "source": "fmz200-optimized",
-          "line": 2407,
+          "line": 3694,
           "section": "Rule"
         },
         "removed": {
@@ -326,7 +328,7 @@
         "kept": {
           "id": "9fe6a6ef63ba6fcb74b8426526f168b5dd96e5c6030a9d90d9aa3b54729e2a71",
           "source": "fmz200-optimized",
-          "line": 2408,
+          "line": 3695,
           "section": "Rule"
         },
         "removed": {
@@ -340,7 +342,7 @@
         "kept": {
           "id": "efa6678c0e34deb6bed657cf28dc8c694e316ee90f4007f9c910d2a7067520d3",
           "source": "fmz200-optimized",
-          "line": 2409,
+          "line": 3700,
           "section": "Rule"
         },
         "removed": {
@@ -354,7 +356,7 @@
         "kept": {
           "id": "f936ead6005ae7db8ca3ef7bb8ce59b72efc503fa1f08a82220717d91ecef789",
           "source": "fmz200-optimized",
-          "line": 2410,
+          "line": 3701,
           "section": "Rule"
         },
         "removed": {
@@ -368,7 +370,7 @@
         "kept": {
           "id": "668b954ee95a18780f24c348b3cb3404b43bd47e660f0e607f3a7b9f92e8840e",
           "source": "fmz200-optimized",
-          "line": 2411,
+          "line": 3698,
           "section": "Rule"
         },
         "removed": {
@@ -382,7 +384,7 @@
         "kept": {
           "id": "35305ce720b7e3d6bbf9cd9733a26ae682a960d37f89c225f326254743eef74e",
           "source": "fmz200-optimized",
-          "line": 2412,
+          "line": 3699,
           "section": "Rule"
         },
         "removed": {
@@ -396,7 +398,7 @@
         "kept": {
           "id": "42a96c4a850258679577dab2c32cb8a3c5929c3bf8d38b676b32b3fec6ad8535",
           "source": "fmz200-optimized",
-          "line": 5686,
+          "line": 5751,
           "section": "Map Local"
         },
         "removed": {
@@ -410,7 +412,7 @@
         "kept": {
           "id": "04eda109e00e6e0aa365f1a9c2474f350d8d85189c52dfbde660bcaf0be2d231",
           "source": "fmz200-optimized",
-          "line": 5745,
+          "line": 5810,
           "section": "Map Local"
         },
         "removed": {
@@ -424,7 +426,7 @@
         "kept": {
           "id": "82dbdc0423cd520e09236087a1a5f8e73b758cc716f699b72eb401a96fbe895e",
           "source": "fmz200-optimized",
-          "line": 6076,
+          "line": 6141,
           "section": "Map Local"
         },
         "removed": {
@@ -452,7 +454,7 @@
         "kept": {
           "id": "35eacf7a995f334f3c0ba50a5989163b54cf325d997fec5016f417a6e2f228c4",
           "source": "fmz200-optimized",
-          "line": 5958,
+          "line": 6023,
           "section": "Map Local"
         },
         "removed": {
@@ -466,7 +468,7 @@
         "kept": {
           "id": "0b34ec1c8c1c4c2541ebe5299feedcd5e3a1e735bac837de5b1ad6af893d324d",
           "source": "fmz200-optimized",
-          "line": 6113,
+          "line": 6178,
           "section": "Map Local"
         },
         "removed": {
@@ -480,7 +482,7 @@
         "kept": {
           "id": "b83258d9ef33e35722d476928f5621c3796351e469d555d4c12983b5cb132a56",
           "source": "fmz200-optimized",
-          "line": 6331,
+          "line": 6396,
           "section": "Map Local"
         },
         "removed": {
@@ -494,7 +496,7 @@
         "kept": {
           "id": "681846f6d15b1886ea970e47623a8b30c158e98420bce1daad796c07e759bd13",
           "source": "fmz200-optimized",
-          "line": 6352,
+          "line": 6417,
           "section": "Map Local"
         },
         "removed": {
@@ -508,7 +510,7 @@
         "kept": {
           "id": "ae7d7d7c79f34ac0bf5301f8305292204fe52e3601584fa16acfc2fb99066288",
           "source": "fmz200-optimized",
-          "line": 6462,
+          "line": 6527,
           "section": "Map Local"
         },
         "removed": {
@@ -522,7 +524,7 @@
         "kept": {
           "id": "ac7db07f538c32f775bfc7488aec2a1f998636f1142de6534b7496b8ae1bab15",
           "source": "fmz200-optimized",
-          "line": 6464,
+          "line": 6529,
           "section": "Map Local"
         },
         "removed": {
@@ -536,7 +538,7 @@
         "kept": {
           "id": "f17350c64b7d8728c0b8e31852b4d0cb3d3d6feb908e4b970f1b03712b828552",
           "source": "fmz200-optimized",
-          "line": 6476,
+          "line": 6541,
           "section": "Map Local"
         },
         "removed": {
@@ -564,7 +566,7 @@
         "kept": {
           "id": "93a06b9e32a6432aa6fb5fae714f74dcd7c2f1f56be9db854820c9ecfc6b02df",
           "source": "fmz200-optimized",
-          "line": 6611,
+          "line": 6689,
           "section": "Map Local"
         },
         "removed": {
@@ -578,7 +580,7 @@
         "kept": {
           "id": "96ae7bde22c00db7529b7652224245ace1994fac61d53d8bf2cc90f0a33874b9",
           "source": "fmz200-optimized",
-          "line": 6749,
+          "line": 6827,
           "section": "Map Local"
         },
         "removed": {
@@ -592,7 +594,7 @@
         "kept": {
           "id": "ab6627de3532d29fa9ee0716bd874a27dc893c9980ebc89e2363ad5823e9f7a4",
           "source": "fmz200-optimized",
-          "line": 6797,
+          "line": 6875,
           "section": "Map Local"
         },
         "removed": {
@@ -606,7 +608,7 @@
         "kept": {
           "id": "dec06cc817deaf99689936dd4d8b01496eaf501bbbcea11593ce8fa4cad3d5bf",
           "source": "fmz200-optimized",
-          "line": 6848,
+          "line": 6926,
           "section": "Map Local"
         },
         "removed": {
@@ -620,7 +622,7 @@
         "kept": {
           "id": "e39619ba86ae1707c96d9c1e176c2ba3692aa13731479704126566e59509596b",
           "source": "fmz200-optimized",
-          "line": 7413,
+          "line": 7421,
           "section": "Map Local"
         },
         "removed": {
@@ -634,7 +636,7 @@
         "kept": {
           "id": "eed58452a3831b0c30167688721e496bc32734727ddd67edc6545f8c6d96fd25",
           "source": "fmz200-optimized",
-          "line": 7300,
+          "line": 7308,
           "section": "Map Local"
         },
         "removed": {
@@ -648,7 +650,7 @@
         "kept": {
           "id": "8074226ae0ed039c26ee08f77860c8c3255695c3cbb07c28bf7d8771da370ed3",
           "source": "fmz200-optimized",
-          "line": 7497,
+          "line": 7505,
           "section": "Map Local"
         },
         "removed": {
@@ -662,7 +664,7 @@
         "kept": {
           "id": "0d6f8526ea824ec02a0ab06b22945e6ae47ee3b122962189f29f1b8cb6f61d29",
           "source": "fmz200-optimized",
-          "line": 7493,
+          "line": 7501,
           "section": "Map Local"
         },
         "removed": {
@@ -676,7 +678,7 @@
         "kept": {
           "id": "6683b632c97ff752a9b0fb159e96e677b6ad1e692cc552d5beddea6a6fa38dac",
           "source": "fmz200-optimized",
-          "line": 7834,
+          "line": 7851,
           "section": "Map Local"
         },
         "removed": {
@@ -690,7 +692,7 @@
         "kept": {
           "id": "37004b1e94d75c453138803eb78d40c9720444b6d9309f8abb2db014a4b1ecc5",
           "source": "fmz200-optimized",
-          "line": 7624,
+          "line": 7632,
           "section": "Map Local"
         },
         "removed": {
@@ -704,7 +706,7 @@
         "kept": {
           "id": "e993fa00850eef1e6670ab762c8dddca21f790ceca5fa734aab54c6b5637f184",
           "source": "fmz200-optimized",
-          "line": 7770,
+          "line": 7787,
           "section": "Map Local"
         },
         "removed": {
@@ -718,7 +720,7 @@
         "kept": {
           "id": "6683b632c97ff752a9b0fb159e96e677b6ad1e692cc552d5beddea6a6fa38dac",
           "source": "fmz200-optimized",
-          "line": 7834,
+          "line": 7851,
           "section": "Map Local"
         },
         "removed": {
@@ -732,7 +734,7 @@
         "kept": {
           "id": "6bfd843b98aad6d574cbc3f84e228bacc15f98d0124836d78c965da825723d90",
           "source": "fmz200-optimized",
-          "line": 7967,
+          "line": 7984,
           "section": "Map Local"
         },
         "removed": {
@@ -746,7 +748,7 @@
         "kept": {
           "id": "b636070c248b81821c78f632315930e01b8d69ac26a1ca6732b80b434a0550a0",
           "source": "fmz200-optimized",
-          "line": 8208,
+          "line": 8242,
           "section": "Map Local"
         },
         "removed": {
@@ -760,7 +762,7 @@
         "kept": {
           "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
           "source": "fmz200-optimized",
-          "line": 8294,
+          "line": 8328,
           "section": "Map Local"
         },
         "removed": {
@@ -774,7 +776,7 @@
         "kept": {
           "id": "8e39db0402c717daa07c7063a800e1189345637da1bce9bece6507a14d0436f4",
           "source": "fmz200-optimized",
-          "line": 8106,
+          "line": 8126,
           "section": "Map Local"
         },
         "removed": {
@@ -788,7 +790,7 @@
         "kept": {
           "id": "d41db2a266531a42cac7885e5d2c1fa058d664b9d57f9628ae5c68377c2a3e7b",
           "source": "fmz200-optimized",
-          "line": 8080,
+          "line": 8100,
           "section": "Map Local"
         },
         "removed": {
@@ -802,7 +804,7 @@
         "kept": {
           "id": "567ab7fd9096c8afd441f27e4c05811e3f50993e3cff6c3ed9ce8910ddbfaab8",
           "source": "fmz200-optimized",
-          "line": 3260,
+          "line": 3335,
           "section": "Rule"
         },
         "removed": {
@@ -815,125 +817,6 @@
     ],
     "inherited_conflicts": [
       {
-        "id": "545e36cefb6e6c425bdcd759425dc443c5ec84d3759d4723013d5db0b88d698a",
-        "kind": "same-key",
-        "key": "Rule:DOMAIN,ads-img-qc.xhscdn.com",
-        "entries": [
-          {
-            "id": "5c9fc0ff412b1805e8e033bc452e27c8bd9e92f76f9a78c959cdec4da2fbe7ce",
-            "source": "fmz200-optimized",
-            "line": 2390,
-            "section": "Rule"
-          },
-          {
-            "id": "23b22ac00fc607e5608fd4e60a92b506ed031547ead1cc76506c87493f9b6303",
-            "source": "fmz200-optimized",
-            "line": 3176,
-            "section": "Rule"
-          }
-        ],
-        "retained_entry_ids": [
-          "5c9fc0ff412b1805e8e033bc452e27c8bd9e92f76f9a78c959cdec4da2fbe7ce",
-          "23b22ac00fc607e5608fd4e60a92b506ed031547ead1cc76506c87493f9b6303"
-        ],
-        "handling": "Retain every base occurrence in original order; inherited behavior is not declared conflict-free."
-      },
-      {
-        "id": "ec85459ab6c9f7c3ca0ac9c13d22bf45d1d0c569d094e7e61fba8784572a71b1",
-        "kind": "same-key",
-        "key": "Rule:DOMAIN,ads-video-al.xhscdn.com",
-        "entries": [
-          {
-            "id": "eea4783c8e6531082a660b7a99d80930e718306b710876e5d0a53cddd514564d",
-            "source": "fmz200-optimized",
-            "line": 2392,
-            "section": "Rule"
-          },
-          {
-            "id": "341d76388fd399bfadbc28f8476265f9d101d5726f2c43fe395707c4d4de4537",
-            "source": "fmz200-optimized",
-            "line": 3177,
-            "section": "Rule"
-          }
-        ],
-        "retained_entry_ids": [
-          "eea4783c8e6531082a660b7a99d80930e718306b710876e5d0a53cddd514564d",
-          "341d76388fd399bfadbc28f8476265f9d101d5726f2c43fe395707c4d4de4537"
-        ],
-        "handling": "Retain every base occurrence in original order; inherited behavior is not declared conflict-free."
-      },
-      {
-        "id": "7585ff0ef2dc317b514f7726d6efc94f4382e7eabf9a03d2286d2e498ae9ac26",
-        "kind": "same-key",
-        "key": "Rule:DOMAIN,ads-video-qc.xhscdn.com",
-        "entries": [
-          {
-            "id": "556b1d8d21b4194309e8f89efa6231456e1049c9a7adc6b5fa6a8070313c2f08",
-            "source": "fmz200-optimized",
-            "line": 2393,
-            "section": "Rule"
-          },
-          {
-            "id": "177d3465bf194ec333687aa9d591e663a26feefd886b9dd4b1e3db970adc4dfd",
-            "source": "fmz200-optimized",
-            "line": 3178,
-            "section": "Rule"
-          }
-        ],
-        "retained_entry_ids": [
-          "556b1d8d21b4194309e8f89efa6231456e1049c9a7adc6b5fa6a8070313c2f08",
-          "177d3465bf194ec333687aa9d591e663a26feefd886b9dd4b1e3db970adc4dfd"
-        ],
-        "handling": "Retain every base occurrence in original order; inherited behavior is not declared conflict-free."
-      },
-      {
-        "id": "2c10b963faac685945e52dd2b634542c3116c50a631b7a3619eb9f8af6e2bfb1",
-        "kind": "same-key",
-        "key": "Rule:DOMAIN,t-ads.xiaohongshu.com",
-        "entries": [
-          {
-            "id": "745b9d93df812f002f9f97876ac7aafcba7f5d10698974122f1ce36ae171170a",
-            "source": "fmz200-optimized",
-            "line": 2394,
-            "section": "Rule"
-          },
-          {
-            "id": "4ae4ff613965d03786890200bcc6aac71187c4fec7fc6a6f1d5b3ec8146ee43f",
-            "source": "fmz200-optimized",
-            "line": 3179,
-            "section": "Rule"
-          }
-        ],
-        "retained_entry_ids": [
-          "745b9d93df812f002f9f97876ac7aafcba7f5d10698974122f1ce36ae171170a",
-          "4ae4ff613965d03786890200bcc6aac71187c4fec7fc6a6f1d5b3ec8146ee43f"
-        ],
-        "handling": "Retain every base occurrence in original order; inherited behavior is not declared conflict-free."
-      },
-      {
-        "id": "00d61884f073467820472221e0352247979509f9a63444dfd3c52b88c7906be0",
-        "kind": "same-key",
-        "key": "URL Rewrite:^https:\\/\\/link\\.zhihu\\.com\\/\\?target=(?:https?)?(?:%3A|:)?(?:\\/\\/|%2F%2F)?(.*)",
-        "entries": [
-          {
-            "id": "b0836c075c8bfe3ffe620d6f53c6781ac14941ce3b6a54012152e4b16627d634",
-            "source": "fmz200-optimized",
-            "line": 4712,
-            "section": "URL Rewrite"
-          },
-          {
-            "id": "b0836c075c8bfe3ffe620d6f53c6781ac14941ce3b6a54012152e4b16627d634",
-            "source": "fmz200-optimized",
-            "line": 5227,
-            "section": "URL Rewrite"
-          }
-        ],
-        "retained_entry_ids": [
-          "b0836c075c8bfe3ffe620d6f53c6781ac14941ce3b6a54012152e4b16627d634"
-        ],
-        "handling": "Retain every base occurrence in original order; inherited behavior is not declared conflict-free."
-      },
-      {
         "id": "6da999f934e4aa804fd0e2d5ab7e36b02e3ed5177b6f3fc8460b9bac6db368ab",
         "kind": "same-key",
         "key": "Map Local:^https?:\\/\\/adx-cn\\.anythinktech\\.com\\/bid",
@@ -941,13 +824,13 @@
           {
             "id": "6013e8d56b99194dea07a3df9021f0c873a66a8463e2fead68ad8fc2cf50d1b4",
             "source": "fmz200-optimized",
-            "line": 6025,
+            "line": 6090,
             "section": "Map Local"
           },
           {
             "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
             "source": "fmz200-optimized",
-            "line": 8294,
+            "line": 8328,
             "section": "Map Local"
           }
         ],
@@ -965,13 +848,13 @@
           {
             "id": "fe57471518671f895c5c36174c844fed4a8a040b56f4cac78183e2d009567587",
             "source": "fmz200-optimized",
-            "line": 4730,
+            "line": 4797,
             "section": "URL Rewrite"
           },
           {
             "id": "cb5a8147d8df6b01e75872f5d5e98e5dec1dc7e4d743861dd5f1024cb5986cdd",
             "source": "fmz200-optimized",
-            "line": 8098,
+            "line": 8118,
             "section": "Map Local"
           }
         ],
@@ -989,13 +872,13 @@
           {
             "id": "23207c7322ed6d62ad4b46270ee5895b9917163aa657e17a32b2da2a012e75da",
             "source": "fmz200-optimized",
-            "line": 5147,
+            "line": 5215,
             "section": "URL Rewrite"
           },
           {
             "id": "164c7abf0fe04a03f1873764e082075cf9dc4f6d05560e633126397f62639f85",
             "source": "fmz200-optimized",
-            "line": 7310,
+            "line": 7318,
             "section": "Map Local"
           },
           {
@@ -1019,13 +902,13 @@
           {
             "id": "c7926748fd4b2744c1c95849d3135e6731cf1ba405673221b0cdc7f900396a44",
             "source": "fmz200-optimized",
-            "line": 5148,
+            "line": 5216,
             "section": "URL Rewrite"
           },
           {
             "id": "27d4b47ffb7f693754eb3af3f925e1945764962a2ac5de058a7694667b168068",
             "source": "fmz200-optimized",
-            "line": 7306,
+            "line": 7314,
             "section": "Map Local"
           },
           {
@@ -1049,13 +932,13 @@
           {
             "id": "6013e8d56b99194dea07a3df9021f0c873a66a8463e2fead68ad8fc2cf50d1b4",
             "source": "fmz200-optimized",
-            "line": 6025,
+            "line": 6090,
             "section": "Map Local"
           },
           {
             "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
             "source": "fmz200-optimized",
-            "line": 8294,
+            "line": 8328,
             "section": "Map Local"
           },
           {
@@ -1079,13 +962,13 @@
           {
             "id": "4e23da0655f4a3a1c57ddb2eaf11eb6c8560321a74526fbcc71c4bec33703bbb",
             "source": "fmz200-optimized",
-            "line": 5059,
+            "line": 5127,
             "section": "URL Rewrite"
           },
           {
             "id": "3f472683e26d6dcbf0bd1c2a3e9d601af22910f8f4d8adff4c75633fb4f9e681",
             "source": "fmz200-optimized",
-            "line": 8484,
+            "line": 8518,
             "section": "Script"
           },
           {
@@ -1109,13 +992,13 @@
           {
             "id": "99a92d4e043034261cb64d2dc5ab063ebe903172ae8e550afd5cbb2c40422b79",
             "source": "fmz200-optimized",
-            "line": 5061,
+            "line": 5129,
             "section": "URL Rewrite"
           },
           {
             "id": "d7b68b0907c20eb4c4cd3f8c97d1251ec3066ef33968c29e8bdbcd9502c8af16",
             "source": "fmz200-optimized",
-            "line": 8490,
+            "line": 8524,
             "section": "Script"
           },
           {
@@ -1133,42 +1016,6 @@
       }
     ],
     "resolved": [
-      {
-        "conflict_id": "545e36cefb6e6c425bdcd759425dc443c5ec84d3759d4723013d5db0b88d698a",
-        "kind": "same-key",
-        "action": "preserve-base",
-        "entry_ids": [
-          "5c9fc0ff412b1805e8e033bc452e27c8bd9e92f76f9a78c959cdec4da2fbe7ce",
-          "23b22ac00fc607e5608fd4e60a92b506ed031547ead1cc76506c87493f9b6303"
-        ]
-      },
-      {
-        "conflict_id": "ec85459ab6c9f7c3ca0ac9c13d22bf45d1d0c569d094e7e61fba8784572a71b1",
-        "kind": "same-key",
-        "action": "preserve-base",
-        "entry_ids": [
-          "eea4783c8e6531082a660b7a99d80930e718306b710876e5d0a53cddd514564d",
-          "341d76388fd399bfadbc28f8476265f9d101d5726f2c43fe395707c4d4de4537"
-        ]
-      },
-      {
-        "conflict_id": "7585ff0ef2dc317b514f7726d6efc94f4382e7eabf9a03d2286d2e498ae9ac26",
-        "kind": "same-key",
-        "action": "preserve-base",
-        "entry_ids": [
-          "556b1d8d21b4194309e8f89efa6231456e1049c9a7adc6b5fa6a8070313c2f08",
-          "177d3465bf194ec333687aa9d591e663a26feefd886b9dd4b1e3db970adc4dfd"
-        ]
-      },
-      {
-        "conflict_id": "2c10b963faac685945e52dd2b634542c3116c50a631b7a3619eb9f8af6e2bfb1",
-        "kind": "same-key",
-        "action": "preserve-base",
-        "entry_ids": [
-          "745b9d93df812f002f9f97876ac7aafcba7f5d10698974122f1ce36ae171170a",
-          "4ae4ff613965d03786890200bcc6aac71187c4fec7fc6a6f1d5b3ec8146ee43f"
-        ]
-      },
       {
         "conflict_id": "7b30c1483bb543412e9e7d547885218b5ec33e02f9adf818dacb7da8f6c8d694",
         "kind": "same-key",
@@ -1935,14 +1782,6 @@
         "action": "preserve-base",
         "entry_ids": [
           "4a2189e09fcfe34f21232061be7d0f7c0f0e1ca81c261af33fbf6267b28a65b9"
-        ]
-      },
-      {
-        "conflict_id": "00d61884f073467820472221e0352247979509f9a63444dfd3c52b88c7906be0",
-        "kind": "same-key",
-        "action": "preserve-base",
-        "entry_ids": [
-          "b0836c075c8bfe3ffe620d6f53c6781ac14941ce3b6a54012152e4b16627d634"
         ]
       },
       {
@@ -5722,7 +5561,7 @@
         "line": 834,
         "entry_id": "449832c0078745f61cec9eb99e1083d40ff28101650ef4d587685618dd31fc17",
         "base_entry_ids": [
-          "ac2329ceb1793d97ca8a08ac78f465f0b60aeb5543790a903b2b7be55e91f269"
+          "17f6b12346618e5d259a1a9ae2efd28f4cb034ec2171b8734400dfe55c592309"
         ]
       },
       {
@@ -6188,6 +6027,14 @@
         "base_entry_ids": [
           "09a7263c242dc968d12e69a792f8de6fcaf1154847a93c5d6a5f59afa407380c"
         ]
+      },
+      {
+        "source": "moyu-native",
+        "line": 503,
+        "entry_id": "fa9b3b1a4c7025f681759de02ba56db4d71d43a9d0147a6f9d8768e2baacd943",
+        "base_entry_ids": [
+          "0ee5ce28adf83fd8e7476e8b3699b23f0d077fec7c678bd725f48abef0662905"
+        ]
       }
     ]
   },
@@ -6197,7 +6044,7 @@
         "entry_id": "a8287b3b13c03d811f7e8856dbe15f06347eeecf4335b8d0240dc1f5fbf6b83d",
         "result_entry_id": "a327b500d8438e39da4b8ab87b8a8bda611fc8aa350e7973bc2436b20a6bfc39",
         "section": "Body Rewrite",
-        "line": 3796,
+        "line": 3793,
         "kind": "body-token-quotes",
         "reason": "Quote both literal body-operation tokens while retaining their bytes, original URL pattern and order.",
         "evidence": "https://manual.nssurge.com/http/body-rewrite.html"
@@ -6206,7 +6053,7 @@
         "entry_id": "055030463c10bc6a35df699cf5eb87ad7b205543f017e249500694224435e6e6",
         "result_entry_id": "fe51affd2ba33525b59374ff546c61e214b6cc15504266bc500575931006e7d6",
         "section": "Script",
-        "line": 4997,
+        "line": 4996,
         "kind": "key-value-template",
         "reason": "Use the runtime-documented key=value argument syntax; retain the default numeric value.",
         "evidence": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js"
@@ -6215,7 +6062,7 @@
         "entry_id": "ce87ece78b010073916ecb1f7feaff8f41d3072b225079b2c8d5d2ba60c75cf0",
         "result_entry_id": "2bab23ba30e58af81e9c4bbd977668aa70f4dc336cd2b1f77695187985f4f44e",
         "section": "Script",
-        "line": 5001,
+        "line": 5000,
         "kind": "json-string-templates",
         "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
         "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
@@ -6224,7 +6071,7 @@
         "entry_id": "726f4064cd8a0f7ca337f4dfea512f38dc4326f39ced04538055bbb78b9dfbb3",
         "result_entry_id": "df890afe5bedc3f10b04abb5cddc581211e6c80b607b5bc533917592160398a9",
         "section": "Script",
-        "line": 5002,
+        "line": 5001,
         "kind": "json-string-templates",
         "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
         "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
@@ -6233,7 +6080,7 @@
         "entry_id": "6ac581b33f8fc739f3cfd1973acdc693f3e208a51f2b8f6ce7f4c9027137b693",
         "result_entry_id": "29ea4a0814ba77fc1a3994c617b78e8a9ade06e8b4d76d0464e36609b3bb3866",
         "section": "Script",
-        "line": 5004,
+        "line": 5003,
         "kind": "json-string-templates",
         "reason": "Place JSON string quotes in the argument template, as in the original native Surge module.",
         "evidence": "https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule"
@@ -6242,7 +6089,7 @@
         "entry_id": "cb49a0499aa06ef3576b95533c04b9645696aa0f05b5f3b393179bcc54445f8e",
         "result_entry_id": "859c1d9f9a7a4b9f1b14b5a692b4e88d38db2840e669dd9d0a16e76e08f161a3",
         "section": "Script",
-        "line": 5214,
+        "line": 5213,
         "kind": "comma-free-host-range",
         "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
         "evidence": "https://manual.nssurge.com/scripting/overview.html"
@@ -6251,7 +6098,7 @@
         "entry_id": "c0aa97e303e0889684d23736cbb7daf61dac81181ed44bbe6ad413b379926ef7",
         "result_entry_id": "46321d628bd1c03a4d46ab7c4f9f9590452ba59a42cf39a65b8c5f4a59b6dd4f",
         "section": "Script",
-        "line": 5216,
+        "line": 5215,
         "kind": "comma-free-host-range",
         "reason": "Expand one-to-four host-label repetition without a comma delimiter; retain triggering URL language.",
         "evidence": "https://manual.nssurge.com/scripting/overview.html"
@@ -6260,7 +6107,7 @@
         "entry_id": "f2c858b10463a21f919dc6b85bcab1214f2b7ae3ac01cc6b28aef3721dd9db34",
         "result_entry_id": "1c07ac186419c5ca3bfca944c1b27ad9e28ea4b994aa2d6e81d5b1c7ed9fce74",
         "section": "Script",
-        "line": 5227,
+        "line": 5226,
         "kind": "uri-header-argument",
         "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
         "evidence": "https://manual.nssurge.com/profile/format.html"
@@ -6269,7 +6116,7 @@
         "entry_id": "f7c0bd2a1c0c57db45f448e068d27c606177fad569d4e003ad31fe5e86d66c5b",
         "result_entry_id": "ee5fee091f5c035872317aa869aaf90180fdccd2dff92dc70cbc07e2a2f37603",
         "section": "Script",
-        "line": 5229,
+        "line": 5228,
         "kind": "uri-header-argument",
         "reason": "Encode the unchanged status-only adapter JSON as a delimiter-free URI string.",
         "evidence": "https://manual.nssurge.com/profile/format.html"
@@ -6282,7 +6129,7 @@
       "Exact format/parameter repairs only; device export and app behavior still require verification."
     ]
   },
-  "base_entries_byte_preserved": 4438,
+  "base_entries_byte_preserved": 4436,
   "limitations": [
     "Not tested in Surge or the affected apps.",
     "Finite regex examples are not an exhaustive overlap/equivalence proof.",
