@@ -3,13 +3,13 @@
   "status": "reviewed_static_build",
   "static_only": true,
   "source_sha256": {
-    "fmz200": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
+    "fmz200": "cc306fc3e061d106d5197a5a1be42f940193c32bc7234302ff31b357f4a01076",
     "blackmatrix7": "66a8282facc2c339363bdf924b0a65eeaf11b57acf4b5839538044303a2d388d",
     "moyu": "9a3443554fe38d94c1b65d648c89f408c87574c674d4a7f4550c758d5d75639b"
   },
-  "policy_sha256": "6a4d819cfeb70a3a7c84e77b526c143e8029c4eb549d4873c2e78a3b6c03238e",
+  "policy_sha256": "14bf92e0b7648d8aabff7ff114450b544be9a3bead46cdd2e14a029c57083cc3",
   "reviewed_assembly_sha256": "098717595b1e2f25c16345c9a0f2201cd3f087fec0b1e94fcd59fecf539f60e5",
-  "output_sha256": "510fd687c41d38e2f92d36e7115716e5c32c7507e9c47d0d583676b28a28fad9",
+  "output_sha256": "7cb21e271f5208b872d45a0d69ad4fa76f8000667ab36b8116f19eebabd2e50e",
   "bytes": 435902,
   "active_entries_sha256": "b44e0c4d7b66b12679be45a89242d002ac02ed39a89120563be8174cbc84b05f",
   "counts": {
@@ -40,8 +40,8 @@
   },
   "stages": {
     "fmz": {
-      "source_sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
-      "output_sha256": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
+      "source_sha256": "cc306fc3e061d106d5197a5a1be42f940193c32bc7234302ff31b357f4a01076",
+      "output_sha256": "c95af023f652bdbd3057803f8ee654a32f1c23918568e5b90e464c6c38a5523e",
       "counts_after": {
         "General": 1,
         "Rule": 2804,
@@ -55,73 +55,74 @@
       "changes_by_kind": {
         "module-metadata": 2,
         "restore-argument-defaults": 1,
-        "exact-duplicate": 184,
+        "exact-duplicate": 168,
         "retained-baseline-rule": 1,
         "json-map-base64": 5,
         "unique-script-label": 92,
-        "script-argument-object": 7,
+        "script-argument-object": 5,
+        "reviewed-order-restoration": 3,
         "module-header-order": 1
       }
     },
     "scope_exclusions": [
       {
-        "line": 1450,
+        "line": 1348,
         "section": "Rule",
         "line_sha256": "d118a415a89a1597e9f089c4e77a2cad81ae7b4267834cd40689d84262a354ca",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4483,
+        "line": 4373,
         "section": "URL Rewrite",
         "line_sha256": "d9ca26d429f45ab1367eb14f8e6d74136a8ded3b232f3dee0e8df7f9d7c5d22b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4484,
+        "line": 4374,
         "section": "URL Rewrite",
         "line_sha256": "b73676d13bd208316c9bcc63bd91df61f316e42f2065568177b1646a17cc80d1",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4518,
+        "line": 4408,
         "section": "URL Rewrite",
         "line_sha256": "849f61060b2ce3b5bab7ecc67467432427fac05e61837a2cbd92e269d59de753",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 4519,
+        "line": 4409,
         "section": "URL Rewrite",
         "line_sha256": "8d57b6d29097b97cc61ee193bab55bef19945c7f41e0070deaf2cb84ccad1c4f",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7262,
+        "line": 7140,
         "section": "Map Local",
         "line_sha256": "e7887c6003f3c30e79fad7ece3cdb59507d6e2bc9955dc0ef16d8e045a1d2b2d",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7055,
+        "line": 6945,
         "section": "Map Local",
         "line_sha256": "136623e2c354990542667965ffe225989734c7f58b9118fb7c2dc0b7e6719d4b",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 7057,
+        "line": 6947,
         "section": "Map Local",
         "line_sha256": "51ced727dc97fefa7ae5d07cb3bbbb02d1fafc854e1260be580e2b33820443a0",
         "classification": "manual-scope-exclusion",
         "reason": "Explicitly selected application-specific rule excluded from this module scope; not classified as obsolete or invalid."
       },
       {
-        "line": 8355,
+        "line": 8233,
         "section": "Map Local",
         "line_sha256": "737d69859e450d6fdb1343686b6be589da5dd38ec3680206d8a3b0bc270f50a5",
         "classification": "manual-scope-exclusion",
@@ -243,7 +244,7 @@
   "merge": {
     "base_source": "fmz200-optimized",
     "source_sha256": {
-      "fmz200-optimized": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
+      "fmz200-optimized": "c95af023f652bdbd3057803f8ee654a32f1c23918568e5b90e464c6c38a5523e",
       "blackmatrix7": "996dddce052e7a68be7923db41e364b6513d813c30713498151af804b8b31525",
       "moyu-native": "e71c88a4e7949a9aa73050740d5c328aff87c64553d27359b257e854be523378"
     },
@@ -272,7 +273,7 @@
         "kept": {
           "id": "728dd1d88dafe58f484343007f78c5c9af62fbb8b78a1ac2bb7454bbd1398cb1",
           "source": "fmz200-optimized",
-          "line": 3692,
+          "line": 3687,
           "section": "Rule"
         },
         "removed": {
@@ -286,7 +287,7 @@
         "kept": {
           "id": "d0f1f1addc9e11b8ac213379f292f5ed5dbbc57b5b8951cfa49403088115295e",
           "source": "fmz200-optimized",
-          "line": 3693,
+          "line": 3688,
           "section": "Rule"
         },
         "removed": {
@@ -300,7 +301,7 @@
         "kept": {
           "id": "2987b894798a32919eb123588ca24aceb16647adab5eb98f3aca83ab6f1859be",
           "source": "fmz200-optimized",
-          "line": 3696,
+          "line": 3691,
           "section": "Rule"
         },
         "removed": {
@@ -314,7 +315,7 @@
         "kept": {
           "id": "3984c55c203a6a17cfb02b7fd18f1688455db87924952429776f21fefc01a332",
           "source": "fmz200-optimized",
-          "line": 3694,
+          "line": 3689,
           "section": "Rule"
         },
         "removed": {
@@ -328,7 +329,7 @@
         "kept": {
           "id": "9fe6a6ef63ba6fcb74b8426526f168b5dd96e5c6030a9d90d9aa3b54729e2a71",
           "source": "fmz200-optimized",
-          "line": 3695,
+          "line": 3690,
           "section": "Rule"
         },
         "removed": {
@@ -342,7 +343,7 @@
         "kept": {
           "id": "efa6678c0e34deb6bed657cf28dc8c694e316ee90f4007f9c910d2a7067520d3",
           "source": "fmz200-optimized",
-          "line": 3700,
+          "line": 3695,
           "section": "Rule"
         },
         "removed": {
@@ -356,7 +357,7 @@
         "kept": {
           "id": "f936ead6005ae7db8ca3ef7bb8ce59b72efc503fa1f08a82220717d91ecef789",
           "source": "fmz200-optimized",
-          "line": 3701,
+          "line": 3696,
           "section": "Rule"
         },
         "removed": {
@@ -370,7 +371,7 @@
         "kept": {
           "id": "668b954ee95a18780f24c348b3cb3404b43bd47e660f0e607f3a7b9f92e8840e",
           "source": "fmz200-optimized",
-          "line": 3698,
+          "line": 3693,
           "section": "Rule"
         },
         "removed": {
@@ -384,7 +385,7 @@
         "kept": {
           "id": "35305ce720b7e3d6bbf9cd9733a26ae682a960d37f89c225f326254743eef74e",
           "source": "fmz200-optimized",
-          "line": 3699,
+          "line": 3694,
           "section": "Rule"
         },
         "removed": {
@@ -398,7 +399,7 @@
         "kept": {
           "id": "42a96c4a850258679577dab2c32cb8a3c5929c3bf8d38b676b32b3fec6ad8535",
           "source": "fmz200-optimized",
-          "line": 5751,
+          "line": 5746,
           "section": "Map Local"
         },
         "removed": {
@@ -412,7 +413,7 @@
         "kept": {
           "id": "04eda109e00e6e0aa365f1a9c2474f350d8d85189c52dfbde660bcaf0be2d231",
           "source": "fmz200-optimized",
-          "line": 5810,
+          "line": 5805,
           "section": "Map Local"
         },
         "removed": {
@@ -426,7 +427,7 @@
         "kept": {
           "id": "82dbdc0423cd520e09236087a1a5f8e73b758cc716f699b72eb401a96fbe895e",
           "source": "fmz200-optimized",
-          "line": 6141,
+          "line": 6136,
           "section": "Map Local"
         },
         "removed": {
@@ -454,7 +455,7 @@
         "kept": {
           "id": "35eacf7a995f334f3c0ba50a5989163b54cf325d997fec5016f417a6e2f228c4",
           "source": "fmz200-optimized",
-          "line": 6023,
+          "line": 6018,
           "section": "Map Local"
         },
         "removed": {
@@ -468,7 +469,7 @@
         "kept": {
           "id": "0b34ec1c8c1c4c2541ebe5299feedcd5e3a1e735bac837de5b1ad6af893d324d",
           "source": "fmz200-optimized",
-          "line": 6178,
+          "line": 6173,
           "section": "Map Local"
         },
         "removed": {
@@ -482,7 +483,7 @@
         "kept": {
           "id": "b83258d9ef33e35722d476928f5621c3796351e469d555d4c12983b5cb132a56",
           "source": "fmz200-optimized",
-          "line": 6396,
+          "line": 6391,
           "section": "Map Local"
         },
         "removed": {
@@ -496,7 +497,7 @@
         "kept": {
           "id": "681846f6d15b1886ea970e47623a8b30c158e98420bce1daad796c07e759bd13",
           "source": "fmz200-optimized",
-          "line": 6417,
+          "line": 6412,
           "section": "Map Local"
         },
         "removed": {
@@ -510,7 +511,7 @@
         "kept": {
           "id": "ae7d7d7c79f34ac0bf5301f8305292204fe52e3601584fa16acfc2fb99066288",
           "source": "fmz200-optimized",
-          "line": 6527,
+          "line": 6522,
           "section": "Map Local"
         },
         "removed": {
@@ -524,7 +525,7 @@
         "kept": {
           "id": "ac7db07f538c32f775bfc7488aec2a1f998636f1142de6534b7496b8ae1bab15",
           "source": "fmz200-optimized",
-          "line": 6529,
+          "line": 6524,
           "section": "Map Local"
         },
         "removed": {
@@ -538,7 +539,7 @@
         "kept": {
           "id": "f17350c64b7d8728c0b8e31852b4d0cb3d3d6feb908e4b970f1b03712b828552",
           "source": "fmz200-optimized",
-          "line": 6541,
+          "line": 6536,
           "section": "Map Local"
         },
         "removed": {
@@ -566,7 +567,7 @@
         "kept": {
           "id": "93a06b9e32a6432aa6fb5fae714f74dcd7c2f1f56be9db854820c9ecfc6b02df",
           "source": "fmz200-optimized",
-          "line": 6689,
+          "line": 6684,
           "section": "Map Local"
         },
         "removed": {
@@ -580,7 +581,7 @@
         "kept": {
           "id": "96ae7bde22c00db7529b7652224245ace1994fac61d53d8bf2cc90f0a33874b9",
           "source": "fmz200-optimized",
-          "line": 6827,
+          "line": 6822,
           "section": "Map Local"
         },
         "removed": {
@@ -594,7 +595,7 @@
         "kept": {
           "id": "ab6627de3532d29fa9ee0716bd874a27dc893c9980ebc89e2363ad5823e9f7a4",
           "source": "fmz200-optimized",
-          "line": 6875,
+          "line": 6870,
           "section": "Map Local"
         },
         "removed": {
@@ -608,7 +609,7 @@
         "kept": {
           "id": "dec06cc817deaf99689936dd4d8b01496eaf501bbbcea11593ce8fa4cad3d5bf",
           "source": "fmz200-optimized",
-          "line": 6926,
+          "line": 6921,
           "section": "Map Local"
         },
         "removed": {
@@ -622,7 +623,7 @@
         "kept": {
           "id": "e39619ba86ae1707c96d9c1e176c2ba3692aa13731479704126566e59509596b",
           "source": "fmz200-optimized",
-          "line": 7421,
+          "line": 7409,
           "section": "Map Local"
         },
         "removed": {
@@ -636,7 +637,7 @@
         "kept": {
           "id": "eed58452a3831b0c30167688721e496bc32734727ddd67edc6545f8c6d96fd25",
           "source": "fmz200-optimized",
-          "line": 7308,
+          "line": 7296,
           "section": "Map Local"
         },
         "removed": {
@@ -650,7 +651,7 @@
         "kept": {
           "id": "8074226ae0ed039c26ee08f77860c8c3255695c3cbb07c28bf7d8771da370ed3",
           "source": "fmz200-optimized",
-          "line": 7505,
+          "line": 7493,
           "section": "Map Local"
         },
         "removed": {
@@ -664,7 +665,7 @@
         "kept": {
           "id": "0d6f8526ea824ec02a0ab06b22945e6ae47ee3b122962189f29f1b8cb6f61d29",
           "source": "fmz200-optimized",
-          "line": 7501,
+          "line": 7489,
           "section": "Map Local"
         },
         "removed": {
@@ -678,7 +679,7 @@
         "kept": {
           "id": "6683b632c97ff752a9b0fb159e96e677b6ad1e692cc552d5beddea6a6fa38dac",
           "source": "fmz200-optimized",
-          "line": 7851,
+          "line": 7839,
           "section": "Map Local"
         },
         "removed": {
@@ -692,7 +693,7 @@
         "kept": {
           "id": "37004b1e94d75c453138803eb78d40c9720444b6d9309f8abb2db014a4b1ecc5",
           "source": "fmz200-optimized",
-          "line": 7632,
+          "line": 7620,
           "section": "Map Local"
         },
         "removed": {
@@ -706,7 +707,7 @@
         "kept": {
           "id": "e993fa00850eef1e6670ab762c8dddca21f790ceca5fa734aab54c6b5637f184",
           "source": "fmz200-optimized",
-          "line": 7787,
+          "line": 7775,
           "section": "Map Local"
         },
         "removed": {
@@ -720,7 +721,7 @@
         "kept": {
           "id": "6683b632c97ff752a9b0fb159e96e677b6ad1e692cc552d5beddea6a6fa38dac",
           "source": "fmz200-optimized",
-          "line": 7851,
+          "line": 7839,
           "section": "Map Local"
         },
         "removed": {
@@ -734,7 +735,7 @@
         "kept": {
           "id": "6bfd843b98aad6d574cbc3f84e228bacc15f98d0124836d78c965da825723d90",
           "source": "fmz200-optimized",
-          "line": 7984,
+          "line": 7972,
           "section": "Map Local"
         },
         "removed": {
@@ -748,7 +749,7 @@
         "kept": {
           "id": "b636070c248b81821c78f632315930e01b8d69ac26a1ca6732b80b434a0550a0",
           "source": "fmz200-optimized",
-          "line": 8242,
+          "line": 8230,
           "section": "Map Local"
         },
         "removed": {
@@ -762,7 +763,7 @@
         "kept": {
           "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
           "source": "fmz200-optimized",
-          "line": 8328,
+          "line": 8316,
           "section": "Map Local"
         },
         "removed": {
@@ -776,7 +777,7 @@
         "kept": {
           "id": "8e39db0402c717daa07c7063a800e1189345637da1bce9bece6507a14d0436f4",
           "source": "fmz200-optimized",
-          "line": 8126,
+          "line": 8114,
           "section": "Map Local"
         },
         "removed": {
@@ -790,7 +791,7 @@
         "kept": {
           "id": "d41db2a266531a42cac7885e5d2c1fa058d664b9d57f9628ae5c68377c2a3e7b",
           "source": "fmz200-optimized",
-          "line": 8100,
+          "line": 8088,
           "section": "Map Local"
         },
         "removed": {
@@ -804,7 +805,7 @@
         "kept": {
           "id": "567ab7fd9096c8afd441f27e4c05811e3f50993e3cff6c3ed9ce8910ddbfaab8",
           "source": "fmz200-optimized",
-          "line": 3335,
+          "line": 3330,
           "section": "Rule"
         },
         "removed": {
@@ -824,13 +825,13 @@
           {
             "id": "6013e8d56b99194dea07a3df9021f0c873a66a8463e2fead68ad8fc2cf50d1b4",
             "source": "fmz200-optimized",
-            "line": 6090,
+            "line": 6085,
             "section": "Map Local"
           },
           {
             "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
             "source": "fmz200-optimized",
-            "line": 8328,
+            "line": 8316,
             "section": "Map Local"
           }
         ],
@@ -848,13 +849,13 @@
           {
             "id": "fe57471518671f895c5c36174c844fed4a8a040b56f4cac78183e2d009567587",
             "source": "fmz200-optimized",
-            "line": 4797,
+            "line": 4792,
             "section": "URL Rewrite"
           },
           {
             "id": "cb5a8147d8df6b01e75872f5d5e98e5dec1dc7e4d743861dd5f1024cb5986cdd",
             "source": "fmz200-optimized",
-            "line": 8118,
+            "line": 8106,
             "section": "Map Local"
           }
         ],
@@ -872,13 +873,13 @@
           {
             "id": "23207c7322ed6d62ad4b46270ee5895b9917163aa657e17a32b2da2a012e75da",
             "source": "fmz200-optimized",
-            "line": 5215,
+            "line": 5210,
             "section": "URL Rewrite"
           },
           {
             "id": "164c7abf0fe04a03f1873764e082075cf9dc4f6d05560e633126397f62639f85",
             "source": "fmz200-optimized",
-            "line": 7318,
+            "line": 7306,
             "section": "Map Local"
           },
           {
@@ -902,13 +903,13 @@
           {
             "id": "c7926748fd4b2744c1c95849d3135e6731cf1ba405673221b0cdc7f900396a44",
             "source": "fmz200-optimized",
-            "line": 5216,
+            "line": 5211,
             "section": "URL Rewrite"
           },
           {
             "id": "27d4b47ffb7f693754eb3af3f925e1945764962a2ac5de058a7694667b168068",
             "source": "fmz200-optimized",
-            "line": 7314,
+            "line": 7302,
             "section": "Map Local"
           },
           {
@@ -932,13 +933,13 @@
           {
             "id": "6013e8d56b99194dea07a3df9021f0c873a66a8463e2fead68ad8fc2cf50d1b4",
             "source": "fmz200-optimized",
-            "line": 6090,
+            "line": 6085,
             "section": "Map Local"
           },
           {
             "id": "b98f1d36ed18c4548e48db6eb35517581a3d1eed7d19e9091e43fb5412d9b0f1",
             "source": "fmz200-optimized",
-            "line": 8328,
+            "line": 8316,
             "section": "Map Local"
           },
           {
@@ -962,13 +963,13 @@
           {
             "id": "4e23da0655f4a3a1c57ddb2eaf11eb6c8560321a74526fbcc71c4bec33703bbb",
             "source": "fmz200-optimized",
-            "line": 5127,
+            "line": 5122,
             "section": "URL Rewrite"
           },
           {
             "id": "3f472683e26d6dcbf0bd1c2a3e9d601af22910f8f4d8adff4c75633fb4f9e681",
             "source": "fmz200-optimized",
-            "line": 8518,
+            "line": 8506,
             "section": "Script"
           },
           {
@@ -992,13 +993,13 @@
           {
             "id": "99a92d4e043034261cb64d2dc5ab063ebe903172ae8e550afd5cbb2c40422b79",
             "source": "fmz200-optimized",
-            "line": 5129,
+            "line": 5124,
             "section": "URL Rewrite"
           },
           {
             "id": "d7b68b0907c20eb4c4cd3f8c97d1251ec3066ef33968c29e8bdbcd9502c8af16",
             "source": "fmz200-optimized",
-            "line": 8524,
+            "line": 8512,
             "section": "Script"
           },
           {

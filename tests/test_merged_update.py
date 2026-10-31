@@ -385,7 +385,8 @@ class MergedUpdateTests(unittest.TestCase):
             self.assertEqual(text.count('--base-sha "$BASE_SHA"'),3)
             self.assertEqual(text.count('persist-credentials: false'),2)
             self.assertEqual(text.count('contents: write'),1);self.assertNotIn('pull_request',text)
-            self.assertIn("cron: '37 3 * * *'",text)
+            self.assertNotIn("schedule:",text)
+            self.assertIn("workflow_dispatch:",text)
             if filename=='update-merged.yml':self.assertIn("'scripts/header-status-v2.js'",text)
 
 

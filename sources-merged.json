@@ -6,9 +6,9 @@
       "id": "fmz200",
       "format": "surge",
       "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/blockAds.module",
-      "immutable_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/e40b8ac948bb96918b4c840f608581fdae4f7711/Surge/module/blockAds.module",
-      "sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
-      "bytes": 458000,
+      "immutable_url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/Surge/module/blockAds.module",
+      "sha256": "cc306fc3e061d106d5197a5a1be42f940193c32bc7234302ff31b357f4a01076",
+      "bytes": 453771,
       "license_review": "GPL-3.0 observed; compatibility pending"
     },
     {
@@ -40,7 +40,7 @@
       "path": "licenses/fmz200-GPL-3.0.txt",
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
       "bytes": 35149,
-      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/e40b8ac948bb96918b4c840f608581fdae4f7711/LICENSE",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/4b7830670baf235ed945085cb926dc499cf619e0/LICENSE",
       "extraction": "whole-file"
     },
     {

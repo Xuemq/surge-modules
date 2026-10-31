@@ -1,7 +1,5 @@
 name: Safely update reviewed three-source module
 on:
-  schedule:
-    - cron: '37 3 * * *'
   workflow_dispatch:
   push:
     branches: [main]

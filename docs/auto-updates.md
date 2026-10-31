@@ -1,9 +1,11 @@
+> 2026-10-31：已停用两条更新工作流的每日 schedule。保留手动 workflow_dispatch 和相关 main 推送验证；每周维护由用户授权的助手任务发起。失败仍保留最后成功版本及全部门禁。
+
 # fmz200 安全自动更新
 
 稳定订阅地址始终为：
 https://raw.githubusercontent.com/Xuemq/surge-modules/main/modules/fmz200.optimized.sgmodule
 
-`.github/workflows/update.yml` 每日 UTC 03:37 执行，也支持 Actions → Safely update fmz200 module → Run workflow。自动更新代码、测试或单来源策略在 `main` 上变更时也会运行一次，用于验证新配置。这里只更新已获准发布的 fmz200 单来源模块；三源合并、个人配置、上游脚本正文不在自动发布范围内。
+`.github/workflows/update.yml` 停用每日定时，可通过 Actions → Safely update fmz200 module → Run workflow。自动更新代码、测试或单来源策略在 `main` 上变更时也会运行一次，用于验证新配置。这里只更新已获准发布的 fmz200 单来源模块；三源合并、个人配置、上游脚本正文不在自动发布范围内。
 
 ## 工作流程
 
@@ -89,3 +91,7 @@ GitHub 定时运行可能排队、延迟或被取消；公共仓库长期无活�
 - [GitHub Actions 事件与定时行为](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 - [GitHub 内置 token 与触发行为](https://docs.github.com/en/actions/how-tos/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow)
 - [Git 引用更新 API](https://docs.github.com/en/rest/git/refs#update-a-reference)
+
+### 2026-10-31 网易云重复块清理
+
+精确来源 4b7830670baf235ed945085cb926dc499cf619e0 删除重复网易云块。删除较早的重复块会使 JSON 响应后移到 tiny-gif 规则之后，因此不直接接受上游顺序。`order_restoration` 仅移动已存在且唯一的精确条目至原锚点，并按同一主机集合排列 MITM，恢复原段顺序；缺失、改写、重复或范围变化一律阻断。最终每一条有效定义及顺序与上一审定输出一致。未来计数、顺序、安全范围与冲突门禁保持启用。

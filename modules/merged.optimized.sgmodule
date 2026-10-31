@@ -7,7 +7,7 @@
 #!system=ios
 #!arguments=12306_enable:true,DT:false,FX:true,HMPR:false,MY:true,PRCN:true,PRDRD:false,PRGG:true,PRMST:true,PRRK:false,PRRR:true,PRSCVPT:false,PRST:false,displayUpList:"show",logLevel:"error",per_filter_video_thread:"0",purifyComment:true,sponsorBlock:true,tab:true,useractivity:true
 
-# Modified 2026-10-30 by Xuemq: reviewed conversion, deduplication, parameter repair and conservative conflict selection.
+# Modified 2026-10-31 by Xuemq: reviewed conversion, deduplication, parameter repair and conservative conflict selection.
 # Original authors and contributors retain their rights. See docs/merged-notice.md and notices/ for exact upstream notices.
 # Source licenses are recorded separately; no single license or additional upstream permission is asserted for the combined contents.
 # Static and synthetic tests only. Surge/app runtime and arbitrary regex overlap are not verified.
@@ -24,7 +24,7 @@
 # #!tg-channel=https://t.me/inaisi
 # #!tag=去广告, fmz200, 奶思
 # #!system=ios
-# #!date=2026-10-25 22:36:13
+# #!date=2026-10-30 16:26:43
 # #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 # #!arguments=12306_enable:true
 # # >>>>>>>>>>>>>>> 🟣 <<<<<<<<<<<<<<

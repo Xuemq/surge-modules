@@ -252,6 +252,8 @@ def optimize_single(data, source, policy):
     for key in sorted(set(metadata) - metadata_written):
         header.insert(-1, f'#!{key}={metadata[key]}')
         report['changes'].append({'kind':'module-metadata','field':key,'value':metadata[key]})
+    from .order import restore_reviewed_order
+    out = restore_reviewed_order(out, policy.get('order_restoration'), report)
     lines = header + out
     first_section = next(i for i, line in enumerate(lines) if line.startswith('['))
     metadata_lines = [line for line in lines[:first_section] if line.startswith('#!')]

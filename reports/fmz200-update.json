@@ -2,11 +2,11 @@
   "schema_version": 1,
   "scope": "fmz200-only",
   "static_only": true,
-  "source_sha256": "084197a83ab68a19746f6c51334735dbc6e330ba7ff65f97ae26e1faa9b60370",
-  "source_commit": "e40b8ac948bb96918b4c840f608581fdae4f7711",
-  "module_sha256": "8a1ef06aac5ac7699575d0a64691fc901e4d9d0b2f192034fccc2aca68ce5bbc",
+  "source_sha256": "cc306fc3e061d106d5197a5a1be42f940193c32bc7234302ff31b357f4a01076",
+  "source_commit": "4b7830670baf235ed945085cb926dc499cf619e0",
+  "module_sha256": "c95af023f652bdbd3057803f8ee654a32f1c23918568e5b90e464c6c38a5523e",
   "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
   "scope_exclusion_count": 9,
-  "policy_sha256": "cfa10918e3995fa34c4cd16d38f6d1ad4eb096a16eb1985f87842b5ac0b5ed2b",
-  "modification_date": "2026-10-30"
+  "policy_sha256": "422227a7a35e8711c2cbf4c9da10d199f3a504faa7252bfbcb734bf46f3a2792",
+  "modification_date": "2026-10-31"
 }
