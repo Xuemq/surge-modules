@@ -111,6 +111,25 @@ class AutoUpdateTests(unittest.TestCase):
             with self.subTest(data=data):
                 self.assertBlocked(data, "scope_target_missing_changed_or_ambiguous")
 
+    def test_all_duplicate_scope_occurrences_can_move_together(self):
+        before = OLD.replace(RULE.encode(), (RULE+"\n"+RULE).encode())
+        policy = fixture_policy(before)
+        other = deepcopy(policy["scope_exclusions"][0]); other["line"] = 6
+        policy["scope_exclusions"].append(other)
+        migrated = auto.migrate_policy(before, b"# moved\n"+before, policy, "2026-11-01")
+        self.assertEqual([s["line"] for s in migrated["scope_exclusions"]], [6, 7])
+        rendered, _ = optimize_single(b"# moved\n"+before, "fmz200", migrated)
+        self.assertNotIn(RULE, rendered)
+        for after in (OLD, before.replace(RULE.encode(), (RULE+"\n"+RULE).encode()),
+                      before.replace(b"excluded.example", b"changed.example", 1)):
+            with self.assertRaisesRegex(auto.Blocked, "scope_target"):
+                auto.migrate_policy(before, after, policy, "2026-11-01")
+
+    def test_partial_duplicate_scope_selection_stays_blocked(self):
+        before = OLD.replace(RULE.encode(), (RULE+"\n"+RULE).encode())
+        with self.assertRaisesRegex(auto.Blocked, "scope_target"):
+            auto.migrate_policy(before, before, fixture_policy(before), "2026-11-01")
+
     def test_repair_changed_removed_or_duplicated_blocks(self):
         for data in (OLD.replace(SCRIPT.encode(), SCRIPT.replace("^repair", "^changed").encode()),
                      OLD.replace((SCRIPT+"\n").encode(), b""), OLD.replace(SCRIPT.encode(), (SCRIPT+"\n"+SCRIPT).encode())):

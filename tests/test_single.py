@@ -32,6 +32,19 @@ class SingleSourceTests(unittest.TestCase):
         self.assertEqual(len(names),len(set(names)))
         self.assertEqual(r['changes_by_kind']['unique-script-label'],1)
 
+    def test_excluding_first_script_keeps_unrelated_later_label_identical(self):
+        first='shared = type=http-response, pattern=^first, script-path=https://example.test/a.js'
+        later='shared = type=http-response, pattern=^later, script-path=https://example.test/b.js'
+        text='[Script]\n'+first+'\n'+later+'\n'
+        before,_=self.run_single(text)
+        selection={'line':2,'section':'Script','line_sha256':digest(first),
+                   'classification':'manual-scope-exclusion','reason':'Exact reviewed scope.'}
+        after,_=self.run_single(text,scope_exclusions=[selection])
+        old=parse_module(before.encode(),'before').entries
+        new=parse_module(after.encode(),'after').entries
+        self.assertEqual([e.raw for e in new],[old[1].raw])
+        self.assertIn('__',new[0].key)
+
     def test_defaults_require_evidence_values(self):
         text='#!arguments=first:true\n[Script]\nx = type=http-response, pattern=^a, script-path=https://example.test/a.js, argument={{{second}}}\n'
         with self.assertRaises(Invalid):self.run_single(text)

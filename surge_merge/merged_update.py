@@ -126,7 +126,20 @@ def relocate_lines(old_data, new_data, selections, section_required=False):
 def migrate_scope(old_data, new_data, policy):
     filter_native_scope(old_data, policy['source_id'], policy)
     migrated = deepcopy(policy)
-    relocate_lines(old_data, new_data, migrated['excluded_entries'], section_required=True)
+    old_records, new_records = raw_records(old_data), raw_records(new_data)
+    groups = {}
+    for selection in migrated['excluded_entries']:
+        groups.setdefault((selection['section'], selection['line_sha256']), []).append(selection)
+    for identity, selections in groups.items():
+        before = [n for sec, sha, n in old_records if (sec, sha) == identity]
+        after = [n for sec, sha, n in new_records if (sec, sha) == identity]
+        ordered = sorted(selections, key=lambda item: item['line'])
+        # Only fully selected exact duplicates may move; no new or missing
+        # occurrence and no partial selection can pass this scope-only gate.
+        require(before == [item['line'] for item in ordered] and before
+                and len(after) == len(before), 'reviewed_target_missing_changed_or_ambiguous')
+        for selection, line in zip(ordered, after):
+            selection['line'] = line
     migrated['source_sha256'] = digest(new_data)
     filter_native_scope(new_data, policy['source_id'], migrated)
     return migrated

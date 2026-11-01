@@ -166,7 +166,11 @@ def optimize_single(data, source, policy):
             selection = scope_exclusions[n]
             if selection['section'] != section or selection['line_sha256'] != original_hash:
                 raise Invalid('scope exclusion does not match exact source section/line/hash')
-            parse_entry(section, raw, source, n)
+            excluded_entry = parse_entry(section, raw, source, n)
+            if section == 'Script':
+                # Reserve the original label history even for excluded scripts,
+                # so deleting one app cannot rename a later unrelated binding.
+                scripts[excluded_entry.key] = excluded_entry.id
             report['removed'].append({'kind': 'scope-exclusion', **selection})
             used_scope_exclusions.add(n)
             out.append(f'# Optimizer: excluded reviewed scope entry at upstream line {n}; see build report.')

@@ -122,12 +122,21 @@ def migrate_policy(old_data, new_data, policy, modification_date):
     optimize_single(old_data, "fmz200", policy)
     old, new = raw_records(old_data), raw_records(new_data)
     migrated = deepcopy(policy)
+    scope_groups = {}
     for selection in migrated.get("scope_exclusions", []):
         identity = (selection["section"], selection["line_sha256"])
+        scope_groups.setdefault(identity, []).append(selection)
+    for identity, selections in scope_groups.items():
         before = [n for sec, sha, n in old if (sec, sha) == identity]
         after = [n for sec, sha, n in new if (sec, sha) == identity]
-        require(before == [selection["line"]] and len(after) == 1, "scope_target_missing_changed_or_ambiguous")
-        selection["line"] = after[0]
+        # A repeated exact rule is safe only when EVERY original occurrence
+        # was explicitly selected and the exact occurrence count is unchanged.
+        # Partial selection, disappearance, duplication or text drift stays blocked.
+        ordered = sorted(selections, key=lambda item: item["line"])
+        require(before == [item["line"] for item in ordered] and before
+                and len(after) == len(before), "scope_target_missing_changed_or_ambiguous")
+        for selection, line in zip(ordered, after):
+            selection["line"] = line
     for selection in migrated.get("retained_entries", []):
         anchor = selection["after"]
         identity = (anchor["section"], anchor["line_sha256"])

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "base_commit": "8331d72cd3e691685134109e5dc101c12d839468",
+  "selection_date": "2026-11-01",
+  "classification": "manual-scope-exclusion",
+  "static_only": true,
+  "modules": {
+    "modules/fmz200.optimized.sgmodule": {
+      "before_sha256": "c95af023f652bdbd3057803f8ee654a32f1c23918568e5b90e464c6c38a5523e",
+      "after_sha256": "c0a1801ec797b80a3029e634a43332ba0c217a2274db3ffc9992f69a39b49a7b",
+      "before_active_count": 4441,
+      "after_active_count": 3683,
+      "removed_by_section": {
+        "Rule": 371,
+        "URL Rewrite": 116,
+        "Body Rewrite": 22,
+        "Map Local": 164,
+        "Script": 85
+      },
+      "remaining_definitions_identical_in_order": true,
+      "mitm_and_general_unchanged": true
+    },
+    "modules/merged.optimized.sgmodule": {
+      "before_sha256": "7cb21e271f5208b872d45a0d69ad4fa76f8000667ab36b8116f19eebabd2e50e",
+      "after_sha256": "48bfe17caaa1e9319401c08a1ab665d165f04b21f9d92c2848767f1d90b0fdf6",
+      "before_active_count": 5147,
+      "after_active_count": 4275,
+      "removed_by_section": {
+        "Rule": 371,
+        "URL Rewrite": 182,
+        "Body Rewrite": 24,
+        "Map Local": 200,
+        "Script": 95
+      },
+      "remaining_definitions_identical_in_order": true,
+      "mitm_and_general_unchanged": true
+    }
+  }
+}

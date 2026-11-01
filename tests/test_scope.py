@@ -23,6 +23,32 @@ class SupplementalScopeTests(unittest.TestCase):
         out,r=filter_native_scope(data,'extra',self.policy(data,raw,section='Map Local'))
         self.assertNotIn(raw.encode(),out);self.assertIn(b'^https://keep.example',out)
 
+    def test_all_reviewed_duplicate_occurrences_migrate_together(self):
+        from surge_merge.merged_update import migrate_scope
+        from surge_merge.auto_update import Blocked
+        raw='^https://scope.example/path _ reject'
+        data=('[URL Rewrite]\n'+raw+'\n'+raw+'\n^https://keep.example _ reject\n').encode()
+        p=self.policy(data,raw)
+        p['excluded_entries'].append({**p['excluded_entries'][0],'line':3})
+        moved=migrate_scope(data,b'# moved\n'+data,p)
+        self.assertEqual([x['line'] for x in moved['excluded_entries']],[3,4])
+        out,_=filter_native_scope(b'# moved\n'+data,'extra',moved)
+        self.assertNotIn(raw.encode(),out)
+        for after in (data.replace((raw+'\n').encode(),b'',1),
+                      data.replace(raw.encode(),(raw+'\n'+raw).encode(),1),
+                      data.replace(b'scope.example',b'changed.example',1),
+                      data.replace(b'[URL Rewrite]',b'[Body Rewrite]')):
+            with self.assertRaisesRegex(Blocked,'reviewed_target'):
+                migrate_scope(data,after,p)
+
+    def test_partial_supplement_duplicate_selection_still_blocks(self):
+        from surge_merge.merged_update import migrate_scope
+        from surge_merge.auto_update import Blocked
+        raw='^https://scope.example/path _ reject'
+        data=('[URL Rewrite]\n'+raw+'\n'+raw+'\n').encode()
+        with self.assertRaisesRegex(Blocked,'reviewed_target'):
+            migrate_scope(data,data,self.policy(data,raw))
+
     def test_source_hash_or_id_drift_rejected(self):
         raw='^a _ reject';data=('[URL Rewrite]\n'+raw+'\n^b _ reject\n').encode();p=self.policy(data,raw)
         with self.assertRaises(Invalid):filter_native_scope(data+b'\n','extra',p)

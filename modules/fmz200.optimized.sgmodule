@@ -11,12 +11,12 @@
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 #!arguments=12306_enable:true,DT:false,FX:true,HMPR:false,MY:true,PRCN:true,PRDRD:false,PRGG:true,PRMST:true,PRRK:false,PRRR:true,PRSCVPT:false,PRST:false,displayUpList:"show",logLevel:"error",per_filter_video_thread:"0",purifyComment:true,sponsorBlock:true,tab:true,useractivity:true
 
-# Modified 2026-10-31 by Xuemq: exact safe deduplication; restored upstream defaults; unique script labels.
+# Modified 2026-11-01 by Xuemq: exact safe deduplication; restored upstream defaults; unique script labels.
 # Derived only from fmz200/wool_scripts. Licensed under the upstream GNU GPL v3; see licenses/fmz200-GPL-3.0.txt.
 # No blackmatrix7 or ddgksf2013 rule contents have been merged.
 # Static validation only. External script/resource URLs retain upstream behavior.
 # Requires Surge iOS 5.14+ for jq Body Rewrite; runtime scripts may require a newer version.
-# Explicit scope exclusions: 9 reviewed entries; see build report.
+# Explicit scope exclusions: 768 reviewed entries; see build report.
 
 # Upstream #!name=广告拦截&净化合集
 # Upstream #!desc=(支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
@@ -645,42 +645,42 @@ DOMAIN-SUFFIX,alexametrics.com,REJECT
 DOMAIN-KEYWORD,in-page-push,REJECT
 
 # > 17173（网络游戏门户网站）
-DOMAIN-SUFFIX,ad.17173.com,REJECT
-DOMAIN-SUFFIX,cvda.17173.com,REJECT
-DOMAIN-SUFFIX,log1.17173.com,REJECT
-DOMAIN-SUFFIX,vda.17173.com,REJECT
-DOMAIN-SUFFIX,s.17173cdn.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 538; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 539; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 540; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 541; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 542; see build report.
 
 # > 178游戏网
 DOMAIN-SUFFIX,market.178.com,REJECT
 DOMAIN-SUFFIX,tuiguang.178.com,REJECT
 
 # > 18183游戏网
-DOMAIN-SUFFIX,img1.18183.com,REJECT
-DOMAIN-SUFFIX,eezdx.erc.18183.com,REJECT
-DOMAIN-SUFFIX,zpe.klre.18183.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 549; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 550; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 551; see build report.
 
 # > 1905电影网
-DOMAIN-SUFFIX,mlog.m1905.cn,REJECT
-DOMAIN-SUFFIX,vodlog.m1905.cn,REJECT
-DOMAIN-SUFFIX,afp.m1905.com,REJECT
-DOMAIN-SUFFIX,counter.m1905.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 554; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 555; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 556; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 557; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
 
 # > 2345网址导航
-DOMAIN-SUFFIX,dl.2345.com,REJECT
-DOMAIN-SUFFIX,download.2345.com,REJECT
-DOMAIN-SUFFIX,ggcode.2345.com,REJECT
-DOMAIN-SUFFIX,houtai.2345.com,REJECT
-DOMAIN-SUFFIX,jifen.2345.com,REJECT
-DOMAIN-SUFFIX,minipage.2345.com,REJECT
-DOMAIN-SUFFIX,wan.2345.com,REJECT
-DOMAIN-SUFFIX,zhushou.2345.com,REJECT
-DOMAIN-SUFFIX,tg.jifen.2345.com,REJECT
-DOMAIN-SUFFIX,update.minipage.2345.com,REJECT
-DOMAIN-SUFFIX,g.wan.2345.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 563; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 564; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 565; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 566; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 567; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 568; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 569; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 570; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 571; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 572; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 573; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
@@ -765,9 +765,9 @@ DOMAIN-SUFFIX,dw.xcar.com.cn,REJECT
 DOMAIN-SUFFIX,pv.xcar.com.cn,REJECT
 
 # > 爱拍
-DOMAIN-SUFFIX,apas.aipai.com,REJECT
-DOMAIN-SUFFIX,atiws.aipai.com,REJECT
-DOMAIN-SUFFIX,mlog.aipai.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 658; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 659; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 660; see build report.
 
 # > 爱奇艺
 # hostname = -i.vip.iqiyi.com, *.iqiyi.com
@@ -906,8 +906,8 @@ DOMAIN-SUFFIX,u3.ucweb.com,REJECT
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 
 # > 百词斩
-DOMAIN,advertise.baicizhan.com,REJECT
-DOMAIN,advertise.baicizhan.org,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 800; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 801; see build report.
 
 # > 百度
 # hostname = www.baidu.com, fcvbjbcebos.baidu.com, cover.baidu.com, baichuan.baidu.com, api*.tuisong.baidu.com, afd.baidu.com, mobads.baidu.com, issuecdn.baidupcs.com, update.pan.baidu.com, sa*.tuisong.baidu.com, m.baidu.com, sofire.baidu.com
@@ -1073,12 +1073,12 @@ DOMAIN,180.76.76.200,REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
 # > 百姓网
-DOMAIN-SUFFIX,admx.baixing.com,REJECT
-DOMAIN-SUFFIX,tu.baixing.com,REJECT
-DOMAIN-SUFFIX,d.admx.baixing.com,REJECT
-DOMAIN-SUFFIX,bd-js.baixing.net,REJECT
-DOMAIN-SUFFIX,bd-s.baixing.net,REJECT
-DOMAIN-SUFFIX,script-bd.baixing.net,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 968; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 969; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 970; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 971; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 972; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 973; see build report.
 
 # > 百意
 DOMAIN-SUFFIX,bayimob.com,REJECT
@@ -1090,51 +1090,51 @@ DOMAIN-SUFFIX,titan.babytree.com,REJECT
 DOMAIN-SUFFIX,titan01.babytree.com,REJECT
 
 # > 暴风影音
-DOMAIN-SUFFIX,active.baofeng.com,REJECT
-DOMAIN-SUFFIX,logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,midinfo.baofeng.com,REJECT
-DOMAIN-SUFFIX,p2pmid.baofeng.com,REJECT
-DOMAIN-SUFFIX,data.danmu.baofeng.com,REJECT
-DOMAIN-SUFFIX,co.dtech.baofeng.com,REJECT
-DOMAIN-SUFFIX,eventlog.hd.baofeng.com,REJECT
-DOMAIN-SUFFIX,pvlog.hd.baofeng.com,REJECT
-DOMAIN-SUFFIX,action.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,duration.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,houyi.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,storm.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,tips.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,tree.logger.baofeng.com,REJECT
-DOMAIN-SUFFIX,sclog.moviebox.baofeng.com,REJECT
-DOMAIN-SUFFIX,timelog.moviebox.baofeng.com,REJECT
-DOMAIN-SUFFIX,vvlog.moviebox.baofeng.com,REJECT
-DOMAIN-SUFFIX,breeze.olclient.baofeng.com,REJECT
-DOMAIN-SUFFIX,coop.pop.baofeng.com,REJECT
-DOMAIN-SUFFIX,androidlog.shouji.baofeng.com,REJECT
-DOMAIN-SUFFIX,iphonelog.shouji.baofeng.com,REJECT
-DOMAIN-SUFFIX,dailylog.storm.baofeng.com,REJECT
-DOMAIN-SUFFIX,logger.treexml.baofeng.com,REJECT
-DOMAIN-SUFFIX,config.baofeng.net,REJECT
-DOMAIN-SUFFIX,houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,listlog.baofeng.net,REJECT
-DOMAIN-SUFFIX,loading.baofeng5.baofeng.net,REJECT
-DOMAIN-SUFFIX,onlinetips.baofeng5.baofeng.net,REJECT
-DOMAIN-SUFFIX,app.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,ck.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,corner.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,d3f.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,mid.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,parser.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,wbwl.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,web.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,wl.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,wx.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,xs.houyi.baofeng.net,REJECT
-DOMAIN-SUFFIX,nclog.mars.baofeng.net,REJECT
-DOMAIN-SUFFIX,clicklog.moviebox.baofeng.net,REJECT
-DOMAIN-SUFFIX,pvlog.moviebox.baofeng.net,REJECT
-DOMAIN-SUFFIX,rec.moviebox.baofeng.net,REJECT
-DOMAIN-SUFFIX,nclog.pad.baofeng.net,REJECT
-DOMAIN-SUFFIX,jfm4.pop.baofeng.net,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 985; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 986; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 987; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 988; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 989; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 990; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 991; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 992; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 993; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 994; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 995; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 996; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 997; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 998; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 999; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1000; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1001; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1002; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1003; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1004; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1005; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1006; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1007; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1008; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1009; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1010; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1011; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1012; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1013; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1014; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1015; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1016; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1017; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1018; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1019; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1020; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1021; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1022; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1023; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1024; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1025; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1026; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1027; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1028; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1029; see build report.
 
 # > 爆米花
 DOMAIN-SUFFIX,a.baomihua.com,REJECT
@@ -1219,9 +1219,9 @@ DOMAIN-SUFFIX,photozoomchina.com,REJECT
 DOMAIN-SUFFIX,xitongqingli.com,REJECT
 
 # > Camera360
-DOMAIN,dispatcher.360in.com,REJECT
-DOMAIN,ad.360in.com,REJECT
-DOMAIN,exp.360in.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1114; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1115; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1116; see build report.
 
 # > CNN
 DOMAIN-SUFFIX,customad.cnn.com,REJECT
@@ -1242,9 +1242,9 @@ DOMAIN-SUFFIX,medal.blog.csdn.net,REJECT
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
 
 # > 当当网
-DOMAIN-SUFFIX,a.dangdang.com,REJECT
-DOMAIN-SUFFIX,schprompt.dangdang.com,REJECT
-DOMAIN-SUFFIX,t.dangdang.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1137; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1138; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1139; see build report.
 
 # > 滴滴青桔
 # hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
@@ -1264,9 +1264,9 @@ DOMAIN-KEYWORD,image.bianxianmao.com,REJECT
 
 # > 叮咚买菜
 # hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
-DOMAIN,trackercollect.ddxq.mobi,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1160; see build report.
 DOMAIN,ddfs-public.ddimg.mobi,REJECT
-DOMAIN,rttrack.ddxq.mobi,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1162; see build report.
 
 # > 东方财富
 # hostname = app.ceair.com
@@ -1296,14 +1296,14 @@ DOMAIN-KEYWORD,p3.pstatp.com,REJECT
 
 # > 斗鱼直播
 # hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
-DOMAIN-SUFFIX,wan.douyu.com,REJECT
-DOMAIN-SUFFIX,g.wan.douyu.com,REJECT
-DOMAIN-SUFFIX,dotcounter.douyutv.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1192; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1193; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1194; see build report.
 
 # > 豆瓣
 # hostname = api.douban.com
-DOMAIN-SUFFIX,erebor.douban.com,REJECT
-DOMAIN-SUFFIX,ad.doubanio.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1198; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1199; see build report.
 
 # > 多多视频
 DOMAIN-SUFFIX,bayescom.com,REJECT
@@ -1321,11 +1321,11 @@ IP-CIDR,211.161.101.110/32,REJECT,no-resolve
 
 # > 饿了么
 # hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
-DOMAIN-SUFFIX,app-monitor.ele.me,REJECT
-DOMAIN-SUFFIX,client-api.ele.me,REJECT
-DOMAIN-SUFFIX,grand.ele.me,REJECT
-DOMAIN-SUFFIX,mobile-pubt.ele.me,REJECT
-DOMAIN-SUFFIX,newton-api.ele.me,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1217; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1218; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1219; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1220; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1221; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
@@ -1367,17 +1367,17 @@ DOMAIN,adv-ads.variflight.com,REJECT
 DOMAIN,app-ad.variflight.com,REJECT
 
 # > 风行网
-DOMAIN-SUFFIX,pb.funshion.net.cn,REJECT
-DOMAIN-SUFFIX,ad.funshion.org.cn,REJECT
-DOMAIN-SUFFIX,adk.funshion.com,REJECT
-DOMAIN-SUFFIX,adm.funshion.com,REJECT
-DOMAIN-SUFFIX,conf.funshion.com,REJECT
-DOMAIN-SUFFIX,pub.funshion.com,REJECT
-DOMAIN-SUFFIX,vas.funshion.com,REJECT
-DOMAIN-SUFFIX,vs.funshion.com,REJECT
-DOMAIN-SUFFIX,aa0.pub.funshion.com,REJECT
-DOMAIN-SUFFIX,aa1.pub.funshion.com,REJECT
-DOMAIN-SUFFIX,rt.funshion.net,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1264; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1265; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1266; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1267; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1268; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1269; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1270; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1271; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1272; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1273; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1274; see build report.
 
 # > 凤凰新媒体
 DOMAIN-SUFFIX,deliver.ifeng.com,REJECT
@@ -1408,12 +1408,12 @@ DOMAIN-SUFFIX,staticxx.facebook.com,REJECT
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 
 # > 赶集网
-DOMAIN-SUFFIX,jiaoben.ganji.cn,REJECT
-DOMAIN-SUFFIX,wuliao.ganji.cn,REJECT
-DOMAIN-SUFFIX,ad.ganji.com,REJECT
-DOMAIN-SUFFIX,ganjituiguang.ganji.com,REJECT
-DOMAIN-SUFFIX,sta.ganji.com,REJECT
-DOMAIN-SUFFIX,tralog.ganji.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1305; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1306; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1307; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1308; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1309; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1310; see build report.
 
 # > 高德地图
 # hostname = m*.amap.com, optimus-ads.amap.com, amap-aos-info-nogw.amap.com
@@ -1569,38 +1569,38 @@ DOMAIN-SUFFIX,v2.log.hunantv.com,REJECT
 
 # > 虎扑
 # hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
-DOMAIN-SUFFIX,adx.hupu.com,REJECT
-DOMAIN-SUFFIX,adx-api.hupu.com,REJECT
-DOMAIN-SUFFIX,goblin.hupu.com,REJECT
-DOMAIN-SUFFIX,orz.hupu.com,REJECT
-DOMAIN-SUFFIX,cc.dace.hupu.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1468; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1469; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1470; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1471; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1472; see build report.
 
 # > 虎牙直播
 # hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
 # 开屏广告, REJECT
-DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
-DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
-DOMAIN,huyafile.msstatic.com,REJECT
-DOMAIN,livewebbs2.msstatic.com,REJECT
-DOMAIN,business.msstatic.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1477; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1478; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1479; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1480; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1481; see build report.
 DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT
-DOMAIN-SUFFIX,3dm.huya.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1483; see build report.
 
 # > 互传
 DOMAIN-SUFFIX,ad.apk.vivo.com.cn,REJECT
 
 # > 沪江网校
-DOMAIN-SUFFIX,mc.hujiang.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1489; see build report.
 
 # > 华数TV
-DOMAIN-SUFFIX,acsystem.wasu.cn,REJECT
-DOMAIN-SUFFIX,afp.wasu.cn,REJECT
-DOMAIN-SUFFIX,afpcreative.wasu.cn,REJECT
-DOMAIN-SUFFIX,collector.wasu.cn,REJECT
-DOMAIN-SUFFIX,delivery.wasu.cn,REJECT
-DOMAIN-SUFFIX,delivery-pc.wasu.cn,REJECT
-DOMAIN-SUFFIX,adsystem.wasu.tv,REJECT
-DOMAIN-SUFFIX,adwasu.tv,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1492; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1493; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1494; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1495; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1496; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1497; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1498; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1499; see build report.
 
 # > 华为商城
 DOMAIN-SUFFIX,hiad.vmall.com,REJECT
@@ -1640,9 +1640,9 @@ IP-CIDR,114.119.160.0/21,REJECT,no-resolve
 
 # > 驾校一点通
 # hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
-DOMAIN,richmanapi.jxedt.com,REJECT
-DOMAIN,richmanmain.jxedt.com,REJECT
-DOMAIN,richmanrules.jxedt.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1539; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1540; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1541; see build report.
 
 # > 建行生活
 # hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
@@ -1759,90 +1759,91 @@ DOMAIN-SUFFIX,ad.cninfo.com.cn,REJECT
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 
 # > 酷6网
-DOMAIN-SUFFIX,st.vq.ku6.cn,REJECT
-DOMAIN-SUFFIX,addata.ku6.com,REJECT
-DOMAIN-SUFFIX,pvdata.ku6.com,REJECT
-DOMAIN-SUFFIX,static.ku6.com,REJECT
-DOMAIN-SUFFIX,gug.ku6cdn.com,REJECT
-DOMAIN-SUFFIX,vi1.ku6img.net,REJECT
-DOMAIN-SUFFIX,vi2.ku6img.net,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1658; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1659; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1660; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1661; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1662; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1663; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1664; see build report.
 
 # > 酷狗音乐
-DOMAIN,adserviceretry.kugou.com,REJECT
-DOMAIN,ads.service.kugou.com,REJECT
-DOMAIN,adsfile.bssdlbig.kugou.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1667; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1668; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1669; see build report.
 DOMAIN,g.koowo.com,REJECT
-DOMAIN,kgmobilestat.kugou.com,REJECT
-DOMAIN,kgmobilestatbak.kugou.com,REJECT
-DOMAIN,mobilelog.kugou.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1671; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1672; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1673; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1674; see build report.
 DOMAIN,pgdt.gtimg.com,REJECT
 DOMAIN,adsmind.gdtimg.com,REJECT
-DOMAIN-KEYWORD,searchrecommend.kugou.com,REJECT
-DOMAIN-KEYWORD,nbcollectretry.kugou.com,REJECT
-DOMAIN-KEYWORD,rtmretry.kugou.com,REJECT
-DOMAIN-KEYWORD,rt-m.kugou.com,REJECT
-DOMAIN-KEYWORD,nbcollect.kugou.com,REJECT
-DOMAIN-KEYWORD,c1img.ali.kugou.com,REJECT
-DOMAIN-KEYWORD,kgstaticdlbssdlbig.tx.kugou.com,REJECT
-DOMAIN-KEYWORD,adsfilebssdlbig.ali.kugou.com,REJECT
-DOMAIN-KEYWORD,splashimgbssdl.yun.kugou.com,REJECT
-DOMAIN-KEYWORD,adservice.kugou.com,REJECT
-DOMAIN-KEYWORD,kgipadstat.kugou.com,REJECT
-DOMAIN-KEYWORD,kgipadstatbak.kugou.com,REJECT
-DOMAIN-KEYWORD,logwebs.kugou.com,REJECT
-DOMAIN-KEYWORD,tracker.kugou.com,REJECT
-DOMAIN-KEYWORD,trackercdnbj.kugou.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1677; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1678; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1679; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1680; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1681; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1682; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1683; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1684; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1685; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1686; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1687; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1688; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1689; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1690; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1691; see build report.
 DOMAIN-SUFFIX,oth.eve.mdt.qq.com,REJECT
-DOMAIN-SUFFIX,channel.fanxing.kugou.com,REJECT
-DOMAIN-SUFFIX,d.kugou.com,REJECT
-DOMAIN-SUFFIX,downmobile.kugou.com,REJECT
-DOMAIN-SUFFIX,gad.kugou.com,REJECT
-DOMAIN-SUFFIX,game.kugou.com,REJECT
-DOMAIN-SUFFIX,gamebox.kugou.com,REJECT
-DOMAIN-SUFFIX,gcapi.sy.kugou.com,REJECT
-DOMAIN-SUFFIX,gg.kugou.com,REJECT
-DOMAIN-SUFFIX,install.kugou.com,REJECT
-DOMAIN-SUFFIX,install2.kugou.com,REJECT
-DOMAIN-SUFFIX,minidcsc.kugou.com,REJECT
-DOMAIN-SUFFIX,mo.kugou.com,REJECT
-DOMAIN-SUFFIX,msg.mobile.kugou.com,REJECT
-DOMAIN-SUFFIX,mvads.kugou.com,REJECT
-DOMAIN-SUFFIX,p.kugou.com,REJECT
-DOMAIN-SUFFIX,push.mobile.kugou.com,REJECT
-DOMAIN-SUFFIX,rtmonitor.kugou.com,REJECT
-DOMAIN-SUFFIX,sdn.kugou.com,REJECT
-DOMAIN-SUFFIX,song.fanxing.kugou.com,REJECT
-DOMAIN-SUFFIX,update.mobile.kugou.com,REJECT
-DOMAIN-SUFFIX,youxi.kugou.com,REJECT
-DOMAIN-SUFFIX,adserviceretry.kugou.com,REJECT
-DOMAIN-SUFFIX,ads.service.kugou.com,REJECT
-DOMAIN-SUFFIX,adsfile.bssdlbig.kugou.com,REJECT
-DOMAIN-SUFFIX,log.stat.kugou.com,REJECT
-DOMAIN-SUFFIX,log.web.kugou.com,REJECT
-DOMAIN-SUFFIX,kgmobilestat.kugou.com,REJECT
-DOMAIN-SUFFIX,kgmobilestatbak.kugou.com,REJECT
-DOMAIN-SUFFIX,mobilelog.kugou.com,REJECT
-DOMAIN-SUFFIX,ad.kugou.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1693; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1694; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1695; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1696; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1697; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1698; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1699; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1700; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1701; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1702; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1703; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1704; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1705; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1706; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1707; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1708; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1709; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1710; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1711; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1712; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1713; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1714; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1715; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1716; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1717; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1718; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1719; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1720; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1721; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1722; see build report.
 
 # > 酷我音乐
 # hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
-DOMAIN,mobilead.kuwo.cn,REJECT
-DOMAIN,rich.kuwo.cn,REJECT
-DOMAIN-KEYWORD,rich.kuwo.cn,REJECT
-DOMAIN-KEYWORD,mobilead.kuwo.cn,REJECT
-DOMAIN-SUFFIX,c.kuwo.cn,REJECT
-DOMAIN-SUFFIX,deliver.kuwo.cn,REJECT
-DOMAIN-SUFFIX,game.kuwo.cn,REJECT
-DOMAIN-SUFFIX,kuwoyy.com,REJECT
-DOMAIN-SUFFIX,kwmsg.kuwo.cn,REJECT
-DOMAIN-SUFFIX,msclick2.kuwo.cn,REJECT
-DOMAIN-SUFFIX,msphoneclick.kuwo.cn,REJECT
-DOMAIN-SUFFIX,updatepage.kuwo.cn,REJECT
-DOMAIN-SUFFIX,wa.kuwo.cn,REJECT
-DOMAIN-SUFFIX,webstat.kuwo.cn,REJECT
-DOMAIN-SUFFIX,mobilead.kuwo.cn,REJECT
-DOMAIN-SUFFIX,rich.kuwo.cn,REJECT
-DOMAIN-SUFFIX,ad.kuwo.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1726; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1727; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1728; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1729; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1730; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1731; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1732; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1733; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1734; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1735; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1736; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1737; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1738; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1739; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1740; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1741; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1742; see build report.
 
 # > 快递100
 # hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
@@ -2007,8 +2008,8 @@ DOMAIN,httpdns.n.netease.com,REJECT
 DOMAIN,httpdns.calorietech.com,REJECT
 # 拦截广告下发
 DOMAIN,hc-ssp.sm.cn,REJECT
-DOMAIN,apm.gotokeep.com,REJECT
-DOMAIN,kad.gotokeep.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1919; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1920; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
@@ -2030,24 +2031,24 @@ DOMAIN-SUFFIX,staticadm.leju.com,REJECT
 
 # > 乐视
 DOMAIN,emma-414870e223.huodonghezi.com,REJECT
-DOMAIN-SUFFIX,webp2p.letv.com,REJECT
-DOMAIN-SUFFIX,ark.letv.com,REJECT
-DOMAIN-SUFFIX,dc.letv.com,REJECT
-DOMAIN-SUFFIX,fz.letv.com,REJECT
-DOMAIN-SUFFIX,g3.letv.com,REJECT
-DOMAIN-SUFFIX,minisite.letv.com,REJECT
-DOMAIN-SUFFIX,pro.letv.com,REJECT
-DOMAIN-SUFFIX,stat.letv.com,REJECT
-DOMAIN-SUFFIX,pro.hoye.letv.com,REJECT
-DOMAIN-SUFFIX,msg.m.letv.com,REJECT
-DOMAIN-SUFFIX,static.app.m.letv.com,REJECT
-DOMAIN-SUFFIX,n.mark.letv.com,REJECT
-DOMAIN-SUFFIX,1.letvlive.com,REJECT
-DOMAIN-SUFFIX,2.letvlive.com,REJECT
-DOMAIN-SUFFIX,api.game.letvstore.com,REJECT
-DOMAIN-SUFFIX,api.push.le.com,REJECT
-DOMAIN-SUFFIX,cn.api.push.le.com,REJECT
-DOMAIN-SUFFIX,guang.lesports.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 1942; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1943; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1944; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1945; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1946; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1947; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1948; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1949; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1950; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1951; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1952; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1953; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1954; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1955; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1956; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1957; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1958; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 1959; see build report.
 
 # > 联想
 # hostname = api.club.lenovo.cn
@@ -2119,39 +2120,39 @@ DOMAIN-KEYWORD,c-hzgt2.getui.com,REJECT
 
 # > 芒果TV
 # hostname = *.mgtv.com
-DOMAIN,dflow.bz.mgtv.com,REJECT
-DOMAIN,encounter.bz.mgtv.com,REJECT
-DOMAIN,floor.bz.mgtv.com,REJECT
-DOMAIN,img.da.mgtv.com,REJECT
-DOMAIN,layer.bz.mgtv.com,REJECT
-DOMAIN,mob.bz.mgtv.com,REJECT
-DOMAIN,mobile.da.mgtv.com,REJECT
-DOMAIN,rc-topic-api.bz.mgtv.com,REJECT
-DOMAIN,v2.da.mgtv.com,REJECT
-DOMAIN,video.da.mgtv.com,REJECT
-DOMAIN,vip.bz.mgtv.com,REJECT
-DOMAIN,ys.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,mobile2.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,cdn.cmop.mgtv.com,REJECT
-DOMAIN-SUFFIX,cmop.mgtv.com,REJECT
-DOMAIN-SUFFIX,imgaliyun.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,imgaliyun.res.mgtv.com,REJECT
-DOMAIN-SUFFIX,m2.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,mobaliyun.res.mgtv.com,REJECT
-DOMAIN-SUFFIX,pc.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,pc1.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,pcvideoaliyun.titan.mgtv.com,REJECT
-DOMAIN-SUFFIX,pcvideoyd.titan.mgtv.com,REJECT
-DOMAIN-SUFFIX,pcweb.v1.mgtv.com,REJECT
-DOMAIN-SUFFIX,py.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,web.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,x.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,y.da.mgtv.com,REJECT
-DOMAIN-SUFFIX,da.mgtv.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2032; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2033; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2034; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2035; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2036; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2037; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2038; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2039; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2040; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2041; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2042; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2043; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2044; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2045; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2046; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2047; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2048; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2049; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2050; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2051; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2052; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2053; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2054; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2055; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2056; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2057; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2058; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2059; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2060; see build report.
 
 # > 猫扑 (Mop)
-DOMAIN-SUFFIX,pub.mop.com,REJECT
-DOMAIN-SUFFIX,union.mop.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2063; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2064; see build report.
 
 # > 美图秀秀
 # hostname = mea.meitudata.com, adui.tg.meitu.com
@@ -2214,14 +2215,14 @@ DOMAIN-SUFFIX,aries.mzres.com,REJECT
 
 # > 咪咕视频
 # hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
-DOMAIN-SUFFIX,ad.cmvideo.cn,REJECT
-DOMAIN,ggc.cmvideo.cn,REJECT
-DOMAIN,ggv.cmvideo.cn,REJECT
-DOMAIN,ggx.cmvideo.cn,REJECT
-DOMAIN,ggx03.miguvideo.com,REJECT
-DOMAIN,ggic03.miguvideo.com,REJECT
-DOMAIN,ggmk.miguvideo.com,REJECT
-DOMAIN,ggadoffline.miguvideo.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2127; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2128; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2129; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2130; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2131; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2132; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2133; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2134; see build report.
 
 # > 米家
 # hostname = home.mi.com
@@ -2235,23 +2236,23 @@ DOMAIN-KEYWORD,cm-10-35.getui.com,REJECT
 DOMAIN-SUFFIX,sdk.open.talk.igexin.com,REJECT
 
 # > 蘑菇街
-DOMAIN-SUFFIX,traffic.mogujie.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2149; see build report.
 
 # > 墨迹天气
-DOMAIN-KEYWORD,me.api.moji.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2152; see build report.
 DOMAIN-KEYWORD,android.bugly.qq.com,REJECT
 DOMAIN-KEYWORD,av1.xdrig.com,REJECT
 DOMAIN-KEYWORD,adash.man.aliyuncs.com,REJECT
-DOMAIN,ad.api.moji.com,REJECT
-DOMAIN,adlaunch.moji.com,REJECT
-DOMAIN,ads.mojicdn.com,REJECT
-DOMAIN,v1.log.moji.com,REJECT
-DOMAIN-SUFFIX,cdn.moji.com,REJECT
-DOMAIN-SUFFIX,fds.api.moji.com,REJECT
-DOMAIN-SUFFIX,app.moji001.com,REJECT
-DOMAIN-SUFFIX,ugc.moji001.com,REJECT
-DOMAIN-SUFFIX,cdn.moji002.com,REJECT
-DOMAIN-SUFFIX,cdn2.moji002.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2156; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2157; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2158; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2159; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2160; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2161; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2162; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2163; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2164; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2165; see build report.
 
 # > MacKeeper
 DOMAIN-SUFFIX,mackeeper.com,REJECT
@@ -2381,28 +2382,28 @@ DOMAIN,regist.fotoable.com,REJECT
 DOMAIN,cdn.adapi.fotoable.com,REJECT
 
 # > PPTV
-DOMAIN,ads.aplus.pptv.com,REJECT
-DOMAIN,ads.aplusapi.pptv.com,REJECT
-DOMAIN,asimgs.pplive.cn,REJECT
-DOMAIN,de.as.pptv.com,REJECT
-DOMAIN-SUFFIX,afp.pplive.com,REJECT
-DOMAIN-SUFFIX,gas.data.pplive.com,REJECT
-DOMAIN-SUFFIX,plt.data.pplive.com,REJECT
-DOMAIN-SUFFIX,web.data.pplive.com,REJECT
-DOMAIN-SUFFIX,pp2.pptv.com,REJECT
-DOMAIN-SUFFIX,stat.pptv.com,REJECT
-DOMAIN-SUFFIX,app.aplus.pptv.com,REJECT
-DOMAIN-SUFFIX,as.aplus.pptv.com,REJECT
-DOMAIN-SUFFIX,jp.as.pptv.com,REJECT
-DOMAIN-SUFFIX,static.g.pptv.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2295; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2296; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2297; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2298; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2299; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2300; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2301; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2302; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2303; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2304; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2305; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2306; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2307; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2308; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
 
 # > 七猫小说
 # hostname = open.e.kuaishou.cn, api-access.pangolin-sdk-toutiao-b.com, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, dsp-x.jd.com, api-cfg.wtzw.com, p1-lm.adukwai.com, lf-cdn-tos.bytescm.com
-DOMAIN,cdn-new-ad.wtzw.com,REJECT
-DOMAIN,a-remad.qm989.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2315; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2316; see build report.
 DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
 
 # > 齐鲁网
@@ -2411,39 +2412,39 @@ DOMAIN-SUFFIX,g4.iqilu.com,REJECT
 
 # > 汽车之家
 # hostname = adproxy.autohome.com.cn, app2.autoimg.cn
-DOMAIN-KEYWORD,adm3.autoimg.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2329; see build report.
 DOMAIN-KEYWORD,collectionpv.che168.com,REJECT
-DOMAIN-KEYWORD,adproxy.autohome.com,REJECT
-DOMAIN-KEYWORD,applogapi.autohome.com,REJECT
-DOMAIN,adproxy.autohome.com.cn,REJECT
-DOMAIN,rd.autohome.com.cn,REJECT
-DOMAIN,al.autohome.com.cn,REJECT
-DOMAIN,applogapi.autohome.com.cn,REJECT
-DOMAIN,adm0.autoimg.cn,REJECT
-DOMAIN,adm1.autoimg.cn,REJECT
-DOMAIN,adm2.autoimg.cn,REJECT
-DOMAIN,adm3.autoimg.cn,REJECT
-DOMAIN-SUFFIX,adm0.autoimg.cn,REJECT
-DOMAIN-SUFFIX,adm1.autoimg.cn,REJECT
-DOMAIN-SUFFIX,adm2.autoimg.cn,REJECT
-DOMAIN-SUFFIX,adm3.autoimg.cn,REJECT
-DOMAIN-SUFFIX,33.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,adproxy.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,al.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,applogapi.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,c.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,cmx.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,dspmnt.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,pcd.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,pcmx.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,pvx.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,rd.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,rdx.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,pv.alert.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,activity.app.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,public.app.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,push.app.autohome.com.cn,REJECT
-DOMAIN-SUFFIX,h.pcd.autohome.com.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2331; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2332; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2333; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2334; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2335; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2336; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2337; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2338; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2339; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2340; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2341; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2342; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2343; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2344; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2345; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2346; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2347; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2348; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2349; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2350; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2351; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2352; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2353; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2354; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2355; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2356; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2357; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2358; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2359; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2360; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2361; see build report.
 
 # > 汽水音乐
 # hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
@@ -2514,7 +2515,7 @@ DOMAIN-SUFFIX,a1.peoplecdn.cn,REJECT
 
 # > 人人视频
 # hostname = api.rr.tv
-DOMAIN-SUFFIX,ad.rr.tv,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2476; see build report.
 DOMAIN-SUFFIX,ebp.renren.com,REJECT
 DOMAIN-SUFFIX,jebe.renren.com,REJECT
 DOMAIN-SUFFIX,bolt.jebe.renren.com,REJECT
@@ -2564,7 +2565,7 @@ DOMAIN-SUFFIX,js.cnmo.com,REJECT
 
 # > 书旗小说
 # hostname = ut2.shuqistat.com, dsp.toutiao.com, sf3-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, sq.sljkj.com, ocean.shuqireader.com, img-tailor.11222.cn, message.shuqireader.com, feedback.uc.cn, *.shuqireader.com, 101.91.69.26
-DOMAIN-SUFFIX,ut2.shuqistat.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2528; see build report.
 
 # > 数盟 (Shuzilm)
 DOMAIN-SUFFIX,shuzilm.cn,REJECT
@@ -2685,11 +2686,11 @@ DOMAIN-SUFFIX,888.tv.sohu.com,REJECT
 
 # > 苏宁易购
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
-DOMAIN-SUFFIX,show.suning.beer,REJECT
-DOMAIN-SUFFIX,apm.suning.cn,REJECT
-DOMAIN-SUFFIX,mads.suning.com,REJECT
-DOMAIN-SUFFIX,ssac.suning.com,REJECT
-DOMAIN-SUFFIX,tad.suning.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2650; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2651; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2652; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2653; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2654; see build report.
 
 # > Sape
 DOMAIN-SUFFIX,sape.ru,REJECT
@@ -2703,10 +2704,10 @@ DOMAIN,adsapi.snapchat.com,REJECT
 
 # > Soul
 # hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
-DOMAIN,soul-ad.soulapp.cn,REJECT
-DOMAIN,ad-r.soulapp.cn,REJECT
-DOMAIN,ad-reward.soulapp.cn,REJECT
-DOMAIN-SUFFIX,cdn.soulapp.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2668; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2669; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2670; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2671; see build report.
 IP-CIDR,47.56.131.76/32,REJECT,no-resolve
 IP-CIDR,47.97.215.55/32,REJECT,no-resolve
 IP-CIDR,47.99.42.29/32,REJECT,no-resolve
@@ -2724,12 +2725,12 @@ DOMAIN-SUFFIX,ivy.pcauto.com.cn,REJECT
 DOMAIN-SUFFIX,ivy.pcbaby.com.cn,REJECT
 DOMAIN-SUFFIX,ivy.pchouse.com.cn,REJECT
 DOMAIN-SUFFIX,ivy.pclady.com.cn,REJECT
-DOMAIN-SUFFIX,ad-analysis.pconline.com.cn,REJECT
-DOMAIN-SUFFIX,count5.pconline.com.cn,REJECT
-DOMAIN-SUFFIX,count6.pconline.com.cn,REJECT
-DOMAIN-SUFFIX,iad0ssl.pconline.com.cn,REJECT
-DOMAIN-SUFFIX,imgad0.pconline.com.cn,REJECT
-DOMAIN-SUFFIX,ivy.pconline.com.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2689; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2690; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2691; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2692; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2693; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2694; see build report.
 
 # > 淘宝
 # hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
@@ -2809,13 +2810,13 @@ DOMAIN,lf9-cdn-tos.bytegecko.com,REJECT
 DOMAIN,novel.pangolin-sdk-toutiao.com,REJECT
 
 # > 天天看看
-DOMAIN-SUFFIX,biz5.kankan.com,REJECT
-DOMAIN-SUFFIX,distf.kankan.com,REJECT
-DOMAIN-SUFFIX,float.kankan.com,REJECT
-DOMAIN-SUFFIX,kkpgv.kankan.com,REJECT
-DOMAIN-SUFFIX,kkpgv2.kankan.com,REJECT
-DOMAIN-SUFFIX,cpm.cm.kankan.com,REJECT
-DOMAIN-SUFFIX,count.cpm.cm.kankan.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2790; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2791; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2792; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2793; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2794; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2795; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2796; see build report.
 
 # > 同盾
 DOMAIN-SUFFIX,fraudmetrix.cn,REJECT
@@ -2831,8 +2832,8 @@ DOMAIN-SUFFIX,ad.thsi.cn,REJECT
 
 # > 途虎养车
 # hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
-DOMAIN,analytics.tuhu.com,REJECT
-DOMAIN,ta.tuhu.cn,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 2812; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 2813; see build report.
 
 # > 团油
 DOMAIN-KEYWORD,img1.czb365.com,REJECT
@@ -3139,7 +3140,7 @@ DOMAIN-SUFFIX,nc045x.corp.youdao.com,REJECT
 DOMAIN-SUFFIX,qt002x.corp.youdao.com,REJECT
 DOMAIN-SUFFIX,tb060x.corp.youdao.com,REJECT
 DOMAIN-SUFFIX,tb104x.corp.youdao.com,REJECT
-DOMAIN-SUFFIX,clkservice2.dict.youdao.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 3135; see build report.
 DOMAIN-SUFFIX,impservice.dictapp.youdao.com,REJECT
 DOMAIN-SUFFIX,impservice-test.dictapp.youdao.com,REJECT
 DOMAIN-SUFFIX,impservicetest.dictapp.youdao.com,REJECT
@@ -3164,9 +3165,9 @@ IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 
 # > 唯品会
 # hostname = b.appsimg.com, mapi.appvipshop.com
-DOMAIN-SUFFIX,n-st.vip.com,REJECT
-DOMAIN-SUFFIX,api.union.vip.com,REJECT
-DOMAIN-SUFFIX,ms.vipstatic.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 3167; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3168; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3169; see build report.
 
 # > Waps（无线广告交易中心）
 DOMAIN-SUFFIX,waps.cn,REJECT
@@ -3490,8 +3491,8 @@ DOMAIN-SUFFIX,oppo.yidianzixun.com,REJECT
 DOMAIN-SUFFIX,s.yidianzixun.com,REJECT
 
 # > 艺龙
-DOMAIN-SUFFIX,d.elong.cn,REJECT
-DOMAIN-SUFFIX,mhuodong.elong.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 3531; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3532; see build report.
 
 # > 易查
 DOMAIN-SUFFIX,yicha.cn,REJECT
@@ -3500,12 +3501,12 @@ DOMAIN-SUFFIX,tuiguang.yicha.cn,REJECT
 
 # > 易车
 # hostname = api.ycapp.yiche.com, cheyouapi.ycapp.yiche.com
-DOMAIN,adx.yiche.com,REJECT
-DOMAIN,log.ycapp.yiche.com,REJECT
-DOMAIN-SUFFIX,bglog.bitauto.com,REJECT
-DOMAIN-SUFFIX,g.bitauto.com,REJECT
-DOMAIN-SUFFIX,gimg.bitauto.com,REJECT
-DOMAIN-SUFFIX,gstat.bitauto.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 3541; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3542; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3543; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3544; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3545; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3546; see build report.
 
 # > 音悦Tai
 DOMAIN-SUFFIX,shop.yinyuetai.com,REJECT
@@ -3780,8 +3781,8 @@ DOMAIN-SUFFIX,xlog.snssdk.com,REJECT
 
 # > 作业帮
 # hostname = syh.zybang.com, www.zybang.com
-DOMAIN-SUFFIX,bu01.zybang.com,REJECT
-DOMAIN-SUFFIX,bu02.zybang.com,REJECT
+# Optimizer: excluded reviewed scope entry at upstream line 3838; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 3839; see build report.
 
 # > ZAKER新闻
 DOMAIN-SUFFIX,adm.myzaker.com,REJECT
@@ -4055,11 +4056,11 @@ http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(interface\.v1\.(Tee
 # > 菜鸟裹裹
 # hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
 # 支付宝-菜鸟
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4113; see build report.
 
 # > 曹操专车
 # hostname = ptmpcap.caocaokeji.cn, cap.caocaokeji.cn
-^https?:\/\/cap\.caocaokeji\.cn\/advert-bss\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4117; see build report.
 
 # > 超级课程表
 # hostname = 182.92.244.70, ad.myfriday.cn
@@ -4097,7 +4098,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 大麦
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
-^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch\?appkey=23782110 - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4155; see build report.
 
 # > 大智慧
 # hostname = ssp.dzh.com.cn
@@ -4122,10 +4123,10 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 当当阅读
 # hostname = e.dangdang.com, api.dangdang.com, mapi.dangdang.com
-^https?:\/\/e\.dangdang\.com\/media\/api.+\?action=getDeviceStartPage - reject
-^https?:\/\/e\.dangdang\.com\/.+?getDeviceStartPage - reject
-^https?:\/\/api\.dangdang\.com\/mapi\d\/mobile\/init - reject
-^https?:\/\/mapi\.dangdang\.com\/index\.php\?action=init - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4180; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4181; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4182; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4183; see build report.
 
 # > 得物
 # 开屏广告 【Runestoner】分享
@@ -4134,8 +4135,8 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > 嘀嗒出行
 # hostname = capis*.didapinche.com, adx-cn.anythinktech.com, www.didapinche.com
 # 小程序净化
-^https?:\/\/capis(-\d)?\.didapinche\.com\/adbase - reject
-^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4192; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4193; see build report.
 
 # > 电视家
 # hostname = api.gaoqingdianshi.com, cdn.dianshihome.com
@@ -4153,11 +4154,11 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > 叮咚买菜
 # hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
 # 开屏广告
-^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4211; see build report.
 # 首页弹窗
-^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4213; see build report.
 # 我的页VIP栏净化
-^https?:\/\/gw\.api\.ddxq\.mobi\/vip-app-service\/vip\/my\/page\/advertising - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4215; see build report.
 
 # > 盯盯拍
 # hostname = *.pglstatp-toutiao.com, api.htp.ad-scope.com.cn, appgw.ddpai.com, init.sms.mob.com, apphw.ddpai.com
@@ -4178,16 +4179,16 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > 斗鱼直播
 # hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
 ^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd - reject
-^https?:\/\/staticlive\.douyucdn\.cn\/upload\/signs\/ - reject
-^https?:\/\/staticlive\.douyucdn\.cn\/.+\/getStartSend - reject
-^https?:\/\/capi\.douyucdn\.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios - reject
-^https?:\/\/douyucdn\.cn\/.+\/appapi\/getinfo - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4236; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4237; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4238; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4239; see build report.
 
 # > 豆瓣
 # hostname = api.douban.com
-^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ - reject
-^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner - reject
-^https?:\/\/erebor\.douban\.com\/count\/\?ad= - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4243; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4244; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4245; see build report.
 
 # > DLabel云标签
 # hostname = dudian-oss.oss-cn-shenzhen.aliyuncs.com, imagepc.ctaiot.com
@@ -4201,15 +4202,15 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > 饿了么
 # hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
 # 开屏广告
-^https?:\/\/elemecdn\.com\/.+\/sitemap - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4259; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4260; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4261; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4262; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4263; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4264; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4265; see build report.
 ^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ - reject
-^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4267; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
@@ -4242,7 +4243,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 飞客茶馆
 # hostname = api.flydigi.com
-^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4300; see build report.
 
 # > 飞猫管家
 # hostname = app.flymodem.com.cn
@@ -4328,7 +4329,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > 韩剧TV
 # hostname = gfp.veta.naver.com, api.hanju.koudaibaobao.com
 ^https?:\/\/gfp\.veta\.naver\.com\/adcall\? - reject
-^https?:\/\/api\.hanju\.koudaibaobao\.com\/api\/carp\/kp\? - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4386; see build report.
 
 # > 杭州公交
 # hostname = m.ibuscloud.com
@@ -4359,7 +4360,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.hippotown\.tabbar\.info - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4417; see build report.
 
 # > 横店电影小程序
 # 开屏广告
@@ -4371,10 +4372,10 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 虎扑
 # hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(interfaceAdMonitor|interfaceAd)\/ - reject
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/status\/init - reject
-^https?:\/\/games\.mobileapi\.hupu\.com\/\d\/(?:\d\.){2}\d\/status\/init - reject
-^https?:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4429; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4430; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4431; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4432; see build report.
 
 # > 虎嗅
 # hostname = api-ad-product.huxiu.com
@@ -4382,8 +4383,8 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 虎牙直播
 # hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
-^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$ - reject
-^https?:\/\/business\.msstatic\.com\/advertiser\/material - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4440; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4441; see build report.
 
 # > 花生地铁
 # hostname = cmsapi.wifi8.com, cmsfile.wifi8.com
@@ -4418,13 +4419,13 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 驾考宝典
 # hostname = *.kakamobi.cn, smart.789.image.mucang.cn
-^https?:\/\/\w+\.kakamobi\.cn\/api\/open\/v\d\/advert-sdk\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4476; see build report.
 
 # > 驾校一点通
 # hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
 # 开屏广告 感谢【jinlvei】分享
-^https?:\/\/richmanrules\.ksedt\.com\/intellectWaterfall(Bidding)?\/find - reject
-^https?:\/\/api\.jxedt\.com\/ad\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4481; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4482; see build report.
 
 # > 建行生活
 # hostname = yunbusiness.ccb.com, g.alicdn.com, waimai-guide.ele.me
@@ -4443,8 +4444,8 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 金山词霸
 # hostname = dict-mobile.iciba.com, mobile-pic.cache.iciba.com, service.iciba.com, *.kingsoft-office-service.com
-^https?:\/\/dict-mobile\.iciba\.com\/interface\/index\.php\?.+(c=ad|collectFeedsAdShowCount|KSFeedsAdCardViewController) - reject
-^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4501; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4502; see build report.
 ^https?:\/\/.+?\.kingsoft-office-service\.com - reject
 
 # > 金十数据
@@ -4461,7 +4462,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # hostname = m.360buyimg.com, api.m.jd.com, bdsp-x.jd.com, dsp-x.jd.com, ms.jr.jd.com, appconf.mail.163.com, support.you.163.com
 ^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture - reject
 ^https?:\/\/appconf\.mail\.163\.com\/mmad\/ - reject
-^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4519; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
@@ -4481,7 +4482,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 
 # > 快递100
 # hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4539; see build report.
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
 ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
 ^https:\/\/images\.pinduoduo\.com\/mrk\/ - reject
@@ -4490,27 +4491,27 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 # > Keep
 # hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
 # 屏蔽应用内弹窗
-^https?:\/\/api\.gotokeep\.com\/guide-webapp\/v\d\/popup\/getPopUp - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4548; see build report.
 # 屏蔽部分启动弹窗
-^https?:\/\/api\.gotokeep\.com\/kprime\/v\d\/popups\/primeGuide - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4550; see build report.
 # 屏蔽开屏广告请求
-^https?:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4552; see build report.
 # 屏蔽青少年弹窗
-^https?:\/\/api.gotokeep.com/cauchy/growth/init - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4554; see build report.
 # 屏蔽搜索栏自动填充词
-^https?:\/\/api\.gotokeep\.com\/search\/v\d\/default\/keyword\/list - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4556; see build report.
 # 屏蔽热词
-^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotword\/list - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4558; see build report.
 # 屏蔽hotCourse
-^https?:\/\/api\.gotokeep\.com\/search\/v\d\/hotCourse\/list - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4560; see build report.
 # 屏蔽adwebapp
-^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4562; see build report.
 # 屏蔽广告预加载
-^https?:\/\/api\.gotokeep\.com\/ads\/v\d\/ads\/preload - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4564; see build report.
 # 屏蔽adbox
-^https?:\/\/api\.gotokeep\.com\/training\/box\/config - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4566; see build report.
 # 屏蔽更新
-^https?:\/\/api\.gotokeep\.com\/anno\/v\d\/upgrade\/check - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4568; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
@@ -4578,9 +4579,9 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 
 # > 马蜂窝
 # hostname = mapi.mafengwo.cn
-^https?:\/\/mapi\.mafengwo\.cn\/(travelguide\/)?ad - reject
-^https?:\/\/mapi\.mafengwo\.cn\/widget\/note\/get_widget_note - reject
-^https?:\/\/mapi\.mafengwo\.cn\/system\/push\/get_local_push_config - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4636; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4637; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4638; see build report.
 
 # > 埋堆堆
 # hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com, conf-darwin.xycdn.com, *.ubixioe.com
@@ -4638,7 +4639,7 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 
 # > MIX
 # hostname = dispatcher.camera360.com
-^https?:\/\/dispatcher\.camera360\.com\/api\/v\d\/list$ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4696; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
@@ -4695,7 +4696,7 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 ^http:\/\/54\.222\.159\.138:8053\/httpdns\/ - reject
 ^http:\/\/101\.42\.130\.147\/httpdns\/resolve\/ - reject
 # 主页实惠卡横幅
-^https:\/\/j1\.pupuapi\.com\/client\/member_card\/index\/my - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4753; see build report.
 
 # > 浦发银行
 # hostname = lban.spdb.com.cn, wap.spdb.com.cn
@@ -4718,7 +4719,7 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 ^https?:\/\/api-access\.pangolin-sdk-toutiao-b\.com\/api\/ad\/union\/sdk\/get_ads - reject
 ^https?:\/\/api-access\.(pangolin-sdk-toutiao|pangolin-sdk-toutiao1)\.com\/api\/ad - reject
 ^https?:\/\/dsp\-x\.jd\.com\/adx\/sdk - reject
-^https?:\/\/api\-cfg\.wtzw\.com\/v1\/(adv|reward|operation) - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4776; see build report.
 ^https?:\/\/p1\-lm\.adukwai\.com\/bs2\/adUnionVideo - reject
 ^https?:\/\/lf\-cdn\-tos\.bytescm\.com\/obj\/static\/ad - reject
 
@@ -4728,11 +4729,11 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 
 # > 起点读书
 # hostname = qidian.qpic.cn, mage.if.qidian.com, magev6.if.qidian.com
-^https?:\/\/mage\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen - reject
-^https?://magev6.if.qidian.com/argus/api/v1/client/iosad - reject
-^https?://magev6.if.qidian.com/argus/api/v1/bookshelf/getad - reject
-^https?://magev6.if.qidian.com/argus/api/v4/client/getsplashscreen? - reject
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\/getadvlistbatch - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4786; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4787; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4788; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4789; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4790; see build report.
 
 # > 汽水音乐
 # hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
@@ -4744,18 +4745,18 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 
 # > 前程无忧 51Job
 # hostname = appapi.51job*.com, cupid.51job*.comhostname
-^https?:\/\/appapi\.51job(app)?\.com\/api\/market\/(adtrace|get_launch|get_prompt) - reject
-^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/recommend-infos - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4802; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4803; see build report.
 # 去广告 (需卸载App重装) img01.51jobcdn.com
-^https:\/\/img01\.51jobcdn\.com\/im\/mkt/(?:tg/((19|20)\d{2})banner/(?!jcgz2/)|\d{4}/bd/\d{4}/).*\.jpg - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4805; see build report.
 # 开屏及营销广告
-^https?:\/\/appapi\.51job(app)?\.com\/api\/market\/(?>adtrace|get_launch|get_prompt) - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4807; see build report.
 # 顶部弹窗
-^https?:\/\/cupid\.51job(app)?\.com\/open\/guide\/home-page-top - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4809; see build report.
 # 首页右上角浮窗及右边浮标
-^https?:\/\/cupid\.51job(app)?\.com\/open\/user-task\/user\/task\/init - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4811; see build report.
 # 弹窗广告
-^https?:\/\/cupid\.51job(app)?\.com\/launch-hub\/open\/noauth\/popUp - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4813; see build report.
 
 # > 亲宝宝
 # hostname = api.qbb6.com
@@ -4773,11 +4774,11 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 
 # > 去哪儿
 # hostname = qde.qunar.com, homefront.qunar.com, client.qunar.com
-^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4831; see build report.
 
 # > 全家便利店
 # hostname = fmapp.chinafamilymart.com.cn
-^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4835; see build report.
 
 # > QQ浏览器
 # hostname = us.l.qq.com
@@ -4806,7 +4807,7 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 # > 人人视频
 # hostname = api.rr.tv
 # RRTV_屏蔽軟件更新
-^https?:\/\/api\.rr\.tv\/.*?Version - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4864; see build report.
 
 # > 日日煮
 # hostname = cms.daydaycook.com.cn, api.daydaycook.com.cn
@@ -4842,29 +4843,29 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 
 # > 首旅如家
 # hostname = app.homeinns.com
-^https?:\/\/app\.homeinns\.com\/api\/landing - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4901; see build report.
 
 # > 首汽约车
 # hostname = gw-passenger.01zhuanche.com, img.yun.01zhuanche
-^https?:\/\/gw-passenger\.01zhuanche\.com\/gw-passenger\/zhuanche-passenger-token\/leachtoken\/webservice\/homepage\/queryADs - reject
-^https?:\/\/gw-passenger\.01zhuanche\.com\/gw-passenger\/zhuanche-passengerController\/notk\/passenger\/recommendADs - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4905; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4906; see build report.
 
 # > 书旗小说
 # hostname = ut2.shuqistat.com, dsp.toutiao.com, sf3-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, sq.sljkj.com, ocean.shuqireader.com, img-tailor.11222.cn, message.shuqireader.com, feedback.uc.cn, *.shuqireader.com, 101.91.69.26
-^https?:\/\/ut2\.shuqistat\.com\/.+\.gif - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4910; see build report.
 ^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/ - reject
 ^https?:\/\/sf3-be-pack\.pglstatp-toutiao\.com\/img\/ad\.union\.api - reject
 ^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/.+ - reject
 ^https?:\/\/sq\.sljkj\.com\/api\/sdk\/ads2 - reject
-^https?:\/\/ocean\.shuqireader\.com\/api\/ad\/adserver\/.+ - reject
-^https?:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/ad.+ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4915; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4916; see build report.
 ^https?:\/\/.+\.pglstatp-toutiao\.com - reject
-^https?:\/\/img-tailor\.11222\.cn\/pm\/app\/.+\.gif - reject
-^https?:\/\/img-tailor\.11222\.cn\/cms\/upload\/img\/.+ - reject
-^https?:\/\/message\.shuqireader\.com\/message\/.+ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4918; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4919; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4920; see build report.
 ^https?:\/\/101\.91\.69\.26:8080\/.+ - reject
 ^https?:\/\/feedback\.uc\.cn\/feedback\/api\/get_unread_status - reject
-^https?:\/\/.+\.shuqireader\.com\/sapi\/.+ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4923; see build report.
 
 # > 顺丰优选
 # hostname = mapi.sfbest.com
@@ -4882,31 +4883,31 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 
 # > 苏宁易购
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
-^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4941; see build report.
 
 # > Soul
 # hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
 # 国际版Soul去广告
-^https?:\/\/api-global\.soulapp\.me\/app\/open\/get - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4946; see build report.
 
 # > Spotify
 # hostname = *-spclient.spotify.com, spclient.wg.spotify.com
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://spclient.wg.spotify.com/artistview/v1/artist/$1&platform=ipad header
-^https:\/\/gae2-spclient\.spotify\.com:443\/ad - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4950; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 4951; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
 
 # > 太平洋电脑
 # hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
-^https?:\/\/agent-count\.pconline\.com\.cn\/counter\/adAnalyse\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4958; see build report.
 ^https?:\/\/mrobot\.(pcauto|pconline)\.com\.cn\/v\d\/ad\dp - reject
 ^https?:\/\/mrobot\.pcauto\.com\.cn\/xsp\/s\/auto\/info\/(ad|preload) - reject
 
 # > 淘票票
 # hostname = acs.m.taobao.com
 # 开屏广告
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 4965; see build report.
 
 # > 淘淘阅读
 # hostname = bid.adview.cn
@@ -4948,7 +4949,7 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 # > 同程旅行
 # hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
 # 开屏广告
-^https?:\/\/wx\.17u\.cn\/xcxhomeapi\/((aggregator\/index)|(home\/(screen|banner|converge)))$ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5007; see build report.
 
 # > 同花顺
 # hostname = adm.10jqka.com.cn, iphone.ac.qq.com, stat.10jqka.com.cn
@@ -4957,13 +4958,13 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 # > 途虎养车
 # hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
 # 包含途虎小程序和App净化
-^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/mkt-cms\/circle\/recommend\/ - reject
-^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/mkt-scene-marketing-service\/api\/scene\/queryScheme - reject
-^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/mkt-push-message-box\/banner\/cms\/getIndexBanner - reject
-^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/mlp-product-search-api\/search\/helper\/defaultAndHotWord - reject
-^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/ext-website-cl-beauty-api\/beautyIndex\/getBeautyIndex - reject
-^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/ext-website-cl-beauty-api\/channelPage\/v\d\/channelPageCouponPromptComponent - reject
-^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-common-api\/api\/personalCenter\/getAutoSuperConfig - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5016; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5017; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5018; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5019; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5020; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5021; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5022; see build report.
 
 # > 途家民宿
 # hostname = client.tujia.com
@@ -5028,9 +5029,9 @@ https://ios.sspai.com/api/v3/recommend/page/get\?ad.*ios_home_modal - reject
 
 # > 网易严选
 # hostname = support.you.163.com, m.you.163.com, yanxuan.nosdn.127.net
-https://support.you.163.com/appversync/check.do - reject
-^https?:\/\/m\.you\.163\.com\/activity\/popWindow - reject
-^https?:\/\/yanxuan\.nosdn\.127\.net\/.*\.mp4 - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5087; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5088; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5089; see build report.
 
 # > 网易邮箱
 # hostname = *.music.126.net, img1.126.net, www.icourse163.org, nex.163.com, g1.163.com, client.mail.163.com, c.m.163.com, interface*.music.163.com
@@ -5053,8 +5054,8 @@ https://support.you.163.com/appversync/check.do - reject
 
 # > 唯品会
 # hostname = b.appsimg.com, mapi.appvipshop.com
-^https?:\/\/b\.appsimg\.com\/upload\/momin - reject
-^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/iosAdInfo\/report - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5112; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5113; see build report.
 
 # > 蜗牛睡眠
 # hostname = snailsleep.net
@@ -5084,7 +5085,7 @@ hostname - reject
 # > 厦门航空
 # hostname = mobileapi.xiamenair.com
 # 开屏广告
-^https:\/\/mobileapi\.xiamenair\.com\/mobile-starter - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5143; see build report.
 
 # > 西窗烛
 # hostname = lchttpapi.xczim.com
@@ -5138,7 +5139,7 @@ hostname - reject
 # > 小兔充充
 # hostname = ad.xiaotucc.com, mapi.xiaotucc.com
 # 小程序净化
-^https?:\/\/ad\.xiaotucc\.com\/advert - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5197; see build report.
 
 # > 小熊艺术
 # hostname = www.xiaoxiongmeishu.com
@@ -5151,29 +5152,29 @@ hostname - reject
 
 # > 晓晓优选
 # hostname = xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_big_module_bottom_ad - reject
-^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/get_index_activity_list_ad - reject
-^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/bottom_banner - reject
-^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/new_banner\? - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5210; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5211; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5212; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5213; see build report.
 # 弹窗广告
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5215; see build report.
 # 右下角的悬浮广告
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/activity\/show - reject
-^https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/client\/urban\/activity\/index\/data\?agentId=12 - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5217; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5218; see build report.
 # 禁止上报设备信息
 ^https?:\/\/statistic\.live\.126\.net\/statics\/report\/common\/form - reject
 
 # > 笑容加
 # hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
 # 屏蔽固件更新
-^https?:\/\/myusmile\.online\/user\/version\/requestFirmwareUpdate\/ - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5225; see build report.
 # 首页弹窗
-^https?:\/\/www\.myusmile\.online\/user\/userTagRecord\/popup - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5227; see build report.
 
 # > 携程
 # hostname = m.ctrip.com, ma-adx.ctrip.com, mbd.baidu.com
 # 开屏去广告
-^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
+# Optimizer: excluded reviewed scope entry at upstream line 5232; see build report.
 ^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
 
 # > 新片场
@@ -5389,7 +5390,7 @@ http-response ^https?:\/\/adservice\.sigmob\.cn\/extconfig false true
 
 # > 叮咚买菜
 # hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
-http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails suspension fmz200
+# Optimizer: excluded reviewed scope entry at upstream line 5448; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
@@ -5399,7 +5400,7 @@ http-response ^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails suspensio
 
 # > 飞客茶馆
 # hostname = api.flydigi.com
-http-response ^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist adv fmz200
+# Optimizer: excluded reviewed scope entry at upstream line 5458; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
@@ -5432,26 +5433,26 @@ http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_Smart
 
 # > 看东方（百视TV）
 # hostname = bp-api.bestv.com.cn, bp-api.bestv.cn
-http-response-jq ^https:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2 '.dt = []'
-http-response-jq ^https:\/\/bp-api\.bestv\.cn\/cms\/api\/c\/search\/hot\/v(2|4) '.dt.hot = [] | .dt.recommand = [] | .dt.bannerList = []'
+# Optimizer: excluded reviewed scope entry at upstream line 5491; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5492; see build report.
 
 # > 快递100
 # hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adsplash"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adIsConsumable"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adProductId"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["nologin_tips"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["index_banner"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["me_banner"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["index_banner_shadow"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adshongbao"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adsapp_homepage_ticket_pop"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adsoptimizationsend"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adsapp_activity_ad_array"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adbanner"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adposition"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do$ 'delpaths([["adShowAgainTime"]])'
-http-response-jq ^https?:\/\/p\.kuaidi100\.com\/apicenter\/xcx\.dox 'delpaths([["data","secondMenuList"]])'
+# Optimizer: excluded reviewed scope entry at upstream line 5496; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5497; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5498; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5499; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5500; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5501; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5502; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5503; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5504; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5505; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5506; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5507; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5508; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5509; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5510; see build report.
 
 # > 快手
 # hostname = az4-api.ksapisrv.com, az4-api-idc.ksapisrv.com, az2-api.ksapisrv.com, az2-api-idc.ksapisrv.com, apissl.gifshow.com, apissl.ksapisrv.com, az2-api-js.gifshow.com, az2-live.ksapisrv.com
@@ -5491,7 +5492,7 @@ http-response ^https?:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post
 
 # > 朴朴超市
 # hostname = j1.pupuapi.com
-http-response-jq ^https:\/\/j1\.pupuapi\.com\/client\/notification\/message_center\/unread_number '.data = []'
+# Optimizer: excluded reviewed scope entry at upstream line 5550; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -5629,8 +5630,8 @@ http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recomme
 
 # > 转转
 # hostname = app.zhuanzhuan.com
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\? userRed fmz200
-http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos infoData fmz200
+# Optimizer: excluded reviewed scope entry at upstream line 5688; see build report.
+# Optimizer: excluded reviewed scope entry at upstream line 5689; see build report.
 
 
 
@@ -5689,7 +5690,7 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 5748; see build report.
 
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
@@ -5699,15 +5700,15 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 ^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 5758; see build report.
 
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # > 阿里云盘
 # hostname = api.alipan.com, member.alipan.com
-^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 5764; see build report.
 
-^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 5766; see build report.
 
 # > 爱美剧
 # hostname = api.bjxkhc.com
@@ -5948,28 +5949,28 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 # > 菜鸟裹裹
 # hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
 # 首页 好物推荐,商品推广,底部标签页,快递详情页,问卷调查,主页图标
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6007; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6009; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|index)\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6011; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6013; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6015; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6017; see build report.
 
 # 发现页 数字角标 裹裹券
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6020; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6022; see build report.
 
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6024; see build report.
 
 # > 曹操专车
 # hostname = ptmpcap.caocaokeji.cn, cap.caocaokeji.cn
-^https?:\/\/ptmpcap\.caocaokeji\.cn\/advert-bss\/ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6028; see build report.
 
 # > 超级课程表
 # hostname = 182.92.244.70, ad.myfriday.cn
@@ -6015,7 +6016,7 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 # > 大麦
 # hostname = acs.m.taobao.com, amdc.m.taobao.com
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6074; see build report.
 
 # > 大师兄
 # hostname = sdk.alibaba.com.ailbaba.me, adservice.sigmob.cn
@@ -6084,9 +6085,9 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 # hostname = capis*.didapinche.com, adx-cn.anythinktech.com, www.didapinche.com
 ^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/capis(-?\w*)?\.didapinche\.com\/publish\/api\/upgrade data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6143; see build report.
 
-^https?:\/\/www\.didapinche\.com\/app\/adstat\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6145; see build report.
 
 # > 电E宝
 # hostname = app.95598pay.com
@@ -6101,19 +6102,19 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 # > 叮咚买菜
 # hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
 # VIP开通弹窗
-^https?:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6160; see build report.
 
 # 我的页弹窗(暂未启用)
-^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/queryMyPagePopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6163; see build report.
 
 # 我的页-猜你喜欢
-^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6166; see build report.
 
 # 购物车顶部VIP横条
-^https?:\/\/maicai\.api\.ddxq\.mobi\/cart\/vipGuide data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6169; see build report.
 
 # 购物车-猜你喜欢
-^https?:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6172; see build report.
 
 # > 盯盯拍
 # hostname = *.pglstatp-toutiao.com, api.htp.ad-scope.com.cn, appgw.ddpai.com, init.sms.mob.com, apphw.ddpai.com
@@ -6133,7 +6134,7 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 # > 动画疯
 # hostname = api.gamer.com.tw
-^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/anime_get_question\.php data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6192; see build report.
 
 # > 动卡空间
 # hostname = ump.sz.creditcard.ecitic.com, m.creditcard.ecitic.com
@@ -6144,29 +6145,29 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 # > 斗鱼直播
 # hostname = daoyu.sdo.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, douyucdn.cn
-^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6203; see build report.
 
-^https?:\/\/staticlive\.douyucdn\.cn\/.+?\/getStartSend data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6205; see build report.
 
-^https?:\/\/capi\.douyucdn\.cn\/api\/ios_app\/check_update data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6207; see build report.
 
-^https?:\/\/capi\.douyucdn\.cn\/api\/v1\/getStartSend?client_sys=ios data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6209; see build report.
 
-^https?:\/\/douyucdn\.cn\/.+?\/appapi\/getinfo data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6211; see build report.
 
 # > 豆瓣
 # hostname = api.douban.com
 # 如开启可自行添加主机名 img*.douban.com, frodo.douban.com, erebor.douban.com
-^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6216; see build report.
 
-^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6218; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
 # > 饿了么
 # hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
-^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6225; see build report.
 
 # > e充电
 # hostname = cdn-evone-ceph.echargenet.com
@@ -6196,11 +6197,11 @@ http-response ^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoo
 
 # > 飞客茶馆
 # hostname = api.flydigi.com
-^https?:\/\/ptf\.flyertrip\.com\/common\/cf\/.*.jpg data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6255; see build report.
 
-^https?:\/\/www\.flyert\.com\/.*\.php\?module=advis data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6257; see build report.
 
-^https?:\/\/www\.flyert\.com(\.cn)?\/.*\.php\?module=advis data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6259; see build report.
 
 # 开屏 需要卸载重装
 ^https:\/\/api\.flydigi\.com\/android\/v2\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -6365,15 +6366,15 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.sg\.querysinglescene data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6424; see build report.
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.querysinglepage data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6426; see build report.
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.fc\.recommend\.feedscommondservice data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6428; see build report.
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.crm\.platform\.ma\.recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6430; see build report.
 
-^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.mimir\.recommend\.after\.purchase\.activity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6432; see build report.
 
 # > 横店电影小程序
 # 顶部横幅广告
@@ -6384,19 +6385,19 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 虎扑
 # hostname = games.mobileapi.hupu.com, du.hupucdn.com, i*.hoopchina.com.cn, goblin.hupu.com
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(search|interfaceAdMonitor|status|hupuBbsPm)/(hotkey|init|hupuBbsPm)\. data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6443; see build report.
 
 ^https?:\/\/du\.hupucdn\.com\/\w+h\d{4} data-type=tiny-gif status-code=200
 
-^https?:\/\/i\d\.hoopchina\.com\.cn/blogfile\//d+\//d+\/BbsImg\.(?<=(big.(png|jpg)))$ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6447; see build report.
 
-^https?:\/\/i1\.hoopchina\.com\.cn\/blogfile\/.+_\d{3}x\d{4} data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6449; see build report.
 
 # > 虎牙直播
 # hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com
-^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6453; see build report.
 
-^https?://live-ads\.huya\.com/live/getAllEntrance.*$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6455; see build report.
 
 # > 花生地铁
 # hostname = cmsapi.wifi8.com, cmsfile.wifi8.com
@@ -6469,17 +6470,17 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 驾考宝典
 # hostname = *.kakamobi.cn, smart.789.image.mucang.cn
-^https?:\/\/789\.kakamobi\.cn\/.+adver data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6528; see build report.
 
-^https?:\/\/smart\.789\.image\.mucang\.cn\/advert data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6530; see build report.
 
 # > 驾校一点通
 # hostname = richmanrules.ksedt.com, api.jxedt.com, richmanapi.jxedt.com
-^https?:\/\/richmanapi\.jxedt\.com\/api\/(ad|adplus|banadplus)\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6534; see build report.
 
-^https?:\/\/api\.jxedt\.com\/jump\/EMiCcDNp data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6536; see build report.
 
-^https?:\/\/richmanmain\.jxedt\.com\/advertisement\/fallback data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6538; see build report.
 
 # > 简讯
 # hostname = api.tipsoon.com
@@ -6513,7 +6514,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 金山词霸
 # hostname = dict-mobile.iciba.com, mobile-pic.cache.iciba.com, service.iciba.com, *.kingsoft-office-service.com
-^https?:\/\/service\.iciba\.com\/popo\/open\/screens\/v\d\?adjson data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6572; see build report.
 
 ^https?:\/\/\w+?\.kingsoft-office-service\.com\/ad data-type=text data=" " status-code=200
 
@@ -6549,7 +6550,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # > 看东方（百视TV）
 # hostname = bp-api.bestv.com.cn, bp-api.bestv.cn
 # 开屏广告 感谢【树先生】分享
-^https:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6608; see build report.
 
 # > 肯德基
 # hostname = res.kfc.com.cn
@@ -6564,17 +6565,17 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # > 酷我音乐
 # hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
 # 广告
-^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6623; see build report.
 
 # > 快递100
 # hostname = p.kuaidi100.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-^https?:\/\/cdn\.kuaidi100\.com\/images\/open\/appads data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6627; see build report.
 
-^https?:\/\/p\.kuaidi100\.com\/advertisement\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6629; see build report.
 
-^https?:\/\/p\.kuaidi100\.com\/e-commerce\/act\/actInfo\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6631; see build report.
 
-^https?:\/\/p\.kuaidi100\.com\/apicenter\/card\.dox data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6633; see build report.
 
 # > 快看
 # hostname = api.kkmh.com
@@ -6651,7 +6652,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 旅途随身听
 # hostname = www.1314zhilv.com
-^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(guideScenic\/getRecentlyUpdatedScenic|city\/getWeatherByCityName) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6710; see build report.
 
 # > 罗森点点
 # hostname = plt.yorentown.com, lawsonapi.yorentown.com
@@ -6721,9 +6722,9 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 马蜂窝
 # hostname = mapi.mafengwo.cn
-^https?:\/\/mapi\.mafengwo\.cn\/system\/update\/check_update data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6780; see build report.
 
-^https?:\/\/mapi\.mafengwo\.cn\/system\/config\/(get|mark)_(push|alert)_config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6782; see build report.
 
 # > 马卡龙玩图
 # hostname = app.api.versa-ai.com, static01.versa-ai.com
@@ -6733,13 +6734,13 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 
 # > 埋堆堆
 # hostname = sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com, conf-darwin.xycdn.com, *.ubixioe.com
-^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert\/(first|third)part\/advertList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6792; see build report.
 
 ^https?:\/\/t-dsp\.pinduoduo\.com data-type=text data=" " status-code=200
 
 ^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data-type=text data=" " status-code=200
 
-^https?:\/\/sfo\.mddcloud\.com\.cn\/api\/v\d\/sfo\/popup_displays? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6798; see build report.
 
 ^https?:\/\/toblog\.ctobsnssdk\.com data-type=text data=" " status-code=200
 
@@ -6758,13 +6759,13 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # > 脉脉
 # hostname = open.taou.com, h3.open.taou.com
 # 开屏广告、职位页面横幅
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6817; see build report.
 
 # 赠送礼物 横幅
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6820; see build report.
 
 # 帖子文末推广卡片
-^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6823; see build report.
 
 # > 芒果TV
 # hostname = *.mgtv.com
@@ -6772,23 +6773,23 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 底部tab红点
-^https?:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6831; see build report.
 
 # 播放器界面
-^https?:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6834; see build report.
 
 # 升级弹窗
-^https?:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6837; see build report.
 
 # 搜索框填充词
-^https?:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6840; see build report.
 
 # > 猫眼
 # hostname = p0.pipi.cn
 # 开屏广告
-^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6845; see build report.
 
-^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6847; see build report.
 
 # > 每日精选
 http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -6823,20 +6824,20 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 # > 咪咕视频
 # hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
-^https?:\/\/ggc\.miguvideo\.com\/v1\/iflyad\/deliverysystem\/direct\/ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6882; see build report.
 
-^https?:\/\/public-deliver9\.miguvideo\.com\/deliver\/site\/batchMatch\/mergeSpot\/miguvideo\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6884; see build report.
 
-^https?:\/\/recommend-dy\.miguvideo\.com\/recommend-dynamic\/dataSource\/v1\/recommend\/merge data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6886; see build report.
 
-^https?:\/\/app-sc\.miguvideo\.com\/app-management\/v1\/staticcache\/settings\/miguvideo\/SHARE_PIC data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6888; see build report.
 
-^https?:\/\/common-sc\.miguvideo\.com\/videoActivity\/activityList\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6890; see build report.
 
 #^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER\/ reject-dict
-^https?:\/\/ggx.+\.miguvideo\.com\/request\/sdk.+[^?]*$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6893; see build report.
 
-^https?:\/\/ggic\d+.miguvideo\.com\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 6895; see build report.
 
 # > 米家
 # hostname = home.mi.com
@@ -6867,7 +6868,7 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 # > 南方航空
 # hostname = 3g.csair.com
 # 弹窗
-^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 6926; see build report.
 
 # > 宁聚
 # hostname = api.nj.nbtv.cn
@@ -6954,19 +6955,19 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 # > 朴朴超市
 # hostname = j1.pupuapi.com
 # 搜索框页面热榜
-^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/search_input_ranking data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7013; see build report.
 
 # 朴朴超市订单待收货页右下角悬浮广告
-^https:\/\/j1\.pupuapi\.com\/client\/assets\/discount\/order data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7016; see build report.
 
 # 购物车页去换购推荐
-^https:\/\/j1\.pupuapi\.com\/client\/marketing\/channel\/global_redeem\/top_tip\/v2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7019; see build report.
 
 # 各种页面的商品推荐
-^https:\/\/j1\.pupuapi\.com\/client\/recommendation\/hub\/interests\/products\/v2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7022; see build report.
 
 # 个人主页会员标识
-^https:\/\/j1\.pupuapi\.com\/client\/member_card\/premium\/user_center data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7025; see build report.
 
 # > 浦大喜奔
 # hostname = image.spdbccc.com.cn
@@ -6982,29 +6983,29 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 # > 起点读书
 # hostname = qidian.qpic.cn, mage.if.qidian.com, magev6.if.qidian.com
-^https?:\/\/qidian\.qpic\.cn\/qidian_common data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7041; see build report.
 
-^https?:\/\/mage\.if\.qidian\.com\/Atom\.axd\/Api\/Client\/GetConfIOS data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7043; see build report.
 
 # 起点读书投票、章末免费领取章节卡等
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7046; see build report.
 
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7048; see build report.
 
 # 我的界面内测推广
-^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7051; see build report.
 
 # 书架置顶推广(保留签到移除花哨背景)
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7054; see build report.
 
 # 发现上面的图标屏蔽
-^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7057; see build report.
 
 # > 汽车之家
 # hostname = adproxy.autohome.com.cn, app2.autoimg.cn
-^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7061; see build report.
 
-^https?:\/\/app2\.autoimg\.cn\/apppdfs\/ data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7063; see build report.
 
 # > 汽水音乐
 # hostname = webcast-open.douyin.com, beta-luna.douyin.com, ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com
@@ -7017,12 +7018,12 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 # > 前程无忧 51Job
 # hostname = appapi.51job*.com, cupid.51job*.comhostname
 # 屏蔽更新
-^https?:\/\/appapi\.51job(app)?\.com\/api\/util\/get_version data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7076; see build report.
 
-^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/index\/last-version data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7078; see build report.
 
 # 底栏中央活动标
-^https?:\/\/cupid\.51job(app)?\.com\/open\/index\/notice-infos data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7081; see build report.
 
 # > 穷游
 # hostname = open.qyer.com, media.qyer.com
@@ -7030,10 +7031,10 @@ http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad data-type=text data="{}" status-
 
 # > 去哪儿
 # hostname = qde.qunar.com, homefront.qunar.com, client.qunar.com
-^https?:\/\/qde\.qunar\.com\/preload data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7089; see build report.
 
 # 开屏广告
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7092; see build report.
 
 # > 全民K歌
 # hostname = y.gtimg.cn
@@ -7076,7 +7077,7 @@ https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad data-type=text data="{
 # > 人人视频
 # hostname = api.rr.tv
 # RRTV_屏蔽限時彈窗
-https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7130; see build report.
 
 # > 日产智联
 # hostname = oneapph5.dongfeng-nissan.com.cn
@@ -7165,32 +7166,32 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 首汽约车
 # hostname = gw-passenger.01zhuanche.com, img.yun.01zhuanche
-^https?:\/\/gw-passenger\.01zhuanche\.com\/gw-passenger\/car-rest\/webservice\/passenger\/recommendADs data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7219; see build report.
 
-^https?:\/\/img\.yun\.01zhuanche\.com\/statics\/app\/advertisement\/.+?-750-1334 data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7221; see build report.
 
 # > 顺丰快递
 # hostname = ccsp-egmas.sf-express.com, ucmp.sf-express.com
 # APP净化 感谢【怎么肥事】分享
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7226; see build report.
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-video\/video\/app\/video\/labelClusterList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7228; see build report.
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/queryInfoFlow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7230; see build report.
 
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/bms\/queryRecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7232; see build report.
 
 # > 顺丰快递小程序
 # hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
-^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7236; see build report.
 
-^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7238; see build report.
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7240; see build report.
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7242; see build report.
 
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7244; see build report.
 
 # > 四季線上影視
 # hostname = service.4gtv.tv
@@ -7244,10 +7245,10 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 苏宁易购
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
-^https?:\/\/image\.suning\.cn\/uimg\/ma\/ad\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7298; see build report.
 
 # 新人专享弹窗
-^https?:\/\/luckman\.suning\.com\/luck-web\/policy\/v\d\/msf\/index\.do data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7301; see build report.
 
 # > 苏周到
 # hostname = szdmobile.suzhou.gov.cn
@@ -7272,28 +7273,28 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # > Soul
 # hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
 # 信息流，帖子详情页等各种广告
-^https?:\/\/ssp\.soulapp\.cn\/api\/q data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7326; see build report.
 
-^https?:\/\/ssp\.soulapp\.cn\/api\/ad\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7328; see build report.
 
-^https?:\/\/chat-live\.soulapp\.cn\/live\/planet\/recListV2 data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7330; see build report.
 
-^https?:\/\/api-chat\.soulapp\.cn\/chat\/entrance\/first data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7332; see build report.
 
 # > Spotify
 # hostname = *-spclient.spotify.com, spclient.wg.spotify.com
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7336; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
 
 # > 太平洋电脑
 # hostname = mrobot.pconline.com.cn, mrobot.pcauto.com.cn, agent-count.pconline.com.cn
-^https?:\/\/mrobot\.pconline\.com\.cn\/s\/onlineinfo\/ad\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7343; see build report.
 
 # > 太平洋知科技
 # hostname = mrobot.pconline.com.cn
-^https?:\/\/mrobot\.pconline\.com\.cn\/s-900\/onlineinfo\/cms\/launch data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7347; see build report.
 
 # > 淘宝
 # hostname = acs.m.taobao.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
@@ -7305,7 +7306,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7359; see build report.
 
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
@@ -7371,19 +7372,19 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 同程旅行
 # hostname = *.ly.com, *.17usoft.com, *.17u.cn, mobilehotelapi.elong.com, quic-tcmapi.elong.com
-^https?:\/\/wx\.17u\.cn\/crapi\/query\/getAdImgUrlByCode data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7425; see build report.
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7427; see build report.
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7429; see build report.
 
-^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7431; see build report.
 
 # 景点界面轮播图和右下角悬浮窗
-^https:\/\/mobileapi\.ly\.com\/wlfrontend\/app\/scenicMain data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7434; see build report.
 
 # 租车界面 广告
-^https:\/\/wx\.17u\.cn\/crapi\/query\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7437; see build report.
 
 # 酒店界面广告
 ^https:\/\/mobilehotelapi\.elong\.com\/appHotel\/adx\/advert\/getAdvert data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -7397,7 +7398,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 途虎养车
 # hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
-^https?:\/\/(mkt-)?gateway\.tuhu\.cn(\/mkt)?\/[a-z-]+\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7451; see build report.
 
 # > 途家民宿
 # hostname = client.tujia.com
@@ -7406,7 +7407,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 途牛
 # hostname = m.tuniu.com
-^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7460; see build report.
 
 # > 推栏
 # hostname = m.pvp.xoyo.com
@@ -7511,7 +7512,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # > 网易有道词典
 # hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
 # 翻译广告
-^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7565; see build report.
 
 # 首次查词弹窗
 ^https?:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/dict-mobile\/prod\/dictCommonConfig data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -7520,13 +7521,13 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 ^https?:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 搜索预想
-^https?:\/\/dict\.youdao\.com\/commonsearch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7574; see build report.
 
 # 会员优惠券弹窗
-^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7577; see build report.
 
 # 首页左上角福利中心
-^https?:\/\/dict\.youdao\.com\/dictusertask\/system data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7580; see build report.
 
 # 会员界面横幅广告
 ^https?:\/\/dictvip-business\.youdao\.com\/home\/ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -7565,13 +7566,13 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 # > 唯品会
 # hostname = b.appsimg.com, mapi.appvipshop.com
-^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7624; see build report.
 
 # APP+小程序弹窗广告
-^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/layout\/productList\/eventData\/v data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7627; see build report.
 
 # 右下角悬浮窗，需手动关闭广告一次
-^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/coupon\/float_entrance\/get\?api_key data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7630; see build report.
 
 # > 我爱卡社区管家
 # hostname = api.51credit.com
@@ -7745,16 +7746,16 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # > 小芒
 # hostname = mgesq.api.mgtv.com, *.hitv.com
 # 我的页面-猜你喜欢
-^https:\/\/mgesq\.api\.mgtv\.com\/v2\/goods\/guess_you_like data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7805; see build report.
 
 # 我的页面-
-https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7808; see build report.
 
 # 搜索排行榜单
-^https:\/\/mgesq\.api\.mgtv\.com\/search\/goods\/rank data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7811; see build report.
 
 # 底部按钮、我的页面左上角
-^https:\/\/mgesq\.api\.mgtv\.com\/user\/center\/config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7814; see build report.
 
 # > 小米打印
 # hostname = api-miprint.hannto.com, api.indeedpower.com
@@ -7821,18 +7822,18 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 # > 笑容加
 # hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
 # 屏蔽更新提示
-^https?:\/\/myusmile\.online\/user\/version\/requestAppUpdate data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7881; see build report.
 
 # 商城页弹窗
-^https?:\/\/wemallh5\.usmile\.com\/api\/sp-portal\/store\/usmile\/activity\/dayCheck\?pop data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7884; see build report.
 
 # > 携程
 # hostname = m.ctrip.com, ma-adx.ctrip.com, mbd.baidu.com
 # 更新弹窗 APP降级8.40.0版本搭配去开屏广告规则，目前没有出现MITM失败等其他问题 如开启可自行添加主机名 m.ctrip.com
-^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/[0-9]{5}\/json\/getTimeZoneServerIpList\?__gw_os=IOS data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7889; see build report.
 
 # 8.47.0以上版本会有部分图片加载不出来
-^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/json\/tripAds data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7892; see build report.
 
 # > 心悦俱乐部
 # hostname = bgw.xinyue.qq.com
@@ -7908,7 +7909,7 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 # > 亚朵开屏
 # hostname = api2.yaduo.com
-^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 7968; see build report.
 
 # > 央视频
 # hostname = cdn.cmgadx.com
@@ -7931,15 +7932,15 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 # > 艺龙旅行网
 # hostname = mobile-api2011.elong.com, webboot.zhangyue.com, saad.ms.zhangyue.net
-^https?:\/\/mobile-api2011\.elong\.com\/ad(?>v|gateway) data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7991; see build report.
 
 # > 易车
 # hostname = api.ycapp.yiche.com, cheyouapi.ycapp.yiche.com
-^https?:\/\/api\.ycapp\.yiche\.com\/appnews\/getadlist data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7995; see build report.
 
-^https?:\/\/api\.ycapp\.yiche\.com\/yicheapp\/getadlist data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7997; see build report.
 
-^https?:\/\/cheyouapi\.ycapp\.yiche\.com\/appforum\/getusermessagecount data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 7999; see build report.
 
 # > 易捷加油
 # hostname = a.sinopecsales.com, ocrifs.ejoy.sinopec.com
@@ -7998,15 +7999,15 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 # > 悠洗APP
 # hostname = api.ulife.group
 # 净化 感谢【TEXAS】分享
-^https?:\/\/api\.ulife\.group\/signintask\/adServing data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8058; see build report.
 
-^https?:\/\/api\.ulife\.group\/auth\/account\/getUpgradeStrategy data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8060; see build report.
 
-^https?:\/\/api\.ulife\.group\/market\/frontEntrance\/getThirdAdvertising\?displayPort=1&type=15 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8062; see build report.
 
-^https?:\/\/api\.ulife\.group\/market\/memberCard\/listMemberCard\?isShowSecondaryCard=1 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8064; see build report.
 
-^https?:\/\/api\.ulife\.group\/auth\/account\/entrance data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8066; see build report.
 
 # > 邮储银行
 # hostname = static.psbc.com, mcc.psbc.com, static.mobile-bank.psbc.com, d.psbc.com
@@ -8044,7 +8045,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 # > 猿辅导
 # hostname = xyst.yuanfudao.com
-^https?:\/\/xyst\.yuanfudao\.com\/iphone\/splashesV\d data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8104; see build report.
 
 # > 云快充
 # hostname = gw3.ykccn.com
@@ -8085,7 +8086,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 # > 掌上公交
 # hostname = quanguo.mygolbs.com, wx.mygolbs.com
 # 我的横幅广告
-^https?:\/\/quanguo\.mygolbs\.com:8081\/MyBusServer\/servlet\/MyGoServer\.HttpPool\.HttpHandlerServlet data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8145; see build report.
 
 # > 掌上鹿城
 # hostname = vapp.tmuyun.com
@@ -8109,13 +8110,13 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 # > 掌阅
 # hostname = ih2.ireader.com, book.img.ireader.com
-^https?:\/\/ih2\.ireader\.com\/zyapi\/bookstore\/ad\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8169; see build report.
 
-^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8171; see build report.
 
-^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8173; see build report.
 
-^https?:\/\/book\.img\.ireader\.com\/group6\/M00 data-type=tiny-gif status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8175; see build report.
 
 # > 招财猫直聘
 # hostname = beehiveapi.58.com
@@ -8178,7 +8179,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 # > 智行APP
 # hostname = m.ctrip.com
 # 开屏广告 影响携程部分功能正常运行，携程8.40.0以下的版本不受影响。如开启可自行添加主机名
-^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8238; see build report.
 
 # > 中关村在线
 # hostname = apicloud.zol.com.cn
@@ -8302,14 +8303,14 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 # > 转转
 # hostname = app.zhuanzhuan.com
-^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8362; see build report.
 
-^https?:\/\/app\.zhuanzhuan\.com\/zzopen\/popwindow\/getallpopwin\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8364; see build report.
 
-^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzlogic\/getOpenScreen data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8366; see build report.
 
 # 转转右下角悬浮广告
-^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/userred\?scene=homePage data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# Optimizer: excluded reviewed scope entry at upstream line 8369; see build report.
 
 # > 追书神器
 # hostname = adx-cn.anythinktech.com
@@ -8336,7 +8337,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 # > 作业帮
 # hostname = syh.zybang.com, www.zybang.com
-^https?:\/\/(syh|www)\.zybang\.com\/adx\/ data-type=text data=" " status-code=200
+# Optimizer: excluded reviewed scope entry at upstream line 8396; see build report.
 
 
 
@@ -8375,7 +8376,7 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 
 # > 阿里巴巴
 # hostname = acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-阿里巴巴广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8435; see build report.
 
 阿里巴巴广告__12193752dd6b = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js, requires-body=true, timeout=60
 
@@ -8383,9 +8384,9 @@ myBlockAds = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\
 
 # > 阿里云盘
 # hostname = api.alipan.com, member.alipan.com
-阿里云盘 = type=http-response, pattern=^https:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8443; see build report.
 
-阿里云盘__42a871eef1cb = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8445; see build report.
 
 # > 爱奇艺
 # hostname = -i.vip.iqiyi.com, *.iqiyi.com
@@ -8434,9 +8435,9 @@ myBlockAds = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\
 
 # > 百度贴吧
 # hostname = tiebac.baidu.com
-贴吧json = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?), script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js, requires-body=true, timeout=10
+# Optimizer: excluded reviewed scope entry at upstream line 8494; see build report.
 
-贴吧proto = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd, script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10, argument=[{{{per_filter_video_thread}}}]
+# Optimizer: excluded reviewed scope entry at upstream line 8496; see build report.
 
 # > 薄荷健康
 # hostname = api.boohee.com, bohe.sfo-tx-shanghai-01.saas.sensorsdata.cn, lego.boohee.com, status.boohee.com
@@ -8484,12 +8485,12 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 # hostname = cn-acs.m.cainiao.com, amdc.m.taobao.com
 菜鸟裹裹 = type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/header.js, timeout=60
 
-菜鸟裹裹__fecaccc2193b = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8544; see build report.
 
-菜鸟裹裹__981f20404ff2 = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8546; see build report.
 
 # 消息中心
-菜鸟裹裹__2d3fc33bb0e2 = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8549; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
@@ -8532,18 +8533,18 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 # > 叮咚买菜
 # hostname = maicai.api.ddxq.mobi, gw.api.ddxq.mobi, user.api.ddxq.mobi
 # 开屏广告及首页推荐流及底部状态栏优化
-叮咚买菜 = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail), script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8592; see build report.
 
 # 右下角AI
-叮咚买菜__83f5d7a08977 = type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/tool\/getConfig, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8595; see build report.
 
 # 我的页净化
-叮咚买菜__07871088a4b0 = type=http-response, pattern=^https?:\/\/user\.api\.ddxq\.mobi\/userportal-service\/api\/v\d\/user\/queryMyPage, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8598; see build report.
 
 # > 动画疯
 # hostname = api.gamer.com.tw
 # (黑屏25秒)
-动画疯 = type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8603; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
@@ -8553,16 +8554,16 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 
 # > 飞客茶馆
 # hostname = api.flydigi.com
-飞客茶馆 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8613; see build report.
 
-飞客茶馆__af1a47a00ca6 = type=http-response, pattern=^https?:\/\/www\.flyert\.com(\.cn)?\/.*plugin, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8615; see build report.
 
 # > 粉笔
-粉笔开屏广告 = type=http-response, pattern=^https?:\/\/tiku\.fenbi\.com\/activity\/app\/launcher\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8618; see build report.
 
 # > 复游会微信小程序
 # hostname = apis.folidaymall.com
-复游会微信小程序 = type=http-response, pattern=^https?:\/\/apis\.folidaymall\.com\/online\/capi\/component\/getPageComponents, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/foliday.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8622; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
@@ -8576,7 +8577,7 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 
 # > 盒马
 # hostname = acs.m.taobao.com, acs-m.freshippo.com
-盒马 = type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream), script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8636; see build report.
 
 # > 汇付天下
 # 感谢【可莉】分享
@@ -8589,7 +8590,7 @@ blued登录后个人界面广告 = type=http-response, pattern=^https?:\/\/socia
 
 # > IT之家
 # 移除 轮播图 置顶文章 信息流广告
-ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8649; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
@@ -8624,16 +8625,16 @@ ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/
 
 # > 酷我音乐
 # hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
-酷我音乐 = type=http-response, pattern=^https?:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8684; see build report.
 
 # 会员
-酷我音乐__a0cf527bf87b = type=http-response, pattern=^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8687; see build report.
 
-酷我音乐__537bdfc515d0 = type=http-response, pattern=^https?:\/\/musicpay\.kuwo\.cn\/music\.pay, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8689; see build report.
 
-酷我音乐__54c5a9befdd8 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/vip\/(enc\/user\/vip\?op=ui|v\d\/theme\?op=gd), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8691; see build report.
 
-酷我音乐__fdf516620f11 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/vip\/v\d\/user\/vip\?op=ui, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8693; see build report.
 
 # > 夸克
 夸克 = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js, requires-body=true, timeout=60
@@ -8644,19 +8645,19 @@ ithome = type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/
 # > Keep
 # hostname = api.gotokeep.com, kad.gotokeep.com, static1.keepcdn.com
 # 我的页面去推广
-keep = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8704; see build report.
 
 # 应用底部栏净化
-keep__433f7a90ef80 = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8707; see build report.
 
 # 发现页处理
-keep__b7c6f6779c03 = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8710; see build report.
 
 # 课程预览页广告
-keep__6ed6ae3004fe = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/nuocha\/course\/v\d/\w+\/preview, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8713; see build report.
 
 # 我的运动页面去除下方推荐
-keep__13cd95ca02fc = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8716; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
@@ -8664,20 +8665,20 @@ keep__13cd95ca02fc = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\
 # > 旅途随身听
 # hostname = www.1314zhilv.com
 # 首页北京城市导览图片,首页上方轮播图片净化
-旅途随身听 = type=http-response, pattern=^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(common\/getJGQIconNew|city\/getAllBannelByCity), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8724; see build report.
 
 # > 罗森点点
 # hostname = plt.yorentown.com, lawsonapi.yorentown.com
-罗森点点 = type=http-response, pattern=^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lawson.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8728; see build report.
 
-罗森点点__c59e763e8e7b = type=http-response, pattern=^https:\/\/lawsonapi\.yorentown\.com\/portal\/app\/globalLaunch\/listAdvert, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lawson.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8730; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
 
 # > 马蜂窝
 # hostname = mapi.mafengwo.cn
-马蜂窝 = type=http-response, pattern=^https?:\/\/mapi\.mafengwo\.cn\/user\/profile\/get_(list|profile), script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8737; see build report.
 
 # > 买单吧
 # hostname = creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, creditcard.bankcomm.cn, creditcard.bankcomm.com
@@ -8686,36 +8687,36 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 # > 脉脉
 # hostname = open.taou.com, h3.open.taou.com
 # 帖子末尾 看过此贴的用户也在看
-脉脉帖子末尾 = type=http-response, pattern=^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8746; see build report.
 
 # 移除信息流和评论区大块广告 信息流广告focus_feed / 评论区广告gossip_detail_comment / 评论区广告feed_detail_comment?
-脉脉 = type=http-response, pattern=^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8749; see build report.
 
 # > 芒果TV
 # hostname = *.mgtv.com
 # 我的页面
-芒果TV我的页面 = type=http-response, pattern=^https?:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8754; see build report.
 
 # 首页信息流,顶部tab
-芒果TV首页信息流,顶部tab = type=http-response, pattern=^https?:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8757; see build report.
 
-芒果TV = type=http-response, pattern=^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8759; see build report.
 
 # 底部tab
-芒果TV底部tab = type=http-response, pattern=^https?:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8762; see build report.
 
 # 播放详情页
-芒果TV播放详情页 = type=http-response, pattern=^https?:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8765; see build report.
 
-芒果TV播放详情页__7da381cf142a = type=http-response, pattern=^https?:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8767; see build report.
 
 # 搜索框填充词
-芒果TV搜索框填充词 = type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8770; see build report.
 
 # > 美丽修行
 # hostname = api.bevol.com
 # 去除开屏 首页广告 美修盒广告 我的页面广告
-美丽修行广告 = type=http-response, pattern=^https:\/\/api\.bevol\.com\/(?:appmain\/app\/home\/page|usercenter\/account\/info|personal\/page|appmain\/app\/home\/launch|trialbox\/shop\/app\/homePage)$, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/mlxx/mlxx.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8775; see build report.
 
 # > 美柚
 # hostname = x.seeyouyima.com, axxd.xmseeyouyima.com, config-service.seeyouyima.com
@@ -8725,7 +8726,7 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 
 # > 咪咕视频
 # hostname = ggc.miguvideo.com, public-deliver9.miguvideo.com, display*-sc.miguvideo.com, recommend-dy.miguvideo.com, app-sc.miguvideo.com, common-sc.miguvideo.com, ggx*.miguvideo.com, ggic*.miguvideo.com
-咪咕视频个人中心去广告 = type=http-response, pattern=^https?:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER$, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Scripts/miguvideo/miguvideo_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8785; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
@@ -8738,20 +8739,20 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 
 # > 朴朴超市
 # hostname = j1.pupuapi.com
-朴朴超市 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/search\/hot_keywords\/v3, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8798; see build report.
 
-朴朴超市__ad392956c56f = type=http-response, pattern="^https:\/\/j1\.pupuapi\.com\/client\/a朴朴超市,", script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8800; see build report.
 
-朴朴超市__5540e81e117a = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8802; see build report.
 
 # 搜索结果页信息流横幅广告
-朴朴超市__c14fbbb7c6da = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/search\/hub\/search_box\/products\/v6, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8805; see build report.
 
 # 下单页实惠卡开通推荐
-朴朴超市__a041cf015936 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/order_settlement\/detail, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8808; see build report.
 
 # 订单列表骑手反馈问题推荐
-朴朴超市__cc027ac8af75 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/order\/orders\/list\/v4, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8811; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -8762,10 +8763,10 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 
 # > 前程无忧 51Job
 # hostname = appapi.51job*.com, cupid.51job*.comhostname
-51job = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8822; see build report.
 
 # 我的页净化
-去哒 = type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8825; see build report.
 
 # > 去哒
 # 首页开屏广告 感谢【德克萨斯】分享
@@ -8777,40 +8778,40 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 # > 人人视频
 # hostname = api.rr.tv
 # RRTV_level_info
+# Optimizer: excluded reviewed scope entry at upstream line 8837; see build report.
+
+# RRTV_去除首頁廣告
+# Optimizer: excluded reviewed scope entry at upstream line 8840; see build report.
+
+# RRTV_去除廣場tab
+# Optimizer: excluded reviewed scope entry at upstream line 8843; see build report.
+
+# RRTV_去除商城廣告
+# Optimizer: excluded reviewed scope entry at upstream line 8846; see build report.
+
+# RRTV_Ad_List
+# Optimizer: excluded reviewed scope entry at upstream line 8849; see build report.
+
+# RRTV_Ad_All
+# Optimizer: excluded reviewed scope entry at upstream line 8852; see build report.
+
+# RRTV_Get_Drama
+# Optimizer: excluded reviewed scope entry at upstream line 8855; see build report.
+
+# RRTV_Watch_V4
+# Optimizer: excluded reviewed scope entry at upstream line 8858; see build report.
+
+# RRTV_User_Info
+# Optimizer: excluded reviewed scope entry at upstream line 8861; see build report.
+
+# > Reddit
+# 过滤推广 关NSFW提示 感谢【xream】分享
 NetEaseCloudMusic_mian = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
 NetEaseCloudMusic_tab = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="{"MY":{{{MY}}},"DT":{{{DT}}},"FX":{{{FX}}}}"
 NetEaseCloudMusic_home = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20, argument="{"PRGG":{{{PRGG}}},"PRRK":{{{PRRK}}},"PRDRD":{{{PRDRD}}},"PRSCVPT":{{{PRSCVPT}}},"PRST":{{{PRST}}},"PRRR":{{{PRRR}}},"HMPR":{{{HMPR}}},"PRMST":{{{PRMST}}},"PRCN":{{{PRCN}}}}"
 NetEaseCloudMusic_fx = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show, script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
 NetEaseCloudMusic_mybarad = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource, script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
 NetEaseCloudMusic_foll = type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get, script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=20
-rrtv_json = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_去除首頁廣告
-rrtv_json__21afbd05a5ba = type=http-response, pattern=https://api.rr.tv/v3plus/index/channel\?pageNum=1&position=CHANNEL_INDEX, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_去除廣場tab
-rrtv_json__93f0a81c5900 = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_去除商城廣告
-rrtv_json__fc8892230f72 = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?pageNum=1&position=CHANNEL_MY, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_Ad_List
-rrtv_json__3c7238c33df3 = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/user\/privilege\/list, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_Ad_All
-rrtv_json__4f17a12cc43b = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/ad\/getAll, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_Get_Drama
-rrtv_json__72684843d08b = type=http-response, pattern=^https?:\/\/api\.rr\.tv\/drama\/app\/get_combined_drama_detail, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_Watch_V4
-rrtv_json__ef23d8ee7ff7 = type=http-response, pattern=https://api.rr.tv/watch/v4, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# RRTV_User_Info
-rrtv_json__028817d70657 = type=http-response, pattern=https://api.rr.tv/user/profile, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true, timeout=60
-
-# > Reddit
-# 过滤推广 关NSFW提示 感谢【xream】分享
 reddit = type=http-response, pattern=^https?:\/\/gql(-fed)?\.reddit\.com, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js, requires-body=true, timeout=60
 
 
@@ -8852,36 +8853,36 @@ Smzdm__0c5e6a8163e6 = type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.co
 # > Soul
 # hostname = 47.110.187.87, ssp.soulapp.cn, chat-live.soulapp.cn, api-chat.soulapp.cn, api-account.soulapp.cn, api-global.soulapp.me, api-a.soulapp.cn, api-pay.soulapp.cn, gateway-mobile-gray.soulapp.cn, post.soulapp.cn, api-user.soulapp.cn
 # 替换信息收集
-req_replace_body = type=http-request, pattern=^https:\/\/data-collector\.soulapp\.cn\/api\/data\/report\/v\d, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8906; see build report.
 
 # 青少年模式弹窗
-soul_ads = type=http-response, pattern=^https?:\/\/api-account\.soulapp\.cn\/teenager\/config, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8909; see build report.
 
-soul_ads__396e30e8165e = type=http-response, pattern=^https?:\/\/api-a\.soulapp\.cn\/v2\/post\/gift\/list, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8911; see build report.
 
-soul_ads__5f025c4200ef = type=http-response, pattern=^https?:\/\/api-a\.soulapp\.cn\/official\/scene\/module, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8913; see build report.
 
-soul_ads__3e2a5a808da3 = type=http-response, pattern=^https?:\/\/api-user\.soulapp\.cn\/furion\/position\/content, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8915; see build report.
 
-soul_ads__e1441ae71996 = type=http-response, pattern=^https?:\/\/api-user\.soulapp\.cn\/v\d\/planet\/config, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8917; see build report.
 
-soul_ads__71be8ee7bf4b = type=http-response, pattern=^https?:\/\/api-chat\.soulapp\.cn\/chat\/limitInfo, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8919; see build report.
 
-soul_ads__ac44f5f0fcc1 = type=http-response, pattern=^https?:\/\/post\.soulapp\.cn\/hot\/soul\/rank, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8921; see build report.
 
-soul_ads__a13e97f0eae0 = type=http-response, pattern=^https?:\/\/post\.soulapp\.cn\/v\d\/post\/homepage\/guide\/card, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8923; see build report.
 
-soul_ads__c8aa1701ad01 = type=http-response, pattern=^https?:\/\/post\.soulapp\.cn\/v\d\/post\/recSquare\/subTabs, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8925; see build report.
 
-soul_ads__1aa572a198c7 = type=http-response, pattern=^https?:\/\/chat-live\.soulapp\.cn\/chatroom\/chatClassifyRoomList, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8927; see build report.
 
-soul_ads__e38c5fe0964f = type=http-response, pattern=^https?:\/\/gateway-mobile-gray\.soulapp\.cn\/mobile\/app\/version\/queryIos, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8929; see build report.
 
-soul_ads__b6fe3a16167f = type=http-response, pattern=^https?:\/\/47\.110\.187\.87\/winterfell\/v2\/getIpByDomain, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8931; see build report.
 
 # > Spotify
 # hostname = *-spclient.spotify.com, spclient.wg.spotify.com
-Protobuf = type=http-response, pattern=^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=3, argument="[{{{tab}}},{{{useractivity}}}]"
+# Optimizer: excluded reviewed scope entry at upstream line 8935; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
@@ -8897,11 +8898,11 @@ Protobuf = type=http-response, pattern=^https:\/\/(?:\w+-spclient|spclient\.wg)\
 
 # > 途虎养车
 # hostname = mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, gateway.tuhu.cn
-途虎养车去广告 = type=http-response, pattern=^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8951; see build report.
 
-途虎养车去广告__039acfa8424d = type=http-response, pattern=^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/[a-z-]+\/homePage\/getHomePageInfo, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8953; see build report.
 
-途虎养车去广告__d2b0bbd0ee9a = type=http-response, pattern=^https?:\/\/(cl-)?gateway\.tuhu\.cn(\/cl)?\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8955; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
@@ -8919,7 +8920,7 @@ vgTime = type=http-response, pattern=^https?:\/\/app02\.vgtime\.com:8080\/vgtime
 # > 网易有道词典
 # hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
 # 首页净化，学习Tab界面净化，首页听读训练净化
-网易有道词典 = type=http-response, pattern=^https?:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 8973; see build report.
 
 # > 网易云音乐
 # hostname = ipv4.music.163.com, interface.music.163.com, interface3.music.163.com, interface9.music.163.com
@@ -8998,19 +8999,19 @@ UnblockURLinWeChat-解除微信链接限制 = type=http-response, pattern=^https
 
 # > 小芒
 # hostname = mgesq.api.mgtv.com, *.hitv.com
-小芒APP主页广告 = type=http-response, pattern=https://mgesq.api.mgtv.com/dsl/index.+, script-path=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9058; see build report.
 
 # > 小米商城
 小米商城 = type=http-response, pattern=^https?:\/\/api\.m\.mi\.com\/v1\/app\/start, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js, requires-body=true, timeout=60
 
 # > 小兔充充
 # hostname = ad.xiaotucc.com, mapi.xiaotucc.com
-小兔充充 = type=http-response, pattern=^https?:\/\/mapi\.xiaotucc\.com\/(mall\/main|main_page\/index\/getActivity), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9065; see build report.
 
 # > 笑容加
 # hostname = myusmile.online, wemallh5.usmile.com, www.myusmile.online
 # 我的页推广
-usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/plaqueTopic\/selectByType, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/usmile.js
+# Optimizer: excluded reviewed scope entry at upstream line 9070; see build report.
 
 
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
@@ -9037,7 +9038,7 @@ usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/pl
 
 # > 悠洗APP
 # hostname = api.ulife.group
-悠洗APP = type=http-response, pattern=^https?:\/\/api\.ulife\.group\/market\/homeIconDetail\/list\/v7, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9097; see build report.
 
 # > YouTube
 # hostname = rr*.googlevideo.com, youtubei.googleapis.com
@@ -9049,7 +9050,7 @@ YouTube响应体 = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.
 
 # > 掌上公交
 # hostname = quanguo.mygolbs.com, wx.mygolbs.com
-掌上公交小程序广告 = type=http-response, pattern=^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9109; see build report.
 
 # > 招商证券
 # hostname = marketing.cmschina.com
@@ -9087,12 +9088,12 @@ YouTube响应体 = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.
 知乎拦截服务器推送配置__42a75bc1724c = type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js, requires-body=true
 
 # > 中国国际航空
-中国国际航空 = type=http-response, pattern=^https:\/\/m\.airchina\.com\.cn\/airchina\/gateway\/v\d(\.\d)*\/api\/services, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9147; see build report.
 
 # > 转转
 # hostname = app.zhuanzhuan.com
 # “我的”页面去除冗余的模块
-转转 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js, requires-body=true, timeout=60
+# Optimizer: excluded reviewed scope entry at upstream line 9152; see build report.
 
 
 
