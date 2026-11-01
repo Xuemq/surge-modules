@@ -26,7 +26,7 @@ def prepare_modules(source_bytes, bundle):
         raise Invalid('combined build requires exactly the three named sources and schema 1')
     if bundle.get('source_sha256') != {s: digest(source_bytes[s]) for s in SOURCE_IDS}:
         raise Invalid('combined source hashes changed; review/migrate exact decisions first')
-    base_text, base_report = optimize_single(source_bytes['fmz200'], 'fmz200', bundle['fmz_policy'])
+    base_text, base_report = optimize_single(source_bytes['fmz200'], 'fmz200', bundle['fmz_policy'], final_repairs=False)
     native, conversion = convert_qx(source_bytes['moyu'], bundle['conversion_policy'])
     if native is None:
         raise Invalid('required QX source has unresolved conversion directives')
@@ -142,7 +142,10 @@ def build_combined(source_bytes, bundle):
     # Existing source/baseline/overlap guards apply to the reviewed assembly.
     # Exact output-only repairs neither select new rules nor relax those guards.
     text, serialization = repair_serialization(text, bundle.get('serialization_repairs'))
+    from .reviewed import apply_reviewed
+    text, audit = apply_reviewed(text, bundle.get('reviewed_repairs'))
     final = parse_module(text.encode(), 'merged-repaired-release')
+    final_ids = {e.id for e in final.entries}
     compact_stages = {
         'fmz': {k: stages['fmz'][k] for k in ('source_sha256', 'output_sha256', 'counts_after', 'changes_by_kind')},
         'scope_exclusions': bundle['fmz_policy'].get('scope_exclusions', []),
@@ -156,11 +159,12 @@ def build_combined(source_bytes, bundle):
         'policy_sha256': digest(json.dumps(bundle, ensure_ascii=False, sort_keys=True, separators=(',', ':'))),
         'reviewed_assembly_sha256': digest(raw), 'output_sha256': digest(text), 'bytes': len(text.encode()),
         'active_entries_sha256': active_signature(final), 'counts': dict(Counter(e.section for e in final.entries)),
-        'base_entries_preserved': len(modules[0].entries), 'baseline_mitm_hosts_preserved': len(base_hosts),
-        'final_mitm_hosts': len(final_hosts), 'native_adapters_preserved': len(adapters),
+        'reviewed_base_assembly_entries': len(modules[0].entries),
+        'base_entries_preserved': sum(e.id in final_ids for e in modules[0].entries), 'baseline_mitm_hosts_preserved': len(base_hosts),
+        'final_mitm_hosts': len(next((host_list(e.raw.partition('=')[2].strip())[1] for e in final.entries if e.section == 'MITM'), [])), 'native_adapters_preserved': len(adapters),
         'finite_overlap_review': guard, 'stages': compact_stages, 'merge': compact_merge,
-        'serialization_repairs': serialization,
-        'base_entries_byte_preserved': len(modules[0].entries) - sum(x['entry_id'] in {e.id for e in modules[0].entries} for x in serialization['applied']),
+        'serialization_repairs': serialization, 'reviewed_repairs': audit,
+        'base_entries_byte_preserved': sum(e.id in final_ids for e in modules[0].entries),
         'limitations': ['Not tested in Surge or the affected apps.',
             'Finite regex examples are not an exhaustive overlap/equivalence proof.',
             'Remote script/resource contents are not executed or vendored and can change independently.',

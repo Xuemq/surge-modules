@@ -202,7 +202,8 @@ def migrate_bundle(old, new, bundle, modification_date):
     # Decisions, witness identities and exceptions remain byte-for-byte identical.
     require(migrated['merge_policy']['decisions'] == bundle['merge_policy']['decisions']
         and migrated['overlap_review'] == bundle['overlap_review']
-        and migrated.get('serialization_repairs') == bundle.get('serialization_repairs'), 'review_decisions_must_not_change')
+        and migrated.get('serialization_repairs') == bundle.get('serialization_repairs')
+        and migrated.get('reviewed_repairs') == bundle.get('reviewed_repairs'), 'review_decisions_must_not_change')
     return migrated
 
 

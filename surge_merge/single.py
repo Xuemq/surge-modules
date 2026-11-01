@@ -69,7 +69,7 @@ def retained_entries_by_anchor(data, source, policy):
     return {anchor['line']: (r, retained)}
 
 
-def optimize_single(data, source, policy):
+def optimize_single(data, source, policy, *, final_repairs=True):
     """Keep comments/order and every distinct behavior; record every changed line."""
     text = clean_bytes(data)
     if digest(data) != policy.get('source_sha256'):
@@ -271,6 +271,9 @@ def optimize_single(data, source, policy):
             'fields':[line[2:].partition('=')[0] for line in first],
             'reason':'Put name/description first, followed by active metadata; preserve attribution and all rule bytes.'})
     result='\n'.join(lines)+'\n'
+    from .reviewed import apply_reviewed
+    result, audit = apply_reviewed(result, policy.get('reviewed_repairs') if final_repairs else None)
+    report['reviewed_repairs'] = audit
     parsed=parse_module(result.encode(),source+'-optimized')
     for entry in parsed.entries:
         if entry.section != 'Script':
